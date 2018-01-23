@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"nnparadisemod:mossy_furnace"},"facing=south":{"model":"nnparadisemod:mossy_furnace","y":180},"facing=west":{"model":"nnparadisemod:mossy_furnace","y":270},"facing=east":{"model":"nnparadisemod:mossy_furnace","y":90}}}

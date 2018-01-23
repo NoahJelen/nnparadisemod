@@ -1,0 +1,123 @@
+0.01A (Christmas Release):
+    Added 14 new doors and trapdoors
+    Added 14 new buttons
+    Added 14 new pressure plates
+    Added santa's suit, christmas trees, and presents
+    Added more wooden crafting tables
+    Added golden hopper
+    Added moss stone furnace
+    Added 7 new fences and gates
+    Added golden bars (function just like iron bars)
+    Added rubies
+    Added old recipe for the enchanted apple
+    Added the ability to craft quartz blocks back into quartz
+    Added emerald, ruby, obsidian, and redstone armor and tools
+
+0.02A:
+    Optimized the living hell out of the block registration class, forge no longer spams the output saying I registered everything twice
+    Removed a bunch of unnecessary items
+    Increased the armor toughness and durability of emerald, ruby, and obsidian armor
+    Increased the armor toughness of redstone armor
+    Changed the button models to resemble the vanilla buttons
+    Added the crafting recipe for the obsidian button
+    Changed brick fence recipe to prevent recipe conflict with Quark's brick wall crafting recipe
+    Made some other technical optimizations
+    Added diamond, emerald, quartz, redstone, and ruby crystals
+    Added soul glass and pane
+    Added liquid redstone
+    Added glowing obsidian (from mcpe)
+
+0.10A Test 1:
+    More technical optimizations
+    Added Blaze and Sugar Blocks
+    Added DU Portal Blocks
+    Added the Deep Underground dimension!
+    Nether Fortresses can generate in the Deep Underground
+    All overworld mobs can spawn in the Deep Underground
+    Obsidian Wall can no longer be moved by pistons
+    Crafting the redstone sword now pre-enchants it with Fire Aspect II
+    Emerald armor now gives the player experience if the player is wearing a full set
+    Liquid Redstone now has a sound!
+
+0.10A Test 2:
+    Added occasional tree gen to the deep underground
+    Nether Forts no longer generate in the DU
+    Darkened the liquid redstone texture so it's more red
+    Changed Blaze block texture to a yellow-orange like color
+    Added fog to the DU
+    DU Portal is now a full block
+    Added Emerald Rails and its powered variant
+    Added mossy variant of the vanilla lever
+
+0.10A (Update 2018):
+    Added crafting recipe for Emerald Rails and its powered variant
+    Added colored redstone lamps
+    Changed the sugar block texture
+    The sugar block is now a falling block
+    The first release of my mod to have its source on github
+
+0.11A (The Decoration and Mob Repellent Update):
+    Increased the rarity of ruby ore (it's now about as rare as diamond but less rare than emerald).
+    Added Silver Ore
+    Added Silver Block
+    Added Silver Button
+    Added Silver Pressure Plate
+    Added Silver Fence
+    Added Silver Fence Gate
+    Renamed the vanilla buttons to "Oak Button" and "Stone Button"
+    Soul Glass and DU Portal now render like normal translucent blocks
+    The vanilla redstone block now has the blast resistance of obsidian
+    Fixed an issue with the walls appearing in the creative inventory twice with the second set being untextured. They should only appear once now
+    Added Silver Door
+    Added Silver Trapdoor
+    Added Silver Hopper
+    Added End Stone Pressure Plate
+    Added End Stone Button
+    Added End Stone Door
+    Added End Stone Trapdoor
+    Added End Stone Wall
+    Added Glowing Obsidian Stairs
+    Added Bedrock Stairs
+    Added Obsidian Stairs
+    Added Glowing Obsidian Wall
+    Added Glowing Obsidian Pressure Plate
+    Added Glowing Obsidian Button
+    Added Glowing Obsidian Door
+    Added Glowing Obsidian Trapdoor
+    Added Compressed Cactus
+    Added Cactus Door
+    Added Cactus Trapdoor
+    Added Cactus Bookshelf
+    Added Cactus Fence
+    Added Cactus Fence Gate
+    Added Cactus Pressure Plate
+    Added Compressed Cactus Chest (Normal and Trapped)
+    Added Cactus tools
+    Added Cactus Stick
+    Added Cactus Stairs
+    Added Salt Ore
+    Added Salt
+    Added Salt Block
+    Added Salt Lamp
+    Added Nether Variants of gold and silver ores
+    Adjusted the blast resistance of all the blocks so they're correct
+    Resolved some recipe conflicts in my own crafting recipes
+
+0.12A (The Structures Update):
+    Added the following structures to Minecraft:
+        Shipwreck (has Guardian spawners in it!)
+        Underwater Village
+        Brick Pyramid (A spinoff of the brick pyramid from Indev, has a dungeon inside)
+        Abandoned Survival Houses (has different variants depending on biome)
+        Abandoned Mining Base (Extremely dangerous! Has 2 creeper spawners inside!)
+        Mesa Temple (A variant of the vanilla desert temple)
+        Rogue Nether Portals
+        Wicker Man Monument (inspired by the song "The Wicker Man" by Iron Maiden)
+        Added 3 structures created by my friend, Attie (2 shrines of his enderman, Bill, and his shulker, John, and a tank for his creeper, Jeff)
+    Finally got gold generating in the nether!
+    Optimized the crafting recipes for the colored redstone lamps (they also now use oredict defs for the dyes, so you could use other mod's dye for making them if they have an oredict definition)
+    Optimized ore generation
+    Fixed a crafting recipe bug for the silver pickaxe
+    Fixed a texture error for the Brown Redstone Lamp item (it had the same texture as the Blue Redstone Lamp)
+    Fixed a block model bug with the cactus trapdoor when it had "half=top" as its metadata
+    Added Dirt, Sand, and Clay to the ocean floor

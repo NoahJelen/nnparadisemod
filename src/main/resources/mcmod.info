@@ -1,0 +1,17 @@
+[
+ {
+  "modid": "nnparadisemod",
+  "name": "Nether Noah's Paradise Mod",
+  "description": "This Mod adds stuff that makes minecraft better!\nBest if used alongside Quark!",
+  "version": "0.10A (Update 2018)",
+  "mcversion": "1.11.2",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["NetherNoah777"],
+  "credits": "Thanks for the awesome modding tutorials, Loremaster!\nThanks for the sample mod, CJMinecraft!\nThanks for the door example, DragonFerocity!\nMore credits in the source code!",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+ }
+]

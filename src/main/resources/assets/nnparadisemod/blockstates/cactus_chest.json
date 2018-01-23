@@ -1,0 +1,1 @@
+{"forge_marker":1,"variants":{"facing=north":{"model":"nnparadisemod:cactus_chest"},"facing=south":{"model":"nnparadisemod:cactus_chest","y":180},"facing=west":{"model":"nnparadisemod:cactus_chest","y":270},"facing=east":{"model":"nnparadisemod:cactus_chest","y":90}}}
