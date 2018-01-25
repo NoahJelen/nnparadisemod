@@ -121,3 +121,4 @@
     Fixed a texture error for the Brown Redstone Lamp item (it had the same texture as the Blue Redstone Lamp)
     Fixed a block model bug with the cactus trapdoor when it had "half=top" as its metadata
     Added Dirt, Sand, and Clay to the ocean floor
+    The resource blocks (the ones made of silver, ruby, sugar, salt, and blaze powder) and glowing obsidian can now be used in beacon pyramids

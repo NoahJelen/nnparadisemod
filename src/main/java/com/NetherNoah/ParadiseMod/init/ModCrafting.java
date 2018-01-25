@@ -1,6 +1,7 @@
 package com.NetherNoah.ParadiseMod.init;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
@@ -10,18 +11,21 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import java.util.List;
 
 public class ModCrafting {
 	//crafting and smelting recipes
 	public static void register() {
+		//globals variables for all recipes
+		List<Block> blocks=Arrays.asList(Blocks.OBSIDIAN,ModBlocks.glowingObsidian,Blocks.END_STONE,ModBlocks.CompressedCactus);
+		List<String> dyes = Arrays.asList("dyeBlack","dyeRed","dyeGreen","dyeBrown","dyeBlue","dyePurple","dyeCyan","dyeLightGray","dyeGray","dyePink","dyeLime","dyeYellow","dyeLightBlue","dyeMagenta","dyeOrange","dyeWhite");
+		List<ItemStack> materials=Arrays.asList(new ItemStack(Blocks.END_STONE),new ItemStack(Blocks.GLASS),new ItemStack(Items.DIAMOND),new ItemStack(Items.GOLD_INGOT),new ItemStack(Items.EMERALD),new ItemStack(Blocks.STONE,1,5),new ItemStack(Blocks.STONE,1,3),new ItemStack(Blocks.STONE,1,1),new ItemStack(Blocks.STONE,1,0),new ItemStack(Blocks.MOSSY_COBBLESTONE),new ItemStack(Blocks.COBBLESTONE),new ItemStack(ModBlocks.glowingObsidian),new ItemStack(Blocks.OBSIDIAN));
+		
 		//the rs sword comes pre-enchanted with Fire Aspect II
 		ItemStack RSSword = new ItemStack(ModItems.redstoneSword);
 		RSSword.addEnchantment(Enchantment.getEnchantmentByID(20), 2);
 		
 		//colored RS Lamps
 		List<Block> lamps = Arrays.asList(ModBlocks.BlackRSLamp,ModBlocks.RedRSLamp,ModBlocks.GreenRSLamp,ModBlocks.BrownRSLamp,ModBlocks.BlueRSLamp,ModBlocks.PurpleRSLamp,ModBlocks.CyanRSLamp,ModBlocks.SilverRSLamp,ModBlocks.GrayRSLamp,ModBlocks.PinkRSLamp,ModBlocks.LimeRSLamp,ModBlocks.YellowRSLamp,ModBlocks.LightBlueRSLamp,ModBlocks.MagentaRSLamp,ModBlocks.OrangeRSLamp,ModBlocks.WhiteRSLamp);
-		List<String> dyes = Arrays.asList("dyeBlack","dyeRed","dyeGreen","dyeBrown","dyeBlue","dyePurple","dyeCyan","dyeLightGray","dyeGray","dyePink","dyeLime","dyeYellow","dyeLightBlue","dyeMagenta","dyeOrange","dyeWhite");
 		for (int i=0;i<16;i++) {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(lamps.get(i),8), new Object[] {"xxx","xyx","xxx",'x',Blocks.REDSTONE_LAMP,'y',dyes.get(i)}));
 		}
@@ -50,16 +54,18 @@ public class ModCrafting {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.ChristmasSapling), new ItemStack(Blocks.STAINED_GLASS_PANE,1,13), new ItemStack(Blocks.STAINED_GLASS_PANE,1,14),new ItemStack(Blocks.SAPLING,1,1),Blocks.GLOWSTONE);
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.ChristmasTopper,2), "axa","xxx","axa",'x',Items.GOLD_INGOT,'a',Blocks.AIR);
 		
+		
 		//stairs
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.CactusStairs,8),"E  ","EE ","EEE",'E',ModBlocks.CompressedCactus);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.EndStairs,8),"E  ","EE ","EEE",'E',Blocks.END_STONE);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.ObsidianStairs,8),"E  ","EE ","EEE",'E',Blocks.OBSIDIAN);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.GlowingObsidianStairs,8),"E  ","EE ","EEE",'E',ModBlocks.glowingObsidian);
+		List<Block> stairs=Arrays.asList(ModBlocks.ObsidianStairs,ModBlocks.GlowingObsidianStairs,ModBlocks.EndStairs,ModBlocks.CactusStairs);
+		for (int i=0; i<4; i++) {
+			GameRegistry.addShapedRecipe(new ItemStack(stairs.get(i),8), "X  ","XX ","XX",'X',blocks.get(i));
+		}
 		
 		//walls
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.ObsidianWall,6), "OOO","OOO",'O',Blocks.OBSIDIAN);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.GlowingObsidianWall,6), "OOO","OOO",'O',ModBlocks.glowingObsidian);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.EndWall,6), "OOO","OOO",'O',Blocks.END_STONE);
+		List<Block> walls= Arrays.asList(ModBlocks.ObsidianWall,ModBlocks.GlowingObsidianWall,ModBlocks.EndWall);
+		for (int i=0; i<3; i++) {
+			GameRegistry.addShapedRecipe(new ItemStack(walls.get(i),6), "XXX","XXX",'X',blocks.get(i));
+		}
 		
 		//tools
 		//cactus
@@ -139,7 +145,7 @@ public class ModCrafting {
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.GoldBars,16), "GGG","GGG",'G',Items.GOLD_INGOT);
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.SilverBars,16), new Object[] {"GGG","GGG",'G',"ingotSilver"}));
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.MossyFurnace), "MMM","M M","MMM",'M',Blocks.MOSSY_COBBLESTONE);
-		
+
 		//pressure plates
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.CactusPlate), "SS",'S',ModBlocks.CompressedCactus);
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.DiamondPlate), "SS",'S',Items.DIAMOND);
@@ -157,8 +163,13 @@ public class ModCrafting {
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.JunglePlate),"SS",'S',new ItemStack(Blocks.PLANKS,1,3));
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.AcaciaPlate),"SS",'S',new ItemStack(Blocks.PLANKS,1,4));
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.DarkOakPlate),"SS",'S',new ItemStack(Blocks.PLANKS,1,5));
+		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.CactusPlate), "SS",'S',ModBlocks.CompressedCactus);
+		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.DiamondPlate), "SS",'S',Items.DIAMOND);
 		
 		//buttons
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.RubyPlate), new Object[] {"SS",'S',"gemRuby"}));//oredict definition
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.SilverPlate), new Object[] {"SS",'S',"ingotSilver"}));//oredict definition
+		
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.CactusButton), ModBlocks.CompressedCactus);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.EndButton), Blocks.END_STONE);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.ObsidianButton), Blocks.OBSIDIAN);
@@ -178,28 +189,19 @@ public class ModCrafting {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.DarkOakButton,2),new ItemStack(Blocks.PLANKS,1,5),new ItemStack(Blocks.PLANKS,1,5));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.JungleButton,2),new ItemStack(Blocks.PLANKS,1,3),new ItemStack(Blocks.PLANKS,1,3));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.SpruceButton,2),new ItemStack(Blocks.PLANKS,1,1),new ItemStack(Blocks.PLANKS,1,1));
-		
+
 		//the workbenches
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.CustomWorkbenchSpruce), "SS","SS",'S',new ItemStack(Blocks.PLANKS,1,1));
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.CustomWorkbenchBirch), "SS","SS",'S',new ItemStack(Blocks.PLANKS,1,2));
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.CustomWorkbenchJungle), "SS","SS",'S',new ItemStack(Blocks.PLANKS,1,3));
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.CustomWorkbenchAcacia), "SS","SS",'S',new ItemStack(Blocks.PLANKS,1,4));
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.CustomWorkbenchDarkOak), "SS","SS",'S',new ItemStack(Blocks.PLANKS,1,5));
+		List<Block> tables=Arrays.asList(ModBlocks.CustomWorkbenchSpruce,ModBlocks.CustomWorkbenchBirch,ModBlocks.CustomWorkbenchJungle,ModBlocks.CustomWorkbenchAcacia,ModBlocks.CustomWorkbenchDarkOak);
+		for (int i=0;i<5;i++) {
+			GameRegistry.addShapedRecipe(new ItemStack(tables.get(i)), "SS","SS",'S',new ItemStack(Blocks.PLANKS,1,i+1));
+		}
 		
 		//the doors
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemEndDoor,3),"GG","GG","GG",'G',Blocks.END_STONE);
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemGlassDoor,3),"GG","GG","GG",'G',Blocks.GLASS);
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemDiamondDoor,3),"DD","DD","DD",'D',Items.DIAMOND);
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemGoldDoor,3),"GG","GG","GG",'G',Items.GOLD_INGOT);
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemEmeraldDoor,3),"EE","EE","EE",'E',Items.EMERALD);
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemAndesiteDoor,3),"aa","aa","aa",'a',new ItemStack(Blocks.STONE,1,5));
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemDioriteDoor,3),"DD","DD","DD",'D',new ItemStack(Blocks.STONE,1,3));
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemGraniteDoor,3),"GG","GG","GG",'G',new ItemStack(Blocks.STONE,1,1));
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemStoneDoor,3),"SS","SS","SS",'S',new ItemStack(Blocks.STONE,1,0));
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemMossStoneDoor,3),"MM","MM","MM",'M',Blocks.MOSSY_COBBLESTONE);
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemCobblestoneDoor,3),"CC","CC","CC",'C',Blocks.COBBLESTONE);
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemGlowingObsidianDoor,3),"OO","OO","OO",'O',ModBlocks.glowingObsidian);
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemObsidianDoor,3),"OO","OO","OO",'O',Blocks.OBSIDIAN);
+		List<ItemStack> doors=Arrays.asList(new ItemStack(ModItems.ItemEndDoor,3),new ItemStack(ModItems.ItemGlassDoor,3),new ItemStack(ModItems.ItemDiamondDoor,3),new ItemStack(ModItems.ItemGoldDoor,3),new ItemStack(ModItems.ItemEmeraldDoor,3),new ItemStack(ModItems.ItemAndesiteDoor,3),new ItemStack(ModItems.ItemDioriteDoor,3),new ItemStack(ModItems.ItemGraniteDoor,3),new ItemStack(ModItems.ItemStoneDoor,3),new ItemStack(ModItems.ItemMossStoneDoor,3),new ItemStack(ModItems.ItemCobblestoneDoor,3),new ItemStack(ModItems.ItemGlowingObsidianDoor,3),new ItemStack(ModItems.ItemObsidianDoor,3));
+		for(int i=0;i<13;i++) {
+			GameRegistry.addShapedRecipe(doors.get(i),"XX","XX","XX",'X',materials.get(i));
+		}
+		
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.ItemRubyDoor,3), new Object[] {"RR","RR","RR",'R',"gemRuby"}));//oredict definition
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.ItemSilverDoor,3), new Object[] {"RR","RR","RR",'R',"ingotSilver"}));//oredict definition
 		
@@ -208,18 +210,20 @@ public class ModCrafting {
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.ItemRedstoneDoor,9),"RR","RR","RR",'R',Blocks.REDSTONE_BLOCK);
 		
 		//the trapdoors
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockEndTrapDoor,5)," G ","GGG"," G ",'G',Blocks.END_STONE);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockGlassTrapDoor,6),"GGG","GGG",'G',Blocks.GLASS);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockGoldTrapdoor,4),"GG","GG",'G',Items.GOLD_INGOT);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockDiamondTrapdoor,6),"DDD","DDD",'D',Items.DIAMOND);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockEmeraldTrapdoor,6),"EEE","EEE",'E',Items.EMERALD);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockAndesiteTrapDoor,4),"aa","aa",'a',new ItemStack(Blocks.STONE,1,5));
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockDioriteTrapdoor,4),"DD","DD",'D',new ItemStack(Blocks.STONE,1,3));
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockGraniteTrapdoor,4),"GG","GG",'G',new ItemStack(Blocks.STONE,1,1));
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockStoneTrapdoor,5)," O ","OOO"," O ",'O',new ItemStack(Blocks.STONE,1,0));
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockMossStoneTrapdoor,4),"MM","MM",'M',Blocks.MOSSY_COBBLESTONE);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockCobblestoneTrapdoor,4),"CC","CC",'C',Blocks.COBBLESTONE);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.BlockObsidianTrapdoor,5)," O ","OOO"," O ",'O',Blocks.OBSIDIAN);
+		List<ItemStack> trapdoors=Arrays.asList(new ItemStack(ModBlocks.BlockEndTrapDoor,5),new ItemStack(ModBlocks.BlockGlassTrapDoor,6),new ItemStack(ModBlocks.BlockGoldTrapdoor,4),new ItemStack(ModBlocks.BlockDiamondTrapdoor,6),new ItemStack(ModBlocks.BlockEmeraldTrapdoor,6),new ItemStack(ModBlocks.BlockAndesiteTrapDoor,4),new ItemStack(ModBlocks.BlockDioriteTrapdoor,5),new ItemStack(ModBlocks.BlockGraniteTrapdoor,5),new ItemStack(ModBlocks.BlockStoneTrapdoor,5),new ItemStack(ModBlocks.BlockMossStoneTrapdoor,5),new ItemStack(ModBlocks.BlockCobblestoneTrapdoor,5),new ItemStack(ModBlocks.BlockGlowingObsidianTrapdoor,5),new ItemStack(ModBlocks.BlockObsidianTrapdoor,5));
+		for(int i=0;i<13;i++) {
+			if(trapdoors.get(i).getCount()==6) {
+				GameRegistry.addShapedRecipe(trapdoors.get(i),"XXX","XXX",'X',materials.get(i));
+			}
+			else if(trapdoors.get(i).getCount()==4) {
+				GameRegistry.addShapedRecipe(trapdoors.get(i),"XX","XX",'X',materials.get(i));
+				
+			}
+			else {
+				GameRegistry.addShapedRecipe(trapdoors.get(i)," X ","XXX"," X ",'X',materials.get(i));
+			}
+		}
+		
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockRubyTrapdoor,6),new Object[] {"RRR","RRR",'R',"gemRuby"}));//oredict definition
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BlockSilverTrapDoor,4),new Object[] {"RR","RR",'R',"ingotSilver"}));//oredict definition
 		

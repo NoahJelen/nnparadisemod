@@ -73,7 +73,11 @@ public class ParadiseMod {
         //This is NOT a coremod!
 		Blocks.REDSTONE_BLOCK.setResistance(2000F);
 		Blocks.WOODEN_BUTTON.setUnlocalizedName("oak_button");
-		
+		Blocks.STRUCTURE_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.REPEATING_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		//liquids
 		LiquidRedstone.register();
 		FluidRegistry.addBucketForFluid(LiquidRedstone.FluidLiquidRedstone.instance);
