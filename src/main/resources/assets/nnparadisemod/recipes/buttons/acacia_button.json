@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [{
+			"item": "minecraft:planks",
+			"data": 4
+		},
+		{
+			"item": "minecraft:planks",
+			"data": 4
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:acacia_button",
+        "count":2
+	}
+}

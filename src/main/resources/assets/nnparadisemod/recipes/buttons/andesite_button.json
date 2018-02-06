@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [{
+			"item": "minecraft:stone",
+			"data": 5
+		},
+		{
+			"item": "minecraft:stone",
+			"data": 5
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:andesite_button",
+        "count":2
+	}
+}

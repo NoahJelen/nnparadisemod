@@ -121,3 +121,10 @@
     Fixed a texture error for the Brown Redstone Lamp item (it had the same texture as the Blue Redstone Lamp)
     Fixed a block model bug with the cactus trapdoor when it had "half=top" as its metadata
     Added Dirt, Sand, and Clay to the ocean floor
+    The resource blocks (the ones made of silver, ruby, sugar, salt, and blaze powder) and glowing obsidian can now be used in beacon pyramids
+    Addded the command blocks and Structure Block to the redstone tab of the creative inventory and added the Barrier to the building blocks tab of the creative inventory
+
+1.0 Test 1:
+    First 1.12.2 only version
+    Changed Sugar Block texture (it looked exactly like the white concrete powder)
+    The wooden and cactus crafting tables now have the recipe book interface

@@ -94,7 +94,7 @@ public class DUPortal extends Block{
 			int i = pos.getY();
 			BlockPos blockpos;
 			
-			for(blockpos = pos; !worldIn.getBlockState(blockpos).isFullyOpaque() && blockpos.getY() > 0; blockpos = blockpos.down()) {
+			for(blockpos = pos; !worldIn.getBlockState(blockpos).isFullCube() && blockpos.getY() > 0; blockpos = blockpos.down()) {
 				;
 			}
 		}
@@ -159,11 +159,11 @@ public class DUPortal extends Block{
 			}
 			else if (thePlayer.dimension != DimensionRegistry.DeepUnderground) {
 				thePlayer.timeUntilPortal = 10;
-				thePlayer.mcServer.getPlayerList().transferPlayerToDimension(thePlayer, DimensionRegistry.DeepUnderground, new DUTeleporter(thePlayer.mcServer.worldServerForDimension(DimensionRegistry.DeepUnderground)));
+				thePlayer.mcServer.getPlayerList().transferPlayerToDimension(thePlayer, DimensionRegistry.DeepUnderground, new DUTeleporter(thePlayer.mcServer.getWorld(DimensionRegistry.DeepUnderground)));
 			}
 			else {
 				thePlayer.timeUntilPortal = 10;
-				thePlayer.mcServer.getPlayerList().transferPlayerToDimension(thePlayer, 0, new DUTeleporter(thePlayer.mcServer.worldServerForDimension(0)));
+				thePlayer.mcServer.getPlayerList().transferPlayerToDimension(thePlayer, 0, new DUTeleporter(thePlayer.mcServer.getWorld(0)));
 			}
 		}
 	}

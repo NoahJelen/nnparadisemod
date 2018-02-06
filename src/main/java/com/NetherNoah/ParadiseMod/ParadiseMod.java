@@ -6,7 +6,7 @@ import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks;
-import com.NetherNoah.ParadiseMod.init.ModCrafting;
+import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.init.ModItems;
 import com.NetherNoah.ParadiseMod.proxy.CommonProxy;
 import com.NetherNoah.ParadiseMod.tileentity.TEAntiMobLamp;
@@ -73,7 +73,11 @@ public class ParadiseMod {
         //This is NOT a coremod!
 		Blocks.REDSTONE_BLOCK.setResistance(2000F);
 		Blocks.WOODEN_BUTTON.setUnlocalizedName("oak_button");
-		
+		Blocks.STRUCTURE_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.REPEATING_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		//liquids
 		LiquidRedstone.register();
 		FluidRegistry.addBucketForFluid(LiquidRedstone.FluidLiquidRedstone.instance);
@@ -122,7 +126,7 @@ public class ParadiseMod {
 		System.out.println("Nether Noah's Paradise Mod: added ores to ore dictionary");
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new CustomCraftBenchGuiHandler());
 		proxy.init();
-		ModCrafting.register();
+		ModSmelting.register();
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered crafting recipes");
 		DimensionRegistry.MainRegistry();
 		System.out.println("Nether Noah's Paradise Mod: Successfully added the Deep Underground to Minecraft");
