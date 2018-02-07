@@ -21,10 +21,11 @@ public class silverAxe extends ItemTool {
 		super(material, EFFECTIVE_ON);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
-	}
-    public float getStrVsBlock(ItemStack stack, IBlockState state)
+	}	
+	@Override
+	public float getDestroySpeed(ItemStack stack, IBlockState state)
     {
         Material material = state.getMaterial();
-        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
+        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getDestroySpeed(stack, state) : this.efficiency;
     }
 }

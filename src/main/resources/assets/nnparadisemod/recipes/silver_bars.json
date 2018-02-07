@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "nnparadisemod:silver_ingot"
+    }
+  },
+  "result": {
+    "item": "nnparadisemod:silver_bars",
+    "count": 16
+  }
+}

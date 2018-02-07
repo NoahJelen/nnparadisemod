@@ -27,7 +27,6 @@ public class ShrineGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		int selectShrine=rand.nextInt(2);
-		System.out.println(selectShrine);
 		Template template = null;
 		if (selectShrine==1) 
 		{

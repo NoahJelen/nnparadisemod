@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [{
+			"item": "minecraft:stone",
+			"data": 3
+		},
+		{
+			"item": "minecraft:stone",
+			"data": 3
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:diorite_button",
+        "count":2
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [{
+			"item": "minecraft:planks",
+			"data": 2
+		},
+		{
+			"item": "minecraft:planks",
+			"data": 2
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:birch_button",
+        "count":2
+	}
+}
