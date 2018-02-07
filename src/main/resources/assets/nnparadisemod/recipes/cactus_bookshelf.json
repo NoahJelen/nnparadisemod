@@ -16,6 +16,12 @@
     }
   },
   "result": {
+<<<<<<< HEAD
     "item": "nnparadisemod:cactus_bookshelf"
+=======
+    "item": "nnparadisemod:cactus_bookshelf",
+    "data": 15,
+    "count": 8
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
   }
 }

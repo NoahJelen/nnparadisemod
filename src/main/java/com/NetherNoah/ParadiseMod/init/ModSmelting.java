@@ -19,10 +19,13 @@ public class ModSmelting {
 		GameRegistry.addSmelting(ModBlocks.RubyOre, new ItemStack(ModItems.Ruby), 5F);
 		GameRegistry.addSmelting(ModBlocks.SilverOre, new ItemStack(ModItems.SilverIngot), 5F);
 		
+<<<<<<< HEAD
 		//smelting recipes for end ores
 		GameRegistry.addSmelting(ModBlocks.EndRubyOre, new ItemStack(ModItems.Ruby), 5F);
 		GameRegistry.addSmelting(ModBlocks.EnderPearlOre, new ItemStack(Items.ENDER_PEARL), 5F);
 		
+=======
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
 		//smelting recipes for nether ores
 		GameRegistry.addSmelting(ModBlocks.SilverOreNether, new ItemStack(ModItems.SilverIngot), 5F);
 		GameRegistry.addSmelting(ModBlocks.GoldOreNether, new ItemStack(Items.GOLD_INGOT), 5F);

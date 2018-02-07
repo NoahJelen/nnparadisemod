@@ -128,9 +128,12 @@
     First 1.12.2 only version
     Changed Sugar Block texture (it looked exactly like the white concrete powder)
     The wooden and cactus crafting tables now have the recipe book interface
+<<<<<<< HEAD
     Started an advancement tree for the mod
     Added Ender Ruby Ore and Ender Pearl Ore
     Numbers should no longer spam your output log while exploring the end
     Added Ender Pearl Block
     Added elytra runways
     Added structure voids to the redstone creative tab
+=======
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec

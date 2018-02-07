@@ -17,6 +17,12 @@
 		}
 	],
 	"result": {
+<<<<<<< HEAD
 		"item": "nnparadisemod:christmas_sapling"
+=======
+		"item": "nnparadisemod:christmas_sapling",
+		"data": 13,
+		"count": 3
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
 	}
 }
