@@ -223,6 +223,13 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+import net.minecraftforge.fml.common.registry.GameRegistry;
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
 
 public class ModBlocks {
 	public static SaltLamp getSaltLamp()
@@ -665,13 +672,20 @@ public class ModBlocks {
 		ForgeRegistries.BLOCKS.register(LitWhiteRSLamp = new LitWhiteRSLamp());
 		ForgeRegistries.BLOCKS.register(LitYellowRSLamp = new LitYellowRSLamp());
 	}
-
 	private static void regBlock(Block block) {
 		ForgeRegistries.BLOCKS.register(block);
 		ItemBlock item = new ItemBlock(block);
 		item.setRegistryName(block.getRegistryName());
 		ForgeRegistries.ITEMS.register(item);
 	}
+	//private static void regBlock(Block block) {
+		//boolean debug=false;
+		//GameRegistry.register(block);
+		//GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		//if (debug) {
+			//System.out.println("Nether Noah's Paradise Mod: Registered " + block.getUnlocalizedName().substring(5));
+		//}
+	//}
 
 	public static void registerRenders() {
 		// block render registry list

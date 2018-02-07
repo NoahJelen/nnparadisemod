@@ -6,6 +6,13 @@ import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+import com.NetherNoah.ParadiseMod.init.ModSmelting;
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
 import com.NetherNoah.ParadiseMod.init.ModItems;
 import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.proxy.CommonProxy;
@@ -76,12 +83,25 @@ public class ParadiseMod {
 		Blocks.REDSTONE_BLOCK.setResistance(2000F);
 		Blocks.WOODEN_BUTTON.setUnlocalizedName("oak_button");
 		Blocks.STRUCTURE_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+<<<<<<< HEAD
 		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
+=======
+<<<<<<< HEAD
+		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
+=======
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
 		Blocks.COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.REPEATING_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
 		
+=======
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
 		//liquids
 		LiquidRedstone.register();
 		FluidRegistry.addBucketForFluid(LiquidRedstone.FluidLiquidRedstone.instance);
