@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stone",
+      "data":1
+    }
+  },
+  "result": {
+    "item": "nnparadisemod:granite_pressure_plate"
+  }
+}

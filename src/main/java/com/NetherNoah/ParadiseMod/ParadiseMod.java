@@ -6,8 +6,8 @@ import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks;
-import com.NetherNoah.ParadiseMod.init.ModCrafting;
 import com.NetherNoah.ParadiseMod.init.ModItems;
+import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.proxy.CommonProxy;
 import com.NetherNoah.ParadiseMod.tileentity.TEAntiMobLamp;
 import com.NetherNoah.ParadiseMod.tileentity.TEMossyFurnace;
@@ -17,6 +17,7 @@ import com.NetherNoah.ParadiseMod.tileentity.TileEntityGoldHopper;
 import com.NetherNoah.ParadiseMod.tileentity.TileEntitySilverHopper;
 import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
 import com.NetherNoah.ParadiseMod.world.worldgen.DirtGen;
+import com.NetherNoah.ParadiseMod.world.worldgen.OreGenEnd;
 import com.NetherNoah.ParadiseMod.world.worldgen.OreGenNether;
 import com.NetherNoah.ParadiseMod.world.worldgen.OreGenOverworld;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.BrickPyramid;
@@ -25,6 +26,7 @@ import com.NetherNoah.ParadiseMod.world.worldgen.structures.MesaTemple;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Minerbase;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Ocean;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.RoguePortal;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Runway;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.WickerMan;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.JeffTank;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.Shrine;
@@ -73,6 +75,12 @@ public class ParadiseMod {
         //This is NOT a coremod!
 		Blocks.REDSTONE_BLOCK.setResistance(2000F);
 		Blocks.WOODEN_BUTTON.setUnlocalizedName("oak_button");
+		Blocks.STRUCTURE_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.REPEATING_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		
 		//liquids
 		LiquidRedstone.register();
@@ -96,6 +104,7 @@ public class ParadiseMod {
 		GameRegistry.registerWorldGenerator(new Minerbase(),1);
 		GameRegistry.registerWorldGenerator(new RoguePortal(),1);
 		GameRegistry.registerWorldGenerator(new MesaTemple(),1);
+		GameRegistry.registerWorldGenerator(new Runway(),1);
 		 
 		//created by AttieCat
 		GameRegistry.registerWorldGenerator(new Shrine(),1);
@@ -104,8 +113,12 @@ public class ParadiseMod {
 		//overworld ore gen
 		GameRegistry.registerWorldGenerator(new OreGenOverworld(),1);
 		
+		
 		//nether ore gen
 		GameRegistry.registerWorldGenerator(new OreGenNether(),1);
+		
+		//end ore gen
+		GameRegistry.registerWorldGenerator(new OreGenEnd(),1);
 		
 		//dirt in the ocean
 		GameRegistry.registerWorldGenerator(new DirtGen(),1);
@@ -122,7 +135,7 @@ public class ParadiseMod {
 		System.out.println("Nether Noah's Paradise Mod: added ores to ore dictionary");
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new CustomCraftBenchGuiHandler());
 		proxy.init();
-		ModCrafting.register();
+		ModSmelting.register();
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered crafting recipes");
 		DimensionRegistry.MainRegistry();
 		System.out.println("Nether Noah's Paradise Mod: Successfully added the Deep Underground to Minecraft");
