@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "nnparadisemod:compressed_cactus"
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:cactus_stairs",
+		"count": 8
+	}
+}

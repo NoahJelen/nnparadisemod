@@ -1,0 +1,19 @@
+{
+	"type": "crafting_shaped",
+	"pattern": [
+		"BbB",
+		"BbB"
+	],
+	"key": {
+		"B": {
+			"item": "block"
+		},
+		"b": {
+			"item": "items"
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:Type_fence",
+        "count":6
+	}
+}

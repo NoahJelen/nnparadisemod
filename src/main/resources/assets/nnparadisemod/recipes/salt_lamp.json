@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"#X#",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "nnparadisemod:salt"
+		},
+		"X": {
+			"item": "minecraft:blaze_powder"
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:salt_lamp"
+	}
+}

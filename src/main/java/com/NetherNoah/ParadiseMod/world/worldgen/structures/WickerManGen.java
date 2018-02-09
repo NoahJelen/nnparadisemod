@@ -37,7 +37,7 @@ public class WickerManGen extends WorldGenerator {
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS|| biome == Biomes.BIRCH_FOREST_HILLS|| biome == Biomes.FOREST_HILLS) {
 			if(WickerManGen.canSpawnHere(template, worldserver, position)) {
-				if(rand.nextInt(399) == 0){
+				if(rand.nextInt(799) == 0){
 					IBlockState iblockstate = world.getBlockState(position);
 					world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 					PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

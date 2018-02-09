@@ -13,6 +13,6 @@ public class GlowingObsidianStairs extends BlockStairs {
 		setResistance(2000F);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		setHarvestLevel("pickaxe", 3);
-		useNeighborBrightness = true;
+		useNeighborBrightness=true;
 	}
 }

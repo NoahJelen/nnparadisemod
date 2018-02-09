@@ -3,8 +3,6 @@ package com.NetherNoah.ParadiseMod.world.dimension;
 import java.util.List;
 import java.util.Random;
 
-import javax.annotation.Nullable;
-
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks;
 
@@ -22,7 +20,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.chunk.IChunkGenerator;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCavesHell;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
@@ -30,7 +28,6 @@ import net.minecraft.world.gen.feature.WorldGenBush;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraft.world.gen.structure.MapGenNetherBridge;
 
 public class DUChunkProvider implements IChunkGenerator {
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
@@ -225,7 +222,7 @@ public class DUChunkProvider implements IChunkGenerator {
 		}
 	}
 	@Override
-	public Chunk provideChunk(int x, int z) {
+	public Chunk generateChunk(int x, int z) {
 		rand.setSeed(x * 341873128712L + z * 132897987541L);
 		ChunkPrimer chunkprimer = new ChunkPrimer();
 		prepareHeights(x, z, chunkprimer);
@@ -403,10 +400,14 @@ public class DUChunkProvider implements IChunkGenerator {
 		return biome.getSpawnableList(creatureType);
 	}
 	@Override
-	public BlockPos getStrongholdGen(World worldIn, String structureName, BlockPos position, boolean p_180513_4_) {
+	public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position, boolean p_180513_4_) {
 		return null;
 	}
 	@Override
 	public void recreateStructures(Chunk chunkIn, int x, int z) {
+	}
+	@Override
+	public boolean isInsideStructure(World worldIn, String structureName, BlockPos pos) {
+		return false;
 	}
 }

@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "redstone_lamp"
+    },
+    "X": {
+            "type": "forge:ore_dict",
+            "ore": "dyeColor"
+    }
+  },
+  "result": {
+    "item": "nnparadisemod:color_redstone_lamp",
+    "count": 8
+  }
+}
