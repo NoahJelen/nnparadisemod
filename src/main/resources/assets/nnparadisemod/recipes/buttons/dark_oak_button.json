@@ -3,9 +3,27 @@
 	"ingredients": [{
 			"item": "minecraft:planks",
 			"data": 5
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
 		}
 	],
 	"result": {
 		"item": "nnparadisemod:dark_oak_button"
+<<<<<<< HEAD
+=======
+=======
+		},
+		{
+			"item": "minecraft:planks",
+			"data": 5
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:dark_oak_button",
+        "count":2
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
 	}
 }

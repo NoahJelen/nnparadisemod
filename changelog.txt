@@ -128,12 +128,26 @@
     First 1.12.2 only version
     Changed Sugar Block texture (it looked exactly like the white concrete powder)
     The wooden and cactus crafting tables now have the recipe book interface
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
     Started an advancement tree for the mod
     Added Ender Ruby Ore and Ender Pearl Ore
     Numbers should no longer spam your output log while exploring the end
     Added Ender Pearl Block
     Added elytra runways
     Added structure voids to the redstone creative tab
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
 
 1.0 Test 2:
     Added more advancements to the advancement tree
@@ -143,3 +157,13 @@
     The christmas tree leaves now properly displays its item
     Fixed a bug with planks (other than oak planks) outputting an oak button instead of the specified variant (this will cause some issues with the advancements!)
     
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969

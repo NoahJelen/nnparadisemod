@@ -36,14 +36,30 @@ public class RunwayGen extends WorldGenerator {
 		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(RunwayGen.canSpawnHere(template, worldserver, position)) {
+<<<<<<< HEAD
 			if(rand.nextInt(599) == 0){
+=======
+<<<<<<< HEAD
+			if(rand.nextInt(599) == 0){
+=======
+			if(rand.nextInt(399) == 0){
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
 						.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
 						.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 				template.getDataBlocks(position, placementsettings);
+<<<<<<< HEAD
 				template.addBlocksToWorld(world, position.add(0, -5, 0), placementsettings);
+=======
+<<<<<<< HEAD
+				template.addBlocksToWorld(world, position.add(0, -5, 0), placementsettings);
+=======
+				template.addBlocksToWorld(world, position.add(0, -6, 0), placementsettings);
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
 				return true;
 			}
 		}
