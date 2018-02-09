@@ -3,7 +3,11 @@
   "modid": "nnparadisemod",
   "name": "Nether Noah's Paradise Mod",
   "description": "This Mod adds stuff that makes minecraft better!\nBest if used alongside Quark!",
+<<<<<<< HEAD
   "version": "1.0 Test 2 (The Advancement Update)",
+=======
+  "version": "1.0 Test 1 (The Advancement Update)",
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
   "mcversion": "1.12.2",
   "logoFile": "",
   "url": "",

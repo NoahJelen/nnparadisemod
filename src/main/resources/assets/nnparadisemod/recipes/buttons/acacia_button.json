@@ -3,9 +3,21 @@
 	"ingredients": [{
 			"item": "minecraft:planks",
 			"data": 4
+<<<<<<< HEAD
 		}
 	],
 	"result": {
 		"item": "nnparadisemod:acacia_button"
+=======
+		},
+		{
+			"item": "minecraft:planks",
+			"data": 4
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:acacia_button",
+        "count":2
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
 	}
 }

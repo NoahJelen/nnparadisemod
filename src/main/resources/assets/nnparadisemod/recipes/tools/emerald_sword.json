@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"X",
@@ -23,3 +24,23 @@
 		}
 	}
 }
+=======
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "X": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "result": {
+    "item": "nnparadisemod:emerald_sword"
+  }
+}
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7

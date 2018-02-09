@@ -94,8 +94,14 @@ public class DUPortal extends Block{
 			int i = pos.getY();
 			BlockPos blockpos;
 			
+<<<<<<< HEAD
 			//for(blockpos = pos; !worldIn.getBlockState(blockpos).isFullCube() && blockpos.getY() > 0; blockpos = blockpos.down()) {
 			//}
+=======
+			for(blockpos = pos; !worldIn.getBlockState(blockpos).isFullCube() && blockpos.getY() > 0; blockpos = blockpos.down()) {
+				;
+			}
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
 		}
 	}
 	public static int getMetaForAxis(EnumFacing.Axis axis) {

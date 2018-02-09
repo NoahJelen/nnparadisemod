@@ -3,9 +3,21 @@
 	"ingredients": [{
 			"item": "minecraft:stone",
 			"data": 1
+<<<<<<< HEAD
 		}
 	],
 	"result": {
 		"item": "nnparadisemod:granite_button"
+=======
+		},
+		{
+			"item": "minecraft:stone",
+			"data": 1
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:granite_button",
+        "count":2
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
 	}
 }

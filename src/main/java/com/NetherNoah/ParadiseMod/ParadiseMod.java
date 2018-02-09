@@ -7,6 +7,16 @@ import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
 import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+import com.NetherNoah.ParadiseMod.init.ModSmelting;
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
 import com.NetherNoah.ParadiseMod.init.ModItems;
 import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.proxy.CommonProxy;
@@ -79,12 +89,32 @@ public class ParadiseMod {
 		Blocks.REDSTONE_BLOCK.setResistance(2000F);
 		Blocks.WOODEN_BUTTON.setUnlocalizedName("oak_button");
 		Blocks.STRUCTURE_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
+<<<<<<< HEAD
 		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
+=======
+<<<<<<< HEAD
+		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
+=======
+<<<<<<< HEAD
+		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
+=======
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
 		Blocks.COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.REPEATING_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
 		
+=======
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
 		//liquids
 		LiquidRedstone.register();
 		FluidRegistry.addBucketForFluid(LiquidRedstone.FluidLiquidRedstone.instance);
@@ -99,6 +129,7 @@ public class ParadiseMod {
 		GameRegistry.registerTileEntity(TEAntiMobLamp.class,"salt_lamp");
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered tile entities");
 		
+<<<<<<< HEAD
 		//world generators
 		IWorldGenerator[] generators = {
 				//structures!
@@ -129,6 +160,36 @@ public class ParadiseMod {
 			GameRegistry.registerWorldGenerator(generators[i],1);
 		}
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered world generators");
+=======
+		//structures!
+		GameRegistry.registerWorldGenerator(new Home(),1);
+		GameRegistry.registerWorldGenerator(new WickerMan(),1);
+		GameRegistry.registerWorldGenerator(new Ocean(),1);
+		GameRegistry.registerWorldGenerator(new BrickPyramid(),1);
+		GameRegistry.registerWorldGenerator(new Minerbase(),1);
+		GameRegistry.registerWorldGenerator(new RoguePortal(),1);
+		GameRegistry.registerWorldGenerator(new MesaTemple(),1);
+		GameRegistry.registerWorldGenerator(new Runway(),1);
+		 
+		//created by AttieCat
+		GameRegistry.registerWorldGenerator(new Shrine(),1);
+		GameRegistry.registerWorldGenerator(new JeffTank(),1);
+		
+		//overworld ore gen
+		GameRegistry.registerWorldGenerator(new OreGenOverworld(),1);
+		
+		
+		//nether ore gen
+		GameRegistry.registerWorldGenerator(new OreGenNether(),1);
+		
+		//end ore gen
+		GameRegistry.registerWorldGenerator(new OreGenEnd(),1);
+		
+		//dirt in the ocean
+		GameRegistry.registerWorldGenerator(new DirtGen(),1);
+		
+		System.out.println("Nether Noah's Paradise Mod: Successfully world generators");
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
 		ModBlocks.initAndRegister();
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered blocks");
 		ModItems.initAndRegister();
@@ -141,7 +202,11 @@ public class ParadiseMod {
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new CustomCraftBenchGuiHandler());
 		proxy.init();
 		ModSmelting.register();
+<<<<<<< HEAD
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered smelting recipes");
+=======
+		System.out.println("Nether Noah's Paradise Mod: Successfully registered crafting recipes");
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
 		DimensionRegistry.MainRegistry();
 		System.out.println("Nether Noah's Paradise Mod: Successfully added the Deep Underground to Minecraft");
 	}
