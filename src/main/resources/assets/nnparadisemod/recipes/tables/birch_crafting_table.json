@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:planks",
+			"data":2
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:birch_crafting_table"
+  }
+}

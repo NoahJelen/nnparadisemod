@@ -1,0 +1,26 @@
+{
+	"display": {
+		"title": "Nether Noah's Paradise Mod",
+		"description": "It's for the heck of it!",
+		"icon": {
+			"item": "nnparadisemod:glowing_obsidian"
+		},
+
+		"background": "nnparadisemod:textures/blocks/blaze_block.png",
+		"show_toast": false,
+		"announce_to_chat": false
+	},
+	"criteria": {
+		"changed_dimension": {
+			"trigger": "minecraft:changed_dimension",
+			"conditions": {
+				"from": "overworld",
+				"to": "deep_underground"
+			}
+		}
+	},
+	"rewards": {},
+	"requirements": [
+		["changed_dimension"]
+	]
+}

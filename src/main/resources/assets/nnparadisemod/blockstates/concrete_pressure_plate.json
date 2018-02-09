@@ -1,0 +1,51 @@
+{
+	"variants": {
+		"color=white,powered=false": {"model": "nnparadisemod:white_concrete_pressure_plate_up"},
+		"color=white,powered=true": {"model": "nnparadisemod:white_concrete_pressure_plate_down"},
+
+		"color=orange,powered=false": {"model": "nnparadisemod:orange_concrete_pressure_plate_up"},
+		"color=orange,powered=true": {"model": "nnparadisemod:orange_concrete_pressure_plate_down"},
+
+		"color=magenta,powered=false": {"model": "nnparadisemod:magenta_concrete_pressure_plate_up"},
+		"color=magenta,powered=true": {"model": "nnparadisemod:magenta_concrete_pressure_plate_down"},
+
+		"color=light_blue,powered=false": {"model": "nnparadisemod:light_blue_concrete_pressure_plate_up"},
+		"color=light_blue,powered=true": {"model": "nnparadisemod:light_blue_concrete_pressure_plate_down"},
+
+		"color=yellow,powered=false": {"model": "nnparadisemod:yellow_concrete_pressure_plate_up"},
+		"color=yellow,powered=true": {"model": "nnparadisemod:yellow_concrete_pressure_plate_down"},
+
+		"color=lime,powered=false": {"model": "nnparadisemod:lime_concrete_pressure_plate_up"},
+		"color=lime,powered=true": {"model": "nnparadisemod:lime_concrete_pressure_plate_down"},
+		
+        "color=pink,powered=false": {"model": "nnparadisemod:pink_concrete_pressure_plate_up"},
+		"color=pink,powered=true": {"model": "nnparadisemod:pink_concrete_pressure_plate_down"},
+		
+        "color=gray,powered=false": {"model": "nnparadisemod:gray_concrete_pressure_plate_up"},
+		"color=gray,powered=true": {"model": "nnparadisemod:gray_concrete_pressure_plate_down"},
+		
+        "color=silver,powered=false": {"model": "nnparadisemod:silver_concrete_pressure_plate_up"},
+		"color=silver,powered=true": {"model": "nnparadisemod:silver_concrete_pressure_plate_down"},
+		
+        "color=cyan,powered=false": {"model": "nnparadisemod:cyan_concrete_pressure_plate_up"},
+		"color=cyan,powered=true": {"model": "nnparadisemod:cyan_concrete_pressure_plate_down"},
+        
+		"color=purple,powered=false": {"model": "nnparadisemod:purple_concrete_pressure_plate_up"},
+		"color=purple,powered=true": {"model": "nnparadisemod:purple_concrete_pressure_plate_down"},
+        
+		"color=blue,powered=false": {"model": "nnparadisemod:blue_concrete_pressure_plate_up"},
+		"color=blue,powered=true": {"model": "nnparadisemod:blue_concrete_pressure_plate_down"},
+		
+        "color=brown,powered=false": {"model": "nnparadisemod:brown_concrete_pressure_plate_up"},
+		"color=brown,powered=true": {"model": "nnparadisemod:brown_concrete_pressure_plate_down"},
+        
+		"color=green,powered=false": {"model": "nnparadisemod:green_concrete_pressure_plate_up"},
+		"color=green,powered=true": {"model": "nnparadisemod:green_concrete_pressure_plate_down"},
+        
+		"color=red,powered=false": {"model": "nnparadisemod:red_concrete_pressure_plate_up"},
+		"color=red,powered=true": {"model": "nnparadisemod:red_concrete_pressure_plate_down"},
+        
+		"color=black,powered=false": {"model": "nnparadisemod:black_concrete_pressure_plate_up"},
+		"color=black,powered=true": {"model": "nnparadisemod:black_concrete_pressure_plate_down"}
+	}
+}

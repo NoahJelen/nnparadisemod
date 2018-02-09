@@ -14,6 +14,6 @@ public class EndStairs extends BlockStairs {
 		setResistance(15F);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		setHarvestLevel("pickaxe", 0);
-		useNeighborBrightness = true;
+		useNeighborBrightness=true;
 	}
 }

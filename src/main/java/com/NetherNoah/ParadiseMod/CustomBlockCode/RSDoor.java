@@ -93,10 +93,10 @@ public class RSDoor extends Block{
     {
         return blockMaterial == Material.IRON ? 1005 : 1006;
     }
-    public MapColor getMapColor(IBlockState state)
-    {
-        return state.getBlock() == Blocks.IRON_DOOR ? MapColor.IRON : (state.getBlock() == Blocks.OAK_DOOR ? BlockPlanks.EnumType.OAK.getMapColor() : (state.getBlock() == Blocks.SPRUCE_DOOR ? BlockPlanks.EnumType.SPRUCE.getMapColor() : (state.getBlock() == Blocks.BIRCH_DOOR ? BlockPlanks.EnumType.BIRCH.getMapColor() : (state.getBlock() == Blocks.JUNGLE_DOOR ? BlockPlanks.EnumType.JUNGLE.getMapColor() : (state.getBlock() == Blocks.ACACIA_DOOR ? BlockPlanks.EnumType.ACACIA.getMapColor() : (state.getBlock() == Blocks.DARK_OAK_DOOR ? BlockPlanks.EnumType.DARK_OAK.getMapColor() : super.getMapColor(state)))))));
-    }
+    //public MapColor getMapColor(IBlockState state)
+    //{
+      //  return state.getBlock() == Blocks.IRON_DOOR ? MapColor.IRON : (state.getBlock() == Blocks.OAK_DOOR ? BlockPlanks.EnumType.OAK.getMapColor() : (state.getBlock() == Blocks.SPRUCE_DOOR ? BlockPlanks.EnumType.SPRUCE.getMapColor() : (state.getBlock() == Blocks.BIRCH_DOOR ? BlockPlanks.EnumType.BIRCH.getMapColor() : (state.getBlock() == Blocks.JUNGLE_DOOR ? BlockPlanks.EnumType.JUNGLE.getMapColor() : (state.getBlock() == Blocks.ACACIA_DOOR ? BlockPlanks.EnumType.ACACIA.getMapColor() : (state.getBlock() == Blocks.DARK_OAK_DOOR ? BlockPlanks.EnumType.DARK_OAK.getMapColor() : super.getMapColor(state)))))));
+    //}
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (blockMaterial == Material.IRON)

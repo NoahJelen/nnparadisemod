@@ -40,7 +40,7 @@ public class BrickPyramidGen extends WorldGenerator {
 		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(BrickPyramidGen.canSpawnHere(part1, worldserver, position)) {
-			if(rand.nextInt(599) == 0){
+			if(rand.nextInt(699) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

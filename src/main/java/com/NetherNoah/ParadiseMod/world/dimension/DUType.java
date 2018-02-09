@@ -4,7 +4,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeProviderSingle;
-import net.minecraft.world.chunk.IChunkGenerator;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -13,7 +13,8 @@ public class DUType extends WorldProvider{
 	public void init() {
 		biomeProvider = new BiomeProviderSingle(Biomes.FOREST);
 		doesWaterVaporize = false;
-		hasNoSky = true;
+		hasSkyLight = false;
+		nether=true;
 	}
 	
 	@Override

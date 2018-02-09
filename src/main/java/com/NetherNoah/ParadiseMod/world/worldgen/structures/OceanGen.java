@@ -30,9 +30,9 @@ public class OceanGen extends WorldGenerator {
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = null;
 		int selectStructure=rand.nextInt(2);
-		int rarity=399;
+		int rarity=799;
 		if (selectStructure==1) {
-			rarity=299;
+			rarity=599;
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":ocean_village"));
 		}
 		else

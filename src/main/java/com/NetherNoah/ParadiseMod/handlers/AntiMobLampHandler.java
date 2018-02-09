@@ -13,7 +13,7 @@ public class AntiMobLampHandler {
 	@SubscribeEvent
 	public void onEntityCheckSpawn(LivingSpawnEvent.CheckSpawn event)
 	{
-		if(event.getResult() == Event.Result.ALLOW) return;
+		//if(event.getResult() == Event.Result.ALLOW) return;
 
 		if(SaltLampFilter.containsEntity(event.getEntity()))
 		{
