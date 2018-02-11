@@ -11,9 +11,27 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
+<<<<<<< HEAD
 version = "1.0 (Advancement Update)"
 group = "com.NetherNoah.ParadiseMod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "nnparadisemod"
+=======
+<<<<<<< HEAD
+version = "1.0 (Advancement Update) Test 2"
+group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "nnparadisemod"
+=======
+<<<<<<< HEAD
+version = "1.0 (Advancement Update) Test 2"
+group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "nnparadisemod"
+=======
+version = "1.0"
+group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "modid"
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {

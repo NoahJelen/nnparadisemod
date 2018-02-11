@@ -14,6 +14,10 @@ public class CustomCraftBenchGuiHandler implements IGuiHandler {
     public Object getClientGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
     	id=0;
         return new CustomCraftBenchGui(player.inventory, world);
+<<<<<<< HEAD
+=======
+        		//, new BlockPos(x, y, z));
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
     }
     @Override
     public Object getServerGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {

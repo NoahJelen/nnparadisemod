@@ -4,7 +4,19 @@ public class Reference {
 	// Basic Mod Info
 	public static final String MOD_ID = "nnparadisemod";
 	public static final String NAME = "Nether Noah's Paradise Mod";
+<<<<<<< HEAD
 	public static final String VERSION = "1.0 (The Advancement Update)";
+=======
+<<<<<<< HEAD
+	public static final String VERSION = "1.0 Test 2 (The Advancement Update)";
+=======
+<<<<<<< HEAD
+	public static final String VERSION = "1.0 Test 2 (The Advancement Update)";
+=======
+	public static final String VERSION = "1.0 Test 1 (The Advancement Update)";
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
 	public static final String ACCEPTED_VERSIONS = "1.12.2";
 	public static int GUI_CUSTOM_WORKBENCH = 0;
 
