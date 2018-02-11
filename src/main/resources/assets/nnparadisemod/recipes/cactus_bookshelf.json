@@ -1,0 +1,21 @@
+
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "nnparadisemod:compressed_cactus"
+    },
+    "X": {
+      "item": "minecraft:book",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "nnparadisemod:cactus_bookshelf"
+  }
+}

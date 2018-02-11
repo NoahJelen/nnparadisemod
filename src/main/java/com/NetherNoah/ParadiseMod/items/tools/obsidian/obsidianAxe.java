@@ -19,12 +19,13 @@ public class obsidianAxe extends ItemTool {
     private static final float[] ATTACK_SPEEDS = new float[] { -3.2F, -3.2F, -3.1F, -3.0F, -3.0F};
 	public obsidianAxe(ToolMaterial material, String unlocalizedName) {
 		super(material, EFFECTIVE_ON);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+		setUnlocalizedName(unlocalizedName);
+		setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
 	}	
-    public float getStrVsBlock(ItemStack stack, IBlockState state)
+	@Override
+	public float getDestroySpeed(ItemStack stack, IBlockState state)
     {
         Material material = state.getMaterial();
-        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
+        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getDestroySpeed(stack, state) : efficiency;
     }
 }

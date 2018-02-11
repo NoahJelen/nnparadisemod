@@ -20,6 +20,6 @@ public class ItemRuby extends Item {
 	public ItemRuby() {
 		setUnlocalizedName("Ruby");
 		setRegistryName("ruby");
-		setCreativeTab(CreativeTabs.MATERIALS);
+		setCreativeTab(CreativeTabs.MISC);
 	}
 }

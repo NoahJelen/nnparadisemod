@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 public class redstoneSword extends ItemSword {
 	public redstoneSword(ToolMaterial material, String unlocalizedName) {
 		super(material);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+		setUnlocalizedName(unlocalizedName);
+		setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
 	}
 }

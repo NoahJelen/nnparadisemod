@@ -8,7 +8,7 @@ import net.minecraft.util.ResourceLocation;
 public class rubySpade extends ItemSpade {
 	public rubySpade(ToolMaterial material, String unlocalizedName) {
 		super(material);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+		setUnlocalizedName(unlocalizedName);
+		setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
 	}
 }

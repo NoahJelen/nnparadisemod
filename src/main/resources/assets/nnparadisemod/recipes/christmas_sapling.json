@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [{
+			"item": "minecraft:stained_glass_pane",
+			"data": 13
+		},
+		{
+			"item": "minecraft:stained_glass_pane",
+			"data": 14
+		},
+		{
+			"item": "minecraft:sapling",
+			"data": 1
+		},
+		{
+			"item": "minecraft:glowstone"
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:christmas_sapling"
+	}
+}

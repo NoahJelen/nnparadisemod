@@ -23,4 +23,9 @@ public class glowingObsidian extends Block {
 		setHarvestLevel("pickaxe",3);
 		setLightLevel(.46666667F);
 	}
+	@Override
+    public boolean isBeaconBase(IBlockAccess worldObj, BlockPos pos, BlockPos beacon)
+    {
+        return true;
+    }
 }

@@ -17,8 +17,8 @@ import net.minecraft.world.World;
 public class ArmorEmerald extends ItemArmor {
 	public ArmorEmerald(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, String unlocalizedName) {
 		super(materialIn, renderIndexIn, equipmentSlotIn);
-		this.setUnlocalizedName(unlocalizedName);
-		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+		setUnlocalizedName(unlocalizedName);
+		setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
 		setCreativeTab(CreativeTabs.COMBAT);
 	}
 	@Override

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "sample"
+    },
+    "X": {
+      "item": "sample",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "sample",
+    "data": 15,
+    "count": 8
+  }
+}

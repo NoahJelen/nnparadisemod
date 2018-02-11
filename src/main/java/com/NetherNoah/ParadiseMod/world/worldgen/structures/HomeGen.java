@@ -73,7 +73,7 @@ public class HomeGen extends WorldGenerator {
 		}
 
 		if(HomeGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(30) == 0){
+			if(rand.nextInt(60) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
@@ -102,6 +102,7 @@ public class HomeGen extends WorldGenerator {
 			return true;
 		return false;
 	}
+	
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
 		int y = 255;

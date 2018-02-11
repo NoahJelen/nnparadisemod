@@ -12,6 +12,5 @@ public class GlowingObsidianPlate extends BedrockPlateCode {
 		setHardness(51F);
 		setResistance(2000F);
 		setLightLevel(.46666667F);
-		setLightLevel(.46666667F);
 	}
 }

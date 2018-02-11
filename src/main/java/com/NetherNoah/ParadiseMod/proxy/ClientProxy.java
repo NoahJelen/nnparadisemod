@@ -8,6 +8,7 @@ import com.NetherNoah.ParadiseMod.tileentity.render.TileEntityCactusChestRender;
 import com.NetherNoah.ParadiseMod.tileentity.render.TileEntityCompressedCactusChestRender;
 
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy implements CommonProxy{
 	@Override
@@ -15,6 +16,7 @@ public class ClientProxy implements CommonProxy{
 		ModItems.registerRenders();
 		ModBlocks.registerRenders();
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCactusChest.class, new TileEntityCactusChestRender());
+		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCompressedCactusChest.class, new TileEntityCompressedCactusChestRender());
 		System.out.println("NetherNoah777: Finally!!! I managed to register that freaking tile entity renderer!!!!");
 	}

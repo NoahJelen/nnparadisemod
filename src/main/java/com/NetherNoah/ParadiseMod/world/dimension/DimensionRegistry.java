@@ -7,7 +7,7 @@ public class DimensionRegistry {
 		registerDimension();
 	}
 	public static final int DeepUnderground = -2;
-	public static final DimensionType DU = DimensionType.register("Deep Underground", "_du", DeepUnderground, DUType.class, false);
+	public static final DimensionType DU = DimensionType.register("deep_underground", "_du", DeepUnderground, DUType.class, false);
 	public static void registerDimension() {
 		DimensionManager.registerDimension(DeepUnderground, DU);
 	}

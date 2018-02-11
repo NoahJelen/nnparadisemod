@@ -20,6 +20,6 @@ public class Salt extends Item {
 	public Salt() {
 		setUnlocalizedName("salt");
 		setRegistryName("salt");
-		setCreativeTab(CreativeTabs.MATERIALS);
+		setCreativeTab(CreativeTabs.MISC);
 	}
 }

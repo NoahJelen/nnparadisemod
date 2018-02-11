@@ -20,6 +20,6 @@ public class CactusStick extends Item {
 	public CactusStick() {
 		setUnlocalizedName("CactusStick");
 		setRegistryName("cactus_stick");
-		setCreativeTab(CreativeTabs.MATERIALS);
+		setCreativeTab(CreativeTabs.MISC);
 	}
 }

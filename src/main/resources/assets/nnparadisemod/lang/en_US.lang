@@ -1,3 +1,7 @@
+tile.SilverFenceGate.name=Silver Fence Gate
+tile.endPearlBlock.name=Ender Pearl Block
+tile.EndRubyOre.name=Ender Ruby Ore
+tile.EndPearlOre.name=Ender Pearl Ore
 tile.hopper.name=Iron Hopper
 tile.furnace.name=Cobblestone Furnace
 tile.workbench.name=Oak Crafting Table
