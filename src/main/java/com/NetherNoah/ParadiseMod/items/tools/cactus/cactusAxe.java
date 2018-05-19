@@ -26,6 +26,14 @@ public class cactusAxe extends ItemTool {
 	public float getDestroySpeed(ItemStack stack, IBlockState state)
     {
         Material material = state.getMaterial();
+<<<<<<< HEAD
         return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getDestroySpeed(stack, state) : efficiency;
+=======
+<<<<<<< HEAD
+        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getDestroySpeed(stack, state) : efficiency;
+=======
+        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getDestroySpeed(stack, state) : this.efficiency;
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
     }
 }

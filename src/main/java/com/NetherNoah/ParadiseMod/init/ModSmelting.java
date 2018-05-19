@@ -19,10 +19,43 @@ public class ModSmelting {
 		GameRegistry.addSmelting(ModBlocks.RubyOre, new ItemStack(ModItems.Ruby), 5F);
 		GameRegistry.addSmelting(ModBlocks.SilverOre, new ItemStack(ModItems.SilverIngot), 5F);
 		
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 		//smelting recipes for end ores
 		GameRegistry.addSmelting(ModBlocks.EndRubyOre, new ItemStack(ModItems.Ruby), 5F);
 		GameRegistry.addSmelting(ModBlocks.EnderPearlOre, new ItemStack(Items.ENDER_PEARL), 5F);
 		
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> fe4e7c11df6ac2d36c62263cef3f6404ef024eec
+>>>>>>> f3bb25d5ded4e2d0a84481ae1aae25c354a4f3ee
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 		//smelting recipes for nether ores
 		GameRegistry.addSmelting(ModBlocks.SilverOreNether, new ItemStack(ModItems.SilverIngot), 5F);
 		GameRegistry.addSmelting(ModBlocks.GoldOreNether, new ItemStack(Items.GOLD_INGOT), 5F);

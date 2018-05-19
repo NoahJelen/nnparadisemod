@@ -7,6 +7,7 @@
   ],
   "key": {
     "#": {
+<<<<<<< HEAD
       "item": "minecraft:iron_block"
     },
     "X": {
@@ -15,6 +16,18 @@
   },
   "result": {
     "item": "nnparadisemod:rusty_iron_block",
+=======
+      "item": "sample"
+    },
+    "X": {
+      "item": "sample",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "sample",
+    "data": 15,
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
     "count": 8
   }
 }

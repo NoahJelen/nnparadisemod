@@ -6,11 +6,19 @@
 	"key": {
 		"#": {
 			"type": "forge:ore_dict",
+<<<<<<< HEAD
 			"ore": "blockSilver"
+=======
+			"ore": "blockRuby"
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 		}
 	},
 	"result": {
 		"item": "nnparadisemod:silver_ingot",
 		"count": 9
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d

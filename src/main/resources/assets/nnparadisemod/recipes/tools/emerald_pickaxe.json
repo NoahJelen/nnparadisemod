@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "X": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "result": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
+    "item": "nnparadisemod:emerald_pickaxe",
+		"nbt": {
+			"ench": [{
+				"id": 35,
+				"lvl": 3
+			}]
+		}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+    "item": "nnparadisemod:emerald_pickaxe"
+>>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
+>>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
+  }
+}

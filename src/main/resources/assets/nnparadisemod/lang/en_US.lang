@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 tile.SilverFenceGate.name=Silver Fence Gate
+=======
+<<<<<<< HEAD
+tile.SilverFenceGate.name=Silver Fence Gate
+=======
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 tile.endPearlBlock.name=Ender Pearl Block
 tile.EndRubyOre.name=Ender Ruby Ore
 tile.EndPearlOre.name=Ender Pearl Ore
@@ -234,6 +241,7 @@ tile.IronFenceGate.name=Iron Fence Gate
 tile.EmeraldFenceGate.name=Emerald Fence Gate
 tile.RubyFenceGate.name=Ruby Fence Gate
 tile.RedstoneFenceGate.name=Redstone Fence Gate
+<<<<<<< HEAD
 tile.GrassButton.name=Grass Button
 tile.GrassPlate.name=Grass Pressure Plate
 tile.RustyFence.name=Rusty Iron Fence
@@ -255,3 +263,5 @@ item.rusty_leggings.name=Rusty Iron Leggings
 item.rusty_boots.name=Rusty Iron Boots
 item.RustyIngot.name=Rusty Iron Ingot
 item.RustyNugget.name=Rusty Iron Nugget
+=======
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d

@@ -19,13 +19,31 @@ public class silverAxe extends ItemTool {
     private static final float[] ATTACK_SPEEDS = new float[] { -3.2F, -3.2F, -3.1F, -3.0F, -3.0F};
 	public silverAxe(ToolMaterial material, String unlocalizedName) {
 		super(material, EFFECTIVE_ON);
+<<<<<<< HEAD
 		setUnlocalizedName(unlocalizedName);
 		setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+=======
+<<<<<<< HEAD
+		setUnlocalizedName(unlocalizedName);
+		setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+=======
+		this.setUnlocalizedName(unlocalizedName);
+		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 	}	
 	@Override
 	public float getDestroySpeed(ItemStack stack, IBlockState state)
     {
         Material material = state.getMaterial();
+<<<<<<< HEAD
         return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getDestroySpeed(stack, state) : efficiency;
+=======
+<<<<<<< HEAD
+        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getDestroySpeed(stack, state) : efficiency;
+=======
+        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getDestroySpeed(stack, state) : this.efficiency;
+>>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
     }
 }

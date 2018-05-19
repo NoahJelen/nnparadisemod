@@ -35,7 +35,11 @@ public class RoguePortalGen extends WorldGenerator {
 		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(RoguePortalGen.canSpawnHere(template, worldserver, position)) {
+<<<<<<< HEAD
 			if(rand.nextInt(699) == 0){
+=======
+			if(rand.nextInt(599) == 0){
+>>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
