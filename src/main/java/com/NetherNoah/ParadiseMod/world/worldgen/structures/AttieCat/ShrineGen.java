@@ -27,7 +27,6 @@ public class ShrineGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		int selectShrine=rand.nextInt(2);
-		System.out.println(selectShrine);
 		Template template = null;
 		if (selectShrine==1) 
 		{
@@ -42,7 +41,7 @@ public class ShrineGen extends WorldGenerator {
 		}	
 		
 		if(ShrineGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(199) == 0){
+			if(rand.nextInt(400) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

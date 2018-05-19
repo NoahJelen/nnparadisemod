@@ -18,14 +18,17 @@ import com.NetherNoah.ParadiseMod.CustomBlockCode.pressurePlates.EmeraldPlateCod
 import com.NetherNoah.ParadiseMod.blocks.buttons.BedrockButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.CobblestoneButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.DiamondButton;
+import com.NetherNoah.ParadiseMod.blocks.buttons.DirtButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.EmeraldButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.EndButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.GlowingObsidianButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.GoldButton;
+import com.NetherNoah.ParadiseMod.blocks.buttons.GrassButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.IronButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.MossyButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.ObsidianButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.RubyButton;
+import com.NetherNoah.ParadiseMod.blocks.buttons.RustyButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.SilverButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.stoneVariants.AndesiteButton;
 import com.NetherNoah.ParadiseMod.blocks.buttons.stoneVariants.DioriteButton;
@@ -61,6 +64,7 @@ import com.NetherNoah.ParadiseMod.blocks.doors.MossStoneDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.ObsidianDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.RedstoneDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.RubyDoor;
+import com.NetherNoah.ParadiseMod.blocks.doors.RustyDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.SilverDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.StoneDoor;
 import com.NetherNoah.ParadiseMod.blocks.fenceGates.BrickFenceGate;
@@ -71,6 +75,7 @@ import com.NetherNoah.ParadiseMod.blocks.fenceGates.GoldFenceGate;
 import com.NetherNoah.ParadiseMod.blocks.fenceGates.IronFenceGate;
 import com.NetherNoah.ParadiseMod.blocks.fenceGates.RedstoneFenceGate;
 import com.NetherNoah.ParadiseMod.blocks.fenceGates.RubyFenceGate;
+import com.NetherNoah.ParadiseMod.blocks.fenceGates.RustyFenceGate;
 import com.NetherNoah.ParadiseMod.blocks.fenceGates.SilverFenceGate;
 import com.NetherNoah.ParadiseMod.blocks.fences.BedrockWall;
 import com.NetherNoah.ParadiseMod.blocks.fences.BrickFence;
@@ -84,6 +89,7 @@ import com.NetherNoah.ParadiseMod.blocks.fences.IronFence;
 import com.NetherNoah.ParadiseMod.blocks.fences.ObsidianWall;
 import com.NetherNoah.ParadiseMod.blocks.fences.RedstoneFence;
 import com.NetherNoah.ParadiseMod.blocks.fences.RubyFence;
+import com.NetherNoah.ParadiseMod.blocks.fences.RustyFence;
 import com.NetherNoah.ParadiseMod.blocks.fences.SilverFence;
 import com.NetherNoah.ParadiseMod.blocks.misc.BedrockStairs;
 import com.NetherNoah.ParadiseMod.blocks.misc.CactusBookshelf;
@@ -96,25 +102,31 @@ import com.NetherNoah.ParadiseMod.blocks.misc.GoldBars;
 import com.NetherNoah.ParadiseMod.blocks.misc.MossyFurnace;
 import com.NetherNoah.ParadiseMod.blocks.misc.MossyFurnaceLit;
 import com.NetherNoah.ParadiseMod.blocks.misc.ObsidianStairs;
+import com.NetherNoah.ParadiseMod.blocks.misc.RustyIronBars;
 import com.NetherNoah.ParadiseMod.blocks.misc.SaltLamp;
 import com.NetherNoah.ParadiseMod.blocks.misc.SilverBars;
 import com.NetherNoah.ParadiseMod.blocks.misc.emeraldRail;
 import com.NetherNoah.ParadiseMod.blocks.misc.glowingObsidian;
 import com.NetherNoah.ParadiseMod.blocks.misc.soulGlass;
 import com.NetherNoah.ParadiseMod.blocks.misc.soulGlassPane;
+import com.NetherNoah.ParadiseMod.blocks.ores.EnderPearlOre;
 import com.NetherNoah.ParadiseMod.blocks.ores.GoldOreNether;
 import com.NetherNoah.ParadiseMod.blocks.ores.RubyOre;
+import com.NetherNoah.ParadiseMod.blocks.ores.RubyOreEnd;
 import com.NetherNoah.ParadiseMod.blocks.ores.SaltOre;
 import com.NetherNoah.ParadiseMod.blocks.ores.SilverOre;
 import com.NetherNoah.ParadiseMod.blocks.ores.SilverOreNether;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.BedrockPlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.CobblestonePlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.DiamondPlate;
+import com.NetherNoah.ParadiseMod.blocks.pressurePlates.DirtPlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.EmeraldPlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.EndPlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.GlowingObsidianPlate;
+import com.NetherNoah.ParadiseMod.blocks.pressurePlates.GrassPlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.MossyPlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.RubyPlate;
+import com.NetherNoah.ParadiseMod.blocks.pressurePlates.RustyPlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.SilverPlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.stoneVariants.AndesitePlate;
 import com.NetherNoah.ParadiseMod.blocks.pressurePlates.stoneVariants.DioritePlate;
@@ -162,9 +174,11 @@ import com.NetherNoah.ParadiseMod.blocks.redstone.lamps.lit.LitSilverRSLamp;
 import com.NetherNoah.ParadiseMod.blocks.redstone.lamps.lit.LitWhiteRSLamp;
 import com.NetherNoah.ParadiseMod.blocks.redstone.lamps.lit.LitYellowRSLamp;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.BlockRuby;
+import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.BlockRustyIron;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.SaltBlock;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.SilverBlock;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.blazeBlock;
+import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.endPearlBlock;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.sugarBlock;
 import com.NetherNoah.ParadiseMod.blocks.trapdoors.AndesiteTrapdoor;
 import com.NetherNoah.ParadiseMod.blocks.trapdoors.BedrockTrapdoor;
@@ -182,6 +196,7 @@ import com.NetherNoah.ParadiseMod.blocks.trapdoors.MossStoneTrapdoor;
 import com.NetherNoah.ParadiseMod.blocks.trapdoors.ObsidianTrapdoor;
 import com.NetherNoah.ParadiseMod.blocks.trapdoors.RedstoneTrapdoor;
 import com.NetherNoah.ParadiseMod.blocks.trapdoors.RubyTrapdoor;
+import com.NetherNoah.ParadiseMod.blocks.trapdoors.RustyTrapdoor;
 import com.NetherNoah.ParadiseMod.blocks.trapdoors.SilverTrapdoor;
 import com.NetherNoah.ParadiseMod.blocks.trapdoors.StoneTrapdoor;
 import com.NetherNoah.ParadiseMod.blocks.workbenches.CustomWorkbenchAcacia;
@@ -200,6 +215,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockButton;
+import net.minecraft.block.BlockButtonStone;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockFence;
@@ -219,7 +235,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class ModBlocks {
 	public static SaltLamp getSaltLamp()
@@ -263,11 +279,13 @@ public class ModBlocks {
 	public static BlockRedstoneLight LitYellowRSLamp;
 	
 	//resource blocks
+	public static Block RustyIronBlock;
 	public static Block blazeBlock;
 	public static BlockFalling sugarBlock;
 	public static Block RubyBlock;
 	public static Block SilverBlock;
 	public static Block SaltBlock;
+	public static Block endPearlBlock;
 	
 	//other blocks
 	public static SaltLamp SaltLamp;
@@ -287,6 +305,7 @@ public class ModBlocks {
 	public static BlockBreakable soulGlass;
 	public static BlockPane soulGlassPane;
 	public static BlockPane SilverBars;
+	public static BlockPane RustyIronBars;
 	
 	//stairs
 	public static BlockStairs BedrockStairs;
@@ -303,6 +322,8 @@ public class ModBlocks {
 	public static BlockBush rubyCrystal;
 	
 	// buttons
+	public static BlockButtonStone DirtButton;
+	public static BlockButtonStone GrassButton;
 	public static BlockButton GlowingObsidianButton;
 	public static BlockButton EndButton;
 	public static BlockButton CactusButton;
@@ -324,8 +345,12 @@ public class ModBlocks {
 	public static QuickButton SilverButton;
 	public static QuickButton GoldButton;
 	public static IronButtonTicks IronButton;
+	public static IronButtonTicks RustyButton;
 	
 	// pressure plates
+	public static BlockPressurePlate DirtPlate;
+	public static BlockPressurePlate GrassPlate;
+	public static BlockPressurePlate concretePlate;
 	public static BedrockPlateCode GlowingObsidianPlate;
 	public static DiamondPlateCode DiamondPlate;
 	public static EmeraldPlateCode EmeraldPlate;
@@ -344,6 +369,7 @@ public class ModBlocks {
 	public static BlockPressurePlate DioritePlate;
 	public static BlockPressurePlate GranitePlate;
 	public static BlockPressurePlate EndPlate;
+	public static BlockPressurePlate RustyPlate;
 	
 	// crafting tables
 	public static CustomWorkBench CustomWorkbenchCactus;
@@ -356,9 +382,11 @@ public class ModBlocks {
 	public static MossyFurnaceCode MossyFurnaceLit;
 	
 	// ores
+	public static Block EnderPearlOre;
 	public static Block SilverOreNether;
 	public static Block GoldOreNether;
 	public static Block RubyOre;
+	public static Block EndRubyOre;
 	public static Block SilverOre;
 	public static Block SaltOre;
 	
@@ -391,6 +419,7 @@ public class ModBlocks {
 	public static BlockDoor BlockBedrockDoor;
 	public static BlockDoor BlockRubyDoor;
 	public static RSDoor BlockRedstoneDoor;
+	public static BlockDoor RustyDoor;
 	
 	// trapdoors
 	public static BlockTrapDoor BlockCactusTrapDoor;
@@ -411,6 +440,7 @@ public class ModBlocks {
 	public static BlockTrapDoor BlockBedrockTrapdoor;
 	public static BlockTrapDoor BlockRubyTrapdoor;
 	public static RSTrapdoor BlockRedstoneTrapdoor;
+	public static BlockTrapDoor RustyTrapdoor;
 	
 	//walls
 	public static CustomWall BedrockWall;
@@ -419,6 +449,7 @@ public class ModBlocks {
 	public static CustomWall EndWall;
 	
 	// fences
+	public static BlockFence RustyFence;
 	public static BlockFence BlockCactusFence;
 	public static BlockFence BlockSilverFence;
 	public static BlockFence BlockBrickFence;
@@ -429,7 +460,8 @@ public class ModBlocks {
 	public static BlockFence BlockRubyFence;
 	public static BlockFence BlockRedstoneFence;
 	
-	// fence gates
+	//fence gates
+	public static BlockFenceGate RustyFenceGate;
 	public static BlockFenceGate BlockCactusFenceGate;
 	public static BlockFenceGate BlockSilverFenceGate;
 	public static BlockFenceGate BlockBrickFenceGate;
@@ -441,6 +473,7 @@ public class ModBlocks {
 	public static RSFenceGate BlockRedstoneFenceGate;
 
 	public static void initAndRegister() {
+		regBlock(RustyIronBars=new RustyIronBars());
 		regBlock(SaltLamp=new SaltLamp());
 		regBlock(CompressedCactus=new CompressedCactus());
 		regBlock(CactusBookshelf=new CactusBookshelf());
@@ -480,7 +513,10 @@ public class ModBlocks {
 		regBlock(ObsidianStairs=new ObsidianStairs());
 		regBlock(GlowingObsidianStairs=new GlowingObsidianStairs());
 		
-		// buttons
+		//buttons
+		regBlock(DirtButton=new DirtButton());
+		regBlock(GrassButton=new GrassButton());
+		regBlock(RustyButton=new RustyButton());
 		regBlock(EndButton=new EndButton());
 		regBlock(CactusButton=new CactusButton());
 		regBlock(GlowingObsidianButton=new GlowingObsidianButton());
@@ -504,6 +540,8 @@ public class ModBlocks {
 		regBlock(SpruceButton = new SpruceButton());
 		
 		// pressure plates
+		regBlock(DirtPlate=new DirtPlate());
+		regBlock(GrassPlate=new GrassPlate());
 		regBlock(CactusPlate=new CactusPlate());
 		regBlock(EndPlate=new EndPlate());
 		regBlock(GlowingObsidianPlate=new GlowingObsidianPlate());
@@ -522,6 +560,7 @@ public class ModBlocks {
 		regBlock(DarkOakPlate = new DarkOakPlate());
 		regBlock(JunglePlate = new JunglePlate());
 		regBlock(SprucePlate = new SprucePlate());
+		regBlock(RustyPlate=new RustyPlate());
 		
 		// crafting tables
 		regBlock(CustomWorkbenchCactus=new CustomWorkbenchCactus());
@@ -533,7 +572,8 @@ public class ModBlocks {
 		regBlock(MossyFurnace = new MossyFurnace());
 		
 		// ores and resource blocks
-
+		regBlock(EnderPearlOre=new EnderPearlOre());
+		regBlock(EndRubyOre = new RubyOreEnd());
 		regBlock(SilverOreNether=new SilverOreNether());
 		regBlock(GoldOreNether=new GoldOreNether());
 		regBlock(blazeBlock=new blazeBlock());
@@ -544,6 +584,8 @@ public class ModBlocks {
 		regBlock(SilverBlock=new SilverBlock());
 		regBlock(SaltBlock=new SaltBlock());
 		regBlock(SaltOre=new SaltOre());
+		regBlock(endPearlBlock=new endPearlBlock());
+		regBlock(RustyIronBlock=new BlockRustyIron());
 		
 		// misc redstone components
 		regBlock(GoldHopper = new GoldHopper());
@@ -573,8 +615,10 @@ public class ModBlocks {
 		regBlock(BlockBedrockTrapdoor = new BedrockTrapdoor());
 		regBlock(BlockRubyTrapdoor = new RubyTrapdoor());
 		regBlock(BlockRedstoneTrapdoor = new RedstoneTrapdoor());
+		regBlock(RustyTrapdoor=new RustyTrapdoor());
 		
-		// fences
+		//fences
+		regBlock(RustyFence=new RustyFence());
 		regBlock(BlockCactusFence=new CactusFence());
 		regBlock(BlockSilverFence=new SilverFence());
 		regBlock(BlockBrickFence = new BrickFence());
@@ -585,7 +629,8 @@ public class ModBlocks {
 		regBlock(BlockRubyFence = new RubyFence());
 		regBlock(BlockRedstoneFence = new RedstoneFence());
 		
-		// fence gates
+		//fence gates
+		regBlock(RustyFenceGate=new RustyFenceGate());
 		regBlock(BlockCactusFenceGate=new CactusFenceGate());
 		regBlock(BlockSilverFenceGate=new SilverFenceGate());
 		regBlock(BlockBrickFenceGate = new BrickFenceGate());
@@ -616,58 +661,58 @@ public class ModBlocks {
 		
 		// door blocks
 		// they don't need their own items
-		GameRegistry.register(BlockCactusDoor=new CactusDoor());
-		GameRegistry.register(BlockGlowingObsidianDoor=new GlowingObsidianDoor());
-		GameRegistry.register(BlockEndDoor=new EndDoor());
-		GameRegistry.register(BlockSilverDoor=new SilverDoor());
-		GameRegistry.register(BlockGlassDoor = new GlassDoor());
-		GameRegistry.register(BlockGoldDoor = new GoldDoor());
-		GameRegistry.register(BlockDiamondDoor = new DiamondDoor());
-		GameRegistry.register(BlockEmeraldDoor = new EmeraldDoor());
-		GameRegistry.register(BlockAndesiteDoor = new AndesiteDoor());
-		GameRegistry.register(BlockDioriteDoor = new DioriteDoor());
-		GameRegistry.register(BlockGraniteDoor = new GraniteDoor());
-		GameRegistry.register(BlockStoneDoor = new StoneDoor());
-		GameRegistry.register(BlockCobblestoneDoor = new CobblestoneDoor());
-		GameRegistry.register(BlockMossStoneDoor = new MossStoneDoor());
-		GameRegistry.register(BlockObsidianDoor = new ObsidianDoor());
-		GameRegistry.register(BlockBedrockDoor = new BedrockDoor());
-		GameRegistry.register(BlockRubyDoor = new RubyDoor());
-		GameRegistry.register(BlockRedstoneDoor = new RedstoneDoor());
+		ForgeRegistries.BLOCKS.register(RustyDoor=new RustyDoor());
+		ForgeRegistries.BLOCKS.register(BlockCactusDoor=new CactusDoor());
+		ForgeRegistries.BLOCKS.register(BlockGlowingObsidianDoor=new GlowingObsidianDoor());
+		ForgeRegistries.BLOCKS.register(BlockEndDoor=new EndDoor());
+		ForgeRegistries.BLOCKS.register(BlockSilverDoor=new SilverDoor());
+		ForgeRegistries.BLOCKS.register(BlockGlassDoor = new GlassDoor());
+		ForgeRegistries.BLOCKS.register(BlockGoldDoor = new GoldDoor());
+		ForgeRegistries.BLOCKS.register(BlockDiamondDoor = new DiamondDoor());
+		ForgeRegistries.BLOCKS.register(BlockEmeraldDoor = new EmeraldDoor());
+		ForgeRegistries.BLOCKS.register(BlockAndesiteDoor = new AndesiteDoor());
+		ForgeRegistries.BLOCKS.register(BlockDioriteDoor = new DioriteDoor());
+		ForgeRegistries.BLOCKS.register(BlockGraniteDoor = new GraniteDoor());
+		ForgeRegistries.BLOCKS.register(BlockStoneDoor = new StoneDoor());
+		ForgeRegistries.BLOCKS.register(BlockCobblestoneDoor = new CobblestoneDoor());
+		ForgeRegistries.BLOCKS.register(BlockMossStoneDoor = new MossStoneDoor());
+		ForgeRegistries.BLOCKS.register(BlockObsidianDoor = new ObsidianDoor());
+		ForgeRegistries.BLOCKS.register(BlockBedrockDoor = new BedrockDoor());
+		ForgeRegistries.BLOCKS.register(BlockRubyDoor = new RubyDoor());
+		ForgeRegistries.BLOCKS.register(BlockRedstoneDoor = new RedstoneDoor());
 		
 		// also don't need an item
-		GameRegistry.register(MossyFurnaceLit = new MossyFurnaceLit());
+		ForgeRegistries.BLOCKS.register(MossyFurnaceLit = new MossyFurnaceLit());
 		
 		//lit lamps
-		GameRegistry.register(LitBlackRSLamp = new LitBlackRSLamp());
-		GameRegistry.register(LitBlueRSLamp = new LitBlueRSLamp());
-		GameRegistry.register(LitBrownRSLamp = new LitBrownRSLamp());
-		GameRegistry.register(LitCyanRSLamp = new LitCyanRSLamp());
-		GameRegistry.register(LitGrayRSLamp = new LitGrayRSLamp());
-		GameRegistry.register(LitGreenRSLamp = new LitGreenRSLamp());
-		GameRegistry.register(LitLightBlueRSLamp = new LitLightBlueRSLamp());
-		GameRegistry.register(LitLimeRSLamp = new LitLimeRSLamp());
-		GameRegistry.register(LitMagentaRSLamp = new LitMagentaRSLamp());
-		GameRegistry.register(LitOrangeRSLamp = new LitOrangeRSLamp());
-		GameRegistry.register(LitPinkRSLamp = new LitPinkRSLamp());
-		GameRegistry.register(LitPurpleRSLamp = new LitPurpleRSLamp());
-		GameRegistry.register(LitRedRSLamp = new LitRedRSLamp());
-		GameRegistry.register(LitSilverRSLamp = new LitSilverRSLamp());
-		GameRegistry.register(LitWhiteRSLamp = new LitWhiteRSLamp());
-		GameRegistry.register(LitYellowRSLamp = new LitYellowRSLamp());
+		ForgeRegistries.BLOCKS.register(LitBlackRSLamp = new LitBlackRSLamp());
+		ForgeRegistries.BLOCKS.register(LitBlueRSLamp = new LitBlueRSLamp());
+		ForgeRegistries.BLOCKS.register(LitBrownRSLamp = new LitBrownRSLamp());
+		ForgeRegistries.BLOCKS.register(LitCyanRSLamp = new LitCyanRSLamp());
+		ForgeRegistries.BLOCKS.register(LitGrayRSLamp = new LitGrayRSLamp());
+		ForgeRegistries.BLOCKS.register(LitGreenRSLamp = new LitGreenRSLamp());
+		ForgeRegistries.BLOCKS.register(LitLightBlueRSLamp = new LitLightBlueRSLamp());
+		ForgeRegistries.BLOCKS.register(LitLimeRSLamp = new LitLimeRSLamp());
+		ForgeRegistries.BLOCKS.register(LitMagentaRSLamp = new LitMagentaRSLamp());
+		ForgeRegistries.BLOCKS.register(LitOrangeRSLamp = new LitOrangeRSLamp());
+		ForgeRegistries.BLOCKS.register(LitPinkRSLamp = new LitPinkRSLamp());
+		ForgeRegistries.BLOCKS.register(LitPurpleRSLamp = new LitPurpleRSLamp());
+		ForgeRegistries.BLOCKS.register(LitRedRSLamp = new LitRedRSLamp());
+		ForgeRegistries.BLOCKS.register(LitSilverRSLamp = new LitSilverRSLamp());
+		ForgeRegistries.BLOCKS.register(LitWhiteRSLamp = new LitWhiteRSLamp());
+		ForgeRegistries.BLOCKS.register(LitYellowRSLamp = new LitYellowRSLamp());
 	}
 
 	private static void regBlock(Block block) {
-		boolean debug=false;
-		GameRegistry.register(block);
-		GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-		if (debug) {
-			System.out.println("Nether Noah's Paradise Mod: Registered " + block.getUnlocalizedName().substring(5));
-		}
+		ForgeRegistries.BLOCKS.register(block);
+		ItemBlock item = new ItemBlock(block);
+		item.setRegistryName(block.getRegistryName());
+		ForgeRegistries.ITEMS.register(item);
 	}
 
 	public static void registerRenders() {
-		// block render registry list
+		//block render registry list
+		regRender(RustyIronBars);
 		regRender(SaltLamp);
 		regRender(CompressedCactus);
 		regRender(CactusBookshelf);
@@ -707,7 +752,10 @@ public class ModBlocks {
 		regRender(GlowingObsidianStairs);
 		regRender(BedrockStairs);
 		
-		// buttons
+		//buttons
+		regRender(DirtButton);
+		regRender(GrassButton);
+		regRender(RustyButton);
 		regRender(CactusButton);
 		regRender(GlowingObsidianButton);
 		regRender(EndButton);
@@ -731,6 +779,9 @@ public class ModBlocks {
 		regRender(SpruceButton);
 		
 		// pressure plates
+		regRender(DirtPlate);
+		regRender(GrassPlate);
+		regRender(RustyPlate);
 		regRender(CactusPlate);
 		regRender(GlowingObsidianPlate);
 		regRender(EndPlate);
@@ -759,7 +810,11 @@ public class ModBlocks {
 		regRender(CustomWorkbenchSpruce);
 		regRender(CustomWorkbenchAcacia);
 		
-		// ores and resource blocks
+		//ores and resource blocks
+		regRender(RustyIronBlock);
+		regRender(endPearlBlock);
+		regRender(EnderPearlOre);
+		regRender(EndRubyOre);
 		regRender(SilverOreNether);
 		regRender(GoldOreNether);
 		regRender(SaltOre);
@@ -771,17 +826,18 @@ public class ModBlocks {
 		regRender(RubyBlock);
 		regRender(SaltBlock);
 		
-		// misc redstone components
+		//misc redstone components
 		regRender(GoldHopper);
 		regRender(SilverHopper);
 		
-		// chests
+		//chests
 		regRender(CompressedCactusChest);
 		regRender(CompressedCactusChestTrapped);
 		regRender(CactusChest);
 		regRender(CactusChestTrapped);
 		
-		// trapdoors
+		//trapdoors
+		regRender(RustyTrapdoor);
 		regRender(BlockCactusTrapDoor);
 		regRender(BlockGlowingObsidianTrapdoor);
 		regRender(BlockEndTrapDoor);
@@ -802,6 +858,7 @@ public class ModBlocks {
 		regRender(BlockRedstoneTrapdoor);
 
 		// fences
+		regRender(RustyFence);
 		regRender(BlockCactusFence);
 		regRender(BlockSilverFenceGate);
 		regRender(BlockSilverFence);
@@ -814,6 +871,7 @@ public class ModBlocks {
 		regRender(BlockRedstoneFence);
 		
 		// fence gates
+		regRender(RustyFenceGate);
 		regRender(BlockCactusFenceGate);
 		regRender(BlockBrickFenceGate);
 		regRender(BlockDiamondFenceGate);

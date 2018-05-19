@@ -6,8 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
@@ -22,10 +22,10 @@ public class Ocean extends WorldGenerator implements IWorldGenerator{
 		}
 	}
 	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
-	{	
+	{
+		WorldGenerator structure = new OceanGen();
 		int y = getGroundFromAbove(world, blockX, blockZ);
 		BlockPos pos = new BlockPos(blockX, y, blockZ);
-		WorldGenerator structure = new OceanGen();
 		structure.generate(world, rand, pos);
 	}
 	public static int getGroundFromAbove(World world, int x, int z)
@@ -35,7 +35,7 @@ public class Ocean extends WorldGenerator implements IWorldGenerator{
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == Blocks.GRAVEL;
+			foundGround = blockAt == Blocks.GRAVEL;
 		}
 		return y;
 	}

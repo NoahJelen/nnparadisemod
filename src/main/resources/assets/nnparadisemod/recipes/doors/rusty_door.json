@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##",
+		"##"
+	],
+	"key": {
+		"#": {
+			"item": "nnparadisemod:rusty_ingot"
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:rusty_door",
+		"count": 3
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"###",
+		" # "
+	],
+	"key": {
+		"#": {
+			"item": "nnparadisemod:glowing_obsidian"
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:glowing_obsidian_trapdoor",
+		"count": 5
+	}
+}

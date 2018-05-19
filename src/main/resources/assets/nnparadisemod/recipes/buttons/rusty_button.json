@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [{
+			"item": "nnparadisemod:rusty_ingot"
+		},
+		{
+			"item": "nnparadisemod:rusty_ingot"
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:rusty_button",
+		"count": 2
+	}
+}

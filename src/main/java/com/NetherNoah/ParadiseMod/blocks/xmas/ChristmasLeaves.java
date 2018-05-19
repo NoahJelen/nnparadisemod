@@ -3,7 +3,11 @@ package com.NetherNoah.ParadiseMod.blocks.xmas;
 import com.NetherNoah.ParadiseMod.ParadiseMod;
 
 import net.minecraft.block.BlockOldLeaf;
+import net.minecraft.block.BlockPlanks;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -20,4 +24,10 @@ public class ChristmasLeaves extends BlockOldLeaf {
 	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.CUTOUT;
 	}
+	
+	@Override
+	public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
+    {
+        items.add(new ItemStack(this, 1, BlockPlanks.EnumType.OAK.getMetadata()));
+    }
 }

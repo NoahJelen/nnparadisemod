@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:skull",
+            "data":2
+        },
+        "title":"GOOD LORD WHAT IS THAT?!",
+        "description": "Summon a Giant",
+        "frame": "challenge"
+    },
+    "parent": "nnparadisemod:nnparadisemod/root",
+    "criteria": {
+        "summoned_giant": {
+            "trigger": "minecraft:summoned_entity",
+            "conditions": {
+                "entity": {
+                    "type": "giant"
+                }
+            }
+        }
+    }
+}

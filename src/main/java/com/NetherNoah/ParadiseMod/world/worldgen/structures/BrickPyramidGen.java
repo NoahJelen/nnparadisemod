@@ -40,7 +40,7 @@ public class BrickPyramidGen extends WorldGenerator {
 		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(BrickPyramidGen.canSpawnHere(part1, worldserver, position)) {
-			if(rand.nextInt(599) == 0){
+			if(rand.nextInt(699) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
@@ -62,16 +62,5 @@ public class BrickPyramidGen extends WorldGenerator {
 	public static boolean canSpawnHere(Template template, World world, BlockPos posAboveGround)
 	{
 		return posAboveGround.getY() > 31;
-	}
-	public static int getGroundFromAbove(World world, int x, int z)
-	{
-		int y = 255;
-		boolean foundGround = false;
-		while(!foundGround && y-- >= 31)
-		{
-			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =blockAt == Blocks.GRASS|| blockAt == Blocks.SAND||blockAt == Blocks.SNOW || blockAt == Blocks.SNOW_LAYER || blockAt == Blocks.GLASS||blockAt == Blocks.MYCELIUM;
-		}
-		return y;
 	}
 }

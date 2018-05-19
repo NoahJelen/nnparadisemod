@@ -1,0 +1,17 @@
+{
+	"type": "forge:ore_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"type": "forge:ore_dict",
+			"ore": "ingotRustyIron"
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:rusty_iron_block"
+	}
+}

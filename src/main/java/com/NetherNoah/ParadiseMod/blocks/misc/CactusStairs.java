@@ -13,6 +13,6 @@ public class CactusStairs extends BlockStairs {
 		setHardness(2F);
 		setResistance(5F);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-		useNeighborBrightness = true;
+		useNeighborBrightness=true;
 	}
 }

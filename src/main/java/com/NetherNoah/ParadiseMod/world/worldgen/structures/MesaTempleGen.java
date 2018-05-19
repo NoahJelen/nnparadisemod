@@ -37,7 +37,7 @@ public class MesaTempleGen extends WorldGenerator {
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(biome == Biomes.MESA||biome == Biomes.MESA_CLEAR_ROCK||biome == Biomes.MESA_ROCK||biome == Biomes.MUTATED_MESA||biome == Biomes.MUTATED_MESA_CLEAR_ROCK||biome == Biomes.MUTATED_MESA_ROCK) {
 			if(MesaTempleGen.canSpawnHere(template, worldserver, position)) {
-				if(rand.nextInt(399) == 0){
+				if(rand.nextInt(499) == 0){
 					IBlockState iblockstate = world.getBlockState(position);
 					world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 					PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
@@ -56,16 +56,5 @@ public class MesaTempleGen extends WorldGenerator {
 		int zwidth = template.getSize().getZ();
 		int xwidth = template.getSize().getX();
 		return posAboveGround.getY() > 10;
-	}
-	public static int getGroundFromAbove(World world, int x, int z)
-	{
-		int y = 255;
-		boolean foundGround = false;
-		while(!foundGround)
-		{
-			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == Blocks.STAINED_HARDENED_CLAY||blockAt==Blocks.RED_SANDSTONE;
-		}
-		return y;
 	}
 }

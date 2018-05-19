@@ -31,12 +31,11 @@ public class RoguePortalGen extends WorldGenerator {
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":rogue_portal"));
 		if(template == null)
 		{
-			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
 			return false;
 		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(RoguePortalGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(399) == 0){
+			if(rand.nextInt(699) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

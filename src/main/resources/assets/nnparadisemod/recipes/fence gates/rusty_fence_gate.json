@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"bBb",
+		"bBb"
+	],
+	"key": {
+		"B": {
+			"item": "nnparadisemod:rusty_iron_block"
+		},
+		"b": {
+			"item": "nnparadisemod:rusty_ingot"
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:rusty_fence_gate",
+        "count":3
+	}
+}

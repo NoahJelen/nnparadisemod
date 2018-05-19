@@ -7,6 +7,6 @@ public class SilverIngot extends Item {
 	public SilverIngot() {
 		setUnlocalizedName("SilverIngot");
 		setRegistryName("silver_ingot");
-		setCreativeTab(CreativeTabs.MATERIALS);
+		setCreativeTab(CreativeTabs.MISC);
 	}
 }

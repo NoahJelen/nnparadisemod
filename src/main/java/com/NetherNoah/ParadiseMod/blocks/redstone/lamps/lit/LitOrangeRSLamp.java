@@ -5,15 +5,17 @@ import java.util.Random;
 import com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockColored;
 import net.minecraft.block.BlockRedstoneLight;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
-public class LitOrangeRSLamp extends BlockRedstoneLight {
+public class LitOrangeRSLamp extends BlockRedstoneLight{
 	public LitOrangeRSLamp() {
 		super(true);
 		setUnlocalizedName("OrangeRSLamp");
@@ -29,6 +31,7 @@ public class LitOrangeRSLamp extends BlockRedstoneLight {
 			}
 		}
 	}
+	
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
     {

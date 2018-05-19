@@ -5,7 +5,7 @@ import net.minecraft.block.material.Material;
 
 public class GranitePlate extends BlockPressurePlate {
 	public GranitePlate() {
-		super(Material.ROCK, BlockPressurePlate.Sensitivity.EVERYTHING);
+		super(Material.ROCK, BlockPressurePlate.Sensitivity.MOBS);
 		setUnlocalizedName("GranitePlate");
 		setRegistryName("granite_pressure_plate");
 		setHardness(0.5F);

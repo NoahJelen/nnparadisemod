@@ -3,7 +3,6 @@ package com.NetherNoah.ParadiseMod.handlers;
 import com.NetherNoah.ParadiseMod.init.ModBlocks;
 import com.NetherNoah.ParadiseMod.init.ModItems;
 
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictHandler {
@@ -25,5 +24,8 @@ public class OreDictHandler {
 		OreDictionary.registerOre("blockSalt", ModBlocks.SaltBlock);
 		OreDictionary.registerOre("lampSalt", ModBlocks.SaltLamp);
 		OreDictionary.registerOre("oreGold", ModBlocks.GoldOreNether);
+		OreDictionary.registerOre("ingotRustyIron", ModItems.RustyIngot);
+		OreDictionary.registerOre("blockRustyIron", ModBlocks.RustyIronBlock);
+		OreDictionary.registerOre("nuggetRustyIron", ModItems.RustyNugget);
 	}
 }

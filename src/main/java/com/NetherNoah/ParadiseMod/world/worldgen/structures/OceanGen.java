@@ -29,18 +29,16 @@ public class OceanGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = null;
-		int selectStructure=rand.nextInt(2);
-		int rarity=399;
-		if (selectStructure==1) {
-			rarity=299;
+		int selectStructure=rand.nextInt(3);
+		int rarity=100;
+		if (selectStructure==0) {
+			rarity=50;
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":ocean_village"));
 		}
-		else
+		if (selectStructure==1)
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":ship"));
 		if(template == null)
-		{
 			return false;
-		}	
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(biome == Biomes.OCEAN||biome == Biomes.DEEP_OCEAN) {
 			if(OceanGen.canSpawnHere(template, worldserver, position)) {
@@ -63,16 +61,5 @@ public class OceanGen extends WorldGenerator {
 		int zwidth = template.getSize().getZ();
 		int xwidth = template.getSize().getX();
 		return posAboveGround.getY() > 31;
-	}
-	public static int getGroundFromAbove(World world, int x, int z)
-	{
-		int y = 255;
-		boolean foundGround = false;
-		while(!foundGround && y-- >= 31)
-		{
-			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == Blocks.GRAVEL;
-		}
-		return y;
 	}
 }

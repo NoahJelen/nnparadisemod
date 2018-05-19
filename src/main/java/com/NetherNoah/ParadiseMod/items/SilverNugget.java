@@ -7,6 +7,6 @@ public class SilverNugget extends Item {
 	public SilverNugget() {
 		setUnlocalizedName("SilverNugget");
 		setRegistryName("silver_nugget");
-		setCreativeTab(CreativeTabs.MATERIALS);
+		setCreativeTab(CreativeTabs.MISC);
 	}
 }

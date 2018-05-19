@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_block"
+    },
+    "X": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "nnparadisemod:rusty_iron_block",
+    "count": 8
+  }
+}
