@@ -31,54 +31,20 @@ public class RunwayGen extends WorldGenerator {
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":runway"));
 		if(template == null)
 		{
-<<<<<<< HEAD
-=======
 			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 			return false;
 		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(RunwayGen.canSpawnHere(template, worldserver, position)) {
-<<<<<<< HEAD
 			if(rand.nextInt(799) == 0){
-=======
-<<<<<<< HEAD
-			if(rand.nextInt(599) == 0){
-=======
-<<<<<<< HEAD
-			if(rand.nextInt(599) == 0){
-=======
-<<<<<<< HEAD
-			if(rand.nextInt(599) == 0){
-=======
-			if(rand.nextInt(399) == 0){
->>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
->>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
->>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
 						.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
 						.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 				template.getDataBlocks(position, placementsettings);
-<<<<<<< HEAD
 				template.addBlocksToWorld(world, position.add(0, -5, 0), placementsettings);
-=======
-<<<<<<< HEAD
-				template.addBlocksToWorld(world, position.add(0, -5, 0), placementsettings);
-=======
-<<<<<<< HEAD
-				template.addBlocksToWorld(world, position.add(0, -5, 0), placementsettings);
-=======
-<<<<<<< HEAD
-				template.addBlocksToWorld(world, position.add(0, -5, 0), placementsettings);
-=======
-				template.addBlocksToWorld(world, position.add(0, -6, 0), placementsettings);
->>>>>>> b4f1ba2701a07a150105d9b8107884ea381af4e7
->>>>>>> 2232dfc8ed202f64e08f79d5fc50cea9a6929969
->>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
+				//template.addBlocksToWorld(world, position.add(0, -6, 0), placementsettings);
 				return true;
 			}
 		}
@@ -90,10 +56,6 @@ public class RunwayGen extends WorldGenerator {
 		int xwidth = template.getSize().getX();
 		return posAboveGround.getY() > 10;
 	}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
 		int y = 255;
@@ -105,6 +67,4 @@ public class RunwayGen extends WorldGenerator {
 		}
 		return y;
 	}
->>>>>>> ff63528162a376128514ecfa30cc4fc1154076ab
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 }

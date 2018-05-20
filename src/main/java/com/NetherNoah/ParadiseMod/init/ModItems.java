@@ -80,10 +80,7 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-<<<<<<< HEAD
-=======
 import net.minecraftforge.fml.common.registry.GameRegistry;
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 
 //item list
 public class ModItems {
@@ -191,16 +188,11 @@ public class ModItems {
 	public static ItemDoor ItemBedrockDoor;
 	public static ItemDoor ItemRubyDoor;
 	public static ItemDoor ItemRedstoneDoor;
-<<<<<<< HEAD
 	public static ItemDoor ItemRustyDoor;
 	public static Item RustyNugget;
 	
 	//tools
 	public static final ToolMaterial rustyMaterialT = EnumHelper.addToolMaterial(Reference.MOD_ID + ":rusty", 2, 125, 12.0F, 2F, 22);
-=======
-	
-	//tools
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 	public static final ToolMaterial silverMaterialT = EnumHelper.addToolMaterial(Reference.MOD_ID + ":silver", 2, 64, 12.0F, 2F, 22);
 	public static final ToolMaterial emeraldMaterialT = EnumHelper.addToolMaterial(Reference.MOD_ID + ":emerald", 4,1700, 9F, 4F, 30);
 	public static final ToolMaterial rubyMaterialT = EnumHelper.addToolMaterial(Reference.MOD_ID + ":ruby", 4, 1700, 9F,4F, 30);
@@ -218,7 +210,6 @@ public class ModItems {
 	public static ArmorMaterial silverMaterial = EnumHelper.addArmorMaterial("silver",Reference.MOD_ID + ":silver", 7, new int[] {2,5,6,2},25,SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F);
 
 	public static void initAndRegister() {
-<<<<<<< HEAD
 		//item registry list
 		regItem(RustyNugget=new RustyNugget());
 		regItem(RustyIngot=new RustyIngot());
@@ -323,7 +314,8 @@ public class ModItems {
 		regItem(ItemBedrockDoor = new ItemBedrockDoor());
 		regItem(ItemRubyDoor = new ItemRubyDoor());
 		regItem(ItemRedstoneDoor = new ItemRedstoneDoor());
-=======
+		
+		/*/
 		// item registry list
 		ForgeRegistries.ITEMS.register(salt=new Salt());
 		ForgeRegistries.ITEMS.register(CactusStick=new CactusStick());
@@ -414,7 +406,7 @@ public class ModItems {
 		ForgeRegistries.ITEMS.register(ItemBedrockDoor = new ItemBedrockDoor());
 		ForgeRegistries.ITEMS.register(ItemRubyDoor = new ItemRubyDoor());
 		ForgeRegistries.ITEMS.register(ItemRedstoneDoor = new ItemRedstoneDoor());
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
+		/*/
 	}
 	public static void registerRenders() {
 		//item render registry list
@@ -424,10 +416,7 @@ public class ModItems {
 		regRender(santaJacket);
 		regRender(santaPants);
 		regRender(santaBoots);
-<<<<<<< HEAD
 		regRender(RustyIngot);
-=======
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 
 		//tools
 		//cactus
@@ -464,7 +453,6 @@ public class ModItems {
 		regRender(silverSpade);
 		regRender(silverHoe);
 		regRender(silverSword);
-<<<<<<< HEAD
 		
 		//rusty iron
 		regRender(rustyPickaxe);
@@ -472,9 +460,6 @@ public class ModItems {
 		regRender(rustySpade);
 		regRender(rustyHoe);
 		regRender(rustySword);
-
-=======
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 
 		//redstone
 		regRender(redstonePickaxe);
@@ -514,7 +499,6 @@ public class ModItems {
 		regRender(silverLeggings);
 		regRender(silverBoots);
 		
-<<<<<<< HEAD
 		//rusty iron
 		regRender(rustyHelmet);
 		regRender(rustyChestplate);
@@ -523,9 +507,6 @@ public class ModItems {
 		
 		//Others
 		regRender(ItemRustyDoor);
-=======
-		//Others
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 		regRender(ItemGlowingObsidianDoor);
 		regRender(ItemEndDoor);
 		regRender(ItemCactusDoor);

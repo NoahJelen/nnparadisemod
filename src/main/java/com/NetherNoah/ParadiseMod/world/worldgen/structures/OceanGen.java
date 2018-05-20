@@ -29,23 +29,19 @@ public class OceanGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = null;
-<<<<<<< HEAD
-		int selectStructure=rand.nextInt(3);
-		int rarity=100;
-		if (selectStructure==0) {
-			rarity=50;
-=======
 		int selectStructure=rand.nextInt(2);
 		int rarity=799;
-		if (selectStructure==1) {
+		if (selectStructure==0) {
 			rarity=599;
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":ocean_village"));
 		}
+		
 		if (selectStructure==1)
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":ship"));
+		
 		if(template == null)
 			return false;
+		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(biome == Biomes.OCEAN||biome == Biomes.DEEP_OCEAN) {
 			if(OceanGen.canSpawnHere(template, worldserver, position)) {
