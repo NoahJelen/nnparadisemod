@@ -152,10 +152,14 @@
     The Silver Fence Gate finally has a display name!
     Added the vanilla mob spawner to the decorations creative tab (just like in MCBE)
 
-1.1 (Resurrection Update):
+1.1 Test 1:
     Improved the models of many blocks
     Fixed the "Infinite Rubies" glitch with the ruby crafting recipe
     Added rusty variants of iron blocks and items
     Just like the vanilla stone pressure plate, stone-type pressure plates (ones made of the stone variants, cobblestone, moss stone, and end stone) no longer react to items.
     Fixed crafting issue with the wooden craft table recipes outputting an oak crafting table instead of their specified wood type.
     Fixed a bug with planks (other than oak planks) outputting an oak button instead of the specified variant (this will cause some issues with the advancements!)
+    Added Landmines! Be careful when playing in survival mode with this mod or you WILL get blown up!
+    Added Buoys to the oceans (they're made of rusty iron)
+    Added pressure plate and buttons made of grass and dirt.
+
