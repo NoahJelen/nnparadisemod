@@ -167,4 +167,13 @@
     Improved the generation of starter houses and landmines (they only spawn on blocks that have air above them).
     Added stone and dirt landmines.
     My structures can now generate in dimensions where overworld blocks are present (like The DU and Cavern's cave dimensions).
+    Added the deep void dimension
+    Added void dungeons (They come in small, medium, and large variants)
+    Added void towers
+    Added Void Stone
+    Added Void Ores
+    Added Void Stone Bricks and stairs variant
+    Added Polished Void Stone
+    Added Void Stone Button and Void Stone Pressure Plate
+    Added Void Stone Wall
 
