@@ -17,20 +17,22 @@ public class Minerbase extends WorldGenerator implements IWorldGenerator{
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		if (world.provider.getDimension() == 0) {
+		if (world.provider.getDimension() != 1&&world.provider.getDimension() != -3&&world.provider.getDimension() != -1) {
 			generateOverworld(world, rand, blockX + 8, blockZ + 8);
 		}
 	}
 	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
 	{	
 		int y = getGroundFromAbove(world, blockX, blockZ);
-		BlockPos pos = new BlockPos(blockX, y, blockZ);
-		WorldGenerator structure = new MinerbaseGen();
-		structure.generate(world, rand, pos);
+		if (y>31) {
+			BlockPos pos = new BlockPos(blockX, y, blockZ);
+			WorldGenerator structure = new MinerbaseGen();
+			structure.generate(world, rand, pos);
+		}
 	}
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
-		int y = 255;
+		int y = 126;
 		boolean foundGround = false;
 		while(!foundGround && y-- >= 31)
 		{

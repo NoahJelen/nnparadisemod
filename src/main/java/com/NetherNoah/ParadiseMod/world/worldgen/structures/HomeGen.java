@@ -105,12 +105,13 @@ public class HomeGen extends WorldGenerator {
 	
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
-		int y = 255;
+		int y = 120;
 		boolean foundGround = false;
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == Blocks.GRASS|| blockAt == Blocks.DIRT || blockAt == Blocks.SAND || blockAt == Blocks.SNOW ||blockAt == Blocks.MYCELIUM||blockAt==Blocks.STONE;
+			Block blockAbove = world.getBlockState(new BlockPos(x,y+1,z)).getBlock();
+			foundGround =  (blockAt == Blocks.GRASS|| blockAt == Blocks.DIRT || blockAt == Blocks.SAND || blockAt == Blocks.SNOW ||blockAt == Blocks.MYCELIUM||blockAt==Blocks.STONE && blockAbove==Blocks.AIR);
 		}
 		return y;
 	}

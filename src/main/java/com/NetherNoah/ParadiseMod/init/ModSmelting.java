@@ -27,6 +27,12 @@ public class ModSmelting {
 		GameRegistry.addSmelting(ModBlocks.SilverOreNether, new ItemStack(ModItems.SilverIngot), 5F);
 		GameRegistry.addSmelting(ModBlocks.GoldOreNether, new ItemStack(Items.GOLD_INGOT), 5F);
 		
+		//smelting recipes for void ores
+		GameRegistry.addSmelting(ModBlocks.GoldOreVoid, new ItemStack(Items.GOLD_INGOT), 5F);
+		GameRegistry.addSmelting(ModBlocks.IronOreVoid, new ItemStack(Items.IRON_INGOT), 5F);
+		GameRegistry.addSmelting(ModBlocks.CoalOreVoid, new ItemStack(Items.COAL), 5F);
+		GameRegistry.addSmelting(ModBlocks.SilverOreVoid, new ItemStack(ModItems.SilverIngot), 5F);
+		
 		//silver nuggets can be obtained by smelting stuff made of silver
 		GameRegistry.addSmelting(ModItems.silverHelmet, new ItemStack(ModItems.SilverNugget),5F);
 		GameRegistry.addSmelting(ModItems.silverChestplate,new ItemStack(ModItems.SilverNugget),5F);

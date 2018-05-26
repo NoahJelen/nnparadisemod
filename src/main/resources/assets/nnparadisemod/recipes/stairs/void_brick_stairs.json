@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "nnparadisemod:void_bricks"
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:void_brick_stairs",
+		"count": 8
+	}
+}

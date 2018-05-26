@@ -27,5 +27,9 @@ public class OreDictHandler {
 		OreDictionary.registerOre("ingotRustyIron", ModItems.RustyIngot);
 		OreDictionary.registerOre("blockRustyIron", ModBlocks.RustyIronBlock);
 		OreDictionary.registerOre("nuggetRustyIron", ModItems.RustyNugget);
+		OreDictionary.registerOre("dyeBlack", ModItems.DyeBlack);
+		OreDictionary.registerOre("dyeBrown", ModItems.DyeBrown);
+		OreDictionary.registerOre("dyeBlue", ModItems.DyeBlue);
+		OreDictionary.registerOre("cobblestone", ModBlocks.VoidStone);
 	}
 }

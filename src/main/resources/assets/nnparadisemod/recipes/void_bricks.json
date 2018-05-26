@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": {
+			"item": "nnparadisemod:polished_void_stone"
+		}
+	},
+	"result": {
+		"item": "nnparadisemod:void_bricks",
+		"count": 4
+	}
+}

@@ -163,3 +163,8 @@
     Added Buoys to the oceans (they're made of rusty iron)
     Added pressure plate and buttons made of grass and dirt.
 
+1.1 Test 2:
+    Improved the generation of starter houses and landmines (they only spawn on blocks that have air above them).
+    Added stone and dirt landmines.
+    My structures can now generate in dimensions where overworld blocks are present (like The DU and Cavern's cave dimensions).
+

@@ -1,13 +1,8 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
-<<<<<<< HEAD
 		"##",
 		"##"
-=======
-		"###",
-		"###"
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 	],
 	"key": {
 		"#": {
@@ -16,10 +11,6 @@
 	},
 	"result": {
 		"item": "nnparadisemod:glass_trapdoor",
-<<<<<<< HEAD
 		"count": 4
-=======
-		"count": 6
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
 	}
 }

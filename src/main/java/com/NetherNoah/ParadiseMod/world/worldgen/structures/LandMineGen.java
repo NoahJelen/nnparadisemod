@@ -70,7 +70,8 @@ public class LandMineGen extends WorldGenerator {
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == Blocks.GRASS;
+			Block blockAbove = world.getBlockState(new BlockPos(x,y+1,z)).getBlock();
+			foundGround=(blockAt==Blocks.GRASS && blockAbove==Blocks.AIR);
 		}
 		return y;
 	}

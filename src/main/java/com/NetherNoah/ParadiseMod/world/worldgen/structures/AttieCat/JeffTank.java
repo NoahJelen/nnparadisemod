@@ -43,7 +43,6 @@ public class JeffTank extends WorldGenerator implements IWorldGenerator{
 	}
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

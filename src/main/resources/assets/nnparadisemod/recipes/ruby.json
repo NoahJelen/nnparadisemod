@@ -6,19 +6,11 @@
   "key": {
     "#": {
             "type": "forge:ore_dict",
-<<<<<<< HEAD
             "ore": "blockRuby"
-=======
-            "ore": "gemRuby"
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d
     }
   },
   "result": {
      "item":"nnparadisemod:ruby",
     "count": 9
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e761e1797315884b007e3fa89750a8d6940a500d

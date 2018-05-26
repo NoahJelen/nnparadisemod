@@ -1,0 +1,14 @@
+{
+  "minecraft:recipes/redstone/tnt": {
+    "criteria": {
+      "has_gunpowder": "2018-05-25 21:03:13 -0700"
+    },
+    "done": true
+  },
+  "nnparadisemod:nnparadisemod/biting_the_dust": {
+    "criteria": {
+      "pick_up_gunpowder": "2018-05-25 21:03:13 -0700"
+    },
+    "done": false
+  }
+}

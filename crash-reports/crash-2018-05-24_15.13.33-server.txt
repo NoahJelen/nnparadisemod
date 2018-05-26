@@ -1,0 +1,141 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  LoadingPlugin (Quark-r1.4-123.jar)
+Contact their authors BEFORE contacting forge
+
+// I'm sorry, Dave.
+
+Time: 5/24/18 3:13 PM
+Description: Colliding entity with block
+
+java.lang.ClassCastException: net.minecraft.entity.passive.EntitySheep cannot be cast to net.minecraft.entity.player.EntityPlayerMP
+	at com.NetherNoah.ParadiseMod.blocks.misc.DUPortal.onEntityCollidedWithBlock(DUPortal.java:157)
+	at net.minecraft.entity.Entity.doBlockCollisions(Entity.java:1152)
+	at net.minecraft.entity.Entity.move(Entity.java:1070)
+	at net.minecraft.entity.EntityLivingBase.travel(EntityLivingBase.java:2163)
+	at net.minecraft.entity.EntityLivingBase.onLivingUpdate(EntityLivingBase.java:2614)
+	at net.minecraft.entity.EntityLiving.onLivingUpdate(EntityLiving.java:647)
+	at net.minecraft.entity.EntityAgeable.onLivingUpdate(EntityAgeable.java:212)
+	at net.minecraft.entity.passive.EntityAnimal.onLivingUpdate(EntityAnimal.java:49)
+	at net.minecraft.entity.passive.EntitySheep.onLivingUpdate(EntitySheep.java:127)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2396)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:346)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2168)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2127)
+	at net.minecraft.world.World.updateEntities(World.java:1928)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:840)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:741)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:590)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.NetherNoah.ParadiseMod.blocks.misc.DUPortal.onEntityCollidedWithBlock(DUPortal.java:157)
+
+-- Block being collided with --
+Details:
+	Block: nnparadisemod:du_portal[axis=x]
+	Block location: World: (-130,69,277), Chunk: (at 14,4,5 in -9,17; contains blocks -144,0,272 to -129,255,287), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+Stacktrace:
+	at net.minecraft.entity.Entity.doBlockCollisions(Entity.java:1152)
+
+-- Entity being checked for collision --
+Details:
+	Entity Type: minecraft:sheep (net.minecraft.entity.passive.EntitySheep)
+	Entity ID: 217
+	Entity Name: Sheep
+	Entity's Exact location: -129.67, 69.00, 278.28
+	Entity's Block location: World: (-130,69,278), Chunk: (at 14,4,6 in -9,17; contains blocks -144,0,272 to -129,255,287), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.04, 0.00, -0.11
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.entity.Entity.move(Entity.java:1070)
+	at net.minecraft.entity.EntityLivingBase.travel(EntityLivingBase.java:2163)
+	at net.minecraft.entity.EntityLivingBase.onLivingUpdate(EntityLivingBase.java:2614)
+	at net.minecraft.entity.EntityLiving.onLivingUpdate(EntityLiving.java:647)
+	at net.minecraft.entity.EntityAgeable.onLivingUpdate(EntityAgeable.java:212)
+	at net.minecraft.entity.passive.EntityAnimal.onLivingUpdate(EntityAnimal.java:49)
+	at net.minecraft.entity.passive.EntitySheep.onLivingUpdate(EntitySheep.java:127)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2396)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:346)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2168)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2127)
+
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:sheep (net.minecraft.entity.passive.EntitySheep)
+	Entity ID: 217
+	Entity Name: Sheep
+	Entity's Exact location: -129.67, 69.00, 278.28
+	Entity's Block location: World: (-130,69,278), Chunk: (at 14,4,6 in -9,17; contains blocks -144,0,272 to -129,255,287), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.04, 0.00, -0.11
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:1928)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+
+-- Affected level --
+Details:
+	Level name: mod test
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 625 Drop: 0
+	Level seed: -6752523055937576202
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: {"diamondSize":8,"lapisCenterHeight":16,"lavaLakeChance":80,"redstoneMaxHeight":16,"diamondMaxHeight":16,"coalMaxHeight":128,"coalMinHeight":0,"seaLevel":63,"graniteCount":10,"riverSize":4,"gravelMinHeight":0,"graniteSize":33,"redstoneSize":8,"fixedBiome":-1,"waterLakeChance":4,"dioriteMinHeight":0,"andesiteCount":10,"graniteMaxHeight":80,"redstoneMinHeight":0,"lapisSize":7,"dirtCount":10,"ironMinHeight":0,"dioriteMaxHeight":80,"coalCount":20,"gravelCount":8,"coalSize":17,"gravelSize":33,"ironMaxHeight":64,"lapisSpread":16,"dioriteCount":10,"andesiteSize":33,"biomeSize":4,"graniteMinHeight":0,"goldCount":2,"diamondCount":1,"dirtSize":33,"gravelMaxHeight":256,"goldSize":9,"ironCount":20,"diamondMinHeight":0,"ironSize":9,"redstoneCount":8,"andesiteMinHeight":0,"dioriteSize":33,"goldMaxHeight":32,"dungeonChance":8,"andesiteMaxHeight":80,"dirtMinHeight":0,"lapisCount":1,"goldMinHeight":0,"dirtMaxHeight":256,"lowerLimitScale":512.0,"biomeDepthOffset":0.0,"upperLimitScale":512.0,"heightScale":684.412,"biomeScaleWeight":1.0,"biomeDepthWeight":1.0,"mainNoiseScaleZ":80.0,"mainNoiseScaleY":160.0,"depthNoiseScaleX":200.0,"mainNoiseScaleX":80.0,"baseSize":8.5,"depthNoiseScaleZ":200.0,"stretchY":12.0,"depthNoiseScaleExponent":0.5,"biomeScaleOffset":0.0,"coordinateScale":684.412,"useStrongholds":true,"useMineShafts":true,"useTemples":true,"useLavaOceans":false,"useCaves":true,"useWaterLakes":true,"useLavaLakes":true,"useMonuments":true,"useRavines":true,"useDungeons":true,"useVillages":true}
+	Level spawn location: World: (-128,64,273), Chunk: (at 0,4,1 in -8,17; contains blocks -128,0,272 to -113,255,287), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 447320 game time, 305765 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 16052 (now: true), thunder time: 140014 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:840)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:741)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:590)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 4.13.0-37-generic
+	Java Version: 1.8.0_171, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 8091612456 bytes (7716 MB) / 8555069440 bytes (8158 MB) up to 8555069440 bytes (8158 MB)
+	JVM Flags: 4 total; -Xincgc -Xmx8G -Xms8G -Xss1024M
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.3.2689 9 mods loaded, 9 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID            | Version                      | Source                           | Signature |
+	|:--------- |:------------- |:---------------------------- |:-------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft     | 1.12.2                       | minecraft.jar                    | None      |
+	| UCHIJAAAA | mcp           | 9.42                         | minecraft.jar                    | None      |
+	| UCHIJAAAA | FML           | 8.0.99.99                    | forgeSrc-1.12.2-14.23.3.2689.jar | None      |
+	| UCHIJAAAA | forge         | 14.23.3.2689                 | forgeSrc-1.12.2-14.23.3.2689.jar | None      |
+	| UCHIJAAAA | nnparadisemod | 1.0 (The Advancement Update) | bin                              | None      |
+	| UCHIJAAAA | quark         | r1.4-123                     | Quark-r1.4-123.jar               | None      |
+	| UCHIJAAAA | autoreglib    | 1.3-16                       | AutoRegLib-1.3-16.jar            | None      |
+	| UCHIJAAAA | jei           | 4.8.0.111                    | jei_1.12.2-4.8.0.111.jar         | None      |
+	| UCHIJAAAA | xray          | 1.4.0                        | xray-1.12.2-1.4.2.jar            | None      |
+
+	Loaded coremods (and transformers): 
+LoadingPlugin (Quark-r1.4-123.jar)
+  vazkii.quark.base.asm.ClassTransformer
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

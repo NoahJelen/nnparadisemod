@@ -5,10 +5,8 @@ import com.NetherNoah.ParadiseMod.handlers.AntiMobLampHandler;
 import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
-import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks;
-import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.init.ModItems;
 import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.proxy.CommonProxy;
@@ -23,10 +21,13 @@ import com.NetherNoah.ParadiseMod.world.worldgen.DirtGen;
 import com.NetherNoah.ParadiseMod.world.worldgen.OreGenEnd;
 import com.NetherNoah.ParadiseMod.world.worldgen.OreGenNether;
 import com.NetherNoah.ParadiseMod.world.worldgen.OreGenOverworld;
+import com.NetherNoah.ParadiseMod.world.worldgen.Rose;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.BrickPyramid;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Buoy;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Home;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.LandMine;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.LandMineDirt;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.LandMineStone;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.MesaTemple;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Minerbase;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.MiniStronghold;
@@ -35,13 +36,22 @@ import com.NetherNoah.ParadiseMod.world.worldgen.structures.RoguePortal;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Runway;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.SkyWheel;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.TreasureChest;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.SkyWheel;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.TreasureChest;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.VoidDungeon;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.VoidDungeonLarge;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.VoidTower;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.WickerMan;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.JeffTank;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.Shrine;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.EntitySlime;
+import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTableList;
@@ -55,6 +65,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSIONS)
@@ -73,7 +84,6 @@ public class ParadiseMod {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered biomes");
 		//loot tables
 		LootTableList.register(new ResourceLocation("nnparadisemod","starter_chest"));
 		LootTableList.register(new ResourceLocation("nnparadisemod","mining_chest"));
@@ -82,10 +92,7 @@ public class ParadiseMod {
 		//this should prevent monsters from spawing
 		MinecraftForge.EVENT_BUS.register((this.AntiMobLampHandler = new AntiMobLampHandler()));
         MinecraftForge.EVENT_BUS.register(SaltLampRegistry.getLampRegistry());
-        MinecraftForge.EVENT_BUS.register(Events.class);
-        
-        //other events
-        MinecraftForge.EVENT_BUS.register(Events.class);
+       //MinecraftForge.EVENT_BUS.register(Events.class);
         
         //other events
         MinecraftForge.EVENT_BUS.register(Events.class);
@@ -96,17 +103,12 @@ public class ParadiseMod {
 		Blocks.WOODEN_BUTTON.setUnlocalizedName("oak_button");
 		Blocks.STRUCTURE_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
-		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
-		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
-		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
-		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
-		Blocks.STRUCTURE_VOID.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.REPEATING_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		Blocks.MOB_SPAWNER.setCreativeTab(CreativeTabs.DECORATIONS);
-		Blocks.MOB_SPAWNER.setCreativeTab(CreativeTabs.DECORATIONS);
+		
 		//liquids
 		LiquidRedstone.register();
 		FluidRegistry.addBucketForFluid(LiquidRedstone.FluidLiquidRedstone.instance);
@@ -120,6 +122,7 @@ public class ParadiseMod {
 		GameRegistry.registerTileEntity(TileEntitySilverHopper.class,"silver_hopper");
 		GameRegistry.registerTileEntity(TEAntiMobLamp.class,"salt_lamp");
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered tile entities");
+		
 		//world generators
 		IWorldGenerator[] generators = {
 				//structures!
@@ -135,10 +138,15 @@ public class ParadiseMod {
 				new SkyWheel(),
 				new MiniStronghold(),
 				new LandMine(),
+				new LandMineDirt(),
+				new LandMineStone(),
 				new Buoy(),
 				new TreasureChest(),
 				new SkyWheel(),
 				new MiniStronghold(),
+				new VoidDungeonLarge(),
+				new VoidDungeon(),
+				new VoidTower(),
 				
 				//created by AttieCat
 				new Shrine(),
@@ -149,47 +157,20 @@ public class ParadiseMod {
 				
 				//nether ore gen
 				new OreGenNether(),
+				
 				//end ore gen
 				new OreGenEnd(),
 				
 				//dirt, gravel, sand, and clay on the ocean floors
-				new DirtGen()};
-		for(int i=0;i<17;i++) {
+				new DirtGen(),
+				
+				//flowers
+				new Rose()
+				};
+		for(int i=0;i<generators.length;i++) {
 			GameRegistry.registerWorldGenerator(generators[i],1);
 		}
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered world generators");
-		for(int i=0;i<14;i++) {
-			GameRegistry.registerWorldGenerator(generators[i],1);
-		}
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered world generators");
-		//structures!
-		GameRegistry.registerWorldGenerator(new Home(),1);
-		GameRegistry.registerWorldGenerator(new WickerMan(),1);
-		GameRegistry.registerWorldGenerator(new Ocean(),1);
-		GameRegistry.registerWorldGenerator(new BrickPyramid(),1);
-		GameRegistry.registerWorldGenerator(new Minerbase(),1);
-		GameRegistry.registerWorldGenerator(new RoguePortal(),1);
-		GameRegistry.registerWorldGenerator(new MesaTemple(),1);
-		GameRegistry.registerWorldGenerator(new Runway(),1);
-		 
-		//created by AttieCat
-		GameRegistry.registerWorldGenerator(new Shrine(),1);
-		GameRegistry.registerWorldGenerator(new JeffTank(),1);
-		
-		//overworld ore gen
-		GameRegistry.registerWorldGenerator(new OreGenOverworld(),1);
-		
-		
-		//nether ore gen
-		GameRegistry.registerWorldGenerator(new OreGenNether(),1);
-		
-		//end ore gen
-		GameRegistry.registerWorldGenerator(new OreGenEnd(),1);
-		
-		//dirt in the ocean
-		GameRegistry.registerWorldGenerator(new DirtGen(),1);
-		
-		System.out.println("Nether Noah's Paradise Mod: Successfully world generators");
 		ModBlocks.initAndRegister();
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered blocks");
 		ModItems.initAndRegister();
@@ -203,12 +184,17 @@ public class ParadiseMod {
 		proxy.init();
 		ModSmelting.register();
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered smelting recipes");
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered smelting recipes");
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered smelting recipes");
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered smelting recipes");
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered crafting recipes");
 		DimensionRegistry.MainRegistry();
 		System.out.println("Nether Noah's Paradise Mod: Successfully added the Deep Underground to Minecraft");
+		System.out.println("Nether Noah's Paradise Mod: Successfully added the Deep Void to Minecraft");
+		
+		//spawn mobs in the deep void dimension
+		EntityRegistry.addSpawn(EntityZombie.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
+		EntityRegistry.addSpawn(EntityCreeper.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
+		EntityRegistry.addSpawn(EntitySpider.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
+		EntityRegistry.addSpawn(EntitySkeleton.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
+		EntityRegistry.addSpawn(EntitySlime.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
+		EntityRegistry.addSpawn(EntityEnderman.class, 1, 0, 1, EnumCreatureType.MONSTER, Biomes.VOID);
 	}
 	/*/
 	@EventHandler

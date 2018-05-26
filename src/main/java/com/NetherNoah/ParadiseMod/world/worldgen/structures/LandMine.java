@@ -17,9 +17,9 @@ public class LandMine extends WorldGenerator implements IWorldGenerator{
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		if (world.provider.getDimension() == 0) {
-			generateOverworld(world, rand, blockX + 8, blockZ + 8);
-		}
+		//if (world.provider.getDimension() == 0||world.provider.getDimension()==-2) {
+		generateOverworld(world, rand, blockX + 8, blockZ + 8);
+		//}
 	}
 	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
 	{	
@@ -35,7 +35,7 @@ public class LandMine extends WorldGenerator implements IWorldGenerator{
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround = blockAt == Blocks.GRASS|| blockAt == Blocks.DIRT || blockAt == Blocks.SAND || blockAt == Blocks.SNOW ||blockAt == Blocks.MYCELIUM||blockAt==Blocks.STONE||blockAt==Blocks.WATER;
+			foundGround = blockAt == Blocks.GRASS;
 		}
 		return y;
 	}
