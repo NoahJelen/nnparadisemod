@@ -5,7 +5,7 @@ package com.NetherNoah.ParadiseMod;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Lamps;
 
 import akka.japi.Predicate;
 import net.minecraft.block.state.IBlockState;
@@ -18,13 +18,13 @@ public class SaltLampRegistry {
 	private static SaltLampRegistry LampRegistry;
 	private final String name;
 	private Predicate<IBlockState> blockValidator;
-	private final List<LampLocation> Lamps = new ArrayList<LampLocation>();
+	private final List<LampLocation> LampsL = new ArrayList<LampLocation>();
 	private int LampRange=512;
 	private int LampRangeSq=LampRange^2;
 	
 	public static SaltLampRegistry getLampRegistry() { return LampRegistry; }
 	static {
-		LampRegistry = new SaltLampRegistry("salt_lamp", s -> s.getBlock() == ModBlocks.getSaltLamp());
+		LampRegistry = new SaltLampRegistry("salt_lamp", s -> s.getBlock() == Lamps.getSaltLamp());
 	}
 	public SaltLampRegistry(String name, Predicate<IBlockState> blockValidator)
 	{
@@ -35,7 +35,7 @@ public class SaltLampRegistry {
 	public boolean isInRangeOfLamp(World world, BlockPos pos)
 	{
 		int dim = world.provider.getDimension();
-		for(LampLocation Lamp : Lamps)
+		for(LampLocation Lamp : LampsL)
 		{
 			if(Lamp.DimensionId != dim) continue;
 			double dx = Lamp.Position.getX() + 0.5 - pos.getX();

@@ -21,7 +21,7 @@ public class rustySword extends ItemSword {
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
         stack.damageItem(1, attacker);
-        target.addPotionEffect(new PotionEffect(Potion.getPotionById(20),1600));
+        target.addPotionEffect(new PotionEffect(Potion.getPotionById(20),1600,255));
         target.addPotionEffect(new PotionEffect(Potion.getPotionById(2),1600,4));
         target.addPotionEffect(new PotionEffect(Potion.getPotionById(4),1600));
         target.addPotionEffect(new PotionEffect(Potion.getPotionById(9),1600));

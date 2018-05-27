@@ -3,11 +3,10 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -60,6 +59,30 @@ public class VoidDungeonLargeGen extends WorldGenerator {
 	}
 	public static boolean canSpawnHere(Template template, World world, BlockPos posAboveGround)
 	{
-		return posAboveGround.getY() > 31;
+		int zwidth = template.getSize().getZ();
+		int xwidth = template.getSize().getX();
+		boolean corner1 = isCornerValid(world, posAboveGround);
+		boolean corner2 = isCornerValid(world, posAboveGround.add(xwidth, 0, zwidth));
+		return posAboveGround.getY() > 31 && corner1 && corner2;
+	}
+	public static boolean isCornerValid(World world, BlockPos pos)
+	{
+		int variation = 3;
+		int highestBlock = getGroundFromAbove(world, pos.getX(), pos.getZ());
+		if (highestBlock > pos.getY() - variation && highestBlock < pos.getY() + variation)
+			return true;
+		return false;
+	}
+	public static int getGroundFromAbove(World world, int x, int z)
+	{
+		int y = 120;
+		boolean foundGround = false;
+		while(!foundGround && y-- >= 31)
+		{
+			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
+			Block blockAbove = world.getBlockState(new BlockPos(x,y+1,z)).getBlock();
+			foundGround =  blockAt == Misc.VoidStone;
+		}
+		return y;
 	}
 }

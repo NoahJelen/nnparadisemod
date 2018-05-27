@@ -1,0 +1,1 @@
+{"variants":{"facing=north":{"model":"nnparadisemod:void_furnace"},"facing=south":{"model":"nnparadisemod:void_furnace","y":180},"facing=west":{"model":"nnparadisemod:void_furnace","y":270},"facing=east":{"model":"nnparadisemod:void_furnace","y":90}}}

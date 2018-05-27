@@ -2,7 +2,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
@@ -25,14 +25,14 @@ public class OreGenNether implements IWorldGenerator {
 		int selectOreNether=random.nextInt(2);
 		
 		//silver ore (nether variant)
-		IBlockState oreSelectionNether=ModBlocks.SilverOreNether.getDefaultState();
+		IBlockState oreSelectionNether=Ores.SilverOreNether.getDefaultState();
 		
 		//gold ore (nether variant)
 		if (selectOreNether==1) {
-			oreSelectionNether=ModBlocks.GoldOreNether.getDefaultState();
+			oreSelectionNether=Ores.GoldOreNether.getDefaultState();
 		}
 		else
-			oreSelectionNether=ModBlocks.SilverOreNether.getDefaultState();
+			oreSelectionNether=Ores.SilverOreNether.getDefaultState();
 		
 		generateOre(oreSelectionNether, world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(15), 6);
 	}

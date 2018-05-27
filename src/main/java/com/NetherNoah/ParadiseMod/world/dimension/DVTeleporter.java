@@ -1,18 +1,16 @@
 package com.NetherNoah.ParadiseMod.world.dimension;
 
+import java.util.Random;
+
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
+
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
-
-import java.util.Random;
-
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
-
 import net.minecraft.block.BlockPortal;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.block.state.pattern.BlockPattern;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -65,9 +63,9 @@ public class DVTeleporter extends Teleporter{
                         int k2 = k + k1 * 0 - j1 * 1;
                         boolean flag = l1 < 0;
                         if (DU)
-                        	worldServerInstance.setBlockState(new BlockPos(i2, j2, k2), flag ? ModBlocks.blazeBlock.getDefaultState() : Blocks.AIR.getDefaultState());
+                        	worldServerInstance.setBlockState(new BlockPos(i2, j2, k2), flag ? Ores.blazeBlock.getDefaultState() : Blocks.AIR.getDefaultState());
                         else
-                            worldServerInstance.setBlockState(new BlockPos(i2, j2, k2), flag ? ModBlocks.endPearlBlock.getDefaultState() : Blocks.AIR.getDefaultState());
+                            worldServerInstance.setBlockState(new BlockPos(i2, j2, k2), flag ? Ores.endPearlBlock.getDefaultState() : Blocks.AIR.getDefaultState());
                     }
                 }
             }
@@ -103,8 +101,8 @@ public class DVTeleporter extends Teleporter{
 						blockpos1 = blockpos.down();
 						
 						if (DU) {
-							if (worldServerInstance.getBlockState(blockpos).getBlock() == ModBlocks.DUPortal) {
-								while (worldServerInstance.getBlockState(blockpos1 = blockpos.down()).getBlock() == ModBlocks.DUPortal) {
+							if (worldServerInstance.getBlockState(blockpos).getBlock() == Misc.DUPortal) {
+								while (worldServerInstance.getBlockState(blockpos1 = blockpos.down()).getBlock() == Misc.DUPortal) {
 									blockpos = blockpos1;
 								}
 								double d1 = blockpos.distanceSq(blockpos4);
@@ -116,8 +114,8 @@ public class DVTeleporter extends Teleporter{
 							
 						}
 						else {
-							if (worldServerInstance.getBlockState(blockpos).getBlock() == ModBlocks.DVPortal) {
-								while (worldServerInstance.getBlockState(blockpos1 = blockpos.down()).getBlock() == ModBlocks.DVPortal) {
+							if (worldServerInstance.getBlockState(blockpos).getBlock() == Misc.DVPortal) {
+								while (worldServerInstance.getBlockState(blockpos1 = blockpos.down()).getBlock() == Misc.DVPortal) {
 									blockpos = blockpos1;
 								}
 								double d1 = blockpos.distanceSq(blockpos4);
@@ -142,31 +140,31 @@ public class DVTeleporter extends Teleporter{
 			EnumFacing enumfacing = null;
 			
 			if (DU) {
-				if (worldServerInstance.getBlockState(((BlockPos) object).west()).getBlock() == ModBlocks.DUPortal) {
+				if (worldServerInstance.getBlockState(((BlockPos) object).west()).getBlock() == Misc.DUPortal) {
 					enumfacing = EnumFacing.NORTH;
 				}
-				if (worldServerInstance.getBlockState(((BlockPos) object).east()).getBlock() == ModBlocks.DUPortal) {
+				if (worldServerInstance.getBlockState(((BlockPos) object).east()).getBlock() == Misc.DUPortal) {
 					enumfacing = EnumFacing.SOUTH;
 				}
-				if (worldServerInstance.getBlockState(((BlockPos) object).north()).getBlock() == ModBlocks.DUPortal) {
+				if (worldServerInstance.getBlockState(((BlockPos) object).north()).getBlock() == Misc.DUPortal) {
 					enumfacing = EnumFacing.EAST;
 				}
-				if (worldServerInstance.getBlockState(((BlockPos) object).south()).getBlock() == ModBlocks.DUPortal) {
+				if (worldServerInstance.getBlockState(((BlockPos) object).south()).getBlock() == Misc.DUPortal) {
 					enumfacing = EnumFacing.WEST;
 				}
 				
 			}
 			else {
-				if (worldServerInstance.getBlockState(((BlockPos) object).west()).getBlock() == ModBlocks.DVPortal) {
+				if (worldServerInstance.getBlockState(((BlockPos) object).west()).getBlock() == Misc.DVPortal) {
 					enumfacing = EnumFacing.NORTH;
 				}
-				if (worldServerInstance.getBlockState(((BlockPos) object).east()).getBlock() == ModBlocks.DVPortal) {
+				if (worldServerInstance.getBlockState(((BlockPos) object).east()).getBlock() == Misc.DVPortal) {
 					enumfacing = EnumFacing.SOUTH;
 				}
-				if (worldServerInstance.getBlockState(((BlockPos) object).north()).getBlock() == ModBlocks.DVPortal) {
+				if (worldServerInstance.getBlockState(((BlockPos) object).north()).getBlock() == Misc.DVPortal) {
 					enumfacing = EnumFacing.EAST;
 				}
-				if (worldServerInstance.getBlockState(((BlockPos) object).south()).getBlock() == ModBlocks.DVPortal) {
+				if (worldServerInstance.getBlockState(((BlockPos) object).south()).getBlock() == Misc.DVPortal) {
 					enumfacing = EnumFacing.WEST;
 				}
 			}
@@ -386,16 +384,16 @@ public class DVTeleporter extends Teleporter{
                         int k11 = k6 + (l7 - 1) * i3 - j7 * l6;
                         boolean flag = k8 < 0;
                         if (DU)
-                        	worldServerInstance.setBlockState(new BlockPos(k9, k10, k11), flag ? ModBlocks.blazeBlock.getDefaultState() : Blocks.AIR.getDefaultState());
+                        	worldServerInstance.setBlockState(new BlockPos(k9, k10, k11), flag ? Ores.blazeBlock.getDefaultState() : Blocks.AIR.getDefaultState());
                         else
-                        	worldServerInstance.setBlockState(new BlockPos(k9, k10, k11), flag ? ModBlocks.endPearlBlock.getDefaultState() : Blocks.AIR.getDefaultState());
+                        	worldServerInstance.setBlockState(new BlockPos(k9, k10, k11), flag ? Ores.endPearlBlock.getDefaultState() : Blocks.AIR.getDefaultState());
                     }
                 }
             }
         }
-    	IBlockState iblockstate = ModBlocks.DVPortal.getDefaultState().withProperty(BlockPortal.AXIS, l6 == 0 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
+    	IBlockState iblockstate = Misc.DVPortal.getDefaultState().withProperty(BlockPortal.AXIS, l6 == 0 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
         if (DU)
-        	iblockstate = ModBlocks.DUPortal.getDefaultState().withProperty(BlockPortal.AXIS, l6 == 0 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
+        	iblockstate = Misc.DUPortal.getDefaultState().withProperty(BlockPortal.AXIS, l6 == 0 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
         for (int i8 = 0; i8 < 4; ++i8)
         {
             for (int l8 = 0; l8 < 4; ++l8)
@@ -406,9 +404,9 @@ public class DVTeleporter extends Teleporter{
                     int l11 = k2 + l9;
                     int k12 = k6 + (l8 - 1) * i3;
                     boolean flag1 = l8 == 0 || l8 == 3 || l9 == -1 || l9 == 3;
-                    worldServerInstance.setBlockState(new BlockPos(l10, l11, k12), flag1 ? ModBlocks.endPearlBlock.getDefaultState() : iblockstate, 2);
+                    worldServerInstance.setBlockState(new BlockPos(l10, l11, k12), flag1 ? Ores.endPearlBlock.getDefaultState() : iblockstate, 2);
                     if(DU)
-                        worldServerInstance.setBlockState(new BlockPos(l10, l11, k12), flag1 ? ModBlocks.blazeBlock.getDefaultState() : iblockstate, 2);
+                        worldServerInstance.setBlockState(new BlockPos(l10, l11, k12), flag1 ? Ores.blazeBlock.getDefaultState() : iblockstate, 2);
                 }
             }
             for (int i9 = 0; i9 < 4; ++i9)

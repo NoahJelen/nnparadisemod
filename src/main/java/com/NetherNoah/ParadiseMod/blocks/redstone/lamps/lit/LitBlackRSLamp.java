@@ -2,7 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.redstone.lamps.lit;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Lamps;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRedstoneLight;
@@ -10,7 +10,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class LitBlackRSLamp extends BlockRedstoneLight {
@@ -29,7 +28,7 @@ public class LitBlackRSLamp extends BlockRedstoneLight {
         {
         	if (!worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, ModBlocks.BlackRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.BlackRSLamp.getDefaultState(), 2);
             }
         }
     }
@@ -37,7 +36,7 @@ public class LitBlackRSLamp extends BlockRedstoneLight {
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (!worldIn.isRemote) {
 			if (!worldIn.isBlockPowered(pos)) {
-				worldIn.setBlockState(pos, ModBlocks.BlackRSLamp.getDefaultState(), 2);
+				worldIn.setBlockState(pos, Lamps.BlackRSLamp.getDefaultState(), 2);
 			}
 		}
 	}
@@ -45,18 +44,18 @@ public class LitBlackRSLamp extends BlockRedstoneLight {
 	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 		if (!worldIn.isRemote) {
 			if (!worldIn.isBlockPowered(pos)) {
-				worldIn.setBlockState(pos, ModBlocks.BlackRSLamp.getDefaultState(), 2);
+				worldIn.setBlockState(pos, Lamps.BlackRSLamp.getDefaultState(), 2);
 			}
 		}
 	}
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(ModBlocks.BlackRSLamp);
+        return Item.getItemFromBlock(Lamps.BlackRSLamp);
     }
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(ModBlocks.BlackRSLamp);
+        return new ItemStack(Lamps.BlackRSLamp);
     }
 }

@@ -275,3 +275,5 @@ tile.VoidPlate.name=Void Stone Pressure Plate
 tile.PolishedVoidStone.name=Polished Void Stone
 tile.VoidBricks.name=Void Stone Bricks
 tile.VoidBrickStairs.name=Void Stone Brick Stairs
+tile.VoidFurnace.name=Void Furnace
+fluid.liquid_redstone=Liquid Redstone

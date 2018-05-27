@@ -1,0 +1,10 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [{
+			"item": "nnparadisemod:void_stone"
+		}
+	],
+	"result": {
+		"item": "nnparadisemod:void_button"
+	}
+}

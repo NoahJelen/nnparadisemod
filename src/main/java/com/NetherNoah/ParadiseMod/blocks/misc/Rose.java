@@ -2,7 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.misc;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -31,7 +31,7 @@ public class Rose extends BlockBush implements IGrowable{
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(ModBlocks.Rose);
+        return new ItemStack(Misc.Rose);
     }
 	
 	@SideOnly(Side.CLIENT)

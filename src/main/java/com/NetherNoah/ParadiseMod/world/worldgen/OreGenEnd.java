@@ -2,7 +2,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
@@ -24,13 +24,13 @@ public class OreGenEnd implements IWorldGenerator {
 	private void generateEnd(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		int selectOreEnd=random.nextInt(2);
 		
-		IBlockState oreSelectionEnd=ModBlocks.EndRubyOre.getDefaultState();
+		IBlockState oreSelectionEnd=Ores.EndRubyOre.getDefaultState();
 		
 		if (selectOreEnd==1) {
-			oreSelectionEnd=ModBlocks.EndRubyOre.getDefaultState();
+			oreSelectionEnd=Ores.EndRubyOre.getDefaultState();
 		}
 		else
-			oreSelectionEnd=ModBlocks.EnderPearlOre.getDefaultState();
+			oreSelectionEnd=Ores.EnderPearlOre.getDefaultState();
 		
 		generateOre(oreSelectionEnd, world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(15), 6);
 	}

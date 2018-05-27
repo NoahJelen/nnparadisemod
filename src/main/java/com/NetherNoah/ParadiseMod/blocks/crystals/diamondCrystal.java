@@ -2,7 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.crystals;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.state.IBlockState;
@@ -36,7 +36,7 @@ public class diamondCrystal extends BlockBush {
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(ModBlocks.diamondCrystal);
+        return new ItemStack(Crystals.diamondCrystal);
     }
 	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()

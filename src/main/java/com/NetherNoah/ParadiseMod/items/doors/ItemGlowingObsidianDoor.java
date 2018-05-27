@@ -1,12 +1,13 @@
 package com.NetherNoah.ParadiseMod.items.doors;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Doors;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemDoor;
 
 public class ItemGlowingObsidianDoor extends ItemDoor {
 	public ItemGlowingObsidianDoor() {
-		super(ModBlocks.BlockGlowingObsidianDoor);
+		super(Doors.BlockGlowingObsidianDoor);
 		setUnlocalizedName("ItemGlowingObsidianDoor");
 		setRegistryName("glowing_obsidian_door");
 		setCreativeTab(CreativeTabs.REDSTONE);

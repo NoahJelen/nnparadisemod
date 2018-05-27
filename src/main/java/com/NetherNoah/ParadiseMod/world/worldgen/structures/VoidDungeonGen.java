@@ -3,12 +3,10 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -79,7 +77,7 @@ public class VoidDungeonGen extends WorldGenerator {
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
 			Block blockAbove = world.getBlockState(new BlockPos(x,y+1,z)).getBlock();
-			foundGround =  (blockAt == ModBlocks.VoidStone);
+			foundGround =  (blockAt == Misc.VoidStone);
 		}
 		return y;
 	}

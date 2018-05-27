@@ -1,0 +1,45 @@
+{
+  "minecraft:nether/find_fortress": {
+    "criteria": {
+      "fortress": "2018-05-26 21:27:04 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/nether_brick_slab": {
+    "criteria": {
+      "has_nether_brick": "2018-05-26 21:27:43 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/nether_brick_fence": {
+    "criteria": {
+      "has_nether_brick": "2018-05-26 21:27:43 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2018-05-26 21:29:31 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "zombie_pigman": "2018-05-26 21:29:31 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "zombie_pigman": "2018-05-26 21:29:31 -0700",
+      "blaze": "2018-05-26 21:29:54 -0700"
+    },
+    "done": false
+  },
+  "minecraft:recipes/building_blocks/nether_brick_stairs": {
+    "criteria": {
+      "has_nether_brick": "2018-05-26 21:27:43 -0700"
+    },
+    "done": true
+  }
+}

@@ -4,7 +4,8 @@ import java.util.List;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockStone;
@@ -54,11 +55,11 @@ public class DUChunkProvider implements IChunkGenerator {
 	private final WorldGenMinable lightsGen2 = new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33, BlockMatcher.forBlock(Blocks.GRASS));
 	
 	//crystals
-	private final WorldGenBush quartzGen = new WorldGenBush(ModBlocks.quartzCrystal);
-	private final WorldGenBush diamondGen = new WorldGenBush(ModBlocks.diamondCrystal);
-	private final WorldGenBush emeraldGen = new WorldGenBush(ModBlocks.emeraldCrystal);
-	private final WorldGenBush redstoneGen = new WorldGenBush(ModBlocks.redstoneCrystal);
-	private final WorldGenBush rubyGen = new WorldGenBush(ModBlocks.rubyCrystal);
+	private final WorldGenBush quartzGen = new WorldGenBush(Crystals.quartzCrystal);
+	private final WorldGenBush diamondGen = new WorldGenBush(Crystals.diamondCrystal);
+	private final WorldGenBush emeraldGen = new WorldGenBush(Crystals.emeraldCrystal);
+	private final WorldGenBush redstoneGen = new WorldGenBush(Crystals.redstoneCrystal);
+	private final WorldGenBush rubyGen = new WorldGenBush(Crystals.rubyCrystal);
 	
 	//stone
 	private final WorldGenMinable Granite = new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE), 33, BlockMatcher.forBlock(Blocks.STONE));
@@ -72,9 +73,9 @@ public class DUChunkProvider implements IChunkGenerator {
 			BlockMatcher.forBlock(Blocks.STONE));
 	private final WorldGenerator goldGen = new WorldGenMinable(Blocks.GOLD_ORE.getDefaultState(), 7,
 			BlockMatcher.forBlock(Blocks.STONE));
-	private final WorldGenerator silverGen = new WorldGenMinable(ModBlocks.SilverOre.getDefaultState(), 7,
+	private final WorldGenerator silverGen = new WorldGenMinable(Ores.SilverOre.getDefaultState(), 7,
 			BlockMatcher.forBlock(Blocks.STONE));
-	private final WorldGenerator saltGen = new WorldGenMinable(ModBlocks.SaltOre.getDefaultState(), 7,
+	private final WorldGenerator saltGen = new WorldGenMinable(Ores.SaltOre.getDefaultState(), 7,
 					BlockMatcher.forBlock(Blocks.STONE));
 	
 	//liquid redstone

@@ -2,7 +2,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOldLeaf;
@@ -17,7 +17,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 public class ChristmasTree extends WorldGenAbstractTree
 {
     private static final IBlockState TRUNK = Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.SPRUCE);
-    private static final IBlockState LEAF = ModBlocks.ChristmasLeaves.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
+    private static final IBlockState LEAF = Misc.ChristmasLeaves.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
     public ChristmasTree(boolean p_i2025_1_)
     {
         super(p_i2025_1_);

@@ -2,8 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.ores;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
-import com.NetherNoah.ParadiseMod.init.ModItems;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -35,7 +34,7 @@ public class CoalOreVoid extends Block {
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(ModBlocks.CoalOreVoid);
+        return new ItemStack(Ores.CoalOreVoid);
     }
 	// get item to drop
 	@Override

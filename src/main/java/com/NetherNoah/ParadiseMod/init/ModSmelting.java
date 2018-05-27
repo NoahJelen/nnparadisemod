@@ -1,37 +1,36 @@
 package com.NetherNoah.ParadiseMod.init;
 
-import java.util.Arrays;
-import java.util.List;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Fences;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Gates;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Trapdoors;
 
-import net.minecraft.block.Block;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 public class ModSmelting {
 	//smelting recipes
 	public static void register() {
 		//rubies and silver ingots can obtained by smelting their ores
-		GameRegistry.addSmelting(ModBlocks.RubyOre, new ItemStack(ModItems.Ruby), 5F);
-		GameRegistry.addSmelting(ModBlocks.SilverOre, new ItemStack(ModItems.SilverIngot), 5F);
+		GameRegistry.addSmelting(Ores.RubyOre, new ItemStack(ModItems.Ruby), 5F);
+		GameRegistry.addSmelting(Ores.SilverOre, new ItemStack(ModItems.SilverIngot), 5F);
 		
 		//smelting recipes for end ores
-		GameRegistry.addSmelting(ModBlocks.EndRubyOre, new ItemStack(ModItems.Ruby), 5F);
-		GameRegistry.addSmelting(ModBlocks.EnderPearlOre, new ItemStack(Items.ENDER_PEARL), 5F);
+		GameRegistry.addSmelting(Ores.EndRubyOre, new ItemStack(ModItems.Ruby), 5F);
+		GameRegistry.addSmelting(Ores.EnderPearlOre, new ItemStack(Items.ENDER_PEARL), 5F);
 		
 		//smelting recipes for nether ores
-		GameRegistry.addSmelting(ModBlocks.SilverOreNether, new ItemStack(ModItems.SilverIngot), 5F);
-		GameRegistry.addSmelting(ModBlocks.GoldOreNether, new ItemStack(Items.GOLD_INGOT), 5F);
+		GameRegistry.addSmelting(Ores.SilverOreNether, new ItemStack(ModItems.SilverIngot), 5F);
+		GameRegistry.addSmelting(Ores.GoldOreNether, new ItemStack(Items.GOLD_INGOT), 5F);
 		
 		//smelting recipes for void ores
-		GameRegistry.addSmelting(ModBlocks.GoldOreVoid, new ItemStack(Items.GOLD_INGOT), 5F);
-		GameRegistry.addSmelting(ModBlocks.IronOreVoid, new ItemStack(Items.IRON_INGOT), 5F);
-		GameRegistry.addSmelting(ModBlocks.CoalOreVoid, new ItemStack(Items.COAL), 5F);
-		GameRegistry.addSmelting(ModBlocks.SilverOreVoid, new ItemStack(ModItems.SilverIngot), 5F);
+		GameRegistry.addSmelting(Ores.GoldOreVoid, new ItemStack(Items.GOLD_INGOT), 5F);
+		GameRegistry.addSmelting(Ores.IronOreVoid, new ItemStack(Items.IRON_INGOT), 5F);
+		GameRegistry.addSmelting(Ores.CoalOreVoid, new ItemStack(Items.COAL), 5F);
+		GameRegistry.addSmelting(Ores.SilverOreVoid, new ItemStack(ModItems.SilverIngot), 5F);
 		
 		//silver nuggets can be obtained by smelting stuff made of silver
 		GameRegistry.addSmelting(ModItems.silverHelmet, new ItemStack(ModItems.SilverNugget),5F);
@@ -45,15 +44,15 @@ public class ModSmelting {
 		GameRegistry.addSmelting(ModItems.silverSword, new ItemStack(ModItems.SilverNugget),5F);
 		
 		//golden hopper can be smelted for a gold nugget just like other gold items in vanilla minecraft
-		GameRegistry.addSmelting(ModBlocks.GoldHopper, new ItemStack(Items.GOLD_NUGGET), .01F);
+		GameRegistry.addSmelting(Misc.GoldHopper, new ItemStack(Items.GOLD_NUGGET), .01F);
 		
 		//same with golden doors, trapdoors, and fences
 		GameRegistry.addSmelting(ModItems.ItemGoldDoor, new ItemStack(Items.GOLD_NUGGET), .01F);
-		GameRegistry.addSmelting(ModBlocks.BlockGoldTrapdoor, new ItemStack(Items.GOLD_NUGGET), .01F);
-		GameRegistry.addSmelting(ModBlocks.BlockGoldFence, new ItemStack(Items.GOLD_NUGGET), .01F);
-		GameRegistry.addSmelting(ModBlocks.BlockGoldFenceGate, new ItemStack(Items.GOLD_NUGGET), .01F);
+		GameRegistry.addSmelting(Trapdoors.BlockGoldTrapdoor, new ItemStack(Items.GOLD_NUGGET), .01F);
+		GameRegistry.addSmelting(Fences.BlockGoldFence, new ItemStack(Items.GOLD_NUGGET), .01F);
+		GameRegistry.addSmelting(Gates.BlockGoldFenceGate, new ItemStack(Items.GOLD_NUGGET), .01F);
 		
 		//soul glass
-		GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(ModBlocks.soulGlass), .01F);
+		GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(Misc.soulGlass), .01F);
 	}
 }

@@ -6,12 +6,26 @@ import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
 import com.NetherNoah.ParadiseMod.init.ModItems;
 import com.NetherNoah.ParadiseMod.init.ModSmelting;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Buttons;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Chests;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Doors;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Fences;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Gates;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Lamps;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Plates;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Stairs;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Tables;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Trapdoors;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Walls;
 import com.NetherNoah.ParadiseMod.proxy.CommonProxy;
 import com.NetherNoah.ParadiseMod.tileentity.TEAntiMobLamp;
 import com.NetherNoah.ParadiseMod.tileentity.TEMossyFurnace;
+import com.NetherNoah.ParadiseMod.tileentity.TEVoidFurnace;
 import com.NetherNoah.ParadiseMod.tileentity.TileEntityCactusChest;
 import com.NetherNoah.ParadiseMod.tileentity.TileEntityCompressedCactusChest;
 import com.NetherNoah.ParadiseMod.tileentity.TileEntityGoldHopper;
@@ -89,10 +103,9 @@ public class ParadiseMod {
 		LootTableList.register(new ResourceLocation("nnparadisemod","mining_chest"));
 		LootTableList.register(new ResourceLocation("nnparadisemod","treasure_chest"));
 		
-		//this should prevent monsters from spawing
+		//this should prevent monsters from spawning
 		MinecraftForge.EVENT_BUS.register((this.AntiMobLampHandler = new AntiMobLampHandler()));
         MinecraftForge.EVENT_BUS.register(SaltLampRegistry.getLampRegistry());
-       //MinecraftForge.EVENT_BUS.register(Events.class);
         
         //other events
         MinecraftForge.EVENT_BUS.register(Events.class);
@@ -116,6 +129,7 @@ public class ParadiseMod {
 		
 		//tile entities
 		GameRegistry.registerTileEntity(TEMossyFurnace.class,"mossy_furnace");
+		GameRegistry.registerTileEntity(TEVoidFurnace.class,"void_furnace");
 		GameRegistry.registerTileEntity(TileEntityCactusChest.class,"cactus_chest");
 		GameRegistry.registerTileEntity(TileEntityCompressedCactusChest.class,"compressed_cactus_chest");
 		GameRegistry.registerTileEntity(TileEntityGoldHopper.class,"gold_hopper");
@@ -171,7 +185,23 @@ public class ParadiseMod {
 			GameRegistry.registerWorldGenerator(generators[i],1);
 		}
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered world generators");
-		ModBlocks.initAndRegister();
+		
+		//blocks
+		Lamps.initAndRegister();
+		Ores.initAndRegister();
+		Misc.initAndRegister();
+		Crystals.initAndRegister();
+		Walls.initAndRegister();
+		Stairs.initAndRegister();
+		Buttons.initAndRegister();
+		Plates.initAndRegister();
+		Tables.initAndRegister();
+		Chests.initAndRegister();
+		Doors.initAndRegister();
+		Trapdoors.initAndRegister();
+		Fences.initAndRegister();
+		Gates.initAndRegister();
+		
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered blocks");
 		ModItems.initAndRegister();
 		System.out.println("Nether Noah's Paradise Mod: Successfully registered items");

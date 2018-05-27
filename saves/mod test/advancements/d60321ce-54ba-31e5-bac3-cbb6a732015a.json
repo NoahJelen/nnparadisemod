@@ -1,0 +1,14 @@
+{
+  "minecraft:nether/find_fortress": {
+    "criteria": {
+      "fortress": "2018-05-26 20:38:44 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2018-05-26 20:39:24 -0700"
+    },
+    "done": true
+  }
+}

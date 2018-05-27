@@ -5,24 +5,20 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 import com.NetherNoah.ParadiseMod.world.dimension.DVTeleporter;
 import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
-import com.google.common.cache.LoadingCache;
 
-import ibxm.Player;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
-import net.minecraft.block.state.BlockWorldState;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.block.state.pattern.BlockPattern;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -59,7 +55,7 @@ public class DUPortal extends Block{
 	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos,EnumFacing side) {
 		IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
         Block block = iblockstate.getBlock();        
-			if (this == ModBlocks.DUPortal)
+			if (this == Misc.DUPortal)
 	        {
 	            if (blockState != iblockstate)
 	            {
@@ -87,7 +83,7 @@ public class DUPortal extends Block{
 	}
 	@Nullable
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
-		return new ItemStack(ModBlocks.DVPortal);
+		return new ItemStack(Misc.DVPortal);
 	}
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
@@ -174,7 +170,7 @@ public class DUPortal extends Block{
 					for (int j=-10;j<=10;j++) {
 						for (int i=-10;i<=10;i++) {
 							if (rand.nextInt(2)==1)
-								worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY - 4, thePlayer.posZ + j), ModBlocks.glowingObsidian.getDefaultState());
+								worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY - 4, thePlayer.posZ + j), Misc.glowingObsidian.getDefaultState());
 							else
 								worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY - 4, thePlayer.posZ + j), Blocks.GLOWSTONE.getDefaultState());
 						}
@@ -182,7 +178,7 @@ public class DUPortal extends Block{
 				
 					for (int j=-10;j<=10;j++) {
 						for (int i=-10;i<=10;i++) {
-							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-3, thePlayer.posZ + j), ModBlocks.glowingObsidian.getDefaultState());
+							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-3, thePlayer.posZ + j), Misc.glowingObsidian.getDefaultState());
 						}
 					}
 					for (int j=-9;j<=9;j++) {
@@ -192,13 +188,13 @@ public class DUPortal extends Block{
 					}
 					for (int i=-3;i<=3;i++) {
 						for (int j=-3;j<=3;j++) {
-							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-3, thePlayer.posZ + j), ModBlocks.VoidStone.getDefaultState());
+							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-3, thePlayer.posZ + j), Misc.VoidStone.getDefaultState());
 						}
 					}
 					for (int i=-2;i<=2;i++) {
 
 						for (int j=-2;j<=2;j++) {
-							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-2, thePlayer.posZ + j), ModBlocks.VoidStone.getDefaultState());
+							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-2, thePlayer.posZ + j), Misc.VoidStone.getDefaultState());
 						}
 					}
 				}
@@ -319,7 +315,7 @@ public class DUPortal extends Block{
                 }
             }
             Block block = world.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
-            return block == ModBlocks.blazeBlock ? i : 0;
+            return block == Ores.blazeBlock ? i : 0;
         }
         public int getHeight()
         {
@@ -343,14 +339,14 @@ public class DUPortal extends Block{
                     {
                         break label24;
                     }
-                    if (block == ModBlocks.DVPortal)
+                    if (block == Misc.DVPortal)
                     {
                         ++portalBlockCount;
                     }
                     if (i == 0)
                     {
                         block = world.getBlockState(blockpos.offset(leftDir)).getBlock();
-                        if (block != ModBlocks.endPearlBlock)
+                        if (block != Ores.endPearlBlock)
                         {
                             break label24;
                         }
@@ -358,7 +354,7 @@ public class DUPortal extends Block{
                     else if (i == width - 1)
                     {
                         block = world.getBlockState(blockpos.offset(rightDir)).getBlock();
-                        if (block != ModBlocks.endPearlBlock)
+                        if (block != Ores.endPearlBlock)
                         {
                             break label24;
                         }
@@ -367,7 +363,7 @@ public class DUPortal extends Block{
             }
             for (int j = 0; j < width; ++j)
             {
-                if (world.getBlockState(bottomLeft.offset(rightDir, j).up(height)).getBlock() != ModBlocks.endPearlBlock)
+                if (world.getBlockState(bottomLeft.offset(rightDir, j).up(height)).getBlock() != Ores.endPearlBlock)
                 {
                     height = 0;
                     break;
@@ -387,7 +383,7 @@ public class DUPortal extends Block{
         }
         protected boolean isEmptyBlock(Block blockIn)
         {
-            return blockIn.getMaterial(blockIn.getDefaultState()) == Material.AIR || blockIn == Blocks.FIRE || blockIn == ModBlocks.DVPortal;
+            return blockIn.getMaterial(blockIn.getDefaultState()) == Material.AIR || blockIn == Blocks.FIRE || blockIn == Misc.DVPortal;
         }
         public boolean isValid()
         {
@@ -400,13 +396,9 @@ public class DUPortal extends Block{
                 BlockPos blockpos = bottomLeft.offset(rightDir, i);
                 for (int j = 0; j < height; ++j)
                 {
-                    world.setBlockState(blockpos.up(j), ModBlocks.DVPortal.getDefaultState().withProperty(BlockPortal.AXIS, axis), 2);
+                    world.setBlockState(blockpos.up(j), Misc.DVPortal.getDefaultState().withProperty(BlockPortal.AXIS, axis), 2);
                 }
             }
         }
-    }
-	
-	
-	
-	
+    }	
 }

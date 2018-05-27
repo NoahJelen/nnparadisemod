@@ -44,7 +44,6 @@ public class RunwayGen extends WorldGenerator {
 						.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 				template.getDataBlocks(position, placementsettings);
 				template.addBlocksToWorld(world, position.add(0, -4, 0), placementsettings);
-				//template.addBlocksToWorld(world, position.add(0, -6, 0), placementsettings);
 				return true;
 			}
 		}

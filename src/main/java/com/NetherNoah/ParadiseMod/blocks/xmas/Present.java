@@ -3,7 +3,6 @@ package com.NetherNoah.ParadiseMod.blocks.xmas;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.ParadiseMod;
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
 import com.NetherNoah.ParadiseMod.init.ModItems;
 
 import net.minecraft.block.Block;
@@ -11,7 +10,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 public class Present extends Block {
 	public Present() {

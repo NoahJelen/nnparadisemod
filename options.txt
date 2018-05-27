@@ -93,7 +93,6 @@ key_quark.keybind.chestMerge:0
 key_quark.keybind.chestRestock:0
 key_quark.keybind.chestExtract:0
 key_quark.keybind.playerSort:0
-key_quark.keybind.toggleAutojump:48
 key_quark.keybind.lockBuilding:37
 key_quark.emote.no:0
 key_quark.emote.yes:0
@@ -107,6 +106,7 @@ key_quark.emote.shrug:0
 key_quark.emote.headbang:0
 key_quark.emote.weep:0
 key_quark.emote.facepalm:0
+key_quark.keybind.toggleAutojump:48
 key_xray.config.toggle:348
 key_xray.config.open:44
 key_key.jei.toggleOverlay:24:CONTROL

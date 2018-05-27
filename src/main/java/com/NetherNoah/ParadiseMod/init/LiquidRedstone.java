@@ -1,18 +1,18 @@
 package com.NetherNoah.ParadiseMod.init;
 
 import java.util.Random;
+
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
@@ -26,7 +26,6 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 public class LiquidRedstone {
 	private static ModelResourceLocation lr_location = new ModelResourceLocation(Reference.MOD_ID + ":" + BlockLiquidRedstone.name, "fluid");
 	public static void register() {
@@ -112,7 +111,7 @@ public class LiquidRedstone {
 				if (flag) {
 					Integer integer = state.getValue(LEVEL);
 					if (integer.intValue() == 0) {
-						worldIn.setBlockState(pos, ModBlocks.glowingObsidian.getDefaultState());
+						worldIn.setBlockState(pos, Misc.glowingObsidian.getDefaultState());
 						this.triggerMixEffects(worldIn, pos);
 						return true;
 					}

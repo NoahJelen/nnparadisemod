@@ -1,35 +1,37 @@
 package com.NetherNoah.ParadiseMod.handlers;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
 import com.NetherNoah.ParadiseMod.init.ModItems;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Lamps;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictHandler {
 	public static void registerOreDict() {
-		OreDictionary.registerOre("oreRuby", ModBlocks.RubyOre);
-		OreDictionary.registerOre("blockRuby", ModBlocks.RubyBlock);
+		OreDictionary.registerOre("oreRuby", Ores.RubyOre);
+		OreDictionary.registerOre("blockRuby", Ores.RubyBlock);
 		OreDictionary.registerOre("gemRuby", ModItems.Ruby);
-		OreDictionary.registerOre("saplingChristmas", ModBlocks.ChristmasSapling);
-		OreDictionary.registerOre("leavesChristmas", ModBlocks.ChristmasLeaves);
-		OreDictionary.registerOre("oreSilver", ModBlocks.SilverOre);
-		OreDictionary.registerOre("oreSilver", ModBlocks.SilverOreNether);
-		OreDictionary.registerOre("blockSilver", ModBlocks.SilverBlock);
+		OreDictionary.registerOre("saplingChristmas", Misc.ChristmasSapling);
+		OreDictionary.registerOre("leavesChristmas", Misc.ChristmasLeaves);
+		OreDictionary.registerOre("oreSilver", Ores.SilverOre);
+		OreDictionary.registerOre("oreSilver", Ores.SilverOreNether);
+		OreDictionary.registerOre("blockSilver", Ores.SilverBlock);
 		OreDictionary.registerOre("ingotSilver", ModItems.SilverIngot);
 		OreDictionary.registerOre("nuggetSilver", ModItems.SilverNugget);
 		OreDictionary.registerOre("stickWood", ModItems.CactusStick);
-		OreDictionary.registerOre("plankWood",ModBlocks.CompressedCactus);
+		OreDictionary.registerOre("plankWood",Misc.CompressedCactus);
 		OreDictionary.registerOre("dustSalt", ModItems.salt);
-		OreDictionary.registerOre("oreSalt", ModBlocks.SaltOre);
-		OreDictionary.registerOre("blockSalt", ModBlocks.SaltBlock);
-		OreDictionary.registerOre("lampSalt", ModBlocks.SaltLamp);
-		OreDictionary.registerOre("oreGold", ModBlocks.GoldOreNether);
+		OreDictionary.registerOre("oreSalt", Ores.SaltOre);
+		OreDictionary.registerOre("blockSalt", Ores.SaltBlock);
+		OreDictionary.registerOre("lampSalt", Lamps.SaltLamp);
+		OreDictionary.registerOre("oreGold", Ores.GoldOreNether);
 		OreDictionary.registerOre("ingotRustyIron", ModItems.RustyIngot);
-		OreDictionary.registerOre("blockRustyIron", ModBlocks.RustyIronBlock);
+		OreDictionary.registerOre("blockRustyIron", Ores.RustyIronBlock);
 		OreDictionary.registerOre("nuggetRustyIron", ModItems.RustyNugget);
 		OreDictionary.registerOre("dyeBlack", ModItems.DyeBlack);
 		OreDictionary.registerOre("dyeBrown", ModItems.DyeBrown);
 		OreDictionary.registerOre("dyeBlue", ModItems.DyeBlue);
-		OreDictionary.registerOre("cobblestone", ModBlocks.VoidStone);
+		OreDictionary.registerOre("cobblestone", Misc.VoidStone);
 	}
 }

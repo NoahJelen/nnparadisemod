@@ -3,7 +3,9 @@ package com.NetherNoah.ParadiseMod.world.dimension;
 import java.util.List;
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
@@ -29,7 +31,7 @@ public class DVChunkProvider implements IChunkGenerator
 {
     /** RNG. */
     private final Random rand;
-    protected static final IBlockState STONE = ModBlocks.VoidStone.getDefaultState();
+    protected static final IBlockState STONE = Misc.VoidStone.getDefaultState();
     protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
     private NoiseGeneratorOctaves lperlinNoise1;
     private NoiseGeneratorOctaves lperlinNoise2;
@@ -56,21 +58,21 @@ public class DVChunkProvider implements IChunkGenerator
     private int chunkZ = 0;
     
     //crystals
-	private final WorldGenBush quartzGen = new WorldGenBush(ModBlocks.quartzCrystal);
-	private final WorldGenBush diamondGen = new WorldGenBush(ModBlocks.diamondCrystal);
-	private final WorldGenBush emeraldGen = new WorldGenBush(ModBlocks.emeraldCrystal);
-	private final WorldGenBush redstoneGen = new WorldGenBush(ModBlocks.redstoneCrystal);
-	private final WorldGenBush rubyGen = new WorldGenBush(ModBlocks.rubyCrystal);
+	private final WorldGenBush quartzGen = new WorldGenBush(Crystals.quartzCrystal);
+	private final WorldGenBush diamondGen = new WorldGenBush(Crystals.diamondCrystal);
+	private final WorldGenBush emeraldGen = new WorldGenBush(Crystals.emeraldCrystal);
+	private final WorldGenBush redstoneGen = new WorldGenBush(Crystals.redstoneCrystal);
+	private final WorldGenBush rubyGen = new WorldGenBush(Crystals.rubyCrystal);
 	
 	//special ores
-	private final WorldGenerator coalGen = new WorldGenMinable(ModBlocks.CoalOreVoid.getDefaultState(), 28,
-			BlockMatcher.forBlock(ModBlocks.VoidStone));
-	private final WorldGenerator ironGen = new WorldGenMinable(ModBlocks.IronOreVoid.getDefaultState(), 14,
-			BlockMatcher.forBlock(ModBlocks.VoidStone));
-	private final WorldGenerator goldGen = new WorldGenMinable(ModBlocks.GoldOreVoid.getDefaultState(), 7,
-			BlockMatcher.forBlock(ModBlocks.VoidStone));
-	private final WorldGenerator silverGen = new WorldGenMinable(ModBlocks.SilverOreVoid.getDefaultState(), 7,
-			BlockMatcher.forBlock(ModBlocks.VoidStone));
+	private final WorldGenerator coalGen = new WorldGenMinable(Ores.CoalOreVoid.getDefaultState(), 28,
+			BlockMatcher.forBlock(Misc.VoidStone));
+	private final WorldGenerator ironGen = new WorldGenMinable(Ores.IronOreVoid.getDefaultState(), 14,
+			BlockMatcher.forBlock(Misc.VoidStone));
+	private final WorldGenerator goldGen = new WorldGenMinable(Ores.GoldOreVoid.getDefaultState(), 7,
+			BlockMatcher.forBlock(Misc.VoidStone));
+	private final WorldGenerator silverGen = new WorldGenMinable(Ores.SilverOreVoid.getDefaultState(), 7,
+			BlockMatcher.forBlock(Misc.VoidStone));
 
     public DVChunkProvider(World p_i47241_1_, boolean p_i47241_2_, long p_i47241_3_)
     {

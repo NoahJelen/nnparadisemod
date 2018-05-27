@@ -2,8 +2,20 @@ package com.NetherNoah.ParadiseMod.proxy;
 
 import javax.annotation.Nullable;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
 import com.NetherNoah.ParadiseMod.init.ModItems;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Buttons;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Chests;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Fences;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Gates;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Lamps;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Plates;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Stairs;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Tables;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Trapdoors;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Walls;
 import com.NetherNoah.ParadiseMod.tileentity.TileEntityCactusChest;
 import com.NetherNoah.ParadiseMod.tileentity.TileEntityCompressedCactusChest;
 import com.NetherNoah.ParadiseMod.tileentity.render.TileEntityCactusChestRender;
@@ -17,15 +29,27 @@ import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy implements CommonProxy{
 	@Override
 	public void init() {
+		//block groups
 		ModItems.registerRenders();
-		ModBlocks.registerRenders();
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCactusChest.class, new TileEntityCactusChestRender());
+		Lamps.regRenders();
+		Ores.regRenders();
+		Misc.regRenders();
+		Crystals.regRenders();
+		Walls.regRenders();
+		Stairs.regRenders();
+		Buttons.regRenders();
+		Plates.regRenders();
+		Tables.regRenders();
+		Chests.regRenders();
+		Trapdoors.regRenders();
+		Fences.regRenders();
+		Gates.regRenders();
 		
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCactusChest.class, new TileEntityCactusChestRender());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCompressedCactusChest.class, new TileEntityCompressedCactusChestRender());
 		System.out.println("NetherNoah777: Finally!!! I managed to register that freaking tile entity renderer!!!!");
 		
@@ -35,13 +59,13 @@ public class ClientProxy implements CommonProxy{
             {
                 return worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : ColorizerGrass.getGrassColor(0.5D, 1.0D);
             }
-        }, ModBlocks.GrassPlate);		
+        }, Plates.GrassPlate);		
 		Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new IBlockColor()
         {
             public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
             {
                 return worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : ColorizerGrass.getGrassColor(0.5D, 1.0D);
             }
-        }, ModBlocks.GrassButton);
+        }, Buttons.GrassButton);
 	}
 }

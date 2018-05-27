@@ -1,5 +1,5 @@
 package com.NetherNoah.ParadiseMod.blocks.misc;
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -19,6 +19,6 @@ public class CactusBookshelf extends Block{
 	@Override
 	public float getEnchantPowerBonus(World world, BlockPos pos)
     {
-        return this == (ModBlocks.CactusBookshelf)? 1 : 0;
+        return this == (Misc.CactusBookshelf)? 1 : 0;
     }
 }

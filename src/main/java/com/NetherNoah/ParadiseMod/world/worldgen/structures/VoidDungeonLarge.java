@@ -2,10 +2,9 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -37,7 +36,7 @@ public class VoidDungeonLarge extends WorldGenerator implements IWorldGenerator{
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == ModBlocks.VoidStone;
+			foundGround =  blockAt == Misc.VoidStone;
 		}
 		return y;
 	}

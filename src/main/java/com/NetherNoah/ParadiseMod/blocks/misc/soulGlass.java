@@ -1,13 +1,12 @@
 package com.NetherNoah.ParadiseMod.blocks.misc;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -32,7 +31,7 @@ public class soulGlass extends BlockBreakable {
 		IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
         Block block = iblockstate.getBlock();
         
-			if (this == ModBlocks.soulGlass)
+			if (this == Misc.soulGlass)
 	        {
 	            if (blockState != iblockstate)
 	            {

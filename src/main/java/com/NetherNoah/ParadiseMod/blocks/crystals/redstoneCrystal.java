@@ -2,10 +2,9 @@ package com.NetherNoah.ParadiseMod.blocks.crystals;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
 
 import net.minecraft.block.BlockBush;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -39,7 +38,7 @@ public class redstoneCrystal extends BlockBush {
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(ModBlocks.redstoneCrystal);
+        return new ItemStack(Crystals.redstoneCrystal);
     }
 	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()

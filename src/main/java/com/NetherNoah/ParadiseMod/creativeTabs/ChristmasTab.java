@@ -1,6 +1,6 @@
 package com.NetherNoah.ParadiseMod.creativeTabs;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -12,6 +12,6 @@ public ChristmasTab() {
 	}
 	@Override
 	public ItemStack getTabIconItem() {
-		return new ItemStack(ModBlocks.ChristmasSapling);
+		return new ItemStack(Misc.ChristmasSapling);
 	}
 }

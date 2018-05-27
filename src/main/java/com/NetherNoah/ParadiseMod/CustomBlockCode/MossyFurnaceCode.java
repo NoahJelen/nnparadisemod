@@ -3,7 +3,7 @@ package com.NetherNoah.ParadiseMod.CustomBlockCode;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 import com.NetherNoah.ParadiseMod.tileentity.TEMossyFurnace;
 
 import net.minecraft.block.BlockContainer;
@@ -47,7 +47,7 @@ public class MossyFurnaceCode extends BlockContainer
     }
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(ModBlocks.MossyFurnace);
+        return Item.getItemFromBlock(Misc.MossyFurnace);
     }
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
     {
@@ -141,13 +141,13 @@ public class MossyFurnaceCode extends BlockContainer
         keepInventory = true;
         if (active)
         {
-            worldIn.setBlockState(pos, ModBlocks.MossyFurnaceLit.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, ModBlocks.MossyFurnaceLit.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, Misc.MossyFurnaceLit.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, Misc.MossyFurnaceLit.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
         else
         {
-            worldIn.setBlockState(pos, ModBlocks.MossyFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, ModBlocks.MossyFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, Misc.MossyFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, Misc.MossyFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
         keepInventory = false;
         if (tileentity != null)
@@ -200,7 +200,7 @@ public class MossyFurnaceCode extends BlockContainer
     }
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(ModBlocks.MossyFurnace);
+        return new ItemStack(Misc.MossyFurnace);
     }
     public EnumBlockRenderType getRenderType(IBlockState state)
     {

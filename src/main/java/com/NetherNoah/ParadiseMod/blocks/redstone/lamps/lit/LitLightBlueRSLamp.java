@@ -2,12 +2,11 @@ package com.NetherNoah.ParadiseMod.blocks.redstone.lamps.lit;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Lamps;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRedstoneLight;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;;
@@ -24,7 +23,7 @@ public class LitLightBlueRSLamp extends BlockRedstoneLight {
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (!worldIn.isRemote) {
 			if (!worldIn.isBlockPowered(pos)) {
-				worldIn.setBlockState(pos, ModBlocks.LightBlueRSLamp.getDefaultState(), 2);
+				worldIn.setBlockState(pos, Lamps.LightBlueRSLamp.getDefaultState(), 2);
 			}
 		}
 	}
@@ -35,7 +34,7 @@ public class LitLightBlueRSLamp extends BlockRedstoneLight {
         {
         	if (!worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, ModBlocks.LightBlueRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.LightBlueRSLamp.getDefaultState(), 2);
             }
         }
     }
@@ -46,13 +45,13 @@ public class LitLightBlueRSLamp extends BlockRedstoneLight {
         {
             if (!worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, ModBlocks.LightBlueRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.LightBlueRSLamp.getDefaultState(), 2);
             }
         }
     }
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(ModBlocks.LightBlueRSLamp);
+        return new ItemStack(Lamps.LightBlueRSLamp);
     }
 }

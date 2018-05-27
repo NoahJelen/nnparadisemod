@@ -2,12 +2,11 @@ package com.NetherNoah.ParadiseMod.blocks.redstone.lamps.lit;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Lamps;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRedstoneLight;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +24,7 @@ public class LitCyanRSLamp extends BlockRedstoneLight {
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (!worldIn.isRemote) {
 			if (!worldIn.isBlockPowered(pos)) {
-				worldIn.setBlockState(pos, ModBlocks.CyanRSLamp.getDefaultState(), 2);
+				worldIn.setBlockState(pos, Lamps.CyanRSLamp.getDefaultState(), 2);
 			}
 		}
 	}
@@ -36,7 +35,7 @@ public class LitCyanRSLamp extends BlockRedstoneLight {
         {
         	if (!worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, ModBlocks.CyanRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.CyanRSLamp.getDefaultState(), 2);
             }
         }
     }
@@ -47,18 +46,18 @@ public class LitCyanRSLamp extends BlockRedstoneLight {
         {
             if (!worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, ModBlocks.CyanRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.CyanRSLamp.getDefaultState(), 2);
             }
         }
     }
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(ModBlocks.CyanRSLamp);
+        return Item.getItemFromBlock(Lamps.CyanRSLamp);
     }
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(ModBlocks.CyanRSLamp);
+        return new ItemStack(Lamps.CyanRSLamp);
     }
 }

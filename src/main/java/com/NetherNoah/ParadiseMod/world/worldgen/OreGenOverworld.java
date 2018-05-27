@@ -2,7 +2,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
@@ -24,28 +24,28 @@ public class OreGenOverworld implements IWorldGenerator {
 		int selectOreOverworld=random.nextInt(3);
 		
 		//salt ore
-		IBlockState oreSelectionOverworld=ModBlocks.SaltOre.getDefaultState();
+		IBlockState oreSelectionOverworld=Ores.SaltOre.getDefaultState();
 		
 		//ruby ore
 		if (selectOreOverworld==0)
 		{
-			oreSelectionOverworld=ModBlocks.RubyOre.getDefaultState();
+			oreSelectionOverworld=Ores.RubyOre.getDefaultState();
 		}
 		
 		//silver ore
 		else if (selectOreOverworld==1)
 		{
-			oreSelectionOverworld=ModBlocks.SilverOre.getDefaultState();	
+			oreSelectionOverworld=Ores.SilverOre.getDefaultState();	
 		}
 		else
-			oreSelectionOverworld=ModBlocks.SaltOre.getDefaultState();
+			oreSelectionOverworld=Ores.SaltOre.getDefaultState();
 		
 		generateOre(oreSelectionOverworld, world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(4), 6);
 	}
 	private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {
 		int deltaY = maxY - minY;
 			int rarity = 16;
-			if (ore==ModBlocks.RubyOre.getDefaultState()) {
+			if (ore==Ores.RubyOre.getDefaultState()) {
 				rarity=8;
 			}
 		for (int i = 0; i < chances; i++) {
