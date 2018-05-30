@@ -186,3 +186,4 @@
     Added a config file
     Brick Pyramids are no longer limited to ocean biomes
     The mod now shows its newest version
+    The version of my mod now ships with the resource pack by default
