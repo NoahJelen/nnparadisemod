@@ -3,10 +3,10 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
@@ -16,7 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
@@ -29,13 +28,12 @@ public class JeffTankGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":attiecat/jeff_tank"));
-		if(template == null)
+		if(template == null||ModConfig.worldgen.structures.attiecat.JeffTank)
 		{
-			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
 			return false;
 		}
 		if(JeffTankGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(30) == 0){
+			if(rand.nextInt(ModConfig.worldgen.structures.attiecat.JeffTankChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);		
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

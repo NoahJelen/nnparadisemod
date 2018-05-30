@@ -3,8 +3,8 @@
 //https://github.com/Xalcon/TorchMaster
 package com.NetherNoah.ParadiseMod.handlers;
 
-import com.NetherNoah.ParadiseMod.SaltLampFilter;
-import com.NetherNoah.ParadiseMod.SaltLampRegistry;
+import com.NetherNoah.ParadiseMod.tileentity.SaltLamp.SaltLampFilter;
+import com.NetherNoah.ParadiseMod.tileentity.SaltLamp.SaltLampRegistry;
 
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;

@@ -5,6 +5,7 @@ import java.util.Random;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
 
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -26,7 +27,7 @@ public class diamondCrystal extends BlockBush {
 		setHardness(.5F);
 		setResistance(1F);
 		setLightLevel(1F);
-		setSoundType(blockSoundType.GLASS);
+		setSoundType(SoundType.GLASS);
 	}
 	@Override
 	protected boolean canSustainBush(IBlockState state)
@@ -38,27 +39,31 @@ public class diamondCrystal extends BlockBush {
     {
         return new ItemStack(Crystals.diamondCrystal);
     }
+	@Override
 	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
     {
         return BlockRenderLayer.TRANSLUCENT;
     }
 	//get item to drop
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+    @Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
         return Items.DIAMOND;
     }
     //get amount of items to drop
-    public int quantityDropped(Random random)
+    @Override
+	public int quantityDropped(Random random)
     {
 		Random rand = new Random();
 		int giveItem = rand.nextInt(4) + 1;
         return giveItem;
     }
     //is the pick enchanted with fortune?
-    public int quantityDroppedWithBonus(int fortune, Random random)
+    @Override
+	public int quantityDroppedWithBonus(int fortune, Random random)
     {
-        if (fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped((IBlockState)this.getBlockState().getValidStates().iterator().next(), random, fortune))
+        if (fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator().next(), random, fortune))
         {
             int i = random.nextInt(fortune + 2) - 1;
 
@@ -75,7 +80,8 @@ public class diamondCrystal extends BlockBush {
         }
     }
     //spawn the item in the world
-    public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
+    @Override
+	public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
     {
         super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
     }
@@ -93,7 +99,8 @@ public class diamondCrystal extends BlockBush {
         return 0;
     }
     //spawn the actual item
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
+    @Override
+	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
         return new ItemStack(Items.DIAMOND);
     }

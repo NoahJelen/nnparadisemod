@@ -27,15 +27,18 @@ public class DiamondPlateCode extends BlockBasePressurePlate
         setDefaultState(blockState.getBaseState().withProperty(POWERED, Boolean.valueOf(false)));
         sensitivity = sensitivityIn;
     }
-    protected int getRedstoneStrength(IBlockState state)
+    @Override
+	protected int getRedstoneStrength(IBlockState state)
     {
-        return ((Boolean)state.getValue(POWERED)).booleanValue() ? 15 : 0;
+        return state.getValue(POWERED).booleanValue() ? 15 : 0;
     }
-    protected IBlockState setRedstoneStrength(IBlockState state, int strength)
+    @Override
+	protected IBlockState setRedstoneStrength(IBlockState state, int strength)
     {
         return state.withProperty(POWERED, Boolean.valueOf(strength > 0));
     }
-    protected void playClickOnSound(World worldIn, BlockPos color)
+    @Override
+	protected void playClickOnSound(World worldIn, BlockPos color)
     {
         if (blockMaterial == Material.WOOD)
         {
@@ -46,7 +49,8 @@ public class DiamondPlateCode extends BlockBasePressurePlate
             worldIn.playSound((EntityPlayer)null, color, SoundEvents.BLOCK_STONE_PRESSPLATE_CLICK_ON, SoundCategory.BLOCKS, 0.3F, 0.6F);
         }
     }
-    protected void playClickOffSound(World worldIn, BlockPos pos)
+    @Override
+	protected void playClickOffSound(World worldIn, BlockPos pos)
     {
         if (blockMaterial == Material.WOOD)
         {
@@ -57,7 +61,8 @@ public class DiamondPlateCode extends BlockBasePressurePlate
             worldIn.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_STONE_PRESSPLATE_CLICK_OFF, SoundCategory.BLOCKS, 0.3F, 0.5F);
         }
     }
-    protected int computeRedstoneStrength(World worldIn, BlockPos pos)
+    @Override
+	protected int computeRedstoneStrength(World worldIn, BlockPos pos)
     {
         AxisAlignedBB axisalignedbb = PRESSURE_AABB.offset(pos);
         List <? extends Entity > list;
@@ -85,15 +90,18 @@ public class DiamondPlateCode extends BlockBasePressurePlate
         }
         return 0;
     }
-    public IBlockState getStateFromMeta(int meta)
+    @Override
+	public IBlockState getStateFromMeta(int meta)
     {
         return getDefaultState().withProperty(POWERED, Boolean.valueOf(meta == 1));
     }
-    public int getMetaFromState(IBlockState state)
+    @Override
+	public int getMetaFromState(IBlockState state)
     {
-        return ((Boolean)state.getValue(POWERED)).booleanValue() ? 1 : 0;
+        return state.getValue(POWERED).booleanValue() ? 1 : 0;
     }
-    protected BlockStateContainer createBlockState()
+    @Override
+	protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {POWERED});
     }

@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import com.NetherNoah.ParadiseMod.CustomBlockCode.RSTrapdoor;
 
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -20,7 +21,7 @@ public class RedstoneTrapdoor extends RSTrapdoor {
 		setRegistryName("redstone_trapdoor");
 		setHardness(5F);
 		setResistance(10F);
-		setSoundType(blockSoundType.METAL);
+		setSoundType(SoundType.METAL);
 		setCreativeTab(CreativeTabs.REDSTONE);
 		setHarvestLevel("pickaxe", 2);
 	}

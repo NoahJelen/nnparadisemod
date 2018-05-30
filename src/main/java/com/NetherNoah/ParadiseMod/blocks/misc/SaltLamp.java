@@ -1,9 +1,10 @@
 package com.NetherNoah.ParadiseMod.blocks.misc;
 
-import com.NetherNoah.ParadiseMod.tileentity.TEAntiMobLamp;
+import com.NetherNoah.ParadiseMod.tileentity.SaltLamp.TEAntiMobLamp;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
@@ -17,7 +18,7 @@ public class SaltLamp extends Block implements ITileEntityProvider{
 		setHardness(.5F);
 		setResistance(1F);
 		setLightLevel(1F);
-		setSoundType(blockSoundType.GLASS);
+		setSoundType(SoundType.GLASS);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 	}
 	@Override

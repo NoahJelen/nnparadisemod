@@ -1,7 +1,5 @@
 package com.NetherNoah.ParadiseMod.blocks.buttons.stoneVariants;
 
-import com.NetherNoah.ParadiseMod.Reference;
-
 import net.minecraft.block.BlockButtonStone;
 
 public class DioriteButton  extends BlockButtonStone {

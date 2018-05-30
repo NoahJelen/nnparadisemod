@@ -4,7 +4,9 @@ import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.ParadiseMod;
 import com.NetherNoah.ParadiseMod.CustomBlockCode.xmasTree;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -14,8 +16,9 @@ public class ChristmasSapling extends xmasTree {
 		setUnlocalizedName("ChristmasSapling");
 		setRegistryName("christmas_sapling");
 		setLightLevel(1F);
-		setSoundType(blockSoundType.PLANT);
-		setCreativeTab(ParadiseMod.xmas);
+		setSoundType(SoundType.PLANT);
+		if (!ModConfig.HideXmasFeatures)
+			setCreativeTab(ParadiseMod.xmas);
 	}
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {

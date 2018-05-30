@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -32,58 +33,25 @@ public class BrickPyramidGen extends WorldGenerator {
 		Template part2 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":brick_pyramid_2"));
 		Template part3 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":brick_pyramid_3"));
 		Template part4 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":brick_pyramid_4"));
-		if(part1 == null)
-		{
-			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
+		if(ModConfig.worldgen.structures.BrickPyramids==false)
 			return false;
-		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
-		if(BrickPyramidGen.canSpawnHere(part1, worldserver, position)&&BrickPyramidGen.canSpawnHere(part2, worldserver, position.add(26, 0, 0))&&BrickPyramidGen.canSpawnHere(part3, worldserver, position.add(0, 0, 27))&&BrickPyramidGen.canSpawnHere(part4, worldserver, position.add(26, 0, 27))) {
-			if(rand.nextInt(699) == 0){
-				IBlockState iblockstate = world.getBlockState(position);
-				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
-				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-						.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
-						.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
-				part1.getDataBlocks(position, placementsettings);
-				part1.addBlocksToWorld(world, position.add(0, -2, 0), placementsettings);			
-				part2.getDataBlocks(position, placementsettings);
-				part2.addBlocksToWorld(world, position.add(26, -2, 0), placementsettings);			
-				part3.getDataBlocks(position, placementsettings);
-				part3.addBlocksToWorld(world, position.add(0, -2, 27), placementsettings);			
-				part4.getDataBlocks(position, placementsettings);
-				part4.addBlocksToWorld(world, position.add(26, -2, 27), placementsettings);
-				return true;
-			}
-		}
-		return false;
-	}
-	public static boolean canSpawnHere(Template template, World world, BlockPos posAboveGround)
-	{
-		int zwidth = template.getSize().getZ();
-		int xwidth = template.getSize().getX();
-		boolean corner1 = isCornerValid(world, posAboveGround);
-		boolean corner2 = isCornerValid(world, posAboveGround.add(xwidth, 0, zwidth));
-		return posAboveGround.getY() > 31 && corner1 && corner2;
-	}
-	public static boolean isCornerValid(World world, BlockPos pos)
-	{
-		int variation = 3;
-		int highestBlock = getGroundFromAbove(world, pos.getX(), pos.getZ());
-		if (highestBlock > pos.getY() - variation && highestBlock < pos.getY() + variation)
+		if(rand.nextInt(ModConfig.worldgen.structures.BrickPyramidsChance) == 0){
+			IBlockState iblockstate = world.getBlockState(position);
+			world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
+			PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
+					.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
+					.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
+			part1.getDataBlocks(position, placementsettings);
+			part1.addBlocksToWorld(world, position.add(0, -2, 0), placementsettings);			
+			part2.getDataBlocks(position, placementsettings);
+			part2.addBlocksToWorld(world, position.add(26, -2, 0), placementsettings);			
+			part3.getDataBlocks(position, placementsettings);
+			part3.addBlocksToWorld(world, position.add(0, -2, 27), placementsettings);			
+			part4.getDataBlocks(position, placementsettings);
+			part4.addBlocksToWorld(world, position.add(26, -2, 27), placementsettings);
 			return true;
-		return false;
-	}
-	public static int getGroundFromAbove(World world, int x, int z)
-	{
-		int y = 120;
-		boolean foundGround = false;
-		while(!foundGround && y-- >= 31)
-		{
-			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			Block blockAbove = world.getBlockState(new BlockPos(x,y+1,z)).getBlock();
-			foundGround =  (blockAt == Blocks.GRASS|| blockAt == Blocks.DIRT || blockAt == Blocks.SAND || blockAt == Blocks.SNOW ||blockAt == Blocks.MYCELIUM||blockAt==Blocks.STONE||blockAt==Blocks.GRAVEL && blockAbove==Blocks.AIR);
 		}
-		return y;
+		return false;
 	}
 }

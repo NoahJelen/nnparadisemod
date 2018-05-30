@@ -6,7 +6,6 @@ import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
-import com.NetherNoah.ParadiseMod.init.ModItems;
 import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Buttons;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Chests;
@@ -22,20 +21,25 @@ import com.NetherNoah.ParadiseMod.init.ModBlocks.Stairs;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Tables;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Trapdoors;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Walls;
+import com.NetherNoah.ParadiseMod.init.ModItems.Armor;
+import com.NetherNoah.ParadiseMod.init.ModItems.DoorItems;
+import com.NetherNoah.ParadiseMod.init.ModItems.MiscItems;
+import com.NetherNoah.ParadiseMod.init.ModItems.Tools;
 import com.NetherNoah.ParadiseMod.proxy.CommonProxy;
-import com.NetherNoah.ParadiseMod.tileentity.TEAntiMobLamp;
-import com.NetherNoah.ParadiseMod.tileentity.TEMossyFurnace;
-import com.NetherNoah.ParadiseMod.tileentity.TEVoidFurnace;
-import com.NetherNoah.ParadiseMod.tileentity.TileEntityCactusChest;
-import com.NetherNoah.ParadiseMod.tileentity.TileEntityCompressedCactusChest;
-import com.NetherNoah.ParadiseMod.tileentity.TileEntityGoldHopper;
-import com.NetherNoah.ParadiseMod.tileentity.TileEntitySilverHopper;
+import com.NetherNoah.ParadiseMod.tileentity.SaltLamp.SaltLampRegistry;
+import com.NetherNoah.ParadiseMod.tileentity.SaltLamp.TEAntiMobLamp;
+import com.NetherNoah.ParadiseMod.tileentity.chest.TileEntityCactusChest;
+import com.NetherNoah.ParadiseMod.tileentity.chest.TileEntityCompressedCactusChest;
+import com.NetherNoah.ParadiseMod.tileentity.furnace.TEMossyFurnace;
+import com.NetherNoah.ParadiseMod.tileentity.furnace.TEVoidFurnace;
+import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntityGoldHopper;
+import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntitySilverHopper;
 import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
-import com.NetherNoah.ParadiseMod.world.worldgen.DirtGen;
-import com.NetherNoah.ParadiseMod.world.worldgen.OreGenEnd;
-import com.NetherNoah.ParadiseMod.world.worldgen.OreGenNether;
-import com.NetherNoah.ParadiseMod.world.worldgen.OreGenOverworld;
-import com.NetherNoah.ParadiseMod.world.worldgen.Rose;
+import com.NetherNoah.ParadiseMod.world.worldgen.misc.Rose;
+import com.NetherNoah.ParadiseMod.world.worldgen.ores.DirtGen;
+import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenEnd;
+import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenNether;
+import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenOverworld;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.BrickPyramid;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Buoy;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Home;
@@ -64,6 +68,7 @@ import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -107,7 +112,7 @@ public class ParadiseMod {
 		MinecraftForge.EVENT_BUS.register((this.AntiMobLampHandler = new AntiMobLampHandler()));
         MinecraftForge.EVENT_BUS.register(SaltLampRegistry.getLampRegistry());
         
-        //other events
+        //events
         MinecraftForge.EVENT_BUS.register(Events.class);
         
         //some modifications to vanilla blocks
@@ -125,7 +130,6 @@ public class ParadiseMod {
 		//liquids
 		LiquidRedstone.register();
 		FluidRegistry.addBucketForFluid(LiquidRedstone.FluidLiquidRedstone.instance);
-		System.out.println("NetherNoah777: Oh my God! Adding liquid redstone was a big pain the a**!!!!!!!");
 		
 		//tile entities
 		GameRegistry.registerTileEntity(TEMossyFurnace.class,"mossy_furnace");
@@ -135,7 +139,6 @@ public class ParadiseMod {
 		GameRegistry.registerTileEntity(TileEntityGoldHopper.class,"gold_hopper");
 		GameRegistry.registerTileEntity(TileEntitySilverHopper.class,"silver_hopper");
 		GameRegistry.registerTileEntity(TEAntiMobLamp.class,"salt_lamp");
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered tile entities");
 		
 		//world generators
 		IWorldGenerator[] generators = {
@@ -184,9 +187,8 @@ public class ParadiseMod {
 		for(int i=0;i<generators.length;i++) {
 			GameRegistry.registerWorldGenerator(generators[i],1);
 		}
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered world generators");
 		
-		//blocks
+		//block categories
 		Lamps.initAndRegister();
 		Ores.initAndRegister();
 		Misc.initAndRegister();
@@ -202,27 +204,29 @@ public class ParadiseMod {
 		Fences.initAndRegister();
 		Gates.initAndRegister();
 		
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered blocks");
-		ModItems.initAndRegister();
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered items");
+		//item categories
+		Tools.initAndRegister();
+		Armor.initAndRegister();
+		DoorItems.initAndRegister();
+		MiscItems.initAndRegister();
 	}
 	@EventHandler
 	public void Init(FMLInitializationEvent event) {
 		OreDictHandler.registerOreDict();
-		System.out.println("Nether Noah's Paradise Mod: added ores to ore dictionary");
+		
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new CustomCraftBenchGuiHandler());
 		proxy.init();
+		
 		ModSmelting.register();
-		System.out.println("Nether Noah's Paradise Mod: Successfully registered smelting recipes");
+		
 		DimensionRegistry.MainRegistry();
-		System.out.println("Nether Noah's Paradise Mod: Successfully added the Deep Underground to Minecraft");
-		System.out.println("Nether Noah's Paradise Mod: Successfully added the Deep Void to Minecraft");
 		
 		//spawn mobs in the deep void dimension
 		EntityRegistry.addSpawn(EntityZombie.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
 		EntityRegistry.addSpawn(EntityCreeper.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
 		EntityRegistry.addSpawn(EntitySpider.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
 		EntityRegistry.addSpawn(EntitySkeleton.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
+		EntityRegistry.addSpawn(EntityWitherSkeleton.class, 1, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
 		EntityRegistry.addSpawn(EntitySlime.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
 		EntityRegistry.addSpawn(EntityEnderman.class, 1, 0, 1, EnumCreatureType.MONSTER, Biomes.VOID);
 	}

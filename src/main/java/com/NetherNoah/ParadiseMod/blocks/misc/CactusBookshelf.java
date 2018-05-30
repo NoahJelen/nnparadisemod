@@ -2,6 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.misc;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +15,7 @@ public class CactusBookshelf extends Block{
 		setHardness(2.5F);
 		setResistance(5F);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-		setSoundType(blockSoundType.WOOD);
+		setSoundType(SoundType.WOOD);
 	}
 	@Override
 	public float getEnchantPowerBonus(World world, BlockPos pos)

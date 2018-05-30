@@ -1,6 +1,7 @@
 package com.NetherNoah.ParadiseMod.blocks.xmas;
 
 import com.NetherNoah.ParadiseMod.ParadiseMod;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockPlanks;
@@ -17,7 +18,8 @@ public class ChristmasLeaves extends BlockOldLeaf {
 		setLightLevel(1F);
 		setUnlocalizedName("ChristmasLeaves");
 		setRegistryName("christmas_leaves");
-		setCreativeTab(ParadiseMod.xmas);
+		if (!ModConfig.HideXmasFeatures)
+			setCreativeTab(ParadiseMod.xmas);
 	}
 	@Override
 	@SideOnly(Side.CLIENT)

@@ -1,4 +1,7 @@
+#Christmas creative tab
 itemGroup.christmas_stuff=Christmas Stuff
+
+#items
 item.santa_jacket.name=Santa Jacket
 item.santa_pants.name=Santa Pants
 item.santa_boots.name=Santa Boots
@@ -88,6 +91,11 @@ item.rusty_boots.name=Rusty Iron Boots
 item.RustyIngot.name=Rusty Iron Ingot
 item.RustyNugget.name=Rusty Iron Nugget
 item.ItemRustyDoor.name=Rusty Iron Door
+item.salt.name=Salt
+item.ItemCactusDoor.name=Cactus Door
+item.CactusStick.name=Cactus Stick
+
+#Blocks
 tile.SilverFenceGate.name=Silver Fence Gate
 tile.endPearlBlock.name=Ender Pearl Block
 tile.EndRubyOre.name=Ender Ruby Ore
@@ -104,13 +112,10 @@ tile.NetherSilverOre.name=Nether Silver Ore
 tile.NetherGoldOre.name=Nether Gold Ore
 tile.oak_button.name=Oak Button
 tile.button.name=Stone Button
-item.salt.name=Salt
 tile.SaltOre.name=Salt Ore
 tile.SaltBlock.name=Salt Block
 tile.CactusPlate.name=Cactus Pressure Plate
 tile.CactusTrapdoor.name=Cactus Trapdoor
-item.ItemCactusDoor.name=Cactus Door
-item.CactusStick.name=Cactus Stick
 tile.CactusFence.name=Cactus Fence
 tile.CactusFenceGate.name=Cactus Fence Gate
 tile.CactusButton.name=Cactus Button
@@ -276,4 +281,43 @@ tile.PolishedVoidStone.name=Polished Void Stone
 tile.VoidBricks.name=Void Stone Bricks
 tile.VoidBrickStairs.name=Void Stone Brick Stairs
 tile.VoidFurnace.name=Void Furnace
+
+#Fluids
 fluid.liquid_redstone=Liquid Redstone
+
+#Config
+config.worldgen=World Generation
+config.dimensions=Dimensions
+config.structures=Structures
+config.attiecat=AttieCat's Structures
+config.rosegen=Generate Roses
+config.owores=Generate Overworld Ores
+config.nores=Generate Nether Ores
+config.eores=Generate End Ores
+config.xmas=Hide Christmas Features
+config.jefftank=Generate Jeff's Tank
+config.shrines=Generate Shrines
+config.brickpyramids=Generate Brick Pyramids
+config.dunum=Deep Underground ID
+config.dvnum=Deep Void ID
+config.duenable=Enable Deep Underground
+config.dvenable=Enable Deep Void
+config.oceanfloors=Beautify Ocean Floors
+config.buoys=Ocean Buoys
+config.starterhomes=Starter Homes
+config.mines=Landmines
+config.mesatemples=Mesa Temples
+config.minerbase=Abandoned Miner Bases
+config.ministronghold=Mini Strongholds
+config.shipwreck=Shipwrecks
+config.oceanvillages=Underwater Villages
+config.portal=Rogue Portals
+config.runways=Elytra Runways
+config.skywheels=Wheels in the Sky
+config.chest=Treasure Chests
+config.voiddungeons=Void Dungeons
+config.voiddungeonslarge=Large Void Dungeons
+config.voidtowers=Void Towers
+config.wickerman=Wicker Man Structures
+config.treasure=Treasure Chest
+config.chance=Chance

@@ -6,6 +6,7 @@ import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -21,7 +22,7 @@ public class BlueRose extends BlockBush implements IGrowable {
 	public BlueRose() {
 		setUnlocalizedName("BlueRose");
 		setRegistryName("blue_rose");
-		setSoundType(blockSoundType.PLANT);
+		setSoundType(SoundType.PLANT);
 	}
 	@Override
 	protected boolean canSustainBush(IBlockState state)
@@ -44,6 +45,7 @@ public class BlueRose extends BlockBush implements IGrowable {
     {
         spawnAsEntity(worldIn, pos, new ItemStack(this));
     }
+	@Override
 	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
     {

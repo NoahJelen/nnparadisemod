@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -35,13 +36,13 @@ public class ShrineGen extends WorldGenerator {
 		else
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":attiecat/john_shrine"));
 		
-		if(template == null)
+		if(template == null||ModConfig.worldgen.structures.attiecat.Shrines)
 		{
 			return false;
 		}	
 		
 		if(ShrineGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(400) == 0){
+			if(rand.nextInt(ModConfig.worldgen.structures.attiecat.ShrinesChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

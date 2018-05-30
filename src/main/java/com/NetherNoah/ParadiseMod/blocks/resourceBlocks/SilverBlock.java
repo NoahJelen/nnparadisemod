@@ -1,6 +1,7 @@
 package com.NetherNoah.ParadiseMod.blocks.resourceBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +15,7 @@ public class SilverBlock extends Block {
 		setHardness(5F);
 		setResistance(10F);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-		setSoundType(blockSoundType.METAL);
+		setSoundType(SoundType.METAL);
 		setHarvestLevel("pickaxe", 2);
 	}
 	@Override

@@ -5,13 +5,15 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
-import com.NetherNoah.ParadiseMod.world.dimension.DVTeleporter;
+import com.NetherNoah.ParadiseMod.world.dimension.DimTeleporter;
 import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -30,6 +32,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -48,7 +51,7 @@ public class DUPortal extends Block{
 		setDefaultState(blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.Z));
 		setTickRandomly(true);
 		setHardness(0.1F);
-		setSoundType(blockSoundType.GLASS);
+		setSoundType(SoundType.GLASS);
 		setCreativeTab(CreativeTabs.DECORATIONS);
 	}
 	@Override
@@ -81,6 +84,7 @@ public class DUPortal extends Block{
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
+	@Override
 	@Nullable
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
 		return new ItemStack(Misc.DVPortal);
@@ -107,7 +111,7 @@ public class DUPortal extends Block{
 	}
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		return getMetaForAxis((EnumFacing.Axis)state.getValue(AXIS));
+		return getMetaForAxis(state.getValue(AXIS));
 	}
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
@@ -135,7 +139,7 @@ public class DUPortal extends Block{
     {
     }
 	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn) {
-		EnumFacing.Axis enumfacing$axis = (EnumFacing.Axis)state.getValue(AXIS);
+		EnumFacing.Axis enumfacing$axis = state.getValue(AXIS);
 		if(enumfacing$axis == EnumFacing.Axis.X) {
 			DUPortal.Size blockportal$size = new DUPortal.Size(worldIn, pos, EnumFacing.Axis.X);
 			if(!blockportal$size.isValid() || blockportal$size.portalBlockCount < blockportal$size.width * blockportal$size.height) {
@@ -162,46 +166,14 @@ public class DUPortal extends Block{
 			}
 			else if (thePlayer.dimension != DimensionRegistry.DeepUnderground) {
 				thePlayer.timeUntilPortal = 10;
-				thePlayer.mcServer.getPlayerList().transferPlayerToDimension(thePlayer, DimensionRegistry.DeepUnderground, new DVTeleporter(thePlayer.mcServer.getWorld(DimensionRegistry.DeepUnderground),true));
-				
-				if (DVTeleporter.portalExists==false) {
-					worldIn = thePlayer.getEntityWorld();
-					Random rand=new Random();
-					for (int j=-10;j<=10;j++) {
-						for (int i=-10;i<=10;i++) {
-							if (rand.nextInt(2)==1)
-								worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY - 4, thePlayer.posZ + j), Misc.glowingObsidian.getDefaultState());
-							else
-								worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY - 4, thePlayer.posZ + j), Blocks.GLOWSTONE.getDefaultState());
-						}
-					}
-				
-					for (int j=-10;j<=10;j++) {
-						for (int i=-10;i<=10;i++) {
-							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-3, thePlayer.posZ + j), Misc.glowingObsidian.getDefaultState());
-						}
-					}
-					for (int j=-9;j<=9;j++) {
-						for (int i=-9;i<=9;i++) {
-							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-3, thePlayer.posZ + j), Blocks.WATER.getDefaultState());
-						}
-					}
-					for (int i=-3;i<=3;i++) {
-						for (int j=-3;j<=3;j++) {
-							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-3, thePlayer.posZ + j), Misc.VoidStone.getDefaultState());
-						}
-					}
-					for (int i=-2;i<=2;i++) {
-
-						for (int j=-2;j<=2;j++) {
-							worldIn.setBlockState(new BlockPos(thePlayer.posX + i, thePlayer.posY-2, thePlayer.posZ + j), Misc.VoidStone.getDefaultState());
-						}
-					}
-				}
+				if (ModConfig.dimensions.DUEnabled)
+					thePlayer.changeDimension(DimensionRegistry.DeepUnderground,new DimTeleporter(thePlayer.mcServer.getWorld(DimensionRegistry.DeepUnderground),true));
+				else
+					thePlayer.sendMessage(new TextComponentString("You disabled the dimension!"));
 			}
 			else {
 				thePlayer.timeUntilPortal = 10;
-				thePlayer.mcServer.getPlayerList().transferPlayerToDimension(thePlayer, 0, new DVTeleporter(thePlayer.mcServer.getWorld(0),true));
+				thePlayer.changeDimension(0,new DimTeleporter(thePlayer.mcServer.getWorld(0),true));
 			}
 		}
 	}
@@ -215,23 +187,23 @@ public class DUPortal extends Block{
 	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
 		
 		if(rand.nextInt(100) == 0) {
-			worldIn.playSound((double)pos.getX() + 0.5d, (double)pos.getY() + 0.5d, (double)pos.getZ() + 0.5d, SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.MASTER, 0.5f, rand.nextFloat() * 0.4f + 0.8f, false);
+			worldIn.playSound(pos.getX() + 0.5d, pos.getY() + 0.5d, pos.getZ() + 0.5d, SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.MASTER, 0.5f, rand.nextFloat() * 0.4f + 0.8f, false);
 		}
 		for(int i = 0; i < 4; ++i) {
-			double d0 = (double)((float)pos.getX() + rand.nextFloat());
-			double d1 = (double)((float)pos.getY() + rand.nextFloat());
-			double d2 = (double)((float)pos.getZ() + rand.nextFloat());
-			double d3 = ((double)rand.nextFloat() - 0.5d) * 0.5d;
-			double d4 = ((double)rand.nextFloat() - 0.5d) * 0.5d;
-			double d5 = ((double)rand.nextFloat() - 0.5d) * 0.5d;
+			double d0 = pos.getX() + rand.nextFloat();
+			double d1 = pos.getY() + rand.nextFloat();
+			double d2 = pos.getZ() + rand.nextFloat();
+			double d3 = (rand.nextFloat() - 0.5d) * 0.5d;
+			double d4 = (rand.nextFloat() - 0.5d) * 0.5d;
+			double d5 = (rand.nextFloat() - 0.5d) * 0.5d;
 			int j = rand.nextInt(2) * 2 - 1;
 			if(worldIn.getBlockState(pos.west()).getBlock() != this && worldIn.getBlockState(pos.east()).getBlock() != this) {
-				d0 = (double)pos.getX() + 0.5d + 0.25d * (double)j;
-				d3 = (double)(rand.nextFloat() * 2.0f * (float)j);
+				d0 = pos.getX() + 0.5d + 0.25d * j;
+				d3 = rand.nextFloat() * 2.0f * j;
 			}
 			else {
-				d2 = (double)pos.getZ() + 0.5d + 0.25d * (double)j;
-				d5 = (double)(rand.nextFloat() * 2.0f * (float)j);
+				d2 = pos.getZ() + 0.5d + 0.25d * j;
+				d5 = rand.nextFloat() * 2.0f * j;
 			}
 			worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0, d1, d2, d3, d4, d5, new int[0]);
 		}
@@ -241,7 +213,7 @@ public class DUPortal extends Block{
 		switch(rot) {
 		case COUNTERCLOCKWISE_90:
 		case CLOCKWISE_90:		
-			switch((EnumFacing.Axis)state.getValue(AXIS)) {
+			switch(state.getValue(AXIS)) {
 			case X:
 				return state.withProperty(AXIS, EnumFacing.Axis.Z);
 			case Z:
@@ -346,7 +318,7 @@ public class DUPortal extends Block{
                     if (i == 0)
                     {
                         block = world.getBlockState(blockpos.offset(leftDir)).getBlock();
-                        if (block != Ores.endPearlBlock)
+                        if (block != Ores.blazeBlock)
                         {
                             break label24;
                         }
@@ -354,7 +326,7 @@ public class DUPortal extends Block{
                     else if (i == width - 1)
                     {
                         block = world.getBlockState(blockpos.offset(rightDir)).getBlock();
-                        if (block != Ores.endPearlBlock)
+                        if (block != Ores.blazeBlock)
                         {
                             break label24;
                         }
@@ -363,7 +335,7 @@ public class DUPortal extends Block{
             }
             for (int j = 0; j < width; ++j)
             {
-                if (world.getBlockState(bottomLeft.offset(rightDir, j).up(height)).getBlock() != Ores.endPearlBlock)
+                if (world.getBlockState(bottomLeft.offset(rightDir, j).up(height)).getBlock() != Ores.blazeBlock)
                 {
                     height = 0;
                     break;

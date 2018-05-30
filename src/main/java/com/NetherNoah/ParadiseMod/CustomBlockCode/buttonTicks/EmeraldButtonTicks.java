@@ -52,28 +52,34 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
         this.wooden = wooden;
     }
 
-    @Nullable
+    @Override
+	@Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
         return NULL_AABB;
     }
-    public int tickRate(World worldIn)
+    @Override
+	public int tickRate(World worldIn)
     {
         return wooden ? 10 : 20;
     }
-    public boolean isOpaqueCube(IBlockState state)
+    @Override
+	public boolean isOpaqueCube(IBlockState state)
     {
         return false;
     }
-    public boolean isFullCube(IBlockState state)
+    @Override
+	public boolean isFullCube(IBlockState state)
     {
         return false;
     }
-    public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
+    @Override
+	public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
     {
         return canPlaceBlock(worldIn, pos, side.getOpposite());
     }
-    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+    @Override
+	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
         for (EnumFacing enumfacing : EnumFacing.values())
         {
@@ -89,13 +95,15 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
         BlockPos blockpos = pos.offset(direction);
         return worldIn.getBlockState(blockpos).isSideSolid(worldIn, blockpos, direction.getOpposite());
     }
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    @Override
+	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
         return canPlaceBlock(worldIn, pos, facing.getOpposite()) ? getDefaultState().withProperty(FACING, facing).withProperty(POWERED, Boolean.valueOf(false)) : getDefaultState().withProperty(FACING, EnumFacing.DOWN).withProperty(POWERED, Boolean.valueOf(false));
     }
-    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
+    @Override
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
     {
-        if (checkForDrop(worldIn, pos, state) && !canPlaceBlock(worldIn, pos, ((EnumFacing)state.getValue(FACING)).getOpposite()))
+        if (checkForDrop(worldIn, pos, state) && !canPlaceBlock(worldIn, pos, state.getValue(FACING).getOpposite()))
         {
             dropBlockAsItem(worldIn, pos, state, 0);
             worldIn.setBlockToAir(pos);
@@ -114,10 +122,11 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
             return false;
         }
     }
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+    @Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
-        EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
-        boolean flag = ((Boolean)state.getValue(POWERED)).booleanValue();
+        EnumFacing enumfacing = state.getValue(FACING);
+        boolean flag = state.getValue(POWERED).booleanValue();
         switch (enumfacing)
         {
             case EAST:
@@ -135,9 +144,10 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
                 return flag ? AABB_DOWN_ON : AABB_DOWN_OFF;
         }
     }
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    @Override
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        if (((Boolean)state.getValue(POWERED)).booleanValue())
+        if (state.getValue(POWERED).booleanValue())
         {
             return true;
         }
@@ -146,41 +156,47 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
             worldIn.setBlockState(pos, state.withProperty(POWERED, Boolean.valueOf(true)), 3);
             worldIn.markBlockRangeForRenderUpdate(pos, pos);
             playClickSound(playerIn, worldIn, pos);
-            notifyNeighbors(worldIn, pos, (EnumFacing)state.getValue(FACING));
+            notifyNeighbors(worldIn, pos, state.getValue(FACING));
             worldIn.scheduleUpdate(pos, this, tickRate(worldIn));
             return true;
         }
     }
     protected abstract void playClickSound(@Nullable EntityPlayer player, World worldIn, BlockPos pos);
     protected abstract void playReleaseSound(World worldIn, BlockPos pos);
-    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    @Override
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
     {
-        if (((Boolean)state.getValue(POWERED)).booleanValue())
+        if (state.getValue(POWERED).booleanValue())
         {
-            notifyNeighbors(worldIn, pos, (EnumFacing)state.getValue(FACING));
+            notifyNeighbors(worldIn, pos, state.getValue(FACING));
         }
         super.breakBlock(worldIn, pos, state);
     }
-    public int getWeakPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
+    @Override
+	public int getWeakPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
     {
-        return ((Boolean)blockState.getValue(POWERED)).booleanValue() ? 15 : 0;
+        return blockState.getValue(POWERED).booleanValue() ? 15 : 0;
     }
-    public int getStrongPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
+    @Override
+	public int getStrongPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
     {
-        return !((Boolean)blockState.getValue(POWERED)).booleanValue() ? 0 : (blockState.getValue(FACING) == side ? 15 : 0);
+        return !blockState.getValue(POWERED).booleanValue() ? 0 : (blockState.getValue(FACING) == side ? 15 : 0);
     }
-    public boolean canProvidePower(IBlockState state)
+    @Override
+	public boolean canProvidePower(IBlockState state)
     {
         return true;
     }
-    public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random)
+    @Override
+	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random)
     {
     }
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+    @Override
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
         if (!worldIn.isRemote)
         {
-            if (((Boolean)state.getValue(POWERED)).booleanValue())
+            if (state.getValue(POWERED).booleanValue())
             {
                 if (wooden)
                 {
@@ -189,20 +205,21 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
                 else
                 {
                     worldIn.setBlockState(pos, state.withProperty(POWERED, Boolean.valueOf(false)));
-                    notifyNeighbors(worldIn, pos, (EnumFacing)state.getValue(FACING));
+                    notifyNeighbors(worldIn, pos, state.getValue(FACING));
                     playReleaseSound(worldIn, pos);
                     worldIn.markBlockRangeForRenderUpdate(pos, pos);
                 }
             }
         }
     }
-    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
+    @Override
+	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
         if (!worldIn.isRemote)
         {
             if (wooden)
             {
-                if (!((Boolean)state.getValue(POWERED)).booleanValue())
+                if (!state.getValue(POWERED).booleanValue())
                 {
                     checkPressed(state, worldIn, pos);
                 }
@@ -213,18 +230,18 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
     {
         List <? extends Entity > list = p_185616_2_.<Entity>getEntitiesWithinAABB(EntityArrow.class, p_185616_1_.getBoundingBox(p_185616_2_, p_185616_3_).offset(p_185616_3_));
         boolean flag = !list.isEmpty();
-        boolean flag1 = ((Boolean)p_185616_1_.getValue(POWERED)).booleanValue();
+        boolean flag1 = p_185616_1_.getValue(POWERED).booleanValue();
         if (flag && !flag1)
         {
             p_185616_2_.setBlockState(p_185616_3_, p_185616_1_.withProperty(POWERED, Boolean.valueOf(true)));
-            notifyNeighbors(p_185616_2_, p_185616_3_, (EnumFacing)p_185616_1_.getValue(FACING));
+            notifyNeighbors(p_185616_2_, p_185616_3_, p_185616_1_.getValue(FACING));
             p_185616_2_.markBlockRangeForRenderUpdate(p_185616_3_, p_185616_3_);
             playClickSound((EntityPlayer)null, p_185616_2_, p_185616_3_);
         }
         if (!flag && flag1)
         {
             p_185616_2_.setBlockState(p_185616_3_, p_185616_1_.withProperty(POWERED, Boolean.valueOf(false)));
-            notifyNeighbors(p_185616_2_, p_185616_3_, (EnumFacing)p_185616_1_.getValue(FACING));
+            notifyNeighbors(p_185616_2_, p_185616_3_, p_185616_1_.getValue(FACING));
             p_185616_2_.markBlockRangeForRenderUpdate(p_185616_3_, p_185616_3_);
             this.playReleaseSound(p_185616_2_, p_185616_3_);
         }
@@ -238,7 +255,8 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
         worldIn.notifyNeighborsOfStateChange(pos, this, false);
         worldIn.notifyNeighborsOfStateChange(pos.offset(facing.getOpposite()), this, false);
     }
-    public IBlockState getStateFromMeta(int meta)
+    @Override
+	public IBlockState getStateFromMeta(int meta)
     {
         EnumFacing enumfacing;
 
@@ -265,10 +283,11 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
         }
         return this.getDefaultState().withProperty(FACING, enumfacing).withProperty(POWERED, Boolean.valueOf((meta & 8) > 0));
     }
-    public int getMetaFromState(IBlockState state)
+    @Override
+	public int getMetaFromState(IBlockState state)
     {
         int i;
-        switch ((EnumFacing)state.getValue(FACING))
+        switch (state.getValue(FACING))
         {
             case EAST:
                 i = 1;
@@ -289,21 +308,24 @@ public abstract class EmeraldButtonTicks extends BlockDirectional
             case DOWN:
                 i = 0;
         }
-        if (((Boolean)state.getValue(POWERED)).booleanValue())
+        if (state.getValue(POWERED).booleanValue())
         {
             i |= 8;
         }
         return i;
     }
-    public IBlockState withRotation(IBlockState state, Rotation rot)
+    @Override
+	public IBlockState withRotation(IBlockState state, Rotation rot)
     {
-        return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
+        return state.withProperty(FACING, rot.rotate(state.getValue(FACING)));
     }
-    public IBlockState withMirror(IBlockState state, Mirror mirrorIn)
+    @Override
+	public IBlockState withMirror(IBlockState state, Mirror mirrorIn)
     {
-        return state.withRotation(mirrorIn.toRotation((EnumFacing)state.getValue(FACING)));
+        return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
     }
-    protected BlockStateContainer createBlockState()
+    @Override
+	protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {FACING, POWERED});
     }

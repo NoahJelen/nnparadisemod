@@ -3,11 +3,10 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -29,6 +28,8 @@ public class MinerbaseGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":miner_base"));
+		if(ModConfig.worldgen.structures.MinerBase==false)
+			return false;
 		if(template == null)
 		{
 			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
@@ -36,7 +37,7 @@ public class MinerbaseGen extends WorldGenerator {
 		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(MinerbaseGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(999) == 0){
+			if(rand.nextInt(ModConfig.worldgen.structures.MinerBaseChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

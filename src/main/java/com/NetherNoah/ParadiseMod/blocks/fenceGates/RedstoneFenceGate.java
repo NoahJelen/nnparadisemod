@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.blocks.fenceGates;
 import com.NetherNoah.ParadiseMod.CustomBlockCode.RSFenceGate;
 
 import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.EnumFacing;
@@ -17,7 +18,7 @@ public class RedstoneFenceGate extends RSFenceGate {
 		setHardness(5F);
 		setResistance(10F);
 		setCreativeTab(CreativeTabs.REDSTONE);
-		setSoundType(blockSoundType.METAL);
+		setSoundType(SoundType.METAL);
 		setHarvestLevel("pickaxe", 2);
 	}
 	// this fence post is a rs power block!

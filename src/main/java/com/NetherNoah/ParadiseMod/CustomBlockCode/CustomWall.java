@@ -61,19 +61,19 @@ public abstract class CustomWall extends Block
     private static int getAABBIndex(IBlockState state)
     {
         int i = 0;
-        if (((Boolean)state.getValue(NORTH)).booleanValue())
+        if (state.getValue(NORTH).booleanValue())
         {
             i |= 1 << EnumFacing.NORTH.getHorizontalIndex();
         }
-        if (((Boolean)state.getValue(EAST)).booleanValue())
+        if (state.getValue(EAST).booleanValue())
         {
             i |= 1 << EnumFacing.EAST.getHorizontalIndex();
         }
-        if (((Boolean)state.getValue(SOUTH)).booleanValue())
+        if (state.getValue(SOUTH).booleanValue())
         {
             i |= 1 << EnumFacing.SOUTH.getHorizontalIndex();
         }
-        if (((Boolean)state.getValue(WEST)).booleanValue())
+        if (state.getValue(WEST).booleanValue())
         {
             i |= 1 << EnumFacing.WEST.getHorizontalIndex();
         }
@@ -100,7 +100,8 @@ public abstract class CustomWall extends Block
         Block block = iblockstate.getBlock();
         return block == Blocks.BARRIER || block == this || block instanceof BlockWall || block instanceof CustomWall || block instanceof BlockFenceGate || block instanceof BlockFence || (block.isOpaqueCube(iblockstate) && iblockstate.isFullCube());
     }
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
     {
         return side == EnumFacing.DOWN ? super.shouldSideBeRendered(blockState, blockAccess, pos, side) : true;

@@ -12,6 +12,7 @@ import com.NetherNoah.ParadiseMod.blocks.ores.SaltOre;
 import com.NetherNoah.ParadiseMod.blocks.ores.SilverOre;
 import com.NetherNoah.ParadiseMod.blocks.ores.SilverOreNether;
 import com.NetherNoah.ParadiseMod.blocks.ores.SilverOreVoid;
+import com.NetherNoah.ParadiseMod.blocks.ores.VoidPearlOre;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.BlockRuby;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.BlockRustyIron;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.SaltBlock;
@@ -19,14 +20,10 @@ import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.SilverBlock;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.blazeBlock;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.endPearlBlock;
 import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.sugarBlock;
+import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.voidPearlBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class Ores {
 	//resource blocks
@@ -37,6 +34,7 @@ public class Ores {
 	public static Block SilverBlock;
 	public static Block SaltBlock;
 	public static Block endPearlBlock;
+	public static Block voidPearlBlock;
 	
 	//ores
 	public static Block SilverOreVoid;
@@ -50,10 +48,12 @@ public class Ores {
 	public static Block EndRubyOre;
 	public static Block SilverOre;
 	public static Block SaltOre;
+	public static Block VoidPearlOre;
 
 	public static void initAndRegister() {
 		
 		//ores
+		Utils.regBlock(VoidPearlOre=new VoidPearlOre());
 		Utils.regBlock(CoalOreVoid=new CoalOreVoid());
 		Utils.regBlock(GoldOreVoid=new GoldOreVoid());
 		Utils.regBlock(IronOreVoid=new IronOreVoid());
@@ -67,6 +67,7 @@ public class Ores {
 		Utils.regBlock(SaltOre=new SaltOre());
 		
 		//resource blocks
+		Utils.regBlock(voidPearlBlock=new voidPearlBlock());
 		Utils.regBlock(blazeBlock=new blazeBlock());
 		Utils.regBlock(sugarBlock=new sugarBlock());
 		Utils.regBlock(RubyBlock = new BlockRuby());
@@ -75,7 +76,9 @@ public class Ores {
 		Utils.regBlock(endPearlBlock=new endPearlBlock());
 		Utils.regBlock(RustyIronBlock=new BlockRustyIron());
 	}
-	public static void regRenders() {		
+	public static void regRenders() {
+		Utils.regRender(voidPearlBlock);
+		Utils.regRender(VoidPearlOre);
 		Utils.regRender(SilverOreVoid);
 		Utils.regRender(CoalOreVoid);
 		Utils.regRender(GoldOreVoid);

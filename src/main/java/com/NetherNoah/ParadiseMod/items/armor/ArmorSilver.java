@@ -8,7 +8,8 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.util.ResourceLocation;
 
 public class ArmorSilver extends ItemArmor {
-	public ArmorSilver(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, String unlocalizedName) {
+	public ArmorSilver(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn,
+			String unlocalizedName) {
 		super(materialIn, renderIndexIn, equipmentSlotIn);
 		setUnlocalizedName(unlocalizedName);
 		setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));

@@ -22,13 +22,7 @@ import com.NetherNoah.ParadiseMod.blocks.trapdoors.RustyTrapdoor;
 import com.NetherNoah.ParadiseMod.blocks.trapdoors.SilverTrapdoor;
 import com.NetherNoah.ParadiseMod.blocks.trapdoors.StoneTrapdoor;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockTrapDoor;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class Trapdoors {
 	//trapdoors

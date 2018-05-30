@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -29,6 +30,8 @@ public class WickerManGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":wicker_man"));
+		if (ModConfig.worldgen.structures.WickerMan==false)
+			return false;
 		if(template == null)
 		{
 			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
@@ -37,7 +40,7 @@ public class WickerManGen extends WorldGenerator {
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS|| biome == Biomes.BIRCH_FOREST_HILLS|| biome == Biomes.FOREST_HILLS) {
 			if(WickerManGen.canSpawnHere(template, worldserver, position)) {
-				if(rand.nextInt(799) == 0){
+				if(rand.nextInt(ModConfig.worldgen.structures.WickerManChance) == 0){
 					IBlockState iblockstate = world.getBlockState(position);
 					world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 					PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

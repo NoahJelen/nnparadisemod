@@ -1,6 +1,7 @@
 package com.NetherNoah.ParadiseMod.blocks.fences;
 
 import net.minecraft.block.BlockFence;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -17,7 +18,7 @@ public class RedstoneFence extends BlockFence {
 		setHardness(5F);
 		setResistance(10F);
 		setCreativeTab(CreativeTabs.DECORATIONS);
-		setSoundType(blockSoundType.METAL);
+		setSoundType(SoundType.METAL);
 		setHarvestLevel("pickaxe", 2);
 	}
 	// this fence post is a rs power block!

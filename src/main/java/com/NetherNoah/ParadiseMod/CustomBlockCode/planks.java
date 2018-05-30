@@ -25,9 +25,10 @@ public class planks extends Block
         setDefaultState(blockState.getBaseState().withProperty(VARIANT, planks.EnumType.CHRISTMAS));
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
     }
-    public int damageDropped(IBlockState state)
+    @Override
+	public int damageDropped(IBlockState state)
     {
-        return ((planks.EnumType)state.getValue(VARIANT)).getMetadata();
+        return state.getValue(VARIANT).getMetadata();
     }
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
@@ -37,19 +38,22 @@ public class planks extends Block
             list.add(new ItemStack(itemIn, 1, blockplanks$enumtype.getMetadata()));
         }
     }
-    public IBlockState getStateFromMeta(int meta)
+    @Override
+	public IBlockState getStateFromMeta(int meta)
     {
         return getDefaultState().withProperty(VARIANT, planks.EnumType.byMetadata(meta));
     }
     public MapColor getMapColor(IBlockState state)
     {
-        return ((planks.EnumType)state.getValue(VARIANT)).getMapColor();
+        return state.getValue(VARIANT).getMapColor();
     }
-    public int getMetaFromState(IBlockState state)
+    @Override
+	public int getMetaFromState(IBlockState state)
     {
-        return ((planks.EnumType)state.getValue(VARIANT)).getMetadata();
+        return state.getValue(VARIANT).getMetadata();
     }
-    protected BlockStateContainer createBlockState()
+    @Override
+	protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {VARIANT});
     }
@@ -80,7 +84,8 @@ public class planks extends Block
         {
             return mapColor;
         }
-        public String toString()
+        @Override
+		public String toString()
         {
             return name;
         }
@@ -92,7 +97,8 @@ public class planks extends Block
             }
             return META_LOOKUP[meta];
         }
-        public String getName()
+        @Override
+		public String getName()
         {
             return name;
         }

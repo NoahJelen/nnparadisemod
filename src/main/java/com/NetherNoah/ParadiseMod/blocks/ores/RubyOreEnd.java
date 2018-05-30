@@ -2,8 +2,8 @@ package com.NetherNoah.ParadiseMod.blocks.ores;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModItems;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
+import com.NetherNoah.ParadiseMod.init.ModItems.MiscItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -39,7 +39,7 @@ public class RubyOreEnd extends Block {
 	// get item to drop
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return ModItems.Ruby;
+		return MiscItems.Ruby;
 	}
 	// get amount of items to drop
 	@Override
@@ -80,6 +80,6 @@ public class RubyOreEnd extends Block {
 	// spawn the actual item
 	@Override
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
-		return new ItemStack(ModItems.Ruby);
+		return new ItemStack(MiscItems.Ruby);
 	}
 }

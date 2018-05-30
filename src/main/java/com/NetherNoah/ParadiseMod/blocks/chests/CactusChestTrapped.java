@@ -1,9 +1,9 @@
 package com.NetherNoah.ParadiseMod.blocks.chests;
 
-import com.NetherNoah.ParadiseMod.Reference;
-import com.NetherNoah.ParadiseMod.tileentity.TileEntityCactusChest;
+import com.NetherNoah.ParadiseMod.tileentity.chest.TileEntityCactusChest;
 
 import net.minecraft.block.BlockChest;
+import net.minecraft.block.SoundType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -16,7 +16,7 @@ public class CactusChestTrapped extends BlockChest {
 		setHardness(.5F);
 		setResistance(1F);
 		setCreativeTab(CreativeTabs.REDSTONE);
-		setSoundType(blockSoundType.CLOTH);
+		setSoundType(SoundType.CLOTH);
 	}
 	@Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {

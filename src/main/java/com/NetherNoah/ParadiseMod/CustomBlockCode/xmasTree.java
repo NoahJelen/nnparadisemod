@@ -2,7 +2,7 @@ package com.NetherNoah.ParadiseMod.CustomBlockCode;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.world.worldgen.ChristmasTree;
+import com.NetherNoah.ParadiseMod.world.worldgen.misc.ChristmasTree;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -37,15 +37,18 @@ public class xmasTree extends BlockBush implements IGrowable
         setDefaultState(blockState.getBaseState().withProperty(TYPE, planks.EnumType.CHRISTMAS).withProperty(STAGE, Integer.valueOf(0)));
         setCreativeTab(CreativeTabs.DECORATIONS);
     }
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+    @Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
         return SAPLING_AABB;
     }
-    public String getLocalizedName()
+    @Override
+	public String getLocalizedName()
     {
         return I18n.translateToLocal(getUnlocalizedName() + "." + planks.EnumType.CHRISTMAS.getUnlocalizedName() + ".name");
     }
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+    @Override
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
         if (!worldIn.isRemote)
         {
@@ -58,7 +61,7 @@ public class xmasTree extends BlockBush implements IGrowable
     }
     public void grow(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-        if (((Integer)state.getValue(STAGE)).intValue() == 0)
+        if (state.getValue(STAGE).intValue() == 0)
         {
             worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
         }
@@ -70,11 +73,11 @@ public class xmasTree extends BlockBush implements IGrowable
     public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
         if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
-        WorldGenerator worldgenerator = (WorldGenerator)(rand.nextInt(10) == 0 ? new WorldGenBigTree(true) : new WorldGenTrees(true));
+        WorldGenerator worldgenerator = rand.nextInt(10) == 0 ? new WorldGenBigTree(true) : new WorldGenTrees(true);
         int i = 0;
         int j = 0;
         boolean flag = false;
-        switch ((planks.EnumType)state.getValue(TYPE))
+        switch (state.getValue(TYPE))
         {
             case CHRISTMAS:
                 label114:
@@ -134,9 +137,10 @@ public class xmasTree extends BlockBush implements IGrowable
         IBlockState iblockstate = worldIn.getBlockState(pos);
         return iblockstate.getBlock() == this && iblockstate.getValue(TYPE) == type;
     }
-    public int damageDropped(IBlockState state)
+    @Override
+	public int damageDropped(IBlockState state)
     {
-        return ((planks.EnumType)state.getValue(TYPE)).getMetadata();
+        return state.getValue(TYPE).getMetadata();
     }
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
@@ -146,30 +150,36 @@ public class xmasTree extends BlockBush implements IGrowable
             list.add(new ItemStack(itemIn, 1, planks$enumtype.getMetadata()));
         }
     }
-    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
+    @Override
+	public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
     {
         return true;
     }
-    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
+    @Override
+	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
     {
-        return (double)worldIn.rand.nextFloat() < 0.45D;
+        return worldIn.rand.nextFloat() < 0.45D;
     }
-    public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state)
+    @Override
+	public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state)
     {
         grow(worldIn, pos, state, rand);
     }
-    public IBlockState getStateFromMeta(int meta)
+    @Override
+	public IBlockState getStateFromMeta(int meta)
     {
         return getDefaultState().withProperty(TYPE, planks.EnumType.byMetadata(meta & 7)).withProperty(STAGE, Integer.valueOf((meta & 8) >> 3));
     }
-    public int getMetaFromState(IBlockState state)
+    @Override
+	public int getMetaFromState(IBlockState state)
     {
         int i = 0;
-        i = i | ((planks.EnumType)state.getValue(TYPE)).getMetadata();
-        i = i | ((Integer)state.getValue(STAGE)).intValue() << 3;
+        i = i | state.getValue(TYPE).getMetadata();
+        i = i | state.getValue(STAGE).intValue() << 3;
         return i;
     }
-    protected BlockStateContainer createBlockState()
+    @Override
+	protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {TYPE, STAGE});
     }

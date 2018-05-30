@@ -3,10 +3,10 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
@@ -33,10 +33,12 @@ public class RunwayGen extends WorldGenerator {
 		{
 			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
 			return false;
-		}		
+		}
+		if (ModConfig.worldgen.structures.Runway==false)
+			return false;	
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(RunwayGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(799) == 0){
+			if(rand.nextInt(ModConfig.worldgen.structures.RunwayChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

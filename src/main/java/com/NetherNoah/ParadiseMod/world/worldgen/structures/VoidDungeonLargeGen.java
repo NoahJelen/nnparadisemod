@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
@@ -32,13 +33,15 @@ public class VoidDungeonLargeGen extends WorldGenerator {
 		Template part2 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":void_dungeon_large_piece_2"));
 		Template part3 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":void_dungeon_large_piece_3"));
 		Template part4 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":void_dungeon_large_piece_4"));
+		if (ModConfig.worldgen.structures.VoidDungeonLarge==false)
+			return false;
 		if(part1 == null)
 		{
 			return false;
 		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(VoidDungeonLargeGen.canSpawnHere(part1, worldserver, position)) {
-			if(rand.nextInt(999) == 0){
+			if(rand.nextInt(ModConfig.worldgen.structures.VoidDungeonLargeChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

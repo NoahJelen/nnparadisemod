@@ -3,10 +3,10 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
@@ -31,8 +31,9 @@ public class LandMineStoneGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":landmine_stone"));
-
-		 if(rand.nextInt(10) == 0){
+		if(ModConfig.worldgen.structures.Landmines==false)
+			return false;
+		if(rand.nextInt(ModConfig.worldgen.structures.LandminesChance) == 0){
 			IBlockState iblockstate = world.getBlockState(position);
 			world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 			PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

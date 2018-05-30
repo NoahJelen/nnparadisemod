@@ -1,6 +1,7 @@
 package com.NetherNoah.ParadiseMod.blocks.redstone;
 
 import net.minecraft.block.BlockRailPowered;
+import net.minecraft.block.SoundType;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -10,7 +11,7 @@ public class emeraldRailPowered extends BlockRailPowered {
 	public emeraldRailPowered() {
 		setUnlocalizedName("emeraldRailPowered");
 		setRegistryName("powered_emerald_rail");
-		setSoundType(blockSoundType.METAL);
+		setSoundType(SoundType.METAL);
 	}
 	@Override
     public float getRailMaxSpeed(World world, EntityMinecart cart, BlockPos pos) {

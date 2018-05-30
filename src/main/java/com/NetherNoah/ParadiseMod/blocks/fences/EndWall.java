@@ -4,7 +4,6 @@ import com.NetherNoah.ParadiseMod.CustomBlockCode.CustomWall;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 
 public class EndWall extends CustomWall {
 	public EndWall() {

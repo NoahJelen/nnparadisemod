@@ -32,6 +32,7 @@ public class LiquidRedstone {
 		FluidRegistry.registerFluid(FluidLiquidRedstone.instance);
 		ForgeRegistries.BLOCKS.register(BlockLiquidRedstone.instance);
 		ModelLoader.setCustomStateMapper(BlockLiquidRedstone.instance, new StateMapperBase() {
+			@SuppressWarnings("synthetic-access")
 			@Override
 			protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
 				return lr_location;
@@ -64,12 +65,12 @@ public class LiquidRedstone {
 		}
 		@Override
 		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-			double d0 = (double)pos.getX();
-	        double d1 = (double)pos.getY();
-	        double d2 = (double)pos.getZ();
-            double d8 = d0 + (double)rand.nextFloat();
+			double d0 = pos.getX();
+	        double d1 = pos.getY();
+	        double d2 = pos.getZ();
+            double d8 = d0 + rand.nextFloat();
             double d4 = d1 + stateIn.getBoundingBox(worldIn, pos).maxY;
-            double d6 = d2 + (double)rand.nextFloat();
+            double d6 = d2 + rand.nextFloat();
 			if(rand.nextInt(100) == 0) {
                 worldIn.spawnParticle(EnumParticleTypes.LAVA, d8, d4, d6, 0.0D, 0.0D, 0.0D, new int[0]);
                 worldIn.playSound(d8, d4, d6, SoundEvents.BLOCK_LAVA_POP, SoundCategory.BLOCKS, 0.2F + rand.nextFloat() * 0.2F, 0.9F + rand.nextFloat() * 0.15F, false);

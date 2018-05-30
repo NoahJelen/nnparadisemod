@@ -35,7 +35,7 @@ public class BrickPyramid extends WorldGenerator implements IWorldGenerator{
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == Blocks.GRAVEL;
+			foundGround =  blockAt == Blocks.GRAVEL||blockAt == Blocks.GRASS||blockAt == Blocks.SAND||blockAt == Blocks.DIRT||blockAt == Blocks.STONE;
 		}
 		return y;
 	}

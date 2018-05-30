@@ -3,11 +3,11 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -30,14 +30,17 @@ public class OceanGen extends WorldGenerator {
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = null;
 		int selectStructure=rand.nextInt(2);
-		int rarity=799;
+		int rarity=ModConfig.worldgen.structures.ShipwreckChance;
 		if (selectStructure==0) {
-			rarity=599;
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":ocean_village"));
+			if (ModConfig.worldgen.structures.OceanVillage==true) {
+				rarity=ModConfig.worldgen.structures.OceanVillageChance;
+				template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":ocean_village"));
+			}
 		}
 		
 		if (selectStructure==1)
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":ship"));
+			if (ModConfig.worldgen.structures.Shipwreck==true)
+				template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":ship"));
 		
 		if(template == null)
 			return false;

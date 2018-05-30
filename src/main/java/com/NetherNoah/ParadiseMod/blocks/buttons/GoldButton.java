@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import com.NetherNoah.ParadiseMod.CustomBlockCode.buttonTicks.QuickButton;
 
+import net.minecraft.block.SoundType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.SoundCategory;
@@ -17,7 +18,7 @@ public class GoldButton extends QuickButton {
 		setUnlocalizedName("GoldButton");
 		setRegistryName("gold_button");
 		setHardness(0.5F);
-		setSoundType(blockSoundType.METAL);
+		setSoundType(SoundType.METAL);
 	}
 	@Override
 	protected void playClickSound(@Nullable EntityPlayer player, World worldIn, BlockPos pos) {

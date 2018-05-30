@@ -177,3 +177,12 @@
     Added Void Stone Button and Void Stone Pressure Plate
     Added Void Stone Wall
 
+1.1 Test 3:
+    Fixed an annoying bug with dimension teleportation
+    Added Regeneration Stone
+    Added Void Pearl
+    Added Void Pearl Ore
+    Added Void Pearl Block
+    Added a config file
+    Brick Pyramids are no longer limited to ocean biomes
+    The mod now shows its newest version

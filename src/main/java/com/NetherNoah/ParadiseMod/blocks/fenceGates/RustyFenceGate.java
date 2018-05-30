@@ -2,6 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.fenceGates;
 
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.SoundType;
 import net.minecraft.creativetab.CreativeTabs;
 
 public class RustyFenceGate extends BlockFenceGate {
@@ -12,7 +13,7 @@ public class RustyFenceGate extends BlockFenceGate {
 		setHardness(5F);
 		setResistance(10F);
 		setCreativeTab(CreativeTabs.REDSTONE);
-		setSoundType(blockSoundType.METAL);
+		setSoundType(SoundType.METAL);
 		setHarvestLevel("pickaxe", 1);
 	}
 }

@@ -3,11 +3,11 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -29,6 +29,8 @@ public class MesaTempleGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":mesa_temple"));
+		if(ModConfig.worldgen.structures.MesaTemple==false)
+			return false;
 		if(template == null)
 		{
 			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
@@ -37,7 +39,7 @@ public class MesaTempleGen extends WorldGenerator {
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(biome == Biomes.MESA||biome == Biomes.MESA_CLEAR_ROCK||biome == Biomes.MESA_ROCK||biome == Biomes.MUTATED_MESA||biome == Biomes.MUTATED_MESA_CLEAR_ROCK||biome == Biomes.MUTATED_MESA_ROCK) {
 			if(MesaTempleGen.canSpawnHere(template, worldserver, position)) {
-				if(rand.nextInt(499) == 0){
+				if(rand.nextInt(ModConfig.worldgen.structures.MesaTempleChance) == 0){
 					IBlockState iblockstate = world.getBlockState(position);
 					world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 					PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

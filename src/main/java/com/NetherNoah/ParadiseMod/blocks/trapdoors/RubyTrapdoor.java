@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.blocks.trapdoors;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockTrapDoor;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +17,7 @@ public class RubyTrapdoor extends BlockTrapDoor {
 		setRegistryName("ruby_trapdoor");
 		setHardness(5F);
 		setResistance(10F);
-		setSoundType(blockSoundType.METAL);
+		setSoundType(SoundType.METAL);
 		setCreativeTab(CreativeTabs.REDSTONE);
 		setHarvestLevel("pickaxe", 2);
 	}

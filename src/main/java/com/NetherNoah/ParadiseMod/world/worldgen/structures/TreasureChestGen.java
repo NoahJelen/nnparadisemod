@@ -3,11 +3,10 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -32,10 +31,12 @@ public class TreasureChestGen extends WorldGenerator {
 		if(template == null)
 		{
 			return false;
-		}		
+		}
+		if (ModConfig.worldgen.structures.TreasureChest==false)
+			return false;
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(TreasureChestGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(999) == 0){
+			if(rand.nextInt(ModConfig.worldgen.structures.TreasureChestChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

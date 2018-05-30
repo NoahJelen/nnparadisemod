@@ -1,13 +1,12 @@
 package com.NetherNoah.ParadiseMod.blocks.buttons;
 
-import com.NetherNoah.ParadiseMod.Reference;
-
 import net.minecraft.block.BlockButtonStone;
+import net.minecraft.block.SoundType;
 
 public class GrassButton  extends BlockButtonStone  {
 	public GrassButton() {
 		setUnlocalizedName("GrassButton");
 		setRegistryName("grass_button");
-		setSoundType(blockSoundType.PLANT);
+		setSoundType(SoundType.PLANT);
 	}
 }

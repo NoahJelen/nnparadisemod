@@ -20,3 +20,10 @@ build
 # other
 eclipse
 run
+config
+crash-reports
+saves
+logs
+options.txt
+forge-1.12.2-14.23.3.2689-mdk.zip
+mods

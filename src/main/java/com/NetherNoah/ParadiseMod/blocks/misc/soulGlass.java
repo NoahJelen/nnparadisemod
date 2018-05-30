@@ -4,6 +4,7 @@ import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,7 +23,7 @@ public class soulGlass extends BlockBreakable {
 		setHardness(.5F);
 		setResistance(1F);
 		setLightLevel(1F);
-		setSoundType(blockSoundType.GLASS);
+		setSoundType(SoundType.GLASS);
 		setDefaultSlipperiness(1F);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 	}

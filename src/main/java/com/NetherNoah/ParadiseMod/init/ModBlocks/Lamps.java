@@ -35,12 +35,7 @@ import com.NetherNoah.ParadiseMod.blocks.redstone.lamps.lit.LitSilverRSLamp;
 import com.NetherNoah.ParadiseMod.blocks.redstone.lamps.lit.LitWhiteRSLamp;
 import com.NetherNoah.ParadiseMod.blocks.redstone.lamps.lit.LitYellowRSLamp;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockRedstoneLight;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class Lamps {

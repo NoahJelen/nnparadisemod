@@ -1,6 +1,7 @@
 package com.NetherNoah.ParadiseMod.blocks.misc;
 
 import net.minecraft.block.BlockPane;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
@@ -14,7 +15,7 @@ public class soulGlassPane extends BlockPane {
 		setHardness(.5F);
 		setResistance(1F);
 		setLightLevel(1F);
-		setSoundType(blockSoundType.GLASS);
+		setSoundType(SoundType.GLASS);
 		setDefaultSlipperiness(1F);
 	}
 	@Override

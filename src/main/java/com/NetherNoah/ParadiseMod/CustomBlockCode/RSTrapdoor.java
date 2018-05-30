@@ -45,12 +45,13 @@ public class RSTrapdoor extends Block{
     protected static final AxisAlignedBB NORTH_OPEN_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.8125D, 1.0D, 1.0D, 1.0D);
     protected static final AxisAlignedBB BOTTOM_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.1875D, 1.0D);
     protected static final AxisAlignedBB TOP_AABB = new AxisAlignedBB(0.0D, 0.8125D, 0.0D, 1.0D, 1.0D, 1.0D);
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+    @Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
         AxisAlignedBB axisalignedbb;
-        if (((Boolean)state.getValue(OPEN)).booleanValue())
+        if (state.getValue(OPEN).booleanValue())
         {
-            switch ((EnumFacing)state.getValue(FACING))
+            switch (state.getValue(FACING))
             {
                 case NORTH:
                 default:
@@ -76,19 +77,23 @@ public class RSTrapdoor extends Block{
         }
         return axisalignedbb;
     }
-    public boolean isOpaqueCube(IBlockState state)
+    @Override
+	public boolean isOpaqueCube(IBlockState state)
     {
         return false;
     }
-    public boolean isFullCube(IBlockState state)
+    @Override
+	public boolean isFullCube(IBlockState state)
     {
         return false;
     }
-    public boolean isPassable(IBlockAccess worldIn, BlockPos pos)
+    @Override
+	public boolean isPassable(IBlockAccess worldIn, BlockPos pos)
     {
-        return !((Boolean)worldIn.getBlockState(pos).getValue(OPEN)).booleanValue();
+        return !worldIn.getBlockState(pos).getValue(OPEN).booleanValue();
     }
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    @Override
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (blockMaterial == Material.IRON)
         {
@@ -98,7 +103,7 @@ public class RSTrapdoor extends Block{
         {
             state = state.cycleProperty(OPEN);
             worldIn.setBlockState(pos, state, 2);
-            playSound(playerIn, worldIn, pos, ((Boolean)state.getValue(OPEN)).booleanValue());
+            playSound(playerIn, worldIn, pos, state.getValue(OPEN).booleanValue());
             return true;
         }
     }
@@ -115,7 +120,8 @@ public class RSTrapdoor extends Block{
             worldIn.playEvent(player, j, pos, 0);
         }
     }
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    @Override
+	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
         IBlockState iblockstate = getDefaultState();
         if (facing.getAxis().isHorizontal())
@@ -134,7 +140,8 @@ public class RSTrapdoor extends Block{
         }
         return iblockstate;
     }
-    public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
+    @Override
+	public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
     {
         return true;
     }
@@ -168,20 +175,23 @@ public class RSTrapdoor extends Block{
                 return 3;
         }
     }
-    public IBlockState getStateFromMeta(int meta)
+    @Override
+	public IBlockState getStateFromMeta(int meta)
     {
         return getDefaultState().withProperty(FACING, getFacing(meta)).withProperty(OPEN, Boolean.valueOf((meta & 4) != 0)).withProperty(HALF, (meta & 8) == 0 ? BlockTrapDoor.DoorHalf.BOTTOM : BlockTrapDoor.DoorHalf.TOP);
     }
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
-    public int getMetaFromState(IBlockState state)
+    @Override
+	public int getMetaFromState(IBlockState state)
     {
         int i = 0;
-        i = i | getMetaForFacing((EnumFacing)state.getValue(FACING));
-        if (((Boolean)state.getValue(OPEN)).booleanValue())
+        i = i | getMetaForFacing(state.getValue(FACING));
+        if (state.getValue(OPEN).booleanValue())
         {
             i |= 4;
         }
@@ -191,15 +201,18 @@ public class RSTrapdoor extends Block{
         }
         return i;
     }
-    public IBlockState withRotation(IBlockState state, Rotation rot)
+    @Override
+	public IBlockState withRotation(IBlockState state, Rotation rot)
     {
-        return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
+        return state.withProperty(FACING, rot.rotate(state.getValue(FACING)));
     }
-    public IBlockState withMirror(IBlockState state, Mirror mirrorIn)
+    @Override
+	public IBlockState withMirror(IBlockState state, Mirror mirrorIn)
     {
-        return state.withRotation(mirrorIn.toRotation((EnumFacing)state.getValue(FACING)));
+        return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
     }
-    protected BlockStateContainer createBlockState()
+    @Override
+	protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {FACING, OPEN, HALF});
     }
@@ -223,11 +236,13 @@ public class RSTrapdoor extends Block{
         {
             this.name = name;
         }
-        public String toString()
+        @Override
+		public String toString()
         {
             return name;
         }
-        public String getName()
+        @Override
+		public String getName()
         {
             return name;
         }

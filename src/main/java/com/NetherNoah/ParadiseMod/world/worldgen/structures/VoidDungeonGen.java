@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
@@ -26,6 +27,8 @@ public class VoidDungeonGen extends WorldGenerator {
 	public boolean generate(World world, Random rand, BlockPos position) {
 		Biome biome = world.getBiomeForCoordsBody(position);
 		WorldServer worldserver = (WorldServer) world;
+		if (ModConfig.worldgen.structures.VoidDungeon==false)
+			return false;
 		
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
@@ -39,7 +42,7 @@ public class VoidDungeonGen extends WorldGenerator {
 		template=dungeons[rand.nextInt(4)];
 
 		if(VoidDungeonGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(60) == 0){
+			if(rand.nextInt(ModConfig.worldgen.structures.VoidDungeonChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

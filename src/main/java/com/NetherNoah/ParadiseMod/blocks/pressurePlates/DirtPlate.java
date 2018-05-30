@@ -1,6 +1,7 @@
 package com.NetherNoah.ParadiseMod.blocks.pressurePlates;
 
 import net.minecraft.block.BlockPressurePlate;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class DirtPlate extends BlockPressurePlate {
@@ -8,6 +9,6 @@ public class DirtPlate extends BlockPressurePlate {
 		super(Material.GROUND, BlockPressurePlate.Sensitivity.EVERYTHING);
 		setUnlocalizedName("DirtPlate");
 		setRegistryName("dirt_pressure_plate");
-		setSoundType(blockSoundType.GROUND);
+		setSoundType(SoundType.GROUND);
 	}
 }

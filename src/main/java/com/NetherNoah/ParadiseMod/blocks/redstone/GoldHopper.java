@@ -1,8 +1,9 @@
 package com.NetherNoah.ParadiseMod.blocks.redstone;
 
-import com.NetherNoah.ParadiseMod.tileentity.TileEntityGoldHopper;
+import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntityGoldHopper;
 
 import net.minecraft.block.BlockHopper;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,7 +23,7 @@ public class GoldHopper extends BlockHopper {
 		setHardness(5F);
 		setResistance(10F);
 		setCreativeTab(CreativeTabs.REDSTONE);
-		setSoundType(blockSoundType.METAL);
+		setSoundType(SoundType.METAL);
 		setHarvestLevel("pickaxe", 2);
 	}
 	@Override

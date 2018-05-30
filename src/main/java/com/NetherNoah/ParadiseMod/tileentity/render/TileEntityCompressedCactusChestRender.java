@@ -36,7 +36,8 @@ public class TileEntityCompressedCactusChestRender extends TileEntitySpecialRend
         }
     }
 
-    public void render(TileEntityChest te, double x, double y, double z, float partialTicks, int destroyStage, float alpha)
+    @Override
+	public void render(TileEntityChest te, double x, double y, double z, float partialTicks, int destroyStage, float alpha)
     {
         GlStateManager.enableDepth();
         GlStateManager.depthFunc(515);
@@ -161,7 +162,7 @@ public class TileEntityCompressedCactusChestRender extends TileEntitySpecialRend
                 GlStateManager.translate(0.0F, 0.0F, -1.0F);
             }
 
-            GlStateManager.rotate((float)j, 0.0F, 1.0F, 0.0F);
+            GlStateManager.rotate(j, 0.0F, 1.0F, 0.0F);
             GlStateManager.translate(-0.5F, -0.5F, -0.5F);
             float f = te.prevLidAngle + (te.lidAngle - te.prevLidAngle) * partialTicks;
 

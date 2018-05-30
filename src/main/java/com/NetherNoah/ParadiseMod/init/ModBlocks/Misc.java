@@ -13,6 +13,7 @@ import com.NetherNoah.ParadiseMod.blocks.misc.GoldBars;
 import com.NetherNoah.ParadiseMod.blocks.misc.MossyFurnace;
 import com.NetherNoah.ParadiseMod.blocks.misc.MossyFurnaceLit;
 import com.NetherNoah.ParadiseMod.blocks.misc.PolishedVoidStone;
+import com.NetherNoah.ParadiseMod.blocks.misc.RegenerationStone;
 import com.NetherNoah.ParadiseMod.blocks.misc.Rose;
 import com.NetherNoah.ParadiseMod.blocks.misc.RustyIronBars;
 import com.NetherNoah.ParadiseMod.blocks.misc.SilverBars;
@@ -45,15 +46,11 @@ import net.minecraft.block.BlockPane;
 import net.minecraft.block.BlockPumpkin;
 import net.minecraft.block.BlockRail;
 import net.minecraft.block.BlockRailPowered;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class Misc {
-	//other blocks
 	public static Block VoidBricks;
+	public static Block RegenerationStone;
 	public static Block PolishedVoidStone;
 	public static Block VoidStone;
 	public static BlockBush BlueRose;
@@ -85,6 +82,7 @@ public class Misc {
 	public static VoidFurnaceCode VoidFurnaceLit;
 
 	public static void initAndRegister() {
+		Utils.regBlock(RegenerationStone=new RegenerationStone());
 		Utils.regBlock(VoidBricks=new VoidBricks());
 		Utils.regBlock(PolishedVoidStone=new PolishedVoidStone());
 		Utils.regBlock(VoidStone=new VoidStone());
@@ -118,6 +116,7 @@ public class Misc {
 		
 	}
 	public static void regRenders() {
+		Utils.regRender(RegenerationStone);
 		Utils.regRender(VoidBricks);
 		Utils.regRender(PolishedVoidStone);
 		Utils.regRender(VoidStone);

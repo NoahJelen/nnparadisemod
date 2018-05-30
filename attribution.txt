@@ -1,8 +1,0 @@
-I have used code from these mods in my mod while creating it:
-Quark by Vazkii (I used this code as examples for mine)
-Portable Craft Bench mod by RenEvo
-The vanilla minecraft code (to see how it's done)
-
-I have also used snippets of code from the forge forums in my mod.
-almost all of my textures are based off of the vanilla textures and all of them have been made with GIMP.
-All of my block and item models use vanilla models or use custom models created by Blockbench.

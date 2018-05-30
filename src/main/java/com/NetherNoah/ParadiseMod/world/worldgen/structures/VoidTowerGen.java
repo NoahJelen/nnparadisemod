@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
@@ -33,8 +34,10 @@ public class VoidTowerGen extends WorldGenerator {
 		Template section = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":void_tower_section"));
 		Template top = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":void_tower_top"));
 		int sections=rand.nextInt(16);
+		if (ModConfig.worldgen.structures.VoidTower==false)
+			return false;
 		if(VoidTowerGen.canSpawnHere(bottom, worldserver, position)) {
-			if(rand.nextInt(899) == 0){
+			if(rand.nextInt(ModConfig.worldgen.structures.VoidTowerChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

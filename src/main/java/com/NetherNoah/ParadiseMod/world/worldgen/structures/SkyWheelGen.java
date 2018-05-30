@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -30,9 +31,11 @@ public class SkyWheelGen extends WorldGenerator {
 		if(template == null)
 		{
 			return false;
-		}		
+		}
+		if (ModConfig.worldgen.structures.SkyWheel==false)
+			return false;
 		Biome biome = world.getBiomeForCoordsBody(position);
-		if(rand.nextInt(999) == 0){
+		if(rand.nextInt(ModConfig.worldgen.structures.SkyWheelChance) == 0){
 			IBlockState iblockstate = world.getBlockState(position);
 			world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 			PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

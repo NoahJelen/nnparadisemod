@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -27,12 +28,14 @@ public class MiniStrongholdGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":mini_stronghold"));
+		if(ModConfig.worldgen.structures.MiniStronghold==false)
+			return false;
 		if(template == null)
 		{
 			return false;
 		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
-		if(rand.nextInt(999) == 0){
+		if(rand.nextInt(ModConfig.worldgen.structures.MiniStrongholdChance) == 0){
 			IBlockState iblockstate = world.getBlockState(position);
 			world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 			PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

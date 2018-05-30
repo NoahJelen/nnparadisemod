@@ -3,9 +3,13 @@ package com.NetherNoah.ParadiseMod.blocks.xmas;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.ParadiseMod;
-import com.NetherNoah.ParadiseMod.init.ModItems;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
+import com.NetherNoah.ParadiseMod.init.ModItems.Armor;
+import com.NetherNoah.ParadiseMod.init.ModItems.MiscItems;
+import com.NetherNoah.ParadiseMod.init.ModItems.Tools;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
@@ -18,68 +22,69 @@ public class Present extends Block {
 		setRegistryName("present");
 		setHardness(.01F);
 		setResistance(.01F);
-		setCreativeTab(ParadiseMod.xmas);
-		setSoundType(blockSoundType.PLANT);
+		if (!ModConfig.HideXmasFeatures)
+			setCreativeTab(ParadiseMod.xmas);
+		setSoundType(SoundType.PLANT);
 	}
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		int chance = rand.nextInt(58);
 		if (chance == 0) {
-			return ModItems.emeraldPickaxe;
+			return Tools.emeraldPickaxe;
 		}
 		if (chance == 1) {
-			return ModItems.obsidianPickaxe;
+			return Tools.obsidianPickaxe;
 		}
 		if (chance == 2) {
-			return ModItems.redstonePickaxe;
+			return Tools.redstonePickaxe;
 		}
 		if (chance == 3) {
-			return ModItems.rubyPickaxe;
+			return Tools.rubyPickaxe;
 		}
 		if (chance == 4) {
-			return ModItems.emeraldAxe;
+			return Tools.emeraldAxe;
 		}
 		if (chance == 5) {
-			return ModItems.obsidianAxe;
+			return Tools.obsidianAxe;
 		}
 		if (chance == 6) {
-			return ModItems.redstoneAxe;
+			return Tools.redstoneAxe;
 		}
 		if (chance == 7) {
-			return ModItems.rubyAxe;
+			return Tools.rubyAxe;
 		}
 		if (chance == 8) {
-			return ModItems.emeraldSword;
+			return Tools.emeraldSword;
 		}
 		if (chance == 9) {
-			return ModItems.obsidianSword;
+			return Tools.obsidianSword;
 		}
 		if (chance == 10) {
-			return ModItems.rubySword;
+			return Tools.rubySword;
 		}
 		if (chance == 11) {
-			return ModItems.emeraldSpade;
+			return Tools.emeraldSpade;
 		}
 		if (chance == 12) {
-			return ModItems.obsidianSpade;
+			return Tools.obsidianSpade;
 		}
 		if (chance == 13) {
-			return ModItems.redstoneSpade;
+			return Tools.redstoneSpade;
 		}
 		if (chance == 14) {
-			return ModItems.rubySpade;
+			return Tools.rubySpade;
 		}
 		if (chance == 15) {
-			return ModItems.emeraldHoe;
+			return Tools.emeraldHoe;
 		}
 		if (chance == 16) {
-			return ModItems.obsidianHoe;
+			return Tools.obsidianHoe;
 		}
 		if (chance == 17) {
-			return ModItems.redstoneHoe;
+			return Tools.redstoneHoe;
 		}
 		if (chance == 18) {
-			return ModItems.rubyHoe;
+			return Tools.rubyHoe;
 		}
 		if (chance == 19) {
 			return Items.DIAMOND_AXE;
@@ -112,52 +117,52 @@ public class Present extends Block {
 			return Items.IRON_SWORD;
 		}
 		if (chance == 29) {
-			return ModItems.emeraldHelmet;
+			return Armor.emeraldHelmet;
 		}
 		if (chance == 30) {
-			return ModItems.emeraldChestplate;
+			return Armor.emeraldChestplate;
 		}
 		if (chance == 31) {
-			return ModItems.emeraldLeggings;
+			return Armor.emeraldLeggings;
 		}
 		if (chance == 32) {
-			return ModItems.emeraldBoots;
+			return Armor.emeraldBoots;
 		}
 		if (chance == 33) {
-			return ModItems.rubyHelmet;
+			return Armor.rubyHelmet;
 		}
 		if (chance == 34) {
-			return ModItems.rubyChestplate;
+			return Armor.rubyChestplate;
 		}
 		if (chance == 35) {
-			return ModItems.rubyLeggings;
+			return Armor.rubyLeggings;
 		}
 		if (chance == 36) {
-			return ModItems.rubyBoots;
+			return Armor.rubyBoots;
 		}
 		if (chance == 37) {
-			return ModItems.obsidianHelmet;
+			return Armor.obsidianHelmet;
 		}
 		if (chance == 38) {
-			return ModItems.obsidianChestplate;
+			return Armor.obsidianChestplate;
 		}
 		if (chance == 39) {
-			return ModItems.obsidianLeggings;
+			return Armor.obsidianLeggings;
 		}
 		if (chance == 40) {
-			return ModItems.obsidianBoots;
+			return Armor.obsidianBoots;
 		}
 		if (chance == 41) {
-			return ModItems.redstoneHelmet;
+			return Armor.redstoneHelmet;
 		}
 		if (chance == 42) {
-			return ModItems.redstoneChestplate;
+			return Armor.redstoneChestplate;
 		}
 		if (chance == 43) {
-			return ModItems.redstoneLeggings;
+			return Armor.redstoneLeggings;
 		}
 		if (chance == 44) {
-			return ModItems.redstoneBoots;
+			return Armor.redstoneBoots;
 		}
 		if (chance == 45) {
 			return Items.IRON_HELMET;
@@ -196,7 +201,7 @@ public class Present extends Block {
 			return Items.IRON_INGOT;
 		}
 		if (chance == 57) {
-			return ModItems.Ruby;
+			return MiscItems.Ruby;
 		}
 		return Items.REDSTONE;
 	}

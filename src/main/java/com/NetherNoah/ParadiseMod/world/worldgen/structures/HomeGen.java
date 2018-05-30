@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -30,7 +31,7 @@ public class HomeGen extends WorldGenerator {
 		
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-		Template template = null;
+		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":starter_house"));
 		
 		//oak forest home
 		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS||biome==Biomes.SWAMPLAND||biome==Biomes.MUTATED_SWAMPLAND||biome==Biomes.PLAINS||biome==Biomes.MUTATED_PLAINS||biome==Biomes.ICE_PLAINS) {
@@ -67,13 +68,10 @@ public class HomeGen extends WorldGenerator {
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":starter_house_spruce"));
 		}
 
-		if(template == null)
-		{
+		if(ModConfig.worldgen.structures.Homes==false)
 			return false;
-		}
-
 		if(HomeGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(60) == 0){
+			if(rand.nextInt(ModConfig.worldgen.structures.HomesChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)

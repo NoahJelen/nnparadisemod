@@ -2,6 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.fenceGates;
 
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.SoundType;
 import net.minecraft.creativetab.CreativeTabs;
 
 public class CactusFenceGate extends BlockFenceGate {
@@ -12,6 +13,6 @@ public class CactusFenceGate extends BlockFenceGate {
 		setHardness(5F);
 		setResistance(10F);
 		setCreativeTab(CreativeTabs.REDSTONE);
-		setSoundType(blockSoundType.WOOD);
+		setSoundType(SoundType.WOOD);
 	}
 }

@@ -2,7 +2,6 @@ package com.NetherNoah.ParadiseMod.proxy;
 
 import javax.annotation.Nullable;
 
-import com.NetherNoah.ParadiseMod.init.ModItems;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Buttons;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Chests;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
@@ -16,8 +15,12 @@ import com.NetherNoah.ParadiseMod.init.ModBlocks.Stairs;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Tables;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Trapdoors;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Walls;
-import com.NetherNoah.ParadiseMod.tileentity.TileEntityCactusChest;
-import com.NetherNoah.ParadiseMod.tileentity.TileEntityCompressedCactusChest;
+import com.NetherNoah.ParadiseMod.init.ModItems.Armor;
+import com.NetherNoah.ParadiseMod.init.ModItems.DoorItems;
+import com.NetherNoah.ParadiseMod.init.ModItems.MiscItems;
+import com.NetherNoah.ParadiseMod.init.ModItems.Tools;
+import com.NetherNoah.ParadiseMod.tileentity.chest.TileEntityCactusChest;
+import com.NetherNoah.ParadiseMod.tileentity.chest.TileEntityCompressedCactusChest;
 import com.NetherNoah.ParadiseMod.tileentity.render.TileEntityCactusChestRender;
 import com.NetherNoah.ParadiseMod.tileentity.render.TileEntityCompressedCactusChestRender;
 
@@ -34,7 +37,6 @@ public class ClientProxy implements CommonProxy{
 	@Override
 	public void init() {
 		//block groups
-		ModItems.registerRenders();
 		Lamps.regRenders();
 		Ores.regRenders();
 		Misc.regRenders();
@@ -49,20 +51,27 @@ public class ClientProxy implements CommonProxy{
 		Fences.regRenders();
 		Gates.regRenders();
 		
+		//item groups
+		Tools.regRenders();
+		Armor.regRenders();
+		DoorItems.regRenders();
+		MiscItems.regRenders();
+		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCactusChest.class, new TileEntityCactusChestRender());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCompressedCactusChest.class, new TileEntityCompressedCactusChestRender());
-		System.out.println("NetherNoah777: Finally!!! I managed to register that freaking tile entity renderer!!!!");
 		
 		Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new IBlockColor()
         {
-            public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
+            @Override
+			public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
             {
                 return worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : ColorizerGrass.getGrassColor(0.5D, 1.0D);
             }
         }, Plates.GrassPlate);		
 		Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new IBlockColor()
         {
-            public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
+            @Override
+			public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex)
             {
                 return worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : ColorizerGrass.getGrassColor(0.5D, 1.0D);
             }

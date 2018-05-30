@@ -1,8 +1,0 @@
-{
-  "minecraft:recipes/redstone/redstone": {
-    "criteria": {
-      "has_redstone_block": "2018-05-26 16:53:28 -0700"
-    },
-    "done": true
-  }
-}

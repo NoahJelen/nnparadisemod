@@ -1,6 +1,7 @@
 package com.NetherNoah.ParadiseMod.blocks.pressurePlates;
 
 import net.minecraft.block.BlockPressurePlate;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class GrassPlate extends BlockPressurePlate {
@@ -8,6 +9,6 @@ public class GrassPlate extends BlockPressurePlate {
 		super(Material.GRASS, BlockPressurePlate.Sensitivity.EVERYTHING);
 		setUnlocalizedName("GrassPlate");
 		setRegistryName("grass_pressure_plate");
-		setSoundType(blockSoundType.PLANT);
+		setSoundType(SoundType.PLANT);
 	}
 }

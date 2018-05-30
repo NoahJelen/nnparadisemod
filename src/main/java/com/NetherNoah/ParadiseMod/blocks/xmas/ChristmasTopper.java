@@ -3,8 +3,10 @@ package com.NetherNoah.ParadiseMod.blocks.xmas;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.ParadiseMod;
+import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.BlockGlass;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class ChristmasTopper extends BlockGlass {
@@ -13,8 +15,9 @@ public class ChristmasTopper extends BlockGlass {
 		setUnlocalizedName("ChristmasTopper");
 		setRegistryName("tree_topper");
 		setLightLevel(1F);
-		setSoundType(blockSoundType.METAL);
-		setCreativeTab(ParadiseMod.xmas);
+		setSoundType(SoundType.METAL);
+		if (!ModConfig.HideXmasFeatures)
+			setCreativeTab(ParadiseMod.xmas);
 	}
 	@Override
 	protected boolean canSilkHarvest() {
