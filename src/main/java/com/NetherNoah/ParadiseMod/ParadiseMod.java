@@ -42,6 +42,7 @@ import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenNether;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenOverworld;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.BrickPyramid;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Buoy;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.GiantGrassBlock;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Home;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.LandMine;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.LandMineDirt;
@@ -50,6 +51,7 @@ import com.NetherNoah.ParadiseMod.world.worldgen.structures.MesaTemple;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Minerbase;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.MiniStronghold;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Ocean;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.PlayerTemples;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.RoguePortal;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Runway;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.SkyWheel;
@@ -126,7 +128,6 @@ public class ParadiseMod {
 		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		Blocks.MOB_SPAWNER.setCreativeTab(CreativeTabs.DECORATIONS);
-		
 		//liquids
 		LiquidRedstone.register();
 		FluidRegistry.addBucketForFluid(LiquidRedstone.FluidLiquidRedstone.instance);
@@ -164,6 +165,8 @@ public class ParadiseMod {
 				new VoidDungeonLarge(),
 				new VoidDungeon(),
 				new VoidTower(),
+				new PlayerTemples(),
+				new GiantGrassBlock(),
 				
 				//created by AttieCat
 				new Shrine(),
@@ -219,7 +222,7 @@ public class ParadiseMod {
 		
 		ModSmelting.register();
 		
-		DimensionRegistry.MainRegistry();
+		DimensionRegistry.registerDimensions();
 		
 		//spawn mobs in the deep void dimension
 		EntityRegistry.addSpawn(EntityZombie.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);

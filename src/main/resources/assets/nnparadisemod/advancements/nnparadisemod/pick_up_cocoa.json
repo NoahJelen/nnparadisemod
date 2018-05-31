@@ -7,7 +7,7 @@
         "title": "HA! GOT 'EM!",
         "description": "Harvest Cocoa Beans from a jungle tree"
     },
-    "parent": "nnparadisemod:nnparadisemod/root",
+    "parent": "nnparadisemod:nnparadisemod/spawn_giant",
     "criteria": {
         "obsidian": {
             "trigger": "minecraft:inventory_changed",

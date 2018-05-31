@@ -5,9 +5,6 @@ import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
 
 public class DimensionRegistry {
-	public static void MainRegistry() {
-		registerDimensions();
-	}
 	public static final int DeepUnderground = ModConfig.dimensions.DeepUndergroundDim;
 	public static final int DeepVoid=ModConfig.dimensions.DeepVoidDim;
 	public static final DimensionType DV = DimensionType.register("deep_void", "_dv", DeepVoid, DVWorldProvider.class, false);

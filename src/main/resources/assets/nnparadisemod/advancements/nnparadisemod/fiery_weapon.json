@@ -1,0 +1,26 @@
+{
+	"display": {
+		"description": "Craft a Redstone Sword",
+		"title": "A Fiery Sword",
+		"icon": {
+			"item": "nnparadisemod:redstone_sword",
+            "nbt":"{Ench:[{id:1,lvl:1}]}"
+		}
+	},
+	"criteria": {
+        "craft_rusty_sword": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [{
+					"item": "nnparadisemod:redstone_sword"
+				}]
+			}
+		}
+        
+	},
+	"parent": "nnparadisemod:nnparadisemod/rusty_weapon",
+	"rewards": {},
+	"requirements": [
+		["craft_rusty_sword"]
+	]
+}

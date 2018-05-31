@@ -1,0 +1,25 @@
+{
+	"display": {
+		"description": "Craft a Rusty Iron Sword",
+		"title": "A Rusty Attack",
+		"icon": {
+			"item": "nnparadisemod:rusty_sword"
+		}
+	},
+	"criteria": {
+        "craft_rusty_sword": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [{
+					"item": "nnparadisemod:rusty_sword"
+				}]
+			}
+		}
+        
+	},
+	"parent": "nnparadisemod:nnparadisemod/root",
+	"rewards": {},
+	"requirements": [
+		["craft_rusty_sword"]
+	]
+}

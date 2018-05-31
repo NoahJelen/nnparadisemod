@@ -32,7 +32,6 @@ public class LiquidRedstone {
 		FluidRegistry.registerFluid(FluidLiquidRedstone.instance);
 		ForgeRegistries.BLOCKS.register(BlockLiquidRedstone.instance);
 		ModelLoader.setCustomStateMapper(BlockLiquidRedstone.instance, new StateMapperBase() {
-			@SuppressWarnings("synthetic-access")
 			@Override
 			protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
 				return lr_location;

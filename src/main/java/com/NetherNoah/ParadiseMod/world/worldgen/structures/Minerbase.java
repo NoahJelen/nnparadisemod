@@ -2,6 +2,8 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 
 import java.util.Random;
 
+import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
+
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -17,7 +19,7 @@ public class Minerbase extends WorldGenerator implements IWorldGenerator{
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		if (world.provider.getDimension() != 1&&world.provider.getDimension() != -3&&world.provider.getDimension() != -1) {
+		if (world.provider.getDimension() != 1&&world.provider.getDimension() != DimensionRegistry.DeepVoid&&world.provider.getDimension() != -1) {
 			generateOverworld(world, rand, blockX + 8, blockZ + 8);
 		}
 	}

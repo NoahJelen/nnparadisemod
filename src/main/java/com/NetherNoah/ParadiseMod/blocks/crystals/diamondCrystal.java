@@ -2,6 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.crystals;
 
 import java.util.Random;
 
+import com.NetherNoah.ParadiseMod.init.LiquidRedstone.BlockLiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
 
 import net.minecraft.block.BlockBush;
@@ -32,7 +33,7 @@ public class diamondCrystal extends BlockBush {
 	@Override
 	protected boolean canSustainBush(IBlockState state)
     {
-		return state.getBlock() != Blocks.AIR;
+		return state.getBlock() != Blocks.AIR||state.getBlock() != Blocks.WATER||state.getBlock() != Blocks.FLOWING_WATER||state.getBlock() != Blocks.LAVA||state.getBlock() != Blocks.FLOWING_LAVA||state.getBlock() !=BlockLiquidRedstone.instance;
     }
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)

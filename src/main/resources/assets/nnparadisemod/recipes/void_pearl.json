@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "nnparadisemod:void_pearl_block"
+    }
+  },
+  "result": {
+    "item": "nnparadisemod:void_pearl",
+    "count": 9
+  }
+}

@@ -25,6 +25,7 @@ public class ModSmelting {
 		//smelting recipes for end ores
 		GameRegistry.addSmelting(Ores.EndRubyOre, new ItemStack(MiscItems.Ruby), 5F);
 		GameRegistry.addSmelting(Ores.EnderPearlOre, new ItemStack(Items.ENDER_PEARL), 5F);
+		GameRegistry.addSmelting(Ores.VoidPearlOre, new ItemStack(MiscItems.VoidPearl), 5F);
 		
 		//smelting recipes for nether ores
 		GameRegistry.addSmelting(Ores.SilverOreNether, new ItemStack(MiscItems.SilverIngot), 5F);

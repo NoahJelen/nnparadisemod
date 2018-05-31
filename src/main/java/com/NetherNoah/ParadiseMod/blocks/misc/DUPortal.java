@@ -87,7 +87,7 @@ public class DUPortal extends Block{
 	@Override
 	@Nullable
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
-		return new ItemStack(Misc.DVPortal);
+		return new ItemStack(Misc.DUPortal);
 	}
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {

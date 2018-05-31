@@ -25,7 +25,7 @@ item.emerald_spade.name=Emerald Shovel
 item.emerald_axe.name=Emerald Axe
 item.emerald_hoe.name=Emerald Hoe
 item.ruby_pickaxe.name=Ruby Pickaxe
-item.ruby_sword.name=Ruby Swordt
+item.ruby_sword.name=Ruby Sword
 item.ruby_spade.name=Ruby Shovel
 item.ruby_axe.name=Ruby Axe
 item.ruby_hoe.name=Ruby Hoe
@@ -94,6 +94,7 @@ item.ItemRustyDoor.name=Rusty Iron Door
 item.salt.name=Salt
 item.ItemCactusDoor.name=Cactus Door
 item.CactusStick.name=Cactus Stick
+item.VoidPearl.name=Void Pearl
 
 #Blocks
 tile.SilverFenceGate.name=Silver Fence Gate
@@ -281,6 +282,10 @@ tile.PolishedVoidStone.name=Polished Void Stone
 tile.VoidBricks.name=Void Stone Bricks
 tile.VoidBrickStairs.name=Void Stone Brick Stairs
 tile.VoidFurnace.name=Void Furnace
+tile.RegenerationStone.name=Regeneration Stone
+tile.voidPearlBlock.name=Void Pearl Block
+tile.VoidPearlOre.name=Void Pearl Ore
+
 
 #Fluids
 fluid.liquid_redstone=Liquid Redstone
@@ -321,3 +326,5 @@ config.voidtowers=Void Towers
 config.wickerman=Wicker Man Structures
 config.treasure=Treasure Chest
 config.chance=Chance
+config.playertemples=Player Temples
+config.grassblocklarge=Giant Grass Block

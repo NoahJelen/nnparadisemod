@@ -34,7 +34,7 @@ public class VoidPearlOre extends Block {
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(Ores.EnderPearlOre);
+        return new ItemStack(Ores.VoidPearlOre);
     }
 	// get item to drop
 	@Override
@@ -61,12 +61,12 @@ public class VoidPearlOre extends Block {
 			return this.quantityDropped(random);
 		}
 	}
-	// spawn the item in the world
+	//spawn the item in the world
 	@Override
 	public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune) {
 		super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
 	}
-	// spawn xp orbs
+	//spawn xp orbs
 	@Override
 	public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
@@ -77,7 +77,7 @@ public class VoidPearlOre extends Block {
 		}
 		return 0;
 	}
-	// spawn the actual item
+	//spawn the actual item
 	@Override
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
 		return new ItemStack(MiscItems.VoidPearl);

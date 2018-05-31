@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "item": "nnparadisemod:regeneration_stone"
+        },
+        "title": "I'm immortal!!",
+        "description": "Mine a regeneration stone"
+    },
+    "parent": "nnparadisemod:nnparadisemod/the_void",
+    "criteria": {
+        "obsidian": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "nnparadisemod:regeneration_stone"
+                    }
+                ]
+            }
+        }
+    }
+}

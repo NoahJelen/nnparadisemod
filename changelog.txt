@@ -187,3 +187,12 @@
     Brick Pyramids are no longer limited to ocean biomes
     The mod now shows its newest version
     The version of my mod now ships with the resource pack by default
+    Added more advancements
+
+1.1 (Resurrection Update):
+    Fixed some bugs with pick-blocking the doors
+    Added recipe for void furnace
+    Gave Regeneration Stone, Void Pearl, Void Pearl Block, and Void Pearl Ore display names
+    Added Player Head Temples and Giant Grass Blocks (must be enabled from the config)
+    Crystals can no longer generate on top of liquids
+    Improved world generation in the Deep Underground

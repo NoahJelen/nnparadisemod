@@ -8,7 +8,7 @@
         "description": "Summon a Giant",
         "frame": "challenge"
     },
-    "parent": "nnparadisemod:nnparadisemod/root",
+    "parent": "nnparadisemod:nnparadisemod/biting_the_dust",
     "criteria": {
         "summoned_giant": {
             "trigger": "minecraft:summoned_entity",

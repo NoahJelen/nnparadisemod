@@ -8,10 +8,16 @@ import net.minecraft.block.BlockDoor;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
 
 public class RubyDoor extends BlockDoor {
+	private static Item item=DoorItems.ItemRubyDoor;
 	public RubyDoor() {
 		super(Material.WOOD);
 		setUnlocalizedName("RubyDoor");
@@ -21,6 +27,11 @@ public class RubyDoor extends BlockDoor {
 		setHarvestLevel("pickaxe", 2);
 		setSoundType(SoundType.METAL);
 	}
+	@Override
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
+    {
+        return new ItemStack(DoorItems.ItemRubyDoor);
+    }
 	private int getCloseSound()
     {
         return this.blockMaterial == Material.WOOD ? 1011 : 1012;
@@ -32,6 +43,6 @@ public class RubyDoor extends BlockDoor {
 	// the item is the door itself
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR : DoorItems.ItemRubyDoor;
+		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.ItemRubyDoor;
 	}
 }

@@ -1,23 +1,16 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [{
-			"item": "minecraft:stained_glass_pane",
-			"data": 13
-		},
-		{
-			"item": "minecraft:stained_glass_pane",
-			"data": 14
-		},
-		{
-			"item": "minecraft:sapling",
+			"item": "minecraft:dye",
 			"data": 1
 		},
 		{
-			"item": "minecraft:glowstone"
+			"item": "minecraft:dye",
+			"data": 2
 		}
 	],
 	"result": {
-		"item": "nnparadisemod:christmas_sapling",
-		"count": 3
+		"item": "nnparadisemod:brown_dye",
+		"count": 2
 	}
 }

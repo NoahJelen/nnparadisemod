@@ -5,7 +5,6 @@ import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
-import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockStone;
@@ -23,12 +22,20 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.MapGenCavesHell;
+import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.WorldGenBush;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraftforge.event.terraingen.ChunkGeneratorEvent;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.InitMapGenEvent;
+import net.minecraftforge.event.terraingen.OreGenEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
+import net.minecraftforge.fml.common.eventhandler.Event;
 
 public class DUChunkGenerator implements IChunkGenerator {
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
@@ -40,7 +47,6 @@ public class DUChunkGenerator implements IChunkGenerator {
 	private final World world;
 	private final boolean generateStructures;
 	private final Random rand;
-	private double[] gravelNoise = new double[256];
 	private double[] depthBuffer = new double[256];
 	private double[] buffer;
 	private NoiseGeneratorOctaves lperlinNoise1;
@@ -72,23 +78,18 @@ public class DUChunkGenerator implements IChunkGenerator {
 			BlockMatcher.forBlock(Blocks.STONE));
 	private final WorldGenerator goldGen = new WorldGenMinable(Blocks.GOLD_ORE.getDefaultState(), 7,
 			BlockMatcher.forBlock(Blocks.STONE));
-	//private final WorldGenerator silverGen = new WorldGenMinable(Ores.SilverOre.getDefaultState(), 7,
-			//BlockMatcher.forBlock(Blocks.STONE));
-	//private final WorldGenerator saltGen = new WorldGenMinable(Ores.SaltOre.getDefaultState(), 7,
-					//BlockMatcher.forBlock(Blocks.STONE));
 	
 	//liquid redstone
-	private final WorldGenerator lrGen = new WorldGenMinable(LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState(), 3, BlockMatcher.forBlock(Blocks.STONE));
+	private final WorldGenerator lrGen = new WorldGenMinable(LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState(), 1, BlockMatcher.forBlock(Blocks.STONE));
 	
 	//decoration
 	private final WorldGenBush brownMushroomFeature = new WorldGenBush(Blocks.BROWN_MUSHROOM);
 	private final WorldGenBush redMushroomFeature = new WorldGenBush(Blocks.RED_MUSHROOM);
-	private final WorldGenMinable sapling = new WorldGenMinable(Blocks.SAPLING.getDefaultState(), 3,BlockMatcher.forBlock(Blocks.GRASS));
+	private final WorldGenMinable sapling = new WorldGenMinable(Blocks.SAPLING.getDefaultState(), 1,BlockMatcher.forBlock(Blocks.GRASS));
 	
 	//structures
-	//no buildings of any kind generate here
-	private MapGenBase genDUCaves = new MapGenCavesHell();
-	private WorldGenerator trees = new WorldGenTrees(false, 5, Blocks.LOG.getDefaultState(), Blocks.LEAVES.getDefaultState(), false);
+	private MapGenBase genDUCaves = new MapGenCaves();
+	private WorldGenerator trees = new WorldGenTrees(false, 1, Blocks.LOG.getDefaultState(), Blocks.LEAVES.getDefaultState(), true);
 	
 	double[] pnr;
 	double[] ar;
@@ -105,7 +106,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 		scaleNoise = new NoiseGeneratorOctaves(rand, 10);
 		depthNoise = new NoiseGeneratorOctaves(rand, 16);
 		worldIn.setSeaLevel(63);
-		genDUCaves = net.minecraftforge.event.terraingen.TerrainGen.getModdedMapGen(genDUCaves,net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.NETHER_CAVE);
+		genDUCaves = TerrainGen.getModdedMapGen(genDUCaves,InitMapGenEvent.EventType.CAVE);
 	}
 	public void prepareHeights(int p_185936_1_, int p_185936_2_, ChunkPrimer primer) {
 		int i = 4;
@@ -163,18 +164,16 @@ public class DUChunkGenerator implements IChunkGenerator {
 		}
 	}
 	public void buildSurfaces(int p_185937_1_, int p_185937_2_, ChunkPrimer primer) {
-		if (!net.minecraftforge.event.ForgeEventFactory.onReplaceBiomeBlocks(this, p_185937_1_, p_185937_2_, primer,
-				world))
+		if (!ForgeEventFactory.onReplaceBiomeBlocks(this, p_185937_1_, p_185937_2_, primer,world))
 			return;
 		int i = world.getSeaLevel() + 1;
 		double d0 = 0.03125D;
 		for (int j = 0; j < 16; ++j) {
 			for (int k = 0; k < 16; ++k) {
-				boolean flag1 = gravelNoise[j + k * 16] + rand.nextDouble() * 0.2D > 0.0D;
 				int l = (int) (depthBuffer[j + k * 16] / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
 				int i1 = -1;
 				IBlockState iblockstate = STONE;
-				IBlockState iblockstate1 = GRASS;
+				IBlockState iblockstate1 = DIRT;
 				for (int j1 = 127; j1 >= 0; --j1) {
 					if (j1 < 127 - rand.nextInt(5) && j1 > rand.nextInt(5)) {
 						IBlockState iblockstate2 = primer.getBlockState(k, j1, j);
@@ -199,6 +198,8 @@ public class DUChunkGenerator implements IChunkGenerator {
 									} 
 									else {
 										primer.setBlockState(k, j1, j, iblockstate1);
+										if (primer.getBlockState(k, j1+1, j)==AIR)
+											primer.setBlockState(k, j1, j, GRASS);
 												
 									}
 								}
@@ -232,7 +233,6 @@ public class DUChunkGenerator implements IChunkGenerator {
 		for (int i = 0; i < abyte.length; ++i) {
 			abyte[i] = (byte) Biome.getIdForBiome(abiome[i]);
 		}
-		chunk.resetRelightChecks();
 		return chunk;
 	}
 	private double[] getHeights(double[] p_185938_1_, int p_185938_2_, int p_185938_3_, int p_185938_4_,
@@ -240,10 +240,10 @@ public class DUChunkGenerator implements IChunkGenerator {
 		if (p_185938_1_ == null) {
 			p_185938_1_ = new double[p_185938_5_ * p_185938_6_ * p_185938_7_];
 		}
-		net.minecraftforge.event.terraingen.ChunkGeneratorEvent.InitNoiseField event = new net.minecraftforge.event.terraingen.ChunkGeneratorEvent.InitNoiseField(
+		ChunkGeneratorEvent.InitNoiseField event = new ChunkGeneratorEvent.InitNoiseField(
 				this, p_185938_1_, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_, p_185938_7_);
-		net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event);
-		if (event.getResult() == net.minecraftforge.fml.common.eventhandler.Event.Result.DENY)
+		MinecraftForge.EVENT_BUS.post(event);
+		if (event.getResult() == Event.Result.DENY)
 			return event.getNoisefield();
 		double d0 = 684.412D;
 		double d1 = 2053.236D;
@@ -307,20 +307,19 @@ public class DUChunkGenerator implements IChunkGenerator {
 	}
 	@Override
 	public void populate(int x, int z) {
-		BlockFalling.fallInstantly = false;
-		net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(true, this, world, rand, x, z, false);
+		ForgeEventFactory.onChunkPopulate(true, this, world, rand, x, z, false);
 		int i = x * 16;
 		int j = z * 16;
 		BlockPos blockpos = new BlockPos(i, 0, j);
 		Biome biome = world.getBiome(blockpos.add(16, 0, 16));
 		ChunkPos chunkpos = new ChunkPos(x, z);
-		net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, world, rand, x, z, false);
-		net.minecraftforge.common.MinecraftForge.EVENT_BUS
-				.post(new net.minecraftforge.event.terraingen.DecorateBiomeEvent.Pre(world, rand, blockpos));
+		ForgeEventFactory.onChunkPopulate(false, this, world, rand, x, z, false);
+		MinecraftForge.EVENT_BUS
+				.post(new DecorateBiomeEvent.Pre(world, rand, blockpos));
 		
 		//stone
-		if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(world, rand, Andesite, blockpos,
-				net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.QUARTZ)) {
+		if (TerrainGen.generateOre(world, rand, Andesite, blockpos,
+				OreGenEvent.GenerateMinable.EventType.ANDESITE)) {
 			Andesite.generate(world, rand,
 				blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 			Diorite.generate(world, rand,
@@ -330,10 +329,13 @@ public class DUChunkGenerator implements IChunkGenerator {
 		}
 		
 		//trees
-		trees.generate(world, rand,
-		blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-		if (net.minecraftforge.event.terraingen.TerrainGen.decorate(world, rand, blockpos,
-				net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
+		if (TerrainGen.decorate(world, rand, blockpos,DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
+			if (rand.nextBoolean()) {
+				trees.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+			}
+		}
+		if (TerrainGen.decorate(world, rand, blockpos,
+				DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
 			if (rand.nextBoolean()) {
 				//crystals
 				quartzGen.generate(world, rand,
@@ -358,8 +360,8 @@ public class DUChunkGenerator implements IChunkGenerator {
 						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 			}
 		}
-		if (net.minecraftforge.event.terraingen.TerrainGen.generateOre(world, rand, coalGen, blockpos,
-				net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.QUARTZ))
+		if (TerrainGen.generateOre(world, rand, coalGen, blockpos,
+				OreGenEvent.GenerateMinable.EventType.QUARTZ))
 			for (int l1 = 0; l1 < 32; ++l1) {
 				//ores
 				coalGen.generate(world, rand,
@@ -379,8 +381,8 @@ public class DUChunkGenerator implements IChunkGenerator {
 			}
 		biome.decorate(world, rand, new BlockPos(i, 0, j));
 		net.minecraftforge.common.MinecraftForge.EVENT_BUS
-				.post(new net.minecraftforge.event.terraingen.DecorateBiomeEvent.Post(world, rand, blockpos));
-		//BlockFalling.fallInstantly = false;
+				.post(new DecorateBiomeEvent.Post(world, rand, blockpos));
+		BlockFalling.fallInstantly = false;
 	}
 	@Override
 	public boolean generateStructures(Chunk chunkIn, int x, int z) {
