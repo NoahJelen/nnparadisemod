@@ -196,3 +196,5 @@
     Added Player Head Temples and Giant Grass Blocks (must be enabled from the config)
     Crystals can no longer generate on top of liquids
     Improved world generation in the Deep Underground
+1.1.1:
+    Fixed a bug with diamond crystal generating in the deep void and deep underground

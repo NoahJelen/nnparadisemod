@@ -1,95 +1,95 @@
-[12:16:32] [main/INFO] [GradleStart]: Extra: []
-[12:16:32] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, /home/nethernoah/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12.2, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
-[12:16:32] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[12:16:32] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[12:16:32] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
-[12:16:32] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
-[12:16:32] [main/INFO] [FML]: Forge Mod Loader version 14.23.3.2689 for Minecraft 1.12.2 loading
-[12:16:32] [main/INFO] [FML]: Java is OpenJDK 64-Bit Server VM, version 1.8.0_171, running on Linux:amd64:4.13.0-37-generic, installed at /usr/lib/jvm/java-8-openjdk-amd64/jre
-[12:16:32] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected: /home/nethernoah/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4/maven-artifact-3.5.3.jar. Using default libraries directory.
-[12:16:33] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[12:16:33] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
-[12:16:33] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
-[12:16:33] [main/INFO] [FML]: Searching /home/nethernoah/Forge Mod Development/./mods for mods
-[12:16:33] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
-[12:16:33] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
-[12:16:33] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
-[12:16:33] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[12:16:33] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[12:16:33] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[12:16:33] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[12:16:33] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[12:16:33] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[12:16:34] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
-[12:16:34] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[12:16:34] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[12:16:35] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[12:16:35] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
-[12:16:35] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
-[12:16:35] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
-[12:16:36] [main/INFO] [net.minecraft.client.Minecraft]: Setting user: Player304
-[12:16:42] [main/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
-[12:16:42] [main/INFO] [net.minecraft.client.Minecraft]: LWJGL Version: 2.9.4
-[12:16:42] [main/INFO] [FML]: -- System Details --
+[12:48:28] [main/INFO] [GradleStart]: Extra: []
+[12:48:28] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, /home/nethernoah/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12.2, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[12:48:29] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[12:48:29] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[12:48:29] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[12:48:29] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[12:48:29] [main/INFO] [FML]: Forge Mod Loader version 14.23.3.2689 for Minecraft 1.12.2 loading
+[12:48:29] [main/INFO] [FML]: Java is OpenJDK 64-Bit Server VM, version 1.8.0_171, running on Linux:amd64:4.13.0-37-generic, installed at /usr/lib/jvm/java-8-openjdk-amd64/jre
+[12:48:29] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected: /home/nethernoah/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4/maven-artifact-3.5.3.jar. Using default libraries directory.
+[12:48:29] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[12:48:29] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
+[12:48:29] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
+[12:48:29] [main/INFO] [FML]: Searching /home/nethernoah/Forge Mod Development/./mods for mods
+[12:48:29] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[12:48:29] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[12:48:29] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[12:48:29] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[12:48:29] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[12:48:29] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[12:48:29] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[12:48:29] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[12:48:29] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[12:48:31] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[12:48:31] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[12:48:31] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[12:48:31] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[12:48:31] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[12:48:31] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[12:48:31] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[12:48:32] [main/INFO] [net.minecraft.client.Minecraft]: Setting user: Player375
+[12:48:37] [main/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[12:48:37] [main/INFO] [net.minecraft.client.Minecraft]: LWJGL Version: 2.9.4
+[12:48:38] [main/INFO] [FML]: -- System Details --
 Details:
 	Minecraft Version: 1.12.2
 	Operating System: Linux (amd64) version 4.13.0-37-generic
 	Java Version: 1.8.0_171, Oracle Corporation
 	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
-	Memory: 8258462656 bytes (7875 MB) / 8555069440 bytes (8158 MB) up to 8555069440 bytes (8158 MB)
+	Memory: 8300138448 bytes (7915 MB) / 8555069440 bytes (8158 MB) up to 8555069440 bytes (8158 MB)
 	JVM Flags: 3 total; -Xincgc -Xmx8192M -Xms8192M
 	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
 	FML: 
 	Loaded coremods (and transformers): 
 	GL info: ' Vendor: 'Intel Open Source Technology Center' Version: '3.0 Mesa 17.2.8' Renderer: 'Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) '
-[12:16:42] [main/INFO] [FML]: MinecraftForge v14.23.3.2689 Initialized
-[12:16:43] [main/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
-[12:16:43] [main/INFO] [FML]: Replaced 1036 ore ingredients
-[12:16:43] [main/INFO] [FML]: Searching /home/nethernoah/Forge Mod Development/./mods for mods
-[12:16:45] [main/INFO] [FML]: Forge Mod Loader has identified 5 mods to load
-[12:16:45] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, nnparadisemod] at CLIENT
-[12:16:45] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, nnparadisemod] at SERVER
-[12:16:46] [main/INFO] [net.minecraft.client.resources.SimpleReloadableResourceManager]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Nether Noah's Paradise Mod
-[12:16:46] [Thread-3/INFO] [FML]: Using sync timing. 200 frames of Display.update took 179746124 nanos
-[12:16:46] [main/INFO] [FML]: Processing ObjectHolder annotations
-[12:16:47] [main/INFO] [FML]: Found 1168 ObjectHolder annotations
-[12:16:47] [main/INFO] [FML]: Identifying ItemStackHolder annotations
-[12:16:47] [main/INFO] [FML]: Found 0 ItemStackHolder annotations
-[12:16:47] [main/INFO] [FML]: Configured a dormant chunk cache size of 0
-[12:16:47] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
-[12:16:47] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.4.2705
-[12:16:48] [main/INFO] [FML]: Applying holder lookups
-[12:16:48] [main/INFO] [FML]: Holder lookups applied
-[12:16:48] [main/INFO] [FML]: Applying holder lookups
-[12:16:48] [main/INFO] [FML]: Holder lookups applied
-[12:16:48] [main/INFO] [FML]: Applying holder lookups
-[12:16:48] [main/INFO] [FML]: Holder lookups applied
-[12:16:48] [main/INFO] [FML]: Applying holder lookups
-[12:16:48] [main/INFO] [FML]: Holder lookups applied
-[12:16:48] [main/INFO] [FML]: Injecting itemstacks
-[12:16:48] [main/INFO] [FML]: Itemstack injection complete
-[12:16:49] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Starting up SoundSystem...
-[12:16:50] [Thread-4/INFO] [net.minecraft.client.audio.SoundManager]: Initializing LWJGL OpenAL
-[12:16:50] [Thread-4/INFO] [net.minecraft.client.audio.SoundManager]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[12:16:50] [Thread-4/INFO] [net.minecraft.client.audio.SoundManager]: OpenAL initialized.
-[12:16:50] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Sound engine started
-[12:16:54] [main/INFO] [FML]: Max texture size: 16384
-[12:16:54] [main/INFO] [net.minecraft.client.renderer.texture.TextureMap]: Created: 1024x512 textures-atlas
-[12:16:58] [main/INFO] [FML]: Applying holder lookups
-[12:16:58] [main/INFO] [FML]: Holder lookups applied
-[12:16:58] [main/INFO] [FML]: Injecting itemstacks
-[12:16:58] [main/INFO] [FML]: Itemstack injection complete
-[12:16:59] [main/INFO] [FML]: Forge Mod Loader has successfully loaded 5 mods
-[12:16:59] [main/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
-[12:16:59] [main/INFO] [com.mojang.text2speech.NarratorLinux]: Narrator library successfully loaded
-[12:17:00] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient]: Could not authorize you against Realms server: Invalid session id
-[12:19:21] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2
-[12:19:21] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypair
-[12:19:22] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
-[12:19:22] [Server thread/INFO] [FML]: Applying holder lookups
-[12:19:22] [Server thread/INFO] [FML]: Holder lookups applied
-[12:19:23] [Server thread/INFO] [FML]: Loading dimension 0 (mod test) (net.minecraft.server.integrated.IntegratedServer@5c3ed0fd)
-[12:19:23] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_pressure_plate
+[12:48:38] [main/INFO] [FML]: MinecraftForge v14.23.3.2689 Initialized
+[12:48:38] [main/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
+[12:48:38] [main/INFO] [FML]: Replaced 1036 ore ingredients
+[12:48:39] [main/INFO] [FML]: Searching /home/nethernoah/Forge Mod Development/./mods for mods
+[12:48:40] [main/INFO] [FML]: Forge Mod Loader has identified 5 mods to load
+[12:48:40] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, nnparadisemod] at CLIENT
+[12:48:40] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, nnparadisemod] at SERVER
+[12:48:41] [main/INFO] [net.minecraft.client.resources.SimpleReloadableResourceManager]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Nether Noah's Paradise Mod
+[12:48:41] [main/INFO] [FML]: Processing ObjectHolder annotations
+[12:48:41] [main/INFO] [FML]: Found 1168 ObjectHolder annotations
+[12:48:41] [main/INFO] [FML]: Identifying ItemStackHolder annotations
+[12:48:41] [main/INFO] [FML]: Found 0 ItemStackHolder annotations
+[12:48:41] [main/INFO] [FML]: Configured a dormant chunk cache size of 0
+[12:48:41] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[12:48:42] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.4.2705
+[12:48:42] [Thread-3/INFO] [FML]: Using sync timing. 200 frames of Display.update took 200063259 nanos
+[12:48:42] [main/INFO] [FML]: Applying holder lookups
+[12:48:42] [main/INFO] [FML]: Holder lookups applied
+[12:48:42] [main/INFO] [FML]: Applying holder lookups
+[12:48:42] [main/INFO] [FML]: Holder lookups applied
+[12:48:42] [main/INFO] [FML]: Applying holder lookups
+[12:48:42] [main/INFO] [FML]: Holder lookups applied
+[12:48:42] [main/INFO] [FML]: Applying holder lookups
+[12:48:42] [main/INFO] [FML]: Holder lookups applied
+[12:48:42] [main/INFO] [FML]: Injecting itemstacks
+[12:48:42] [main/INFO] [FML]: Itemstack injection complete
+[12:48:44] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Starting up SoundSystem...
+[12:48:44] [Thread-4/INFO] [net.minecraft.client.audio.SoundManager]: Initializing LWJGL OpenAL
+[12:48:44] [Thread-4/INFO] [net.minecraft.client.audio.SoundManager]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[12:48:44] [Thread-4/INFO] [net.minecraft.client.audio.SoundManager]: OpenAL initialized.
+[12:48:44] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Sound engine started
+[12:48:48] [main/INFO] [FML]: Max texture size: 16384
+[12:48:49] [main/INFO] [net.minecraft.client.renderer.texture.TextureMap]: Created: 1024x512 textures-atlas
+[12:48:52] [main/INFO] [FML]: Applying holder lookups
+[12:48:52] [main/INFO] [FML]: Holder lookups applied
+[12:48:52] [main/INFO] [FML]: Injecting itemstacks
+[12:48:52] [main/INFO] [FML]: Itemstack injection complete
+[12:48:53] [main/INFO] [FML]: Forge Mod Loader has successfully loaded 5 mods
+[12:48:53] [main/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[12:48:53] [main/INFO] [com.mojang.text2speech.NarratorLinux]: Narrator library successfully loaded
+[12:48:55] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient]: Could not authorize you against Realms server: Invalid session id
+[12:49:31] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2
+[12:49:31] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypair
+[12:49:32] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
+[12:49:32] [Server thread/INFO] [FML]: Applying holder lookups
+[12:49:32] [Server thread/INFO] [FML]: Holder lookups applied
+[12:49:32] [Server thread/INFO] [FML]: Loading dimension 0 (mod test) (net.minecraft.server.integrated.IntegratedServer@2112fffc)
+[12:49:33] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_pressure_plate
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_pressure_plate'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
@@ -113,7 +113,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_pressure_p
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:19:23] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_button
+[12:49:33] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_button
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_button'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
@@ -137,7 +137,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_button'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:19:23] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/furnace
+[12:49:33] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/furnace
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:furnace'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
@@ -161,7 +161,7 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:furnace'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:19:23] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/crafting_table
+[12:49:33] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/crafting_table
 com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:crafting_table'
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
 	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
@@ -185,1068 +185,51 @@ com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:crafting_table'
 	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
 	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:19:23] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 495 advancements
-[12:19:24] [Server thread/INFO] [FML]: Loading dimension -3 (mod test) (net.minecraft.server.integrated.IntegratedServer@5c3ed0fd)
-[12:19:24] [Server thread/INFO] [FML]: Loading dimension 1 (mod test) (net.minecraft.server.integrated.IntegratedServer@5c3ed0fd)
-[12:19:24] [Server thread/INFO] [FML]: Loading dimension -1 (mod test) (net.minecraft.server.integrated.IntegratedServer@5c3ed0fd)
-[12:19:24] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@5c3ed0fd)
-[12:19:24] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
-[12:19:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 4%
-[12:19:26] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 6%
-[12:19:28] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:28] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:28] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:28] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:29] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:29] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:19:30] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 6%
-[12:19:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 11%
-[12:19:32] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 16%
-[12:19:33] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 22%
-[12:19:34] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 29%
-[12:19:35] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 35%
-[12:19:36] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 40%
-[12:19:37] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 47%
-[12:19:38] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 54%
-[12:19:39] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 60%
-[12:19:40] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 67%
-[12:19:41] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 76%
-[12:19:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 84%
-[12:19:43] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 90%
-[12:19:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 97%
-[12:19:45] [Server thread/INFO] [FML]: Unloading dimension -3
-[12:19:45] [Server thread/INFO] [FML]: Unloading dimension -1
-[12:19:45] [Server thread/INFO] [FML]: Unloading dimension 1
-[12:19:45] [Server thread/INFO] [FML]: Unloading dimension -2
-[12:19:45] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 12, from 10
-[12:19:46] [Netty Local Client IO #0/INFO] [FML]: Server protocol version 2
-[12:19:46] [Netty Server IO #1/INFO] [FML]: Client protocol version 2
-[12:19:46] [Netty Server IO #1/INFO] [FML]: Client attempting to join with 5 mods : minecraft@1.12.2,FML@8.0.99.99,nnparadisemod@1.1 (The Resurrection Update),forge@14.23.3.2689,mcp@9.42
-[12:19:46] [Netty Local Client IO #0/INFO] [FML]: [Netty Local Client IO #0] Client side modded connection established
-[12:19:47] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
-[12:19:47] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: Player304[local:E:a528555d] logged in with entity id 839 at (239.5, 72.0, 252.5)
-[12:19:47] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 joined the game
-[12:19:48] [pool-2-thread-1/WARN] [com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@540ea2aa[id=2b98548a-5e09-3029-b082-b4c99d31d926,name=Player304,properties={},legacy=false]
-com.mojang.authlib.exceptions.AuthenticationException: The client has sent too many requests within a certain amount of time
-	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:79) ~[YggdrasilAuthenticationService.class:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:180) [YggdrasilMinecraftSessionService.class:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:60) [YggdrasilMinecraftSessionService$1.class:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:57) [YggdrasilMinecraftSessionService$1.class:?]
-	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3716) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2424) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2298) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2211) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache.get(LocalCache.java:4154) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:4158) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:5147) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:5153) [guava-21.0.jar:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillProfileProperties(YggdrasilMinecraftSessionService.java:170) [YggdrasilMinecraftSessionService.class:?]
-	at net.minecraft.client.Minecraft.getProfileProperties(Minecraft.java:3178) [Minecraft.class:?]
-	at net.minecraft.client.resources.SkinManager$3.run(SkinManager.java:138) [SkinManager$3.class:?]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_171]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_171]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_171]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_171]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:19:50] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:19:50] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:19:53] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 8168ms behind, skipping 163 tick(s)
-[12:20:05] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 4094ms behind, skipping 81 tick(s)
-[12:20:18] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2016ms behind, skipping 40 tick(s)
-[12:20:33] [Server thread/INFO] [FML]: Loading dimension -3 (mod test) (net.minecraft.server.integrated.IntegratedServer@5c3ed0fd)
-[12:20:37] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 has made the advancement [Is this the Void?]
-[12:20:38] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player304 has made the advancement [Is this the Void?]
-[12:20:39] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 4 advancements
-[12:20:39] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 5111ms behind, skipping 102 tick(s)
-[12:20:39] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:20:39] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:20:39] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_void
-[12:21:50] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 has made the advancement [Stone Age]
-[12:21:50] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player304 has made the advancement [Stone Age]
-[12:21:50] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 18 advancements
-[12:22:04] [Server thread/INFO] [FML]: Unloading dimension -3
-[12:22:16] [Server thread/INFO] [FML]: Loading dimension -3 (mod test) (net.minecraft.server.integrated.IntegratedServer@5c3ed0fd)
-[12:24:09] [Server thread/INFO] [FML]: Unloading dimension -3
-[12:24:12] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:24:12] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:24:16] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:24:16] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:24:21] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:24:21] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:24:22] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:24:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:24:30] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] You disabled the dimension!
-[12:24:31] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] You disabled the dimension!
-[12:25:02] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] You disabled the dimension!
-[12:25:03] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:25:03] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:25:04] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:25:04] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:25:05] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:25:05] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:25:16] [Server thread/INFO] [FML]: Loading dimension -3 (mod test) (net.minecraft.server.integrated.IntegratedServer@5c3ed0fd)
-[12:26:00] [Server thread/INFO] [FML]: Unloading dimension -3
-[12:26:07] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Spectator Mode]
-[12:26:07] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Spectator Mode
-[12:26:11] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:26:11] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:27:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Creative Mode]
-[12:27:19] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Creative Mode
-[12:27:40] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@5c3ed0fd)
-[12:27:57] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 has made the advancement [We need go even deeper!]
-[12:27:57] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player304 has made the advancement [We need go even deeper!]
-[12:28:00] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 24 advancements
-[12:28:00] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 19188ms behind, skipping 383 tick(s)
-[12:28:07] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Spectator Mode]
-[12:28:07] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Spectator Mode
-[12:28:22] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:28:22] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:28:22] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:28:22] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:28:22] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:28:22] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:28:32] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 31979ms behind, skipping 639 tick(s)
-[12:28:38] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 6358ms behind, skipping 127 tick(s)
-[12:29:07] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:29:07] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:29:07] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:29:57] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3447ms behind, skipping 68 tick(s)
-[12:30:08] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:08] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:08] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:08] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:08] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:25] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:25] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:25] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:25] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:25] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:25] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:30:26] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:30:26] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:30:26] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:30:26] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 15906ms behind, skipping 318 tick(s)
-[12:31:10] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3073ms behind, skipping 61 tick(s)
-[12:31:19] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Player304 lost connection: Disconnected
-[12:31:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 left the game
-[12:31:19] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Stopping singleplayer server as player logged out
-[12:31:19] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:31:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:31:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:31:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
-[12:31:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
-[12:31:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
-[12:31:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:31:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:31:20] [Server thread/INFO] [FML]: Unloading dimension 0
-[12:31:20] [Server thread/INFO] [FML]: Unloading dimension -2
-[12:31:20] [Server thread/INFO] [FML]: Applying holder lookups
-[12:31:20] [Server thread/INFO] [FML]: Holder lookups applied
-[12:31:33] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2
-[12:31:33] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypair
-[12:31:33] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
-[12:31:33] [Server thread/INFO] [FML]: Applying holder lookups
-[12:31:33] [Server thread/INFO] [FML]: Holder lookups applied
-[12:31:33] [Server thread/INFO] [FML]: Loading dimension 0 (mod test) (net.minecraft.server.integrated.IntegratedServer@1fc77743)
-[12:31:33] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_pressure_plate
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_pressure_plate'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:31:33] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_button
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_button'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:31:33] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/furnace
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:furnace'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:31:33] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/crafting_table
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:crafting_table'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:31:34] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 495 advancements
-[12:31:34] [Server thread/INFO] [FML]: Loading dimension -3 (mod test) (net.minecraft.server.integrated.IntegratedServer@1fc77743)
-[12:31:34] [Server thread/INFO] [FML]: Loading dimension 1 (mod test) (net.minecraft.server.integrated.IntegratedServer@1fc77743)
-[12:31:34] [Server thread/INFO] [FML]: Loading dimension -1 (mod test) (net.minecraft.server.integrated.IntegratedServer@1fc77743)
-[12:31:34] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@1fc77743)
-[12:31:34] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
-[12:31:35] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 55%
-[12:31:35] [Server thread/INFO] [FML]: Unloading dimension -3
-[12:31:35] [Server thread/INFO] [FML]: Unloading dimension -1
-[12:31:35] [Server thread/INFO] [FML]: Unloading dimension 1
-[12:31:35] [Server thread/INFO] [FML]: Unloading dimension -2
-[12:31:35] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 12, from 10
-[12:31:35] [Netty Local Client IO #1/INFO] [FML]: Server protocol version 2
-[12:31:35] [Netty Server IO #3/INFO] [FML]: Client protocol version 2
-[12:31:35] [Netty Server IO #3/INFO] [FML]: Client attempting to join with 5 mods : minecraft@1.12.2,FML@8.0.99.99,nnparadisemod@1.1 (The Resurrection Update),forge@14.23.3.2689,mcp@9.42
-[12:31:35] [Netty Local Client IO #1/INFO] [FML]: [Netty Local Client IO #1] Client side modded connection established
-[12:31:35] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
-[12:31:35] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@1fc77743)
-[12:31:35] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: Player304[local:E:e8818e28] logged in with entity id 13746 at (325.97781477712084, 88.87613027739086, 767.2585960448263)
-[12:31:35] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 joined the game
-[12:31:37] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 24 advancements
-[12:31:37] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:31:37] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:31:37] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:31:53] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 9821ms behind, skipping 196 tick(s)
-[12:31:57] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:31:57] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:31:57] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:33:47] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:33:47] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:33:47] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:33:47] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:33:47] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:33:47] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:33:47] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3435ms behind, skipping 68 tick(s)
-[12:34:15] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 14719ms behind, skipping 294 tick(s)
-[12:35:00] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2182ms behind, skipping 43 tick(s)
-[12:35:08] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Creative Mode]
-[12:35:08] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Creative Mode
-[12:35:16] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:35:16] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:35:16] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:36:29] [main/WARN] [net.minecraft.client.network.NetHandlerPlayClient]: Received passengers for unknown entity
-[12:36:30] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:36:30] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:36:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:36:31] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2175ms behind, skipping 43 tick(s)
-[12:36:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
-[12:36:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
-[12:36:31] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Player304 lost connection: Disconnected
-[12:36:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 left the game
-[12:36:31] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Stopping singleplayer server as player logged out
-[12:36:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
-[12:36:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:36:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:36:32] [Server thread/INFO] [FML]: Unloading dimension 0
-[12:36:32] [Server thread/INFO] [FML]: Unloading dimension -2
-[12:36:32] [Server thread/INFO] [FML]: Applying holder lookups
-[12:36:32] [Server thread/INFO] [FML]: Holder lookups applied
-[12:36:40] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2
-[12:36:40] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypair
-[12:36:40] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
-[12:36:41] [Server thread/INFO] [FML]: Applying holder lookups
-[12:36:41] [Server thread/INFO] [FML]: Holder lookups applied
-[12:36:41] [Server thread/INFO] [FML]: Loading dimension 0 (mod test) (net.minecraft.server.integrated.IntegratedServer@63a20547)
-[12:36:41] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_pressure_plate
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_pressure_plate'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:36:41] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_button
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_button'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:36:41] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/furnace
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:furnace'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:36:41] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/crafting_table
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:crafting_table'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[12:36:41] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 495 advancements
-[12:36:41] [Server thread/INFO] [FML]: Loading dimension -3 (mod test) (net.minecraft.server.integrated.IntegratedServer@63a20547)
-[12:36:41] [Server thread/INFO] [FML]: Loading dimension 1 (mod test) (net.minecraft.server.integrated.IntegratedServer@63a20547)
-[12:36:41] [Server thread/INFO] [FML]: Loading dimension -1 (mod test) (net.minecraft.server.integrated.IntegratedServer@63a20547)
-[12:36:41] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@63a20547)
-[12:36:41] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
-[12:36:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 51%
-[12:36:42] [Server thread/INFO] [FML]: Unloading dimension -3
-[12:36:42] [Server thread/INFO] [FML]: Unloading dimension -1
-[12:36:42] [Server thread/INFO] [FML]: Unloading dimension 1
-[12:36:42] [Server thread/INFO] [FML]: Unloading dimension -2
-[12:36:42] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 12, from 10
-[12:36:43] [Netty Local Client IO #2/INFO] [FML]: Server protocol version 2
-[12:36:43] [Netty Server IO #5/INFO] [FML]: Client protocol version 2
-[12:36:43] [Netty Server IO #5/INFO] [FML]: Client attempting to join with 5 mods : minecraft@1.12.2,FML@8.0.99.99,nnparadisemod@1.1 (The Resurrection Update),forge@14.23.3.2689,mcp@9.42
-[12:36:43] [Netty Local Client IO #2/INFO] [FML]: [Netty Local Client IO #2] Client side modded connection established
-[12:36:43] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
-[12:36:43] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@63a20547)
-[12:36:43] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: Player304[local:E:694e0e39] logged in with entity id 21037 at (488.1710357725768, 67.88391318720623, 1167.0521572499022)
-[12:36:43] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 joined the game
-[12:36:44] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 24 advancements
-[12:37:04] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 19622ms behind, skipping 392 tick(s)
-[12:37:09] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:37:09] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:37:09] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:37:10] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 5267ms behind, skipping 105 tick(s)
-[12:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:06] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 7755ms behind, skipping 155 tick(s)
-[12:41:27] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 7767ms behind, skipping 155 tick(s)
-[12:41:54] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 7533ms behind, skipping 150 tick(s)
-[12:41:57] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:57] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:57] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:57] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:41:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:42:14] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 has made the advancement [A Rusty Attack]
-[12:42:14] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player304 has made the advancement [A Rusty Attack]
-[12:42:14] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 25 advancements
-[12:42:20] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] /gamemode, /gamerule, /give
-[12:42:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Survival Mode]
-[12:42:22] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Survival Mode
-[12:42:31] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 27 advancements
-[12:42:37] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 28 advancements
-[12:42:42] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 22440ms behind, skipping 448 tick(s)
-[12:43:04] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 has made the advancement [Monster Hunter]
-[12:43:04] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player304 has made the advancement [Monster Hunter]
-[12:43:04] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 38 advancements
-[12:43:06] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 38 advancements
-[12:43:15] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 39 advancements
-[12:43:32] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 was blown up by Creeper
-[12:43:32] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player304 was blown up by Creeper
-[12:43:38] [Server thread/INFO] [FML]: Unloading dimension -2
-[12:43:38] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3064ms behind, skipping 61 tick(s)
-[12:43:44] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@63a20547)
-[12:44:01] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:44:01] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:44:01] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:44:03] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2065ms behind, skipping 41 tick(s)
-[12:44:31] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 4772ms behind, skipping 95 tick(s)
-[12:44:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Creative Mode]
-[12:44:42] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Creative Mode
-[12:44:43] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Spectator Mode]
-[12:44:43] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Spectator Mode
-[12:44:56] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3790ms behind, skipping 75 tick(s)
-[12:45:10] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:45:10] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:45:10] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:45:10] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:45:10] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:45:10] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:45:16] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:45:16] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:45:16] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:45:16] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 6920ms behind, skipping 138 tick(s)
-[12:47:12] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2896ms behind, skipping 57 tick(s)
-[12:47:39] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:47:39] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:47:39] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:47:40] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 5400ms behind, skipping 108 tick(s)
-[12:48:51] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:48:51] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:48:51] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:48:52] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 15916ms behind, skipping 318 tick(s)
-[12:51:00] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 11331ms behind, skipping 226 tick(s)
-[12:51:13] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:51:13] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:51:13] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:52:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:30] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:41] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:41] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:41] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:41] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:41] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:52:42] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:52:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:52:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:52:43] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 12230ms behind, skipping 244 tick(s)
-[12:53:55] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 9369ms behind, skipping 187 tick(s)
-[12:54:35] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:54:35] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:54:35] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:54:35] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:54:35] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:54:35] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[12:54:45] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[12:54:45] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[12:54:45] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[12:54:48] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 30702ms behind, skipping 614 tick(s)
-[12:55:50] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Creative Mode]
-[12:55:51] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Creative Mode
-[12:55:58] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 9453ms behind, skipping 189 tick(s)
-[13:04:57] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2621ms behind, skipping 52 tick(s)
-[13:05:07] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 40 advancements
-[13:05:41] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:05:41] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:05:41] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:05:42] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 29572ms behind, skipping 591 tick(s)
-[13:07:23] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Spectator Mode]
-[13:07:23] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Spectator Mode
-[13:07:25] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3008ms behind, skipping 60 tick(s)
-[13:07:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:07:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:07:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:07:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:07:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:07:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:08:18] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:08:18] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:08:18] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:08:18] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:08:18] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:08:18] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:08:25] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:08:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:08:26] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:08:26] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 46033ms behind, skipping 920 tick(s)
-[13:10:49] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3533ms behind, skipping 70 tick(s)
-[13:11:19] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:11:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:11:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:11:43] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:11:43] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:11:43] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:11:43] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:11:43] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:11:43] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:11:49] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 8129ms behind, skipping 162 tick(s)
-[13:12:22] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:12:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:12:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:12:22] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 18977ms behind, skipping 379 tick(s)
-[13:13:13] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 6052ms behind, skipping 121 tick(s)
-[13:13:18] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:13:18] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:13:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:13:32] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 5143ms behind, skipping 102 tick(s)
-[13:13:34] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Creative Mode]
-[13:13:34] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Creative Mode
-[13:13:41] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 42 advancements
-[13:13:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Spectator Mode]
-[13:13:53] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Spectator Mode
-[13:14:16] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:14:16] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:14:16] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:14:53] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:14:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:14:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:14:54] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 5718ms behind, skipping 114 tick(s)
-[13:17:30] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:17:30] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:17:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:17:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
-[13:17:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
-[13:17:31] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Player304 lost connection: Disconnected
-[13:17:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 left the game
-[13:17:31] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Stopping singleplayer server as player logged out
-[13:17:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
-[13:17:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:17:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:17:31] [Server thread/INFO] [FML]: Unloading dimension 0
-[13:17:31] [Server thread/INFO] [FML]: Unloading dimension -2
-[13:17:32] [Server thread/INFO] [FML]: Applying holder lookups
-[13:17:32] [Server thread/INFO] [FML]: Holder lookups applied
-[13:17:41] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2
-[13:17:41] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypair
-[13:17:41] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
-[13:17:41] [Server thread/INFO] [FML]: Applying holder lookups
-[13:17:41] [Server thread/INFO] [FML]: Holder lookups applied
-[13:17:41] [Server thread/INFO] [FML]: Loading dimension 0 (mod test) (net.minecraft.server.integrated.IntegratedServer@5fcd2351)
-[13:17:41] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_pressure_plate
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_pressure_plate'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[13:17:41] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_button
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_button'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[13:17:41] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/furnace
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:furnace'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[13:17:41] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/crafting_table
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:crafting_table'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[13:17:41] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 495 advancements
-[13:17:41] [Server thread/INFO] [FML]: Loading dimension -3 (mod test) (net.minecraft.server.integrated.IntegratedServer@5fcd2351)
-[13:17:41] [Server thread/INFO] [FML]: Loading dimension 1 (mod test) (net.minecraft.server.integrated.IntegratedServer@5fcd2351)
-[13:17:41] [Server thread/INFO] [FML]: Loading dimension -1 (mod test) (net.minecraft.server.integrated.IntegratedServer@5fcd2351)
-[13:17:41] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@5fcd2351)
-[13:17:41] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
-[13:17:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 83%
-[13:17:42] [Server thread/INFO] [FML]: Unloading dimension -3
-[13:17:42] [Server thread/INFO] [FML]: Unloading dimension -1
-[13:17:42] [Server thread/INFO] [FML]: Unloading dimension 1
-[13:17:42] [Server thread/INFO] [FML]: Unloading dimension -2
-[13:17:42] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 12, from 10
-[13:17:42] [Netty Local Client IO #3/INFO] [FML]: Server protocol version 2
-[13:17:42] [Netty Server IO #7/INFO] [FML]: Client protocol version 2
-[13:17:42] [Netty Server IO #7/INFO] [FML]: Client attempting to join with 5 mods : minecraft@1.12.2,FML@8.0.99.99,nnparadisemod@1.1 (The Resurrection Update),forge@14.23.3.2689,mcp@9.42
-[13:17:42] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
-[13:17:42] [Netty Local Client IO #3/INFO] [FML]: [Netty Local Client IO #3] Client side modded connection established
-[13:17:42] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@5fcd2351)
-[13:17:42] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: Player304[local:E:3dc7939e] logged in with entity id 273795 at (2129.3037371364794, 107.96165447594288, -2845.371586521098)
-[13:17:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 joined the game
-[13:17:44] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 42 advancements
-[13:17:54] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 10284ms behind, skipping 205 tick(s)
-[13:18:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:45] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:45] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:45] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:45] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:45] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:45] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:56] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:56] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:56] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:18:56] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:19:00] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 48780ms behind, skipping 975 tick(s)
-[13:19:05] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:19:05] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:19:05] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:19:05] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:19:05] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:19:05] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:19:05] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3212ms behind, skipping 64 tick(s)
-[13:19:30] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 6156ms behind, skipping 123 tick(s)
-[13:19:33] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:19:33] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:19:33] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:20:00] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:20:00] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:20:00] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:20:01] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3605ms behind, skipping 72 tick(s)
-[13:20:30] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 4014ms behind, skipping 80 tick(s)
-[13:20:50] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:20:50] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:20:50] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:20:50] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:20:50] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:20:50] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:21:04] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Creative Mode]
-[13:21:04] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Creative Mode
-[13:21:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:21:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:21:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:21:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:21:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:21:37] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:22:03] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 72821ms behind, skipping 1456 tick(s)
-[13:22:05] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2165ms behind, skipping 43 tick(s)
-[13:22:16] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 48 advancements
-[13:22:31] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 11984ms behind, skipping 239 tick(s)
-[13:23:00] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 10846ms behind, skipping 216 tick(s)
-[13:23:27] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 22320ms behind, skipping 446 tick(s)
-[13:24:09] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 49 advancements
-[13:24:59] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3838ms behind, skipping 76 tick(s)
-[13:25:28] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 10028ms behind, skipping 200 tick(s)
-[13:25:45] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 6660ms behind, skipping 133 tick(s)
-[13:26:10] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 12586ms behind, skipping 251 tick(s)
-[13:26:19] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3055ms behind, skipping 61 tick(s)
-[13:26:24] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:26:24] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:26:24] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:34:19] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:34:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:34:19] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:38:51] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:38:51] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:38:51] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:38:52] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
-[13:38:52] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
-[13:38:52] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Player304 lost connection: Disconnected
-[13:38:52] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 left the game
-[13:38:52] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Stopping singleplayer server as player logged out
-[13:38:52] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
-[13:38:52] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:38:52] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:38:52] [Server thread/INFO] [FML]: Unloading dimension 0
-[13:38:52] [Server thread/INFO] [FML]: Unloading dimension -2
-[13:38:52] [Server thread/INFO] [FML]: Applying holder lookups
-[13:38:52] [Server thread/INFO] [FML]: Holder lookups applied
-[13:39:31] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2
-[13:39:31] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypair
-[13:39:31] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
-[13:39:31] [Server thread/INFO] [FML]: Applying holder lookups
-[13:39:31] [Server thread/INFO] [FML]: Holder lookups applied
-[13:39:31] [Server thread/INFO] [FML]: Loading dimension 0 (mod test) (net.minecraft.server.integrated.IntegratedServer@640d3680)
-[13:39:31] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_pressure_plate
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_pressure_plate'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[13:39:31] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/redstone/wooden_button
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:wooden_button'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[13:39:31] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/furnace
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:furnace'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[13:39:31] [Server thread/ERROR] [net.minecraft.advancements.AdvancementManager]: Parsing error loading built-in advancement minecraft:recipes/decorations/crafting_table
-com.google.gson.JsonSyntaxException: Unknown recipe 'minecraft:crafting_table'
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:204) ~[AdvancementRewards$Deserializer.class:?]
-	at net.minecraft.advancements.AdvancementRewards$Deserializer.deserialize(AdvancementRewards.java:180) ~[AdvancementRewards$Deserializer.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:887) ~[Gson.class:?]
-	at com.google.gson.Gson.fromJson(Gson.java:952) ~[Gson.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:162) ~[TreeTypeAdapter$GsonContextImpl.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:359) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.deserializeClass(JsonUtils.java:381) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.Advancement$Builder.deserialize(Advancement.java:295) ~[Advancement$Builder.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:50) ~[AdvancementManager$1.class:?]
-	at net.minecraft.advancements.AdvancementManager$1.deserialize(AdvancementManager.java:46) ~[AdvancementManager$1.class:?]
-	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:69) ~[TreeTypeAdapter.class:?]
-	at net.minecraft.util.JsonUtils.gsonDeserialize(JsonUtils.java:435) ~[JsonUtils.class:?]
-	at net.minecraft.util.JsonUtils.fromJson(JsonUtils.java:485) ~[JsonUtils.class:?]
-	at net.minecraft.advancements.AdvancementManager.loadBuiltInAdvancements(AdvancementManager.java:185) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.reload(AdvancementManager.java:69) [AdvancementManager.class:?]
-	at net.minecraft.advancements.AdvancementManager.<init>(AdvancementManager.java:61) [AdvancementManager.class:?]
-	at net.minecraft.world.WorldServer.init(WorldServer.java:162) [WorldServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:123) [IntegratedServer.class:?]
-	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:160) [IntegratedServer.class:?]
-	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:550) [MinecraftServer.class:?]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
-[13:39:31] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 495 advancements
-[13:39:31] [Server thread/INFO] [FML]: Loading dimension -3 (mod test) (net.minecraft.server.integrated.IntegratedServer@640d3680)
-[13:39:31] [Server thread/INFO] [FML]: Loading dimension 1 (mod test) (net.minecraft.server.integrated.IntegratedServer@640d3680)
-[13:39:31] [Server thread/INFO] [FML]: Loading dimension -1 (mod test) (net.minecraft.server.integrated.IntegratedServer@640d3680)
-[13:39:31] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@640d3680)
-[13:39:31] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
-[13:39:32] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 82%
-[13:39:33] [Server thread/INFO] [FML]: Unloading dimension -3
-[13:39:33] [Server thread/INFO] [FML]: Unloading dimension -1
-[13:39:33] [Server thread/INFO] [FML]: Unloading dimension 1
-[13:39:33] [Server thread/INFO] [FML]: Unloading dimension -2
-[13:39:33] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 12, from 10
-[13:39:33] [Netty Local Client IO #4/INFO] [FML]: Server protocol version 2
-[13:39:33] [Netty Server IO #1/INFO] [FML]: Client protocol version 2
-[13:39:33] [Netty Server IO #1/INFO] [FML]: Client attempting to join with 5 mods : minecraft@1.12.2,FML@8.0.99.99,nnparadisemod@1.1 (The Resurrection Update),forge@14.23.3.2689,mcp@9.42
-[13:39:33] [Netty Local Client IO #4/INFO] [FML]: [Netty Local Client IO #4] Client side modded connection established
-[13:39:33] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
-[13:39:33] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@640d3680)
-[13:39:33] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: Player304[local:E:3c87606f] logged in with entity id 381745 at (1663.794694974595, 38.62647780115054, -4292.980256740518)
-[13:39:33] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player304 joined the game
-[13:39:34] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 49 advancements
-[13:39:34] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:39:34] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:39:34] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:39:45] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2214ms behind, skipping 44 tick(s)
-[13:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:40:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:41:34] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:41:34] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:41:34] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:41:35] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 83982ms behind, skipping 1679 tick(s)
-[13:42:09] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2080ms behind, skipping 41 tick(s)
-[13:42:14] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:14] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:14] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:14] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:14] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:14] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:49] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:49] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:49] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:49] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:49] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:42:49] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:05] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:43:05] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:43:05] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:43:06] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 38703ms behind, skipping 774 tick(s)
-[13:43:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:31] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:32] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 13616ms behind, skipping 272 tick(s)
-[13:43:46] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:46] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:46] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:46] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:46] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:43:46] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:44:12] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:44:12] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:44:12] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:44:12] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:44:12] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:44:12] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:44:20] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:44:20] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:44:20] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:44:21] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 29859ms behind, skipping 597 tick(s)
-[13:45:24] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 6532ms behind, skipping 130 tick(s)
-[13:45:27] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:45:27] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:45:27] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:45:27] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:45:27] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:45:49] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Spectator Mode]
-[13:45:49] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Spectator Mode
-[13:46:14] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 27739ms behind, skipping 554 tick(s)
-[13:46:39] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:46:39] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:46:39] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:49:37] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:49:37] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:49:37] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:50:25] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 20483ms behind, skipping 409 tick(s)
-[13:50:39] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:39] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:39] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:39] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:40] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:40] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:45] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 19896ms behind, skipping 397 tick(s)
-[13:50:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:50:58] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:51:02] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:51:02] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:51:02] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:51:02] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:51:02] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:51:02] [Server thread/WARN] [net.minecraft.world.storage.loot.LootTable]: Tried to over-fill a container
-[13:51:07] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[13:51:07] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[13:51:07] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[13:51:08] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 23382ms behind, skipping 467 tick(s)
-[13:59:11] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player304: Set own game mode to Creative Mode]
-[13:59:11] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Your game mode has been updated to Creative Mode
-[13:59:27] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 17567ms behind, skipping 351 tick(s)
-[13:59:58] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 56 advancements
-[14:02:12] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3390ms behind, skipping 67 tick(s)
-[14:02:15] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[14:02:15] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[14:02:16] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[14:02:24] [main/INFO] [net.minecraft.client.Minecraft]: Stopping!
-[14:02:24] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
-[14:02:24] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
-[14:02:24] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
-[14:02:24] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
-[14:02:24] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
-[14:02:24] [Server thread/INFO] [FML]: Unloading dimension 0
-[14:02:24] [Server thread/INFO] [FML]: Unloading dimension -2
-[14:02:24] [Server thread/INFO] [FML]: Applying holder lookups
-[14:02:24] [Server thread/INFO] [FML]: Holder lookups applied
-[14:02:24] [main/INFO] [net.minecraft.client.audio.SoundManager]: SoundSystem shutting down...
-[14:02:24] [main/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.com
+[12:49:33] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 495 advancements
+[12:49:33] [Server thread/INFO] [FML]: Loading dimension -3 (mod test) (net.minecraft.server.integrated.IntegratedServer@2112fffc)
+[12:49:33] [Server thread/INFO] [FML]: Loading dimension 1 (mod test) (net.minecraft.server.integrated.IntegratedServer@2112fffc)
+[12:49:33] [Server thread/INFO] [FML]: Loading dimension -1 (mod test) (net.minecraft.server.integrated.IntegratedServer@2112fffc)
+[12:49:33] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@2112fffc)
+[12:49:33] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
+[12:49:34] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 2%
+[12:49:35] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 57%
+[12:49:36] [Server thread/INFO] [FML]: Unloading dimension -3
+[12:49:36] [Server thread/INFO] [FML]: Unloading dimension -1
+[12:49:36] [Server thread/INFO] [FML]: Unloading dimension 1
+[12:49:36] [Server thread/INFO] [FML]: Unloading dimension -2
+[12:49:36] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 12, from 10
+[12:49:39] [Netty Local Client IO #0/INFO] [FML]: Server protocol version 2
+[12:49:39] [Netty Server IO #1/INFO] [FML]: Client protocol version 2
+[12:49:39] [Netty Server IO #1/INFO] [FML]: Client attempting to join with 5 mods : minecraft@1.12.2,FML@8.0.99.99,nnparadisemod@1.1 (The Resurrection Update),forge@14.23.3.2689,mcp@9.42
+[12:49:39] [Netty Local Client IO #0/INFO] [FML]: [Netty Local Client IO #0] Client side modded connection established
+[12:49:39] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
+[12:49:39] [Server thread/INFO] [FML]: Loading dimension -2 (mod test) (net.minecraft.server.integrated.IntegratedServer@2112fffc)
+[12:49:39] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: Player375[local:E:c5806ce4] logged in with entity id 361 at (632.9481593671627, 81.00425893006833, -4502.08633362952)
+[12:49:39] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player375 joined the game
+[12:49:39] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player375 has made the advancement [Diamonds!]
+[12:49:40] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
+[12:49:40] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
+[12:49:40] [main/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player375 has made the advancement [Diamonds!]
+[12:49:41] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 30 advancements
+[12:49:41] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
+[12:49:42] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2626ms behind, skipping 52 tick(s)
+[12:49:50] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 31 advancements
+[12:49:51] [main/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 33 advancements
+[12:49:58] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
+[12:49:58] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
+[12:49:58] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
+[12:49:59] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[12:49:59] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[12:49:59] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Player375 lost connection: Disconnected
+[12:49:59] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player375 left the game
+[12:49:59] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Stopping singleplayer server as player logged out
+[12:49:59] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
+[12:49:59] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/overworld
+[12:49:59] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'mod test'/deep_underground
+[12:49:59] [Server thread/INFO] [FML]: Unloading dimension 0
+[12:49:59] [Server thread/INFO] [FML]: Unloading dimension -2
+[12:50:00] [Server thread/INFO] [FML]: Applying holder lookups
+[12:50:00] [Server thread/INFO] [FML]: Holder lookups applied
+[12:50:04] [main/INFO] [net.minecraft.client.Minecraft]: Stopping!
+[12:50:04] [main/INFO] [net.minecraft.client.audio.SoundManager]: SoundSystem shutting down...
+[12:50:05] [main/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.com
