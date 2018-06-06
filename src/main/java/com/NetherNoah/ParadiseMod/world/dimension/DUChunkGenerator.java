@@ -287,6 +287,10 @@ public class DUChunkGenerator implements IChunkGenerator {
 					//the block above it
 					Block blockAbove=chunk.getBlockState(cx, cy+1, cz).getBlock();
 					
+					//for performance reasons
+					if (blockToReplace==Blocks.GRAVEL)
+						chunk.setBlockState(new BlockPos(cx,cy,cz), Blocks.STONE.getDefaultState());
+					
 					//replace grass and dirt
 					if (blockToReplace==Blocks.GRASS||blockToReplace==Blocks.DIRT) {
 						

@@ -27,82 +27,60 @@ public class DUTreesGen extends WorldGenerator {
 	public boolean generate(World world, Random rand, BlockPos position) {
 		Biome biome = world.getBiomeForCoordsBody(position);
 		WorldServer worldserver = (WorldServer) world;
-		int x=0;
-		int z=0;
 		
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		
-		Template oak= templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/sapling"));
+		Template oak= templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/oak_sapling"));
 		
-		Template birch=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/birch_tree_1"));
+		Template birch=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/birch_sapling"));
 		
-		Template darkOak=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/dark_oak_tree_1"));
-		int[] darkOakZ= {-5,-3,-6};
-		
-		Template[] acacia= {templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/acacia_tree_1")),templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/acacia_tree_2")),templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/acacia_tree_3"))};
-		int[] acaciaX= {-3,-5,-2};
-		int[] acaciaZ= {-2,-3,-3};
+		Template darkOak=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/dark_oak_sapling"));
+		Template acacia=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/acacia_sapling"));
 		Template jungle=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/jungle_tree"));
 		
 		Template spruce=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/spruce_tree"));
 		
-		Template template = null;
+		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/oak_sapling"));
 		
 		int treeSelect=rand.nextInt(3);
-		//oak forest home
-		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS||biome==Biomes.SWAMPLAND||biome==Biomes.MUTATED_SWAMPLAND) {
-			x=oakX[treeSelect];
-			z=oakZ[treeSelect];			
-			template = oak[treeSelect];
+		//oak sapling
+		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS||biome==Biomes.SWAMPLAND||biome==Biomes.MUTATED_SWAMPLAND) {			
+			template = oak;
 		}
 		
-		//savanna home
+		//acacia sapling
 		if(biome == Biomes.SAVANNA||biome == Biomes.SAVANNA_PLATEAU||biome == Biomes.MUTATED_SAVANNA||biome == Biomes.MUTATED_SAVANNA_ROCK) {
-			x=acaciaX[treeSelect];
-			z=acaciaZ[treeSelect];
-			template = acacia[treeSelect];
+			template = acacia;
 		}
 		
-		//birch forest home
+		//birch sapling
 		if(biome == Biomes.BIRCH_FOREST_HILLS|| biome == Biomes.BIRCH_FOREST_HILLS) {
-			x=-2;
-			z=-2;
-			template = birch[treeSelect];
+			template = birch;
 		}
 		
-		//roofed forest home
+		//dark oak sapling
 		if(biome == Biomes.ROOFED_FOREST) {
-			x=-3;
-			z=darkOakZ[treeSelect];
-			template = darkOak[treeSelect];
+			template = darkOak;
 		}
 		
-		//jungle home
+		//jungle sapling
 		if(biome == Biomes.JUNGLE||biome == Biomes.JUNGLE_EDGE||biome == Biomes.JUNGLE_HILLS||biome == Biomes.MUTATED_JUNGLE||biome == Biomes.MUTATED_JUNGLE_EDGE) {
-			x=-2;
-			z=-2;
 			template = jungle;
 		}
 		
-		//spruce home
+		//spruce sapling
 		if(biome == Biomes.TAIGA||biome == Biomes.TAIGA_HILLS||biome == Biomes.COLD_TAIGA||biome == Biomes.COLD_TAIGA_HILLS||biome == Biomes.MUTATED_REDWOOD_TAIGA||biome == Biomes.MUTATED_REDWOOD_TAIGA_HILLS||biome == Biomes.MUTATED_TAIGA||biome == Biomes.MUTATED_TAIGA_COLD||biome == Biomes.REDWOOD_TAIGA||biome == Biomes.REDWOOD_TAIGA_HILLS||biome==Biomes.EXTREME_HILLS_WITH_TREES||biome==Biomes.MUTATED_EXTREME_HILLS_WITH_TREES) {
-			x=-3;
-			z=-3;
 			template = spruce;
 		}
-		//if(DUTreesGen.canSpawnHere(template, worldserver, position.add(x, 1, z))) {
-		if (template!=null) {
-			IBlockState iblockstate = world.getBlockState(position.add(x, 1, z));
-			world.notifyBlockUpdate(position.add(x, 1, z), iblockstate, iblockstate, 3);
-			PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-					.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
-					.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
-			template.getDataBlocks(position.add(x, 1, z), placementsettings);
-			template.addBlocksToWorld(world, position.add(x, 1, z), placementsettings);
-			return true;
-		}
-		return false;
+		IBlockState iblockstate = world.getBlockState(position);
+		world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
+		PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
+				.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
+				.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
+		template.getDataBlocks(position, placementsettings);
+		template.addBlocksToWorld(world, position.add(0, 0, 0), placementsettings);
+		return true;
 	}
 	public static boolean canSpawnHere(Template template, World world, BlockPos posAboveGround)
 	{
@@ -121,13 +99,13 @@ public class DUTreesGen extends WorldGenerator {
 	
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
-		int y = 120;
+		int y = 75;
 		boolean foundGround = false;
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			Block blockAbove = world.getBlockState(new BlockPos(x,y+1,z)).getBlock();
-			foundGround =  (blockAt == Blocks.GRASS|| blockAt == Blocks.DIRT || blockAt == Blocks.SAND || blockAt == Blocks.SNOW ||blockAt == Blocks.MYCELIUM||blockAt==Blocks.STONE && blockAbove==Blocks.AIR);
+			//Block blockAbove = world.getBlockState(new BlockPos(x,y+1,z)).getBlock();
+			foundGround =  (blockAt == Blocks.GRASS);// && blockAbove==Blocks.AIR);
 		}
 		return y;
 	}

@@ -27,16 +27,17 @@ public class DUTrees extends WorldGenerator implements IWorldGenerator{
 		int y = getGroundFromAbove(world, blockX, blockZ);
 		BlockPos pos = new BlockPos(blockX, y, blockZ);
 		WorldGenerator structure = new DUTreesGen();
-		structure.generate(world, rand, pos);
+		if (y>31)
+			structure.generate(world, rand, pos);
 	}
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
-		int y = 128;
+		int y = 75;
 		boolean foundGround = false;
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == Blocks.GRASS|| blockAt == Blocks.DIRT;
+			foundGround =  blockAt == Blocks.GRASS;
 		}
 		return y;
 	}

@@ -200,3 +200,4 @@
     Fixed a bug with diamond crystal generating in the deep void and deep underground
 1.2:
     Added biomes to Deep Underground
+    For performance reasons, gravel generation has been removed from the deep underground dimension.
