@@ -6,6 +6,7 @@ import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
+import com.NetherNoah.ParadiseMod.init.ModBiomes;
 import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Buttons;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Chests;
@@ -40,28 +41,29 @@ import com.NetherNoah.ParadiseMod.world.worldgen.ores.DirtGen;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenEnd;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenNether;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenOverworld;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.BrickPyramid;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Buoy;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.DUTrees;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.GiantGrassBlock;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Home;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.LandMine;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.LandMineDirt;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.LandMineStone;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.MesaTemple;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.Minerbase;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.MiniStronghold;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Ocean;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.PlayerTemples;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.RoguePortal;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Runway;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.SkyWheel;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.TreasureChest;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.VoidDungeon;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.VoidDungeonLarge;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.VoidTower;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.WickerMan;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.JeffTank;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.Shrine;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons.BrickPyramid;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons.MesaTemple;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons.Minerbase;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons.MiniStronghold;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons.VoidDungeon;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons.VoidDungeonLarge;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons.VoidTower;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Landmines.LandMine;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Landmines.LandMineDirt;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.Landmines.LandMineStone;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EnumCreatureType;
@@ -185,12 +187,16 @@ public class ParadiseMod {
 				new DirtGen(),
 				
 				//flowers
-				new Rose()
+				new Rose(),
+				
+				//trees in the Deep Underground
+				new DUTrees()
 				};
 		for(int i=0;i<generators.length;i++) {
 			GameRegistry.registerWorldGenerator(generators[i],1);
 		}
-		
+		//biomes
+		ModBiomes.regBiomes();
 		//block categories
 		Lamps.initAndRegister();
 		Ores.initAndRegister();
