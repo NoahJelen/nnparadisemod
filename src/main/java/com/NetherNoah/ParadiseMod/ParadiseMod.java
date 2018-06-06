@@ -6,7 +6,6 @@ import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
-import com.NetherNoah.ParadiseMod.init.ModBiomes;
 import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Buttons;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Chests;
@@ -195,8 +194,6 @@ public class ParadiseMod {
 		for(int i=0;i<generators.length;i++) {
 			GameRegistry.registerWorldGenerator(generators[i],1);
 		}
-		//biomes
-		ModBiomes.regBiomes();
 		//block categories
 		Lamps.initAndRegister();
 		Ores.initAndRegister();

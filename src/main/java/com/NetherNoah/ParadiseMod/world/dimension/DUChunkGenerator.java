@@ -3,8 +3,8 @@ package com.NetherNoah.ParadiseMod.world.dimension;
 import java.util.List;
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
+import com.NetherNoah.ParadiseMod.world.MapGenDuCaves;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
@@ -23,12 +23,12 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.MapGenCaves;
+import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.WorldGenBush;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.terraingen.ChunkGeneratorEvent;
@@ -43,16 +43,13 @@ public class DUChunkGenerator implements IChunkGenerator {
 	protected static final IBlockState STONE = Blocks.STONE.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
-	
 	protected static final IBlockState GRASS = Blocks.GRASS.getDefaultState();
 	protected static final IBlockState DIRT = Blocks.DIRT.getDefaultState();
-	
 	protected static final IBlockState COMPICE = Blocks.PACKED_ICE.getDefaultState();
 	protected static final IBlockState ICE=Blocks.ICE.getDefaultState();
-	
 	protected static final IBlockState SAND = Blocks.SAND.getDefaultState();
 	protected static final IBlockState SANDSTONE = Blocks.SANDSTONE.getDefaultState();
-
+	protected static final IBlockState PRISMARINE=Blocks.PRISMARINE.getDefaultState();
 	protected static final IBlockState COBBLESTONE = Blocks.COBBLESTONE.getDefaultState();
 	
 
@@ -75,58 +72,43 @@ public class DUChunkGenerator implements IChunkGenerator {
 	private final WorldGenMinable lightsGenDesert= new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.SANDSTONE));
 	private final WorldGenMinable lightsGenDesert2= new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.SAND));
 
+	//oceanic
+	private final WorldGenMinable Lantern= new WorldGenMinable(Blocks.SEA_LANTERN.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.PRISMARINE));
+
 	//volcanic
 	private final WorldGenMinable Magma= new WorldGenMinable(Blocks.MAGMA.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.COBBLESTONE));
 	
-	// crystals
+	//crystals
 	private final WorldGenBush quartzGen = new WorldGenBush(Crystals.quartzCrystal);
 	private final WorldGenBush diamondGen = new WorldGenBush(Crystals.diamondCrystal);
 	private final WorldGenBush emeraldGen = new WorldGenBush(Crystals.emeraldCrystal);
 	private final WorldGenBush redstoneGen = new WorldGenBush(Crystals.redstoneCrystal);
 	private final WorldGenBush rubyGen = new WorldGenBush(Crystals.rubyCrystal);
 
-	// stone
-	private final WorldGenMinable Granite = new WorldGenMinable(
-			Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE), 33,
-			BlockMatcher.forBlock(Blocks.STONE));
-	private final WorldGenMinable Andesite = new WorldGenMinable(
-			Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE), 33,
-			BlockMatcher.forBlock(Blocks.STONE));
-	private final WorldGenMinable Diorite = new WorldGenMinable(
-			Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE), 33,
-			BlockMatcher.forBlock(Blocks.STONE));
+	//stone
+	private final WorldGenMinable Granite = new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE),33,BlockMatcher.forBlock(Blocks.STONE));
+	private final WorldGenMinable Andesite = new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE), 33,BlockMatcher.forBlock(Blocks.STONE));
+	private final WorldGenMinable Diorite = new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE), 33,BlockMatcher.forBlock(Blocks.STONE));
 
-	// ores
-	private final WorldGenerator coalGen = new WorldGenMinable(Blocks.COAL_ORE.getDefaultState(), 28,
-			BlockMatcher.forBlock(Blocks.STONE));
-	private final WorldGenerator ironGen = new WorldGenMinable(Blocks.IRON_ORE.getDefaultState(), 14,
-			BlockMatcher.forBlock(Blocks.STONE));
-	private final WorldGenerator goldGen = new WorldGenMinable(Blocks.GOLD_ORE.getDefaultState(), 7,
-			BlockMatcher.forBlock(Blocks.STONE));
-
-	// liquid redstone
-	private final WorldGenerator lrGen = new WorldGenMinable(
-			LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState(), 1, BlockMatcher.forBlock(Blocks.STONE));
-
-	// decoration
+	//ores
+	private final WorldGenerator coalGen = new WorldGenMinable(Blocks.COAL_ORE.getDefaultState(), 28,BlockMatcher.forBlock(Blocks.STONE));
+	private final WorldGenerator ironGen = new WorldGenMinable(Blocks.IRON_ORE.getDefaultState(), 14,BlockMatcher.forBlock(Blocks.STONE));
+	private final WorldGenerator goldGen = new WorldGenMinable(Blocks.GOLD_ORE.getDefaultState(), 7,BlockMatcher.forBlock(Blocks.STONE));
+	
+	//decoration
 	private final WorldGenBush brownMushroomFeature = new WorldGenBush(Blocks.BROWN_MUSHROOM);
 	private final WorldGenBush redMushroomFeature = new WorldGenBush(Blocks.RED_MUSHROOM);
-	private final WorldGenMinable sapling = new WorldGenMinable(Blocks.SAPLING.getDefaultState(), 1,
-			BlockMatcher.forBlock(Blocks.GRASS));
 
-	// structures
-	private MapGenBase genDUCaves = new MapGenCaves();
-	private WorldGenerator trees = new WorldGenTrees(false, 1, Blocks.LOG.getDefaultState(),
-			Blocks.LEAVES.getDefaultState(), true);
-
+	//natural structures
+	private MapGenBase genDUCaves = new MapGenDuCaves();
+	private MapGenBase genDURavines = new MapGenRavine();
+	private MapGenBase genDUMineshafts=new MapGenMineshaft();
+	
 	double[] pnr;
 	double[] ar;
 	double[] br;
 	double[] noiseData4;
 	double[] dr;
-
-	public static Block fromBlock = Blocks.GRASS; // change this to suit your need
-	public static Block toBlock = Blocks.SLIME_BLOCK; // change this to suit your need
 
 	public DUChunkGenerator(World worldIn, boolean p_i45637_2_, long seed) {
 		world = worldIn;
@@ -138,7 +120,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 		scaleNoise = new NoiseGeneratorOctaves(rand, 10);
 		depthNoise = new NoiseGeneratorOctaves(rand, 16);
 		worldIn.setSeaLevel(63);
-		genDUCaves = TerrainGen.getModdedMapGen(genDUCaves, InitMapGenEvent.EventType.CAVE);
+		genDUCaves=TerrainGen.getModdedMapGen(genDUCaves, InitMapGenEvent.EventType.CAVE);
+		genDURavines=TerrainGen.getModdedMapGen(genDURavines, InitMapGenEvent.EventType.RAVINE);
+		genDUMineshafts=TerrainGen.getModdedMapGen(genDUMineshafts,InitMapGenEvent.EventType.MINESHAFT);
 	}
 
 	public void prepareHeights(int p_185936_1_, int p_185936_2_, ChunkPrimer primer) {
@@ -258,15 +242,16 @@ public class DUChunkGenerator implements IChunkGenerator {
 		ChunkPrimer chunkprimer = new ChunkPrimer();
 		prepareHeights(x, z, chunkprimer);
 		buildSurfaces(x, z, chunkprimer, 0);
+		genDURavines.generate(world, x, z, chunkprimer);
+		genDUMineshafts.generate(world, x, z, chunkprimer);
 		genDUCaves.generate(world, x, z, chunkprimer);
 		Chunk chunk = new Chunk(world, chunkprimer, x, z);
 		Biome[] abiome = world.getBiomeProvider().getBiomes((Biome[]) null, x * 16, z * 16, 16, 16);
-		Biome genBiome = Biomes.PLAINS;
 		byte[] abyte = chunk.getBiomeArray();
 		for (int i = 0; i < abyte.length; ++i) {
 			abyte[i] = (byte) Biome.getIdForBiome(abiome[i]);
 		}
-		
+			
 		//biome dependent worldgen
 		for (int cx = 0; cx < 16; ++cx) {
 			for (int cz = 0; cz < 16; ++cz) {
@@ -280,6 +265,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 					boolean cold=blockBiome==Biomes.TAIGA||blockBiome==Biomes.TAIGA_HILLS||blockBiome==Biomes.MUTATED_REDWOOD_TAIGA||blockBiome==Biomes.MUTATED_REDWOOD_TAIGA_HILLS||blockBiome==Biomes.STONE_BEACH;
 					boolean desert=blockBiome==Biomes.DESERT||blockBiome==Biomes.DESERT_HILLS||blockBiome==Biomes.MUTATED_DESERT;
 					boolean volcanic=blockBiome==Biomes.EXTREME_HILLS||blockBiome==Biomes.EXTREME_HILLS_EDGE||blockBiome==Biomes.EXTREME_HILLS_WITH_TREES||blockBiome==Biomes.MUTATED_EXTREME_HILLS||blockBiome==Biomes.MUTATED_EXTREME_HILLS_WITH_TREES;
+					boolean oceanic=blockBiome==Biomes.OCEAN||blockBiome==Biomes.DEEP_OCEAN;
 					
 					//block to replace
 					Block blockToReplace=chunk.getBlockState(cx, cy, cz).getBlock();
@@ -289,7 +275,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 					
 					//for performance reasons
 					if (blockToReplace==Blocks.GRAVEL)
-						chunk.setBlockState(new BlockPos(cx,cy,cz), Blocks.STONE.getDefaultState());
+						chunk.setBlockState(new BlockPos(cx,cy,cz), STONE);
 					
 					//replace grass and dirt
 					if (blockToReplace==Blocks.GRASS||blockToReplace==Blocks.DIRT) {
@@ -322,14 +308,16 @@ public class DUChunkGenerator implements IChunkGenerator {
 							if (desert)
 								chunk.setBlockState(new BlockPos(cx, cy, cz), SANDSTONE);
 							
-							if (volcanic)
+							if (volcanic) 
 								chunk.setBlockState(new BlockPos(cx,cy,cz), COBBLESTONE);
+							
+							if (oceanic) 
+								chunk.setBlockState(new BlockPos(cx,cy,cz), PRISMARINE);
+							
 						}
 					}
 				}
 			}
-			
-			
 		}
 		return chunk;
 	}
@@ -415,32 +403,21 @@ public class DUChunkGenerator implements IChunkGenerator {
 		ForgeEventFactory.onChunkPopulate(false, this, world, rand, x, z, false);
 		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(world, rand, blockpos));
 
-		// stone
+		//stone
 		if (TerrainGen.generateOre(world, rand, Andesite, blockpos, OreGenEvent.GenerateMinable.EventType.ANDESITE)) {
 			Andesite.generate(world, rand, blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
 			Diorite.generate(world, rand, blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
 			Granite.generate(world, rand, blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
 		}
-
-		// trees
+		
 		if (TerrainGen.decorate(world, rand, blockpos, DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
+			//crystals
 			if (rand.nextBoolean()) {
-				trees.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-			}
-		}
-		if (TerrainGen.decorate(world, rand, blockpos, DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
-			if (rand.nextBoolean()) {
-				// crystals
 				quartzGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 				diamondGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 				emeraldGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 				redstoneGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 				rubyGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-
-				// sapling
-				sapling.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 			}
 			
 			//mushrooms
@@ -451,17 +428,15 @@ public class DUChunkGenerator implements IChunkGenerator {
 		}
 		
 		//ores
-		if (TerrainGen.generateOre(world, rand, coalGen, blockpos, OreGenEvent.GenerateMinable.EventType.QUARTZ))
+		if (TerrainGen.generateOre(world, rand, coalGen, blockpos, OreGenEvent.GenerateMinable.EventType.QUARTZ)) {
 			for (int l1 = 0; l1 < 32; ++l1) {
 				coalGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				ironGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				goldGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
-
-				// liquid redstone
-				lrGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 			}
+		}
 		
-		// lights
+		//lights
 		if (TerrainGen.generateOre(world, rand, lightsGen, blockpos, OreGenEvent.GenerateMinable.EventType.QUARTZ))
 			for (int l1=0;l1<32;l1++) {
 				//general
@@ -474,6 +449,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 				
 				//volcanic
 				Magma.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				
+				//oceanic
+				Lantern.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 			}
 		biome.decorate(world, rand, new BlockPos(i, 0, j));
 		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(world, rand, blockpos));
