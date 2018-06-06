@@ -3,7 +3,6 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
-import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -23,64 +22,85 @@ import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.TemplateManager;
 
-public class HomeGen extends WorldGenerator {
+public class DUTreesGen extends WorldGenerator {
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) {
 		Biome biome = world.getBiomeForCoordsBody(position);
 		WorldServer worldserver = (WorldServer) world;
+		int x=0;
+		int z=0;
 		
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house"));
 		
+		Template oak= templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/sapling"));
+		
+		Template birch=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/birch_tree_1"));
+		
+		Template darkOak=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/dark_oak_tree_1"));
+		int[] darkOakZ= {-5,-3,-6};
+		
+		Template[] acacia= {templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/acacia_tree_1")),templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/acacia_tree_2")),templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/acacia_tree_3"))};
+		int[] acaciaX= {-3,-5,-2};
+		int[] acaciaZ= {-2,-3,-3};
+		Template jungle=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/jungle_tree"));
+		
+		Template spruce=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/spruce_tree"));
+		
+		Template template = null;
+		
+		int treeSelect=rand.nextInt(3);
 		//oak forest home
-		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS||biome==Biomes.SWAMPLAND||biome==Biomes.MUTATED_SWAMPLAND||biome==Biomes.PLAINS||biome==Biomes.MUTATED_PLAINS||biome==Biomes.ICE_PLAINS) {
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house"));
+		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS||biome==Biomes.SWAMPLAND||biome==Biomes.MUTATED_SWAMPLAND) {
+			x=oakX[treeSelect];
+			z=oakZ[treeSelect];			
+			template = oak[treeSelect];
 		}
 		
 		//savanna home
 		if(biome == Biomes.SAVANNA||biome == Biomes.SAVANNA_PLATEAU||biome == Biomes.MUTATED_SAVANNA||biome == Biomes.MUTATED_SAVANNA_ROCK) {
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_acacia"));
+			x=acaciaX[treeSelect];
+			z=acaciaZ[treeSelect];
+			template = acacia[treeSelect];
 		}
 		
 		//birch forest home
 		if(biome == Biomes.BIRCH_FOREST_HILLS|| biome == Biomes.BIRCH_FOREST_HILLS) {
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_birch"));
+			x=-2;
+			z=-2;
+			template = birch[treeSelect];
 		}
 		
 		//roofed forest home
 		if(biome == Biomes.ROOFED_FOREST) {
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_dark_oak"));
-		}
-		
-		//desert home
-		if(biome == Biomes.DESERT||biome == Biomes.DESERT_HILLS||biome == Biomes.MUTATED_DESERT) {
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_desert"));
+			x=-3;
+			z=darkOakZ[treeSelect];
+			template = darkOak[treeSelect];
 		}
 		
 		//jungle home
 		if(biome == Biomes.JUNGLE||biome == Biomes.JUNGLE_EDGE||biome == Biomes.JUNGLE_HILLS||biome == Biomes.MUTATED_JUNGLE||biome == Biomes.MUTATED_JUNGLE_EDGE) {
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_jungle"));
+			x=-2;
+			z=-2;
+			template = jungle;
 		}
 		
 		//spruce home
 		if(biome == Biomes.TAIGA||biome == Biomes.TAIGA_HILLS||biome == Biomes.COLD_TAIGA||biome == Biomes.COLD_TAIGA_HILLS||biome == Biomes.MUTATED_REDWOOD_TAIGA||biome == Biomes.MUTATED_REDWOOD_TAIGA_HILLS||biome == Biomes.MUTATED_TAIGA||biome == Biomes.MUTATED_TAIGA_COLD||biome == Biomes.REDWOOD_TAIGA||biome == Biomes.REDWOOD_TAIGA_HILLS||biome==Biomes.EXTREME_HILLS_WITH_TREES||biome==Biomes.MUTATED_EXTREME_HILLS_WITH_TREES) {
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_spruce"));
+			x=-3;
+			z=-3;
+			template = spruce;
 		}
-
-		if(ModConfig.worldgen.structures.Homes==false)
-			return false;
-		if(HomeGen.canSpawnHere(template, worldserver, position)) {
-			if(rand.nextInt(ModConfig.worldgen.structures.HomesChance) == 0){
-				IBlockState iblockstate = world.getBlockState(position);
-				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
-				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-						.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
-						.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
-				template.getDataBlocks(position, placementsettings);
-				template.addBlocksToWorld(world, position.add(0, 0, 0), placementsettings);
-				return true;
-			}
+		//if(DUTreesGen.canSpawnHere(template, worldserver, position.add(x, 1, z))) {
+		if (template!=null) {
+			IBlockState iblockstate = world.getBlockState(position.add(x, 1, z));
+			world.notifyBlockUpdate(position.add(x, 1, z), iblockstate, iblockstate, 3);
+			PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
+					.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
+					.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
+			template.getDataBlocks(position.add(x, 1, z), placementsettings);
+			template.addBlocksToWorld(world, position.add(x, 1, z), placementsettings);
+			return true;
 		}
 		return false;
 	}
@@ -88,9 +108,7 @@ public class HomeGen extends WorldGenerator {
 	{
 		int zwidth = template.getSize().getZ();
 		int xwidth = template.getSize().getX();
-		boolean corner1 = isCornerValid(world, posAboveGround);
-		boolean corner2 = isCornerValid(world, posAboveGround.add(xwidth, 0, zwidth));
-		return posAboveGround.getY() > 31 && corner1 && corner2;
+		return posAboveGround.getY() > 31;
 	}
 	public static boolean isCornerValid(World world, BlockPos pos)
 	{

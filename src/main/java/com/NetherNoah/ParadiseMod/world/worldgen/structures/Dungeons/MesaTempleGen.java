@@ -1,4 +1,4 @@
-package com.NetherNoah.ParadiseMod.world.worldgen.structures;
+package com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons;
 
 import java.util.Random;
 
@@ -28,7 +28,7 @@ public class MesaTempleGen extends WorldGenerator {
 		WorldServer worldserver = (WorldServer) world;
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":mesa_temple"));
+		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":dungeons/mesa_temple"));
 		if(ModConfig.worldgen.structures.MesaTemple==false)
 			return false;
 		if(template == null)

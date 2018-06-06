@@ -1,4 +1,4 @@
-package com.NetherNoah.ParadiseMod.world.worldgen.structures;
+package com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons;
 
 import java.util.Random;
 
@@ -7,7 +7,6 @@ import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -22,34 +21,28 @@ import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.TemplateManager;
 
-public class BrickPyramidGen extends WorldGenerator {
-
+public class MiniStrongholdGen extends WorldGenerator {
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) {
 		WorldServer worldserver = (WorldServer) world;
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-		Template part1 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":brick_pyramid_1"));
-		Template part2 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":brick_pyramid_2"));
-		Template part3 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":brick_pyramid_3"));
-		Template part4 = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":brick_pyramid_4"));
-		if(ModConfig.worldgen.structures.BrickPyramids==false)
+		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":dungeons/mini_stronghold"));
+		if(ModConfig.worldgen.structures.MiniStronghold==false)
 			return false;
+		if(template == null)
+		{
+			return false;
+		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
-		if(rand.nextInt(ModConfig.worldgen.structures.BrickPyramidsChance) == 0){
+		if(rand.nextInt(ModConfig.worldgen.structures.MiniStrongholdChance) == 0){
 			IBlockState iblockstate = world.getBlockState(position);
 			world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 			PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
 					.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
 					.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
-			part1.getDataBlocks(position, placementsettings);
-			part1.addBlocksToWorld(world, position.add(0, -2, 0), placementsettings);			
-			part2.getDataBlocks(position, placementsettings);
-			part2.addBlocksToWorld(world, position.add(26, -2, 0), placementsettings);			
-			part3.getDataBlocks(position, placementsettings);
-			part3.addBlocksToWorld(world, position.add(0, -2, 27), placementsettings);			
-			part4.getDataBlocks(position, placementsettings);
-			part4.addBlocksToWorld(world, position.add(26, -2, 27), placementsettings);
+			template.getDataBlocks(position, placementsettings);
+			template.addBlocksToWorld(world, position.add(0, 0, 0), placementsettings);
 			return true;
 		}
 		return false;

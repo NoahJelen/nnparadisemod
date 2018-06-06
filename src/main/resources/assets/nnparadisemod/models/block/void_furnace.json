@@ -46,10 +46,6 @@
 			"to": [12, 16, 8],
 			"faces": {
 				"north": {"uv": [4, 0, 5, 5], "texture": "#0"},
-				"south": {
-					"uv": [0, 0, 1, 5],
-					"texture": "#missing"
-				},
 				"west": {"uv": [4, 2, 12, 7], "texture": "#0"},
 				"up": {"uv": [11, 0, 12, 8], "texture": "#2"},
 				"down": {"uv": [4, 5, 12, 6], "texture": "#0"}

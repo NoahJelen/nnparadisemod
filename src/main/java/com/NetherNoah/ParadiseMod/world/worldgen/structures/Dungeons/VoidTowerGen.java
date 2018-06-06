@@ -1,4 +1,4 @@
-package com.NetherNoah.ParadiseMod.world.worldgen.structures;
+package com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons;
 
 import java.util.Random;
 
@@ -30,9 +30,9 @@ public class VoidTowerGen extends WorldGenerator {
 		WorldServer worldserver = (WorldServer) world;
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-		Template bottom = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":void_tower_bottom"));
-		Template section = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":void_tower_section"));
-		Template top = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":void_tower_top"));
+		Template bottom = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":dungeons/void_tower_bottom"));
+		Template section = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":dungeons/void_tower_section"));
+		Template top = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":dungeons/void_tower_top"));
 		int sections=rand.nextInt(16);
 		if (ModConfig.worldgen.structures.VoidTower==false)
 			return false;

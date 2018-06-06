@@ -1,4 +1,4 @@
-package com.NetherNoah.ParadiseMod.world.worldgen.structures;
+package com.NetherNoah.ParadiseMod.world.worldgen.structures.Landmines;
 
 import java.util.Random;
 
@@ -11,7 +11,7 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
-public class LandMine extends WorldGenerator implements IWorldGenerator{
+public class LandMineStone extends WorldGenerator implements IWorldGenerator{
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
@@ -23,17 +23,20 @@ public class LandMine extends WorldGenerator implements IWorldGenerator{
 	{	
 		int y = getGroundFromAbove(world, blockX, blockZ);
 		BlockPos pos = new BlockPos(blockX, y, blockZ);
-		WorldGenerator structure = new LandMineGen();
+		WorldGenerator structure = new LandMineStoneGen();
 		structure.generate(world, rand, pos);
 	}
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
-		int y = 255;
+		Random rand = new Random();
+		int ground[]= {255,30,16};
+		int y = ground[rand.nextInt(3)];
 		boolean foundGround = false;
-		while(!foundGround && y-- >= 31)
+		while(!foundGround && y-- >= 1)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround = blockAt == Blocks.GRASS;
+			Block blockAbove = world.getBlockState(new BlockPos(x,y+1,z)).getBlock();
+			foundGround=(blockAt==Blocks.STONE && blockAbove==Blocks.AIR);
 		}
 		return y;
 	}

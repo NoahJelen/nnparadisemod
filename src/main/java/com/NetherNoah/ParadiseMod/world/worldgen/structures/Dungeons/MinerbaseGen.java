@@ -1,4 +1,4 @@
-package com.NetherNoah.ParadiseMod.world.worldgen.structures;
+package com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons;
 
 import java.util.Random;
 
@@ -7,7 +7,6 @@ import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Biomes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -22,27 +21,30 @@ import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.TemplateManager;
 
-public class PlayerTempleGen extends WorldGenerator {
+public class MinerbaseGen extends WorldGenerator {
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) {
 		WorldServer worldserver = (WorldServer) world;
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":player_temples/nn777_temple"));
-		if (rand.nextInt(2)==0)
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":player_temples/attiecat_temple"));
-		if(ModConfig.worldgen.structures.PlayerTemples==false)
+		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":dungeons/miner_base"));
+		if(ModConfig.worldgen.structures.MinerBase==false)
 			return false;
+		if(template == null)
+		{
+			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
+			return false;
+		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
-		if (biome==Biomes.DESERT||biome==Biomes.SAVANNA||biome==Biomes.TAIGA||biome==Biomes.PLAINS) {
-			if(rand.nextInt(ModConfig.worldgen.structures.PlayerTemplesChance) == 0){
+		if(MinerbaseGen.canSpawnHere(template, worldserver, position)) {
+			if(rand.nextInt(ModConfig.worldgen.structures.MinerBaseChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);
 				world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 				PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
 						.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
 						.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 				template.getDataBlocks(position, placementsettings);
-				template.addBlocksToWorld(world, position.add(0, 0, 0), placementsettings);
+				template.addBlocksToWorld(world, position.add(0, -30, 0), placementsettings);
 				return true;
 			}
 		}

@@ -6,12 +6,13 @@ import java.util.Random;
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
 
-import net.minecraft.block.BlockFalling;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -42,8 +43,19 @@ public class DUChunkGenerator implements IChunkGenerator {
 	protected static final IBlockState STONE = Blocks.STONE.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
+	
 	protected static final IBlockState GRASS = Blocks.GRASS.getDefaultState();
 	protected static final IBlockState DIRT = Blocks.DIRT.getDefaultState();
+	
+	protected static final IBlockState COMPICE = Blocks.PACKED_ICE.getDefaultState();
+	protected static final IBlockState ICE=Blocks.ICE.getDefaultState();
+	
+	protected static final IBlockState SAND = Blocks.SAND.getDefaultState();
+	protected static final IBlockState SANDSTONE = Blocks.SANDSTONE.getDefaultState();
+
+	protected static final IBlockState COBBLESTONE = Blocks.COBBLESTONE.getDefaultState();
+	
+
 	private final World world;
 	private final boolean generateStructures;
 	private final Random rand;
@@ -54,48 +66,68 @@ public class DUChunkGenerator implements IChunkGenerator {
 	private NoiseGeneratorOctaves perlinNoise1;
 	public NoiseGeneratorOctaves scaleNoise;
 	public NoiseGeneratorOctaves depthNoise;
-	
+
 	//light it up!
-	private final WorldGenMinable lightsGen = new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33, BlockMatcher.forBlock(Blocks.STONE));
-	private final WorldGenMinable lightsGen2 = new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33, BlockMatcher.forBlock(Blocks.GRASS));
+	private final WorldGenMinable lightsGen = new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.STONE));
+	private final WorldGenMinable lightsGen2 = new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.GRASS));
 	
-	//crystals
+	//desert
+	private final WorldGenMinable lightsGenDesert= new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.SANDSTONE));
+	private final WorldGenMinable lightsGenDesert2= new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.SAND));
+
+	//volcanic
+	private final WorldGenMinable Magma= new WorldGenMinable(Blocks.MAGMA.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.COBBLESTONE));
+	
+	// crystals
 	private final WorldGenBush quartzGen = new WorldGenBush(Crystals.quartzCrystal);
 	private final WorldGenBush diamondGen = new WorldGenBush(Crystals.diamondCrystal);
 	private final WorldGenBush emeraldGen = new WorldGenBush(Crystals.emeraldCrystal);
 	private final WorldGenBush redstoneGen = new WorldGenBush(Crystals.redstoneCrystal);
 	private final WorldGenBush rubyGen = new WorldGenBush(Crystals.rubyCrystal);
-	
-	//stone
-	private final WorldGenMinable Granite = new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE), 33, BlockMatcher.forBlock(Blocks.STONE));
-	private final WorldGenMinable Andesite = new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE), 33, BlockMatcher.forBlock(Blocks.STONE));
-	private final WorldGenMinable Diorite = new WorldGenMinable(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE), 33, BlockMatcher.forBlock(Blocks.STONE));
-	
-	//ores
+
+	// stone
+	private final WorldGenMinable Granite = new WorldGenMinable(
+			Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE), 33,
+			BlockMatcher.forBlock(Blocks.STONE));
+	private final WorldGenMinable Andesite = new WorldGenMinable(
+			Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE), 33,
+			BlockMatcher.forBlock(Blocks.STONE));
+	private final WorldGenMinable Diorite = new WorldGenMinable(
+			Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE), 33,
+			BlockMatcher.forBlock(Blocks.STONE));
+
+	// ores
 	private final WorldGenerator coalGen = new WorldGenMinable(Blocks.COAL_ORE.getDefaultState(), 28,
 			BlockMatcher.forBlock(Blocks.STONE));
 	private final WorldGenerator ironGen = new WorldGenMinable(Blocks.IRON_ORE.getDefaultState(), 14,
 			BlockMatcher.forBlock(Blocks.STONE));
 	private final WorldGenerator goldGen = new WorldGenMinable(Blocks.GOLD_ORE.getDefaultState(), 7,
 			BlockMatcher.forBlock(Blocks.STONE));
-	
-	//liquid redstone
-	private final WorldGenerator lrGen = new WorldGenMinable(LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState(), 1, BlockMatcher.forBlock(Blocks.STONE));
-	
-	//decoration
+
+	// liquid redstone
+	private final WorldGenerator lrGen = new WorldGenMinable(
+			LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState(), 1, BlockMatcher.forBlock(Blocks.STONE));
+
+	// decoration
 	private final WorldGenBush brownMushroomFeature = new WorldGenBush(Blocks.BROWN_MUSHROOM);
 	private final WorldGenBush redMushroomFeature = new WorldGenBush(Blocks.RED_MUSHROOM);
-	private final WorldGenMinable sapling = new WorldGenMinable(Blocks.SAPLING.getDefaultState(), 1,BlockMatcher.forBlock(Blocks.GRASS));
-	
-	//structures
+	private final WorldGenMinable sapling = new WorldGenMinable(Blocks.SAPLING.getDefaultState(), 1,
+			BlockMatcher.forBlock(Blocks.GRASS));
+
+	// structures
 	private MapGenBase genDUCaves = new MapGenCaves();
-	private WorldGenerator trees = new WorldGenTrees(false, 1, Blocks.LOG.getDefaultState(), Blocks.LEAVES.getDefaultState(), true);
-	
+	private WorldGenerator trees = new WorldGenTrees(false, 1, Blocks.LOG.getDefaultState(),
+			Blocks.LEAVES.getDefaultState(), true);
+
 	double[] pnr;
 	double[] ar;
 	double[] br;
 	double[] noiseData4;
 	double[] dr;
+
+	public static Block fromBlock = Blocks.GRASS; // change this to suit your need
+	public static Block toBlock = Blocks.SLIME_BLOCK; // change this to suit your need
+
 	public DUChunkGenerator(World worldIn, boolean p_i45637_2_, long seed) {
 		world = worldIn;
 		generateStructures = false;
@@ -106,8 +138,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 		scaleNoise = new NoiseGeneratorOctaves(rand, 10);
 		depthNoise = new NoiseGeneratorOctaves(rand, 16);
 		worldIn.setSeaLevel(63);
-		genDUCaves = TerrainGen.getModdedMapGen(genDUCaves,InitMapGenEvent.EventType.CAVE);
+		genDUCaves = TerrainGen.getModdedMapGen(genDUCaves, InitMapGenEvent.EventType.CAVE);
 	}
+
 	public void prepareHeights(int p_185936_1_, int p_185936_2_, ChunkPrimer primer) {
 		int i = 4;
 		int j = world.getSeaLevel() / 2 + 1;
@@ -163,8 +196,10 @@ public class DUChunkGenerator implements IChunkGenerator {
 			}
 		}
 	}
-	public void buildSurfaces(int p_185937_1_, int p_185937_2_, ChunkPrimer primer) {
-		if (!ForgeEventFactory.onReplaceBiomeBlocks(this, p_185937_1_, p_185937_2_, primer,world))
+
+	public void buildSurfaces(int p_185937_1_, int p_185937_2_, ChunkPrimer primer, int blockType) {
+		IBlockState[] blocks = { DIRT, COMPICE, SAND };
+		if (!ForgeEventFactory.onReplaceBiomeBlocks(this, p_185937_1_, p_185937_2_, primer, world))
 			return;
 		int i = world.getSeaLevel() + 1;
 		double d0 = 0.03125D;
@@ -173,7 +208,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 				int l = (int) (depthBuffer[j + k * 16] / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
 				int i1 = -1;
 				IBlockState iblockstate = STONE;
-				IBlockState iblockstate1 = DIRT;
+				IBlockState iblockstate1 = blocks[blockType];
 				for (int j1 = 127; j1 >= 0; --j1) {
 					if (j1 < 127 - rand.nextInt(5) && j1 > rand.nextInt(5)) {
 						IBlockState iblockstate2 = primer.getBlockState(k, j1, j);
@@ -195,68 +230,128 @@ public class DUChunkGenerator implements IChunkGenerator {
 									i1 = l;
 									if (j1 >= i - 1) {
 										primer.setBlockState(k, j1, j, iblockstate);
-									} 
-									else {
+									} else {
 										primer.setBlockState(k, j1, j, iblockstate1);
-										if (primer.getBlockState(k, j1+1, j)==AIR)
+										if (primer.getBlockState(k, j1 + 1, j) == AIR && blocks[blockType] == DIRT)
 											primer.setBlockState(k, j1, j, GRASS);
-												
+
 									}
-								}
-								else if (i1 > 0) {
+								} else if (i1 > 0) {
 									--i1;
 									primer.setBlockState(k, j1, j, iblockstate1);
 								}
 							}
-						}
-						else {
+						} else {
 							i1 = -1;
 						}
-					}
-					else {
+					} else {
 						primer.setBlockState(k, j1, j, BEDROCK);
 					}
 				}
 			}
 		}
 	}
+
 	@Override
 	public Chunk generateChunk(int x, int z) {
 		rand.setSeed(x * 341873128712L + z * 132897987541L);
 		ChunkPrimer chunkprimer = new ChunkPrimer();
 		prepareHeights(x, z, chunkprimer);
-		buildSurfaces(x, z, chunkprimer);
+		buildSurfaces(x, z, chunkprimer, 0);
 		genDUCaves.generate(world, x, z, chunkprimer);
 		Chunk chunk = new Chunk(world, chunkprimer, x, z);
 		Biome[] abiome = world.getBiomeProvider().getBiomes((Biome[]) null, x * 16, z * 16, 16, 16);
+		Biome genBiome = Biomes.PLAINS;
 		byte[] abyte = chunk.getBiomeArray();
 		for (int i = 0; i < abyte.length; ++i) {
 			abyte[i] = (byte) Biome.getIdForBiome(abiome[i]);
 		}
+		
+		//biome dependent worldgen
+		for (int cx = 0; cx < 16; ++cx) {
+			for (int cz = 0; cz < 16; ++cz) {
+				for (int cy = 0; cy < 129; cy++) {
+					
+					//biome of the block
+					Biome blockBiome=chunk.getBiome(new BlockPos(cx, cy, cz),world.getBiomeProvider());
+					
+					//biome types
+					boolean icy=blockBiome==Biomes.ICE_MOUNTAINS||blockBiome==Biomes.ICE_PLAINS||blockBiome==Biomes.MUTATED_ICE_FLATS||blockBiome==Biomes.FROZEN_RIVER||blockBiome==Biomes.COLD_TAIGA||blockBiome==Biomes.COLD_TAIGA_HILLS||blockBiome==Biomes.COLD_BEACH;
+					boolean cold=blockBiome==Biomes.TAIGA||blockBiome==Biomes.TAIGA_HILLS||blockBiome==Biomes.MUTATED_REDWOOD_TAIGA||blockBiome==Biomes.MUTATED_REDWOOD_TAIGA_HILLS||blockBiome==Biomes.STONE_BEACH;
+					boolean desert=blockBiome==Biomes.DESERT||blockBiome==Biomes.DESERT_HILLS||blockBiome==Biomes.MUTATED_DESERT;
+					boolean volcanic=blockBiome==Biomes.EXTREME_HILLS||blockBiome==Biomes.EXTREME_HILLS_EDGE||blockBiome==Biomes.EXTREME_HILLS_WITH_TREES||blockBiome==Biomes.MUTATED_EXTREME_HILLS||blockBiome==Biomes.MUTATED_EXTREME_HILLS_WITH_TREES;
+					
+					//block to replace
+					Block blockToReplace=chunk.getBlockState(cx, cy, cz).getBlock();
+					
+					//the block above it
+					Block blockAbove=chunk.getBlockState(cx, cy+1, cz).getBlock();
+					
+					//replace grass and dirt
+					if (blockToReplace==Blocks.GRASS||blockToReplace==Blocks.DIRT) {
+						
+						if (icy)
+							chunk.setBlockState(new BlockPos(cx, cy, cz),COMPICE);
+						
+						if (cold&&blockAbove==Blocks.AIR)
+							chunk.setBlockState(new BlockPos(cx, cy+1, cz),Blocks.SNOW_LAYER.getDefaultState());
+						
+						if (desert)
+							chunk.setBlockState(new BlockPos(cx, cy, cz),SAND);
+						
+						if (volcanic)
+							chunk.setBlockState(new BlockPos(cx,cy,cz), COBBLESTONE);
+					}
+					
+					//in cold biomes, replace the water with ice
+					if (blockToReplace==Blocks.WATER&&blockAbove==Blocks.AIR&&(icy||cold)) {
+						chunk.setBlockState(new BlockPos(cx, cy, cz),Blocks.ICE.getDefaultState());
+					}
+					
+					//replace exposed stone
+					if (blockToReplace==Blocks.STONE) {
+						if (chunk.getBlockState(cx+1,cy, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy+1, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy, cz+1).getBlock()==Blocks.AIR||chunk.getBlockState(cx-1,cy, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy-1, cz).getBlock()==Blocks.AIR|| chunk.getBlockState(cx,cy, cz-1).getBlock()==Blocks.AIR) {
+							
+							if (icy)
+								chunk.setBlockState(new BlockPos(cx, cy, cz), COMPICE);
+							
+							if (desert)
+								chunk.setBlockState(new BlockPos(cx, cy, cz), SANDSTONE);
+							
+							if (volcanic)
+								chunk.setBlockState(new BlockPos(cx,cy,cz), COBBLESTONE);
+						}
+					}
+				}
+			}
+			
+			
+		}
 		return chunk;
 	}
+
 	private double[] getHeights(double[] p_185938_1_, int p_185938_2_, int p_185938_3_, int p_185938_4_,
 			int p_185938_5_, int p_185938_6_, int p_185938_7_) {
 		if (p_185938_1_ == null) {
 			p_185938_1_ = new double[p_185938_5_ * p_185938_6_ * p_185938_7_];
 		}
-		ChunkGeneratorEvent.InitNoiseField event = new ChunkGeneratorEvent.InitNoiseField(
-				this, p_185938_1_, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_, p_185938_7_);
+		ChunkGeneratorEvent.InitNoiseField event = new ChunkGeneratorEvent.InitNoiseField(this, p_185938_1_,
+				p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_, p_185938_7_);
 		MinecraftForge.EVENT_BUS.post(event);
 		if (event.getResult() == Event.Result.DENY)
 			return event.getNoisefield();
 		double d0 = 684.412D;
 		double d1 = 2053.236D;
-		noiseData4 = scaleNoise.generateNoiseOctaves(noiseData4, p_185938_2_, p_185938_3_, p_185938_4_,
-				p_185938_5_, 1, p_185938_7_, 1.0D, 0.0D, 1.0D);
-		dr = depthNoise.generateNoiseOctaves(dr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, 1,
-				p_185938_7_, 100.0D, 0.0D, 100.0D);
-		pnr = perlinNoise1.generateNoiseOctaves(pnr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_,
-				p_185938_6_, p_185938_7_, 8.555150000000001D, 34.2206D, 8.555150000000001D);
-		ar = lperlinNoise1.generateNoiseOctaves(ar, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_,
-				p_185938_6_, p_185938_7_, 684.412D, 2053.236D, 684.412D);
-		br = lperlinNoise2.generateNoiseOctaves(br, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_,
-				p_185938_6_, p_185938_7_, 684.412D, 2053.236D, 684.412D);
+		noiseData4 = scaleNoise.generateNoiseOctaves(noiseData4, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, 1,
+				p_185938_7_, 1.0D, 0.0D, 1.0D);
+		dr = depthNoise.generateNoiseOctaves(dr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, 1, p_185938_7_,
+				100.0D, 0.0D, 100.0D);
+		pnr = perlinNoise1.generateNoiseOctaves(pnr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_,
+				p_185938_7_, 8.555150000000001D, 34.2206D, 8.555150000000001D);
+		ar = lperlinNoise1.generateNoiseOctaves(ar, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_,
+				p_185938_7_, 684.412D, 2053.236D, 684.412D);
+		br = lperlinNoise2.generateNoiseOctaves(br, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_,
+				p_185938_7_, 684.412D, 2053.236D, 684.412D);
 		int i = 0;
 		double[] adouble = new double[p_185938_6_];
 		for (int j = 0; j < p_185938_6_; ++j) {
@@ -281,11 +376,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 					double d8;
 					if (d7 < 0.0D) {
 						d8 = d5;
-					}
-					else if (d7 > 1.0D) {
+					} else if (d7 > 1.0D) {
 						d8 = d6;
-					}
-					else {
+					} else {
 						d8 = d5 + (d6 - d5) * d7;
 					}
 					d8 = d8 - d4;
@@ -305,101 +398,104 @@ public class DUChunkGenerator implements IChunkGenerator {
 		}
 		return p_185938_1_;
 	}
+
 	@Override
 	public void populate(int x, int z) {
 		ForgeEventFactory.onChunkPopulate(true, this, world, rand, x, z, false);
 		int i = x * 16;
 		int j = z * 16;
 		BlockPos blockpos = new BlockPos(i, 0, j);
+		Chunk chunkToDecorate = world.getChunkFromBlockCoords(blockpos);
 		Biome biome = world.getBiome(blockpos.add(16, 0, 16));
 		ChunkPos chunkpos = new ChunkPos(x, z);
 		ForgeEventFactory.onChunkPopulate(false, this, world, rand, x, z, false);
-		MinecraftForge.EVENT_BUS
-				.post(new DecorateBiomeEvent.Pre(world, rand, blockpos));
-		
-		//stone
-		if (TerrainGen.generateOre(world, rand, Andesite, blockpos,
-				OreGenEvent.GenerateMinable.EventType.ANDESITE)) {
-			Andesite.generate(world, rand,
-				blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-			Diorite.generate(world, rand,
-				blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-			Granite.generate(world, rand,
-				blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(world, rand, blockpos));
+
+		// stone
+		if (TerrainGen.generateOre(world, rand, Andesite, blockpos, OreGenEvent.GenerateMinable.EventType.ANDESITE)) {
+			Andesite.generate(world, rand, blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
+			Diorite.generate(world, rand, blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
+			Granite.generate(world, rand, blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
 		}
-		
-		//trees
-		if (TerrainGen.decorate(world, rand, blockpos,DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
+
+		// trees
+		if (TerrainGen.decorate(world, rand, blockpos, DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
 			if (rand.nextBoolean()) {
-				trees.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				trees.generate(world, rand,
+						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 			}
 		}
-		if (TerrainGen.decorate(world, rand, blockpos,
-				DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
+		if (TerrainGen.decorate(world, rand, blockpos, DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
 			if (rand.nextBoolean()) {
-				//crystals
-				quartzGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				diamondGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				emeraldGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				redstoneGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				rubyGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				
-				//sapling
+				// crystals
+				quartzGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				diamondGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				emeraldGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				redstoneGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				rubyGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+
+				// sapling
 				sapling.generate(world, rand,
-						blockpos.add(rand.nextInt(16)+8, rand.nextInt(256), rand.nextInt(16)+8));
+						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 			}
+			
+			//mushrooms
 			if (rand.nextBoolean()) {
-				brownMushroomFeature.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				redMushroomFeature.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				brownMushroomFeature.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				redMushroomFeature.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 			}
 		}
-		if (TerrainGen.generateOre(world, rand, coalGen, blockpos,
-				OreGenEvent.GenerateMinable.EventType.QUARTZ))
+		
+		//ores
+		if (TerrainGen.generateOre(world, rand, coalGen, blockpos, OreGenEvent.GenerateMinable.EventType.QUARTZ))
 			for (int l1 = 0; l1 < 32; ++l1) {
-				//ores
-				coalGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
-				ironGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
-				goldGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
-				
-				//lights
+				coalGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				ironGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				goldGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+
+				// liquid redstone
+				lrGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+			}
+		
+		// lights
+		if (TerrainGen.generateOre(world, rand, lightsGen, blockpos, OreGenEvent.GenerateMinable.EventType.QUARTZ))
+			for (int l1=0;l1<32;l1++) {
+				//general
 				lightsGen.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				lightsGen2.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				
-				//liquid redstone
-				lrGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				//desert
+				lightsGenDesert.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				lightsGenDesert2.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				
+				//volcanic
+				Magma.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 			}
 		biome.decorate(world, rand, new BlockPos(i, 0, j));
-		net.minecraftforge.common.MinecraftForge.EVENT_BUS
-				.post(new DecorateBiomeEvent.Post(world, rand, blockpos));
-		BlockFalling.fallInstantly = false;
+		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(world, rand, blockpos));
 	}
+
 	@Override
 	public boolean generateStructures(Chunk chunkIn, int x, int z) {
 		return false;
 	}
+
 	@Override
 	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
 		Biome biome = world.getBiome(pos);
 		return biome.getSpawnableList(creatureType);
 	}
+
 	@Override
-	public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position, boolean p_180513_4_) {
+	public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position,
+			boolean p_180513_4_) {
 		return null;
 	}
+
 	@Override
 	public void recreateStructures(Chunk chunkIn, int x, int z) {
 	}
+
 	@Override
 	public boolean isInsideStructure(World worldIn, String structureName, BlockPos pos) {
 		return false;

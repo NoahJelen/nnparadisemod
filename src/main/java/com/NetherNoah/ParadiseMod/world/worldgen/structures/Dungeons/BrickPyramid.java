@@ -1,10 +1,9 @@
-package com.NetherNoah.ParadiseMod.world.worldgen.structures;
+package com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
-
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -12,13 +11,13 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
-public class VoidDungeonLarge extends WorldGenerator implements IWorldGenerator{
+public class BrickPyramid extends WorldGenerator implements IWorldGenerator{
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		if (world.provider.getDimension() == -3) {
+		if (world.provider.getDimension() == 0) {
 			generateOverworld(world, rand, blockX + 8, blockZ + 8);
 		}
 	}
@@ -26,7 +25,7 @@ public class VoidDungeonLarge extends WorldGenerator implements IWorldGenerator{
 	{	
 		int y = getGroundFromAbove(world, blockX, blockZ);
 		BlockPos pos = new BlockPos(blockX, y, blockZ);
-		WorldGenerator structure = new VoidDungeonLargeGen();
+		WorldGenerator structure = new BrickPyramidGen();
 		structure.generate(world, rand, pos);
 	}
 	public static int getGroundFromAbove(World world, int x, int z)
@@ -36,7 +35,7 @@ public class VoidDungeonLarge extends WorldGenerator implements IWorldGenerator{
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == Misc.VoidStone;
+			foundGround =  blockAt == Blocks.GRAVEL||blockAt == Blocks.GRASS||blockAt == Blocks.SAND||blockAt == Blocks.DIRT||blockAt == Blocks.STONE;
 		}
 		return y;
 	}
