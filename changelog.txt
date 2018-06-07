@@ -198,7 +198,9 @@
     Improved world generation in the Deep Underground
 1.1.1:
     Fixed a bug with diamond crystal generating in the deep void and deep underground
+
 1.2:
     Added biomes to Deep Underground
     For performance reasons, most of the gravel generation has been removed from the deep underground dimension.
     Liquid Redstone now generate underground in lakes
+    Added Glowing Ice

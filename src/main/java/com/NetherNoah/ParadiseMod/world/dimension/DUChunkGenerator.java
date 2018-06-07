@@ -3,8 +3,11 @@ package com.NetherNoah.ParadiseMod.world.dimension;
 import java.util.List;
 import java.util.Random;
 
+import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
-import com.NetherNoah.ParadiseMod.world.MapGenDuCaves;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
+import com.NetherNoah.ParadiseMod.world.mapgen.MapGenDUCaves;
+import com.NetherNoah.ParadiseMod.world.mapgen.MapGenDURavines;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStone;
@@ -23,7 +26,6 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.WorldGenBush;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -51,6 +53,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 	protected static final IBlockState SANDSTONE = Blocks.SANDSTONE.getDefaultState();
 	protected static final IBlockState PRISMARINE=Blocks.PRISMARINE.getDefaultState();
 	protected static final IBlockState COBBLESTONE = Blocks.COBBLESTONE.getDefaultState();
+	protected static final IBlockState MYCELIUM=Blocks.MYCELIUM.getDefaultState();
+	protected static final IBlockState LIQUID_REDSTONE=LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState();
+	protected static final IBlockState GLOWING_ICE=Misc.glowingIce.getDefaultState();
 	
 
 	private final World world;
@@ -78,6 +83,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 	//volcanic
 	private final WorldGenMinable Magma= new WorldGenMinable(Blocks.MAGMA.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.COBBLESTONE));
 	
+	//icy
+	private final WorldGenMinable glowingIce= new WorldGenMinable(GLOWING_ICE, 33,BlockMatcher.forBlock(Blocks.PACKED_ICE));
+	
 	//crystals
 	private final WorldGenBush quartzGen = new WorldGenBush(Crystals.quartzCrystal);
 	private final WorldGenBush diamondGen = new WorldGenBush(Crystals.diamondCrystal);
@@ -100,8 +108,8 @@ public class DUChunkGenerator implements IChunkGenerator {
 	private final WorldGenBush redMushroomFeature = new WorldGenBush(Blocks.RED_MUSHROOM);
 
 	//natural structures
-	private MapGenBase genDUCaves = new MapGenDuCaves();
-	private MapGenBase genDURavines = new MapGenRavine();
+	private MapGenBase genDUCaves = new MapGenDUCaves();
+	private MapGenBase genDURavines = new MapGenDURavines();
 	private MapGenBase genDUMineshafts=new MapGenMineshaft();
 	
 	double[] pnr;
@@ -266,6 +274,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 					boolean desert=blockBiome==Biomes.DESERT||blockBiome==Biomes.DESERT_HILLS||blockBiome==Biomes.MUTATED_DESERT;
 					boolean volcanic=blockBiome==Biomes.EXTREME_HILLS||blockBiome==Biomes.EXTREME_HILLS_EDGE||blockBiome==Biomes.EXTREME_HILLS_WITH_TREES||blockBiome==Biomes.MUTATED_EXTREME_HILLS||blockBiome==Biomes.MUTATED_EXTREME_HILLS_WITH_TREES;
 					boolean oceanic=blockBiome==Biomes.OCEAN||blockBiome==Biomes.DEEP_OCEAN;
+					boolean mushroom=blockBiome==Biomes.MUSHROOM_ISLAND||blockBiome==Biomes.MUSHROOM_ISLAND_SHORE;
 					
 					//block to replace
 					Block blockToReplace=chunk.getBlockState(cx, cy, cz).getBlock();
@@ -277,8 +286,15 @@ public class DUChunkGenerator implements IChunkGenerator {
 					if (blockToReplace==Blocks.GRAVEL)
 						chunk.setBlockState(new BlockPos(cx,cy,cz), STONE);
 					
+					if (cy<=9&&blockToReplace==Blocks.WATER)
+						chunk.setBlockState(new BlockPos(cx,cy,cz), LIQUID_REDSTONE);
+					if (cy==10&&blockToReplace==Blocks.WATER)
+						chunk.setBlockState(new BlockPos(cx,cy,cz), Misc.glowingObsidian.getDefaultState());
+					
 					//replace grass and dirt
 					if (blockToReplace==Blocks.GRASS||blockToReplace==Blocks.DIRT) {
+						if (mushroom)
+							chunk.setBlockState(new BlockPos(cx,cy,cz), MYCELIUM);
 						
 						if (icy)
 							chunk.setBlockState(new BlockPos(cx, cy, cz),COMPICE);
@@ -300,7 +316,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 					
 					//replace exposed stone
 					if (blockToReplace==Blocks.STONE) {
-						if (chunk.getBlockState(cx+1,cy, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy+1, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy, cz+1).getBlock()==Blocks.AIR||chunk.getBlockState(cx-1,cy, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy-1, cz).getBlock()==Blocks.AIR|| chunk.getBlockState(cx,cy, cz-1).getBlock()==Blocks.AIR) {
+						if (chunk.getBlockState(cx+1,cy, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy+1, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy, cz+1).getBlock()==Blocks.AIR||chunk.getBlockState(cx-1,cy, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy-1, cz).getBlock()==Blocks.AIR|| chunk.getBlockState(cx,cy, cz-1).getBlock()==Blocks.AIR||chunk.getBlockState(cx+1,cy, cz).getBlock()==Blocks.WATER||chunk.getBlockState(cx,cy+1, cz).getBlock()==Blocks.WATER||chunk.getBlockState(cx,cy, cz+1).getBlock()==Blocks.WATER||chunk.getBlockState(cx-1,cy, cz).getBlock()==Blocks.WATER||chunk.getBlockState(cx,cy-1, cz).getBlock()==Blocks.WATER|| chunk.getBlockState(cx,cy, cz-1).getBlock()==Blocks.WATER) {
 							
 							if (icy)
 								chunk.setBlockState(new BlockPos(cx, cy, cz), COMPICE);
@@ -452,6 +468,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 				
 				//oceanic
 				Lantern.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				
+				//icy
+				glowingIce.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 			}
 		biome.decorate(world, rand, new BlockPos(i, 0, j));
 		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(world, rand, blockpos));

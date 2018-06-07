@@ -97,6 +97,7 @@ item.CactusStick.name=Cactus Stick
 item.VoidPearl.name=Void Pearl
 
 #Blocks
+tile.glowingIce.name=Glowing Ice
 tile.SilverFenceGate.name=Silver Fence Gate
 tile.endPearlBlock.name=Ender Pearl Block
 tile.EndRubyOre.name=Ender Ruby Ore

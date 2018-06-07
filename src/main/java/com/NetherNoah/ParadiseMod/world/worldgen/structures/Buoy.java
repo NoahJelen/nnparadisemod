@@ -33,7 +33,7 @@ public class Buoy extends WorldGenerator implements IWorldGenerator{
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround = blockAt == Blocks.WATER;
+			foundGround = blockAt == Blocks.WATER||blockAt==Blocks.ICE;
 		}
 		return y;
 	}

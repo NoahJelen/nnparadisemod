@@ -1,30 +1,37 @@
-package com.NetherNoah.ParadiseMod.world;
+package com.NetherNoah.ParadiseMod.world.mapgen;
 
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 import com.google.common.base.MoreObjects;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.MapGenBase;
 
-public class MapGenDuCaves extends MapGenBase
+public class MapGenDUCaves extends MapGenBase
 {
-    protected static final IBlockState BLK_LAVA = LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState();
-    protected static final IBlockState BLK_AIR = Blocks.AIR.getDefaultState();
+    protected static final IBlockState LIQUID_REDSTONE = LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState();
+    protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
+    protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
+    protected static final IBlockState GLOWING_OBSIDIAN=Misc.glowingObsidian.getDefaultState();
+    protected static final IBlockState FLOWING_WATER=Blocks.FLOWING_WATER.getDefaultState();
 
-    protected void addRoom(long p_180703_1_, int p_180703_3_, int p_180703_4_, ChunkPrimer p_180703_5_, double p_180703_6_, double p_180703_8_, double p_180703_10_)
+    protected void addRoom(long p_180703_1_, int p_180703_3_, int p_180703_4_, ChunkPrimer primer, double p_180703_6_, double p_180703_8_, double p_180703_10_)
     {
-        this.addTunnel(p_180703_1_, p_180703_3_, p_180703_4_, p_180703_5_, p_180703_6_, p_180703_8_, p_180703_10_, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
+        this.addTunnel(p_180703_1_, p_180703_3_, p_180703_4_, primer, p_180703_6_, p_180703_8_, p_180703_10_, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
     }
 
-    protected void addTunnel(long p_180702_1_, int p_180702_3_, int p_180702_4_, ChunkPrimer p_180702_5_, double p_180702_6_, double p_180702_8_, double p_180702_10_, float p_180702_12_, float p_180702_13_, float p_180702_14_, int p_180702_15_, int p_180702_16_, double p_180702_17_)
+    protected void addTunnel(long p_180702_1_, int p_180702_3_, int p_180702_4_, ChunkPrimer primer, double p_180702_6_, double p_180702_8_, double p_180702_10_, float p_180702_12_, float p_180702_13_, float p_180702_14_, int p_180702_15_, int p_180702_16_, double p_180702_17_)
     {
         double d0 = (double)(p_180702_3_ * 16 + 8);
         double d1 = (double)(p_180702_4_ * 16 + 8);
@@ -76,8 +83,8 @@ public class MapGenDuCaves extends MapGenBase
 
             if (!flag2 && p_180702_15_ == j && p_180702_12_ > 1.0F && p_180702_16_ > 0)
             {
-                this.addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, p_180702_5_, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ - ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
-                this.addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, p_180702_5_, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ + ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
+                this.addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ - ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
+                this.addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ + ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
                 return;
             }
 
@@ -142,7 +149,7 @@ public class MapGenDuCaves extends MapGenBase
                             {
                                 if (l1 >= 0 && l1 < 256)
                                 {
-                                    if (isOceanBlock(p_180702_5_, j1, l1, k1, p_180702_3_, p_180702_4_))
+                                    if (isOceanBlock(primer, j1, l1, k1, p_180702_3_, p_180702_4_))
                                     {
                                         flag3 = true;
                                     }
@@ -177,15 +184,15 @@ public class MapGenDuCaves extends MapGenBase
 
                                         if (d9 > -0.7D && d10 * d10 + d9 * d9 + d8 * d8 < 1.0D)
                                         {
-                                            IBlockState iblockstate1 = p_180702_5_.getBlockState(j3, j2, i2);
-                                            IBlockState iblockstate2 = (IBlockState)MoreObjects.firstNonNull(p_180702_5_.getBlockState(j3, j2 + 1, i2), BLK_AIR);
+                                            IBlockState iblockstate1 = primer.getBlockState(j3, j2, i2);
+                                            IBlockState iblockstate2 = (IBlockState)MoreObjects.firstNonNull(primer.getBlockState(j3, j2 + 1, i2), AIR);
 
-                                            if (isTopBlock(p_180702_5_, j3, j2, i2, p_180702_3_, p_180702_4_))
+                                            if (isTopBlock(primer, j3, j2, i2, p_180702_3_, p_180702_4_))
                                             {
                                                 flag1 = true;
                                             }
 
-                                            digBlock(p_180702_5_, j3, j2, i2, p_180702_3_, p_180702_4_, flag1, iblockstate1, iblockstate2);
+                                            digBlock(primer, j3, j2, i2, p_180702_3_, p_180702_4_, flag1, iblockstate1, iblockstate2);
                                         }
                                     }
                                 }
@@ -202,47 +209,49 @@ public class MapGenDuCaves extends MapGenBase
         }
     }
 
-    protected boolean canReplaceBlock(IBlockState p_175793_1_, IBlockState p_175793_2_)
+    protected boolean canReplaceBlock(IBlockState block1, IBlockState block2)
     {
-        if (p_175793_1_.getBlock() == Blocks.STONE)
+        if (block1.getBlock() == Blocks.STONE)
         {
             return true;
         }
-        else if (p_175793_1_.getBlock() == Blocks.DIRT)
+        else if (block1.getBlock() == Blocks.DIRT)
         {
             return true;
         }
-        else if (p_175793_1_.getBlock() == Blocks.GRASS)
+        else if (block1.getBlock() == Blocks.GRASS)
         {
             return true;
         }
-        else if (p_175793_1_.getBlock() == Blocks.HARDENED_CLAY)
+        else if (block1.getBlock() == Blocks.HARDENED_CLAY)
         {
             return true;
         }
-        else if (p_175793_1_.getBlock() == Blocks.STAINED_HARDENED_CLAY)
+        else if (block1.getBlock() == Blocks.STAINED_HARDENED_CLAY)
         {
             return true;
         }
-        else if (p_175793_1_.getBlock() == Blocks.SANDSTONE)
+        else if (block1.getBlock() == Blocks.SANDSTONE)
         {
             return true;
         }
-        else if (p_175793_1_.getBlock() == Blocks.RED_SANDSTONE)
+        else if (block1.getBlock() == Blocks.RED_SANDSTONE)
         {
             return true;
         }
-        else if (p_175793_1_.getBlock() == Blocks.MYCELIUM)
+        else if (block1.getBlock() == Blocks.MYCELIUM)
         {
             return true;
         }
-        else if (p_175793_1_.getBlock() == Blocks.SNOW_LAYER)
+        else if (block1.getBlock() == Blocks.SNOW_LAYER)
         {
             return true;
         }
+        else if (block1.getBlock()==Blocks.FLOWING_WATER||block1.getBlock()==Blocks.WATER)
+        	return true;
         else
         {
-            return (p_175793_1_.getBlock() == Blocks.SAND || p_175793_1_.getBlock() == Blocks.GRAVEL) && p_175793_2_.getMaterial() != Material.WATER;
+            return (block1.getBlock() == Blocks.SAND || block1.getBlock() == Blocks.GRAVEL) && block2.getMaterial() != Material.WATER;
         }
     }
 
@@ -289,15 +298,15 @@ public class MapGenDuCaves extends MapGenBase
 
     protected boolean isOceanBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ)
     {
-        net.minecraft.block.Block block = data.getBlockState(x, y, z).getBlock();
-        return block== Blocks.FLOWING_WATER || block == Blocks.WATER;
+        Block block = data.getBlockState(x, y, z).getBlock();
+        return false;
     }
 
     //Exception biomes to make sure we generate like vanilla
-    private boolean isExceptionBiome(net.minecraft.world.biome.Biome biome)
+    private boolean isExceptionBiome(Biome biome)
     {
-        if (biome == net.minecraft.init.Biomes.BEACH) return true;
-        if (biome == net.minecraft.init.Biomes.DESERT) return true;
+        if (biome == Biomes.BEACH) return true;
+        if (biome == Biomes.DESERT) return true;
         return false;
     }
 
@@ -305,46 +314,31 @@ public class MapGenDuCaves extends MapGenBase
     //Vanilla bugs to make sure that we generate the map the same way vanilla does.
     private boolean isTopBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ)
     {
-        net.minecraft.world.biome.Biome biome = world.getBiome(new BlockPos(x + chunkX * 16, 0, z + chunkZ * 16));
+        Biome biome = world.getBiome(new BlockPos(x + chunkX * 16, 0, z + chunkZ * 16));
         IBlockState state = data.getBlockState(x, y, z);
         return (isExceptionBiome(biome) ? state.getBlock() == Blocks.GRASS : state.getBlock() == biome.topBlock);
     }
 
-    /**
-     * Digs out the current block, default implementation removes stone, filler, and top block
-     * Sets the block to lava if y is less then 10, and air other wise.
-     * If setting to air, it also checks to see if we've broken the surface and if so
-     * tries to make the floor the biome's top block
-     *
-     * @param data Block data array
-     * @param index Pre-calculated index into block data
-     * @param x local X position
-     * @param y local Y position
-     * @param z local Z position
-     * @param chunkX Chunk X position
-     * @param chunkZ Chunk Y position
-     * @param foundTop True if we've encountered the biome's top block. Ideally if we've broken the surface.
-     */
     protected void digBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop, IBlockState state, IBlockState up)
     {
-        net.minecraft.world.biome.Biome biome = world.getBiome(new BlockPos(x + chunkX * 16, 0, z + chunkZ * 16));
+        Biome biome = world.getBiome(new BlockPos(x + chunkX * 16, 0, z + chunkZ * 16));
         IBlockState top = biome.topBlock;
         IBlockState filler = biome.fillerBlock;
 
         if (this.canReplaceBlock(state, up) || state.getBlock() == top.getBlock() || state.getBlock() == filler.getBlock())
         {
-            if (y - 1 < 10)
-            {
-                data.setBlockState(x, y, z, BLK_LAVA);
-            }
-            else
-            {
-                data.setBlockState(x, y, z, BLK_AIR);
-
-                if (foundTop && data.getBlockState(x, y - 1, z).getBlock() == filler.getBlock())
-                {
-                    data.setBlockState(x, y - 1, z, top.getBlock().getDefaultState());
-                }
+        	if (y<=31) {
+                data.setBlockState(x, y, z, WATER);
+                return;
+        	}
+        	//if this is an ocean biome, fill it with water instead
+        	if (biome==Biomes.OCEAN||biome==Biomes.DEEP_OCEAN&&y-1>=10) {
+                data.setBlockState(x, y, z, WATER);
+                return;
+        	}
+            data.setBlockState(x, y, z, AIR);
+            if (foundTop && data.getBlockState(x, y - 1, z).getBlock() == filler.getBlock()){
+            	data.setBlockState(x, y - 1, z, top.getBlock().getDefaultState());
             }
         }
     }

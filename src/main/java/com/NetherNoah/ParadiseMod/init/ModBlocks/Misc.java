@@ -23,6 +23,7 @@ import com.NetherNoah.ParadiseMod.blocks.misc.VoidFurnace;
 import com.NetherNoah.ParadiseMod.blocks.misc.VoidFurnaceLit;
 import com.NetherNoah.ParadiseMod.blocks.misc.VoidStone;
 import com.NetherNoah.ParadiseMod.blocks.misc.emeraldRail;
+import com.NetherNoah.ParadiseMod.blocks.misc.glowingIce;
 import com.NetherNoah.ParadiseMod.blocks.misc.glowingObsidian;
 import com.NetherNoah.ParadiseMod.blocks.misc.soulGlass;
 import com.NetherNoah.ParadiseMod.blocks.misc.soulGlassPane;
@@ -80,6 +81,7 @@ public class Misc {
 	public static MossyFurnaceCode MossyFurnaceLit;
 	public static VoidFurnaceCode VoidFurnace;
 	public static VoidFurnaceCode VoidFurnaceLit;
+	public static Block glowingIce;
 
 	public static void initAndRegister() {
 		Utils.regBlock(RegenerationStone=new RegenerationStone());
@@ -111,11 +113,13 @@ public class Misc {
 		Utils.regBlock(GoldHopper = new GoldHopper());
 		Utils.regBlock(MossyFurnace = new MossyFurnace());
 		Utils.regBlock(VoidFurnace=new VoidFurnace());
+		Utils.regBlock(glowingIce=new glowingIce());
 		ForgeRegistries.BLOCKS.register(MossyFurnaceLit = new MossyFurnaceLit());
 		ForgeRegistries.BLOCKS.register(VoidFurnaceLit=new VoidFurnaceLit());
 		
 	}
 	public static void regRenders() {
+		Utils.regRender(glowingIce);
 		Utils.regRender(RegenerationStone);
 		Utils.regRender(VoidBricks);
 		Utils.regRender(PolishedVoidStone);

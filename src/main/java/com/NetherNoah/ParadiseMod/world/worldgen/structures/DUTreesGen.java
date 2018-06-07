@@ -37,11 +37,11 @@ public class DUTreesGen extends WorldGenerator {
 		
 		Template darkOak=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/dark_oak_sapling"));
 		Template acacia=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/acacia_sapling"));
-		Template jungle=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/jungle_tree"));
+		Template jungle=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/jungle_sapling"));
 		
-		Template spruce=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/spruce_tree"));
+		Template spruce=templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/spruce_sapling"));
 		
-		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":trees/oak_sapling"));
+		Template template = oak;
 		
 		int treeSelect=rand.nextInt(3);
 		//oak sapling
