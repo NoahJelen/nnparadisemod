@@ -32,12 +32,12 @@ public class DUTrees extends WorldGenerator implements IWorldGenerator{
 	}
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
-		int y = 75;
+		int y = 85;
 		boolean foundGround = false;
 		while(!foundGround && y-- >= 31)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround =  blockAt == Blocks.GRASS;
+			foundGround =  blockAt == Blocks.GRASS||blockAt==Blocks.SAND||blockAt==Blocks.SANDSTONE;
 		}
 		return y;
 	}

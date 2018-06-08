@@ -19,9 +19,8 @@ public class Minerbase extends WorldGenerator implements IWorldGenerator{
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		if (world.provider.getDimension() != 1&&world.provider.getDimension() != DimensionRegistry.DeepVoid&&world.provider.getDimension() != -1) {
+		if (world.provider.getDimension() != 1&&world.provider.getDimension() != DimensionRegistry.DeepVoid&&world.provider.getDimension() != -1)
 			generateOverworld(world, rand, blockX + 8, blockZ + 8);
-		}
 	}
 	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
 	{	
@@ -34,7 +33,7 @@ public class Minerbase extends WorldGenerator implements IWorldGenerator{
 	}
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
-		int y = 126;
+		int y = 75;
 		boolean foundGround = false;
 		while(!foundGround && y-- >= 31)
 		{

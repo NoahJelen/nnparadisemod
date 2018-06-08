@@ -28,7 +28,7 @@ public class Home extends WorldGenerator implements IWorldGenerator{
 	}
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
-		int y = 255;
+		int y = 75;
 		boolean foundGround = false;
 		while(!foundGround && y-- >= 31)
 		{

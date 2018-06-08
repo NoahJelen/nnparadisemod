@@ -30,9 +30,8 @@ public class OreGenNether implements IWorldGenerator {
 		IBlockState oreSelectionNether=Ores.SilverOreNether.getDefaultState();
 		
 		//gold ore (nether variant)
-		if (selectOreNether==1) {
+		if (selectOreNether==1)
 			oreSelectionNether=Ores.GoldOreNether.getDefaultState();
-		}
 		else
 			oreSelectionNether=Ores.SilverOreNether.getDefaultState();
 		

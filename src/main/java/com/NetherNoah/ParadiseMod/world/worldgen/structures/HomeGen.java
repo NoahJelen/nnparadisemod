@@ -34,39 +34,26 @@ public class HomeGen extends WorldGenerator {
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house"));
 		
 		//oak forest home
-		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS||biome==Biomes.SWAMPLAND||biome==Biomes.MUTATED_SWAMPLAND||biome==Biomes.PLAINS||biome==Biomes.MUTATED_PLAINS||biome==Biomes.ICE_PLAINS) {
+		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS||biome==Biomes.SWAMPLAND||biome==Biomes.MUTATED_SWAMPLAND||biome==Biomes.PLAINS||biome==Biomes.MUTATED_PLAINS||biome==Biomes.ICE_PLAINS)
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house"));
-		}
-		
 		//savanna home
-		if(biome == Biomes.SAVANNA||biome == Biomes.SAVANNA_PLATEAU||biome == Biomes.MUTATED_SAVANNA||biome == Biomes.MUTATED_SAVANNA_ROCK) {
+		if(biome == Biomes.SAVANNA||biome == Biomes.SAVANNA_PLATEAU||biome == Biomes.MUTATED_SAVANNA||biome == Biomes.MUTATED_SAVANNA_ROCK)
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_acacia"));
-		}
-		
 		//birch forest home
-		if(biome == Biomes.BIRCH_FOREST_HILLS|| biome == Biomes.BIRCH_FOREST_HILLS) {
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_birch"));
-		}
-		
+		if(biome == Biomes.BIRCH_FOREST_HILLS|| biome == Biomes.BIRCH_FOREST_HILLS)
+			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_birch"));		
 		//roofed forest home
-		if(biome == Biomes.ROOFED_FOREST) {
+		if(biome == Biomes.ROOFED_FOREST)
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_dark_oak"));
-		}
-		
 		//desert home
-		if(biome == Biomes.DESERT||biome == Biomes.DESERT_HILLS||biome == Biomes.MUTATED_DESERT) {
-			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_desert"));
-		}
-		
+		if(biome == Biomes.DESERT||biome == Biomes.DESERT_HILLS||biome == Biomes.MUTATED_DESERT)
+			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_desert"));		
 		//jungle home
-		if(biome == Biomes.JUNGLE||biome == Biomes.JUNGLE_EDGE||biome == Biomes.JUNGLE_HILLS||biome == Biomes.MUTATED_JUNGLE||biome == Biomes.MUTATED_JUNGLE_EDGE) {
+		if(biome == Biomes.JUNGLE||biome == Biomes.JUNGLE_EDGE||biome == Biomes.JUNGLE_HILLS||biome == Biomes.MUTATED_JUNGLE||biome == Biomes.MUTATED_JUNGLE_EDGE)
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_jungle"));
-		}
-		
 		//spruce home
-		if(biome == Biomes.TAIGA||biome == Biomes.TAIGA_HILLS||biome == Biomes.COLD_TAIGA||biome == Biomes.COLD_TAIGA_HILLS||biome == Biomes.MUTATED_REDWOOD_TAIGA||biome == Biomes.MUTATED_REDWOOD_TAIGA_HILLS||biome == Biomes.MUTATED_TAIGA||biome == Biomes.MUTATED_TAIGA_COLD||biome == Biomes.REDWOOD_TAIGA||biome == Biomes.REDWOOD_TAIGA_HILLS||biome==Biomes.EXTREME_HILLS_WITH_TREES||biome==Biomes.MUTATED_EXTREME_HILLS_WITH_TREES) {
+		if(biome == Biomes.TAIGA||biome == Biomes.TAIGA_HILLS||biome == Biomes.COLD_TAIGA||biome == Biomes.COLD_TAIGA_HILLS||biome == Biomes.MUTATED_REDWOOD_TAIGA||biome == Biomes.MUTATED_REDWOOD_TAIGA_HILLS||biome == Biomes.MUTATED_TAIGA||biome == Biomes.MUTATED_TAIGA_COLD||biome == Biomes.REDWOOD_TAIGA||biome == Biomes.REDWOOD_TAIGA_HILLS||biome==Biomes.EXTREME_HILLS_WITH_TREES||biome==Biomes.MUTATED_EXTREME_HILLS_WITH_TREES)
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":homes/starter_house_spruce"));
-		}
 
 		if(ModConfig.worldgen.structures.Homes==false)
 			return false;
@@ -103,7 +90,7 @@ public class HomeGen extends WorldGenerator {
 	
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
-		int y = 120;
+		int y = 75;
 		boolean foundGround = false;
 		while(!foundGround && y-- >= 31)
 		{

@@ -62,6 +62,11 @@ public class DVWorldProvider extends WorldProvider{
     {
         return true;
     }
+	@Override
+    public float getSunBrightnessFactor(float par1)
+    {
+        return 0.0f;
+    }
 
 	@Override
     @Nullable

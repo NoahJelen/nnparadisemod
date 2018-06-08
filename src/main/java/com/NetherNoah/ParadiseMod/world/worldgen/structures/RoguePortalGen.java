@@ -16,7 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
@@ -29,13 +28,9 @@ public class RoguePortalGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":rogue_portal"));
-		if(template == null)
-		{
+		if(template == null||ModConfig.worldgen.structures.RoguePortal==false)
 			return false;
-		}
-		if (ModConfig.worldgen.structures.RoguePortal==false)
-			return false;
-		Biome biome = world.getBiomeForCoordsBody(position);
+		
 		if(RoguePortalGen.canSpawnHere(template, worldserver, position)) {
 			if(rand.nextInt(ModConfig.worldgen.structures.RoguePortalChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);

@@ -28,11 +28,7 @@ public class SkyWheelGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":sky_wheel"));
-		if(template == null)
-		{
-			return false;
-		}
-		if (ModConfig.worldgen.structures.SkyWheel==false)
+		if(template == null||ModConfig.worldgen.structures.SkyWheel==false)
 			return false;
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(rand.nextInt(ModConfig.worldgen.structures.SkyWheelChance) == 0){

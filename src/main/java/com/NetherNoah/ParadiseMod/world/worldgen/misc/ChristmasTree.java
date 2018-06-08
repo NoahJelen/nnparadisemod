@@ -36,13 +36,9 @@ public class ChristmasTree extends WorldGenAbstractTree
             {
                 int j1;
                 if (i1 - position.getY() < j)
-                {
                     j1 = 0;
-                }
                 else
-                {
                     j1 = l;
-                }
                 BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
                 for (int k1 = position.getX() - j1; k1 <= position.getX() + j1 && flag; ++k1)
                 {
@@ -52,21 +48,15 @@ public class ChristmasTree extends WorldGenAbstractTree
                         {
                             IBlockState state = worldIn.getBlockState(blockpos$mutableblockpos.setPos(k1, i1, l1));
                             if (!state.getBlock().isAir(state, worldIn, blockpos$mutableblockpos.setPos(k1, i1, l1)) && !state.getBlock().isLeaves(state, worldIn, blockpos$mutableblockpos.setPos(k1, i1, l1)))
-                            {
                                 flag = false;
-                            }
                         }
                         else
-                        {
                             flag = false;
-                        }
                     }
                 }
             }
             if (!flag)
-            {
                 return false;
-            }
             else
             {
                 BlockPos down = position.down();
@@ -118,21 +108,15 @@ public class ChristmasTree extends WorldGenAbstractTree
                         BlockPos upN = position.up(k4);
                         state = worldIn.getBlockState(upN);
                         if (state.getBlock().isAir(state, worldIn, upN) || state.getBlock().isLeaves(state, worldIn, upN))
-                        {
                             setBlockAndNotifyAdequately(worldIn, position.up(k4), TRUNK);
-                        }
                     }
                     return true;
                 }
                 else
-                {
                     return false;
-                }
             }
         }
         else
-        {
             return false;
-        }
     }
 }

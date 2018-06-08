@@ -28,11 +28,7 @@ public class TreasureChestGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":treasure_chest"));
-		if(template == null)
-		{
-			return false;
-		}
-		if (ModConfig.worldgen.structures.TreasureChest==false)
+		if(template == null||ModConfig.worldgen.structures.TreasureChest==false)
 			return false;
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(TreasureChestGen.canSpawnHere(template, worldserver, position)) {

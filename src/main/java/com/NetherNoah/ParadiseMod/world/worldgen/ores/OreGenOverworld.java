@@ -29,15 +29,11 @@ public class OreGenOverworld implements IWorldGenerator {
 		
 		//ruby ore
 		if (selectOreOverworld==0)
-		{
 			oreSelectionOverworld=Ores.RubyOre.getDefaultState();
-		}
 		
 		//silver ore
 		else if (selectOreOverworld==1)
-		{
-			oreSelectionOverworld=Ores.SilverOre.getDefaultState();	
-		}
+			oreSelectionOverworld=Ores.SilverOre.getDefaultState();
 		else
 			oreSelectionOverworld=Ores.SaltOre.getDefaultState();
 		generateOre(oreSelectionOverworld, world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(4), 6);
@@ -45,9 +41,8 @@ public class OreGenOverworld implements IWorldGenerator {
 	private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {
 		int deltaY = maxY - minY;
 			int rarity = 16;
-			if (ore==Ores.RubyOre.getDefaultState()) {
+			if (ore==Ores.RubyOre.getDefaultState())
 				rarity=8;
-			}
 		for (int i = 0; i < chances; i++) {
 			BlockPos pos = new BlockPos(x + random.nextInt(rarity), minY + random.nextInt(deltaY), z + random.nextInt(8));
 			WorldGenMinable generator = new WorldGenMinable(ore, size,BlockMatcher.forBlock(Blocks.STONE));

@@ -29,13 +29,8 @@ public class RunwayGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":runway"));
-		if(template == null)
-		{
-			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
+		if(template == null||ModConfig.worldgen.structures.Runway==false)
 			return false;
-		}
-		if (ModConfig.worldgen.structures.Runway==false)
-			return false;	
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(RunwayGen.canSpawnHere(template, worldserver, position)) {
 			if(rand.nextInt(ModConfig.worldgen.structures.RunwayChance) == 0){

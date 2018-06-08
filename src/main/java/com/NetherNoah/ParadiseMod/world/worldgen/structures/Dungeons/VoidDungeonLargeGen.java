@@ -36,9 +36,7 @@ public class VoidDungeonLargeGen extends WorldGenerator {
 		if (ModConfig.worldgen.structures.VoidDungeonLarge==false)
 			return false;
 		if(part1 == null)
-		{
 			return false;
-		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(VoidDungeonLargeGen.canSpawnHere(part1, worldserver, position)) {
 			if(rand.nextInt(ModConfig.worldgen.structures.VoidDungeonLargeChance) == 0){

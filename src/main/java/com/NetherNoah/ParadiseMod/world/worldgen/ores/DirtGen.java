@@ -15,9 +15,8 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 public class DirtGen implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		if (world.provider.getDimension() == 0) {
+		if (world.provider.getDimension() == 0)
 			generateOverworld(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
-		}
 	}
 	private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider){
 		int dirtOrSand=random.nextInt(3);

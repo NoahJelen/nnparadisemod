@@ -18,9 +18,7 @@ public class Shrine extends WorldGenerator implements IWorldGenerator{
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
 		if (world.provider.getDimension() == 1)
-		{
 			generateEnd(world, rand, blockX + 8, blockZ + 8);
-		}
 	}
 	private void generateEnd(World world, Random rand, int blockX, int blockZ)
 	{	

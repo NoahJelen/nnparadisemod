@@ -30,13 +30,8 @@ public class WickerManGen extends WorldGenerator {
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":wicker_man"));
-		if (ModConfig.worldgen.structures.WickerMan==false)
-			return false;
-		if(template == null)
-		{
-			System.out.println("Nether Noah's Paradise mod: Please don't screw with me!");
-			return false;
-		}		
+		if (ModConfig.worldgen.structures.WickerMan==false||template == null)
+			return false;		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(biome == Biomes.FOREST || biome == Biomes.FOREST_HILLS|| biome == Biomes.BIRCH_FOREST_HILLS|| biome == Biomes.FOREST_HILLS) {
 			if(WickerManGen.canSpawnHere(template, worldserver, position)) {

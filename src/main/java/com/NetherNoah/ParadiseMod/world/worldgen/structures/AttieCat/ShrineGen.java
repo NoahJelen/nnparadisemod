@@ -30,16 +30,12 @@ public class ShrineGen extends WorldGenerator {
 		int selectShrine=rand.nextInt(2);
 		Template template = null;
 		if (selectShrine==1) 
-		{
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":attiecat/bill_shrine"));
-		}
 		else
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":attiecat/john_shrine"));
 		
 		if(template == null||ModConfig.worldgen.structures.attiecat.Shrines)
-		{
-			return false;
-		}	
+			return false;	
 		
 		if(ShrineGen.canSpawnHere(template, worldserver, position)) {
 			if(rand.nextInt(ModConfig.worldgen.structures.attiecat.ShrinesChance) == 0){
@@ -63,8 +59,7 @@ public class ShrineGen extends WorldGenerator {
 		boolean corner2 = isCornerValid(world, posAboveGround.add(xwidth, 0, zwidth));
 		return posAboveGround.getY() > 31 && corner1 && corner2;
 	}
-	public static boolean isCornerValid(World world, BlockPos pos)
-	{
+	public static boolean isCornerValid(World world, BlockPos pos){
 		int variation = 3;
 		int highestBlock = getGroundFromAbove(world, pos.getX(), pos.getZ());
 		
@@ -81,6 +76,6 @@ public class ShrineGen extends WorldGenerator {
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
 			foundGround =  blockAt == Blocks.END_STONE;
 		}
-			return y;
+		return y;
 	}
 }

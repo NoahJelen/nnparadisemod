@@ -31,9 +31,7 @@ public class MiniStrongholdGen extends WorldGenerator {
 		if(ModConfig.worldgen.structures.MiniStronghold==false)
 			return false;
 		if(template == null)
-		{
 			return false;
-		}		
 		Biome biome = world.getBiomeForCoordsBody(position);
 		if(rand.nextInt(ModConfig.worldgen.structures.MiniStrongholdChance) == 0){
 			IBlockState iblockstate = world.getBlockState(position);

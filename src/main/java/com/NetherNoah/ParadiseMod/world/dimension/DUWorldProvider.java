@@ -10,7 +10,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class DUWorldProvider extends WorldProvider{
 	@Override
 	public void init() {
-		biomeProvider = new BiomeProvider(this.world.getWorldInfo());
+		biomeProvider = new BiomeProvider(world.getWorldInfo());
 		doesWaterVaporize = false;
 		hasSkyLight = false;
 		nether=true;
@@ -53,4 +53,22 @@ public class DUWorldProvider extends WorldProvider{
 	public boolean doesXZShowFog(int par1, int par2) {
 		return true;
 	}
+	
+	@Override
+    public boolean shouldMapSpin(String entity, double x, double z, double rotation)
+    {
+        return false;
+    }
+	
+	@Override
+    public float getSunBrightnessFactor(float par1)
+    {
+        return 0.0f;
+    }
+
+	@Override
+    public boolean isDaytime()
+    {
+        return false;
+    }
 }

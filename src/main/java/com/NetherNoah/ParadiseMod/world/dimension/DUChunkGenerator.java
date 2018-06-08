@@ -164,12 +164,10 @@ public class DUChunkGenerator implements IChunkGenerator {
 							double d16 = (d11 - d10) * 0.25D;
 							for (int k2 = 0; k2 < 4; ++k2) {
 								IBlockState iblockstate = null;
-								if (l1 * 8 + i2 < j) {
+								if (l1 * 8 + i2 < j)
 									iblockstate = WATER;
-								}
-								if (d15 > 0.0D) {
+								if (d15 > 0.0D) 
 									iblockstate = STONE;
-								}
 								int l2 = j2 + j1 * 4;
 								int i3 = i2 + l1 * 8;
 								int j3 = k2 + k1 * 4;
@@ -220,25 +218,26 @@ public class DUChunkGenerator implements IChunkGenerator {
 										iblockstate1 = STONE;
 									}
 									i1 = l;
-									if (j1 >= i - 1) {
+									if (j1 >= i - 1)
 										primer.setBlockState(k, j1, j, iblockstate);
-									} else {
+									else {
 										primer.setBlockState(k, j1, j, iblockstate1);
 										if (primer.getBlockState(k, j1 + 1, j) == AIR && blocks[blockType] == DIRT)
 											primer.setBlockState(k, j1, j, GRASS);
 
 									}
-								} else if (i1 > 0) {
+								}
+								else if (i1 > 0) {
 									--i1;
 									primer.setBlockState(k, j1, j, iblockstate1);
 								}
 							}
-						} else {
-							i1 = -1;
 						}
-					} else {
-						primer.setBlockState(k, j1, j, BEDROCK);
+						else
+							i1 = -1;
 					}
+					else
+						primer.setBlockState(k, j1, j, BEDROCK);
 				}
 			}
 		}
@@ -256,9 +255,8 @@ public class DUChunkGenerator implements IChunkGenerator {
 		Chunk chunk = new Chunk(world, chunkprimer, x, z);
 		Biome[] abiome = world.getBiomeProvider().getBiomes((Biome[]) null, x * 16, z * 16, 16, 16);
 		byte[] abyte = chunk.getBiomeArray();
-		for (int i = 0; i < abyte.length; ++i) {
+		for (int i = 0; i < abyte.length; ++i)
 			abyte[i] = (byte) Biome.getIdForBiome(abiome[i]);
-		}
 			
 		//biome dependent worldgen
 		for (int cx = 0; cx < 16; ++cx) {
@@ -288,6 +286,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 					
 					if (cy<=9&&blockToReplace==Blocks.WATER)
 						chunk.setBlockState(new BlockPos(cx,cy,cz), LIQUID_REDSTONE);
+					
 					if (cy==10&&blockToReplace==Blocks.WATER)
 						chunk.setBlockState(new BlockPos(cx,cy,cz), Misc.glowingObsidian.getDefaultState());
 					
@@ -310,9 +309,8 @@ public class DUChunkGenerator implements IChunkGenerator {
 					}
 					
 					//in cold biomes, replace the water with ice
-					if (blockToReplace==Blocks.WATER&&blockAbove==Blocks.AIR&&(icy||cold)) {
+					if (blockToReplace==Blocks.WATER&&blockAbove==Blocks.AIR&&(icy||cold))
 						chunk.setBlockState(new BlockPos(cx, cy, cz),Blocks.ICE.getDefaultState());
-					}
 					
 					//replace exposed stone
 					if (blockToReplace==Blocks.STONE) {
@@ -340,34 +338,27 @@ public class DUChunkGenerator implements IChunkGenerator {
 
 	private double[] getHeights(double[] p_185938_1_, int p_185938_2_, int p_185938_3_, int p_185938_4_,
 			int p_185938_5_, int p_185938_6_, int p_185938_7_) {
-		if (p_185938_1_ == null) {
+		if (p_185938_1_ == null)
 			p_185938_1_ = new double[p_185938_5_ * p_185938_6_ * p_185938_7_];
-		}
-		ChunkGeneratorEvent.InitNoiseField event = new ChunkGeneratorEvent.InitNoiseField(this, p_185938_1_,
-				p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_, p_185938_7_);
+		ChunkGeneratorEvent.InitNoiseField event = new ChunkGeneratorEvent.InitNoiseField(this, p_185938_1_,p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_, p_185938_7_);
 		MinecraftForge.EVENT_BUS.post(event);
 		if (event.getResult() == Event.Result.DENY)
 			return event.getNoisefield();
 		double d0 = 684.412D;
 		double d1 = 2053.236D;
-		noiseData4 = scaleNoise.generateNoiseOctaves(noiseData4, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, 1,
-				p_185938_7_, 1.0D, 0.0D, 1.0D);
-		dr = depthNoise.generateNoiseOctaves(dr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, 1, p_185938_7_,
-				100.0D, 0.0D, 100.0D);
-		pnr = perlinNoise1.generateNoiseOctaves(pnr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_,
-				p_185938_7_, 8.555150000000001D, 34.2206D, 8.555150000000001D);
-		ar = lperlinNoise1.generateNoiseOctaves(ar, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_,
-				p_185938_7_, 684.412D, 2053.236D, 684.412D);
-		br = lperlinNoise2.generateNoiseOctaves(br, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_,
-				p_185938_7_, 684.412D, 2053.236D, 684.412D);
+		noiseData4 = scaleNoise.generateNoiseOctaves(noiseData4, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, 1,p_185938_7_, 1.0D, 0.0D, 1.0D);
+		dr = depthNoise.generateNoiseOctaves(dr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, 1, p_185938_7_,100.0D, 0.0D, 100.0D);
+		pnr = perlinNoise1.generateNoiseOctaves(pnr, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_,p_185938_7_, 8.555150000000001D, 34.2206D, 8.555150000000001D);
+		ar = lperlinNoise1.generateNoiseOctaves(ar, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_,p_185938_7_, 684.412D, 2053.236D, 684.412D);
+		br = lperlinNoise2.generateNoiseOctaves(br, p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_,p_185938_7_, 684.412D, 2053.236D, 684.412D);
 		int i = 0;
 		double[] adouble = new double[p_185938_6_];
 		for (int j = 0; j < p_185938_6_; ++j) {
 			adouble[j] = Math.cos(j * Math.PI * 6.0D / p_185938_6_) * 2.0D;
 			double d2 = j;
-			if (j > p_185938_6_ / 2) {
+			if (j > p_185938_6_ / 2)
 				d2 = p_185938_6_ - 1 - j;
-			}
+			
 			if (d2 < 4.0D) {
 				d2 = 4.0D - d2;
 				adouble[j] -= d2 * d2 * d2 * 10.0D;
@@ -382,13 +373,12 @@ public class DUChunkGenerator implements IChunkGenerator {
 					double d6 = br[i] / 512.0D;
 					double d7 = (pnr[i] / 10.0D + 1.0D) / 2.0D;
 					double d8;
-					if (d7 < 0.0D) {
+					if (d7 < 0.0D)
 						d8 = d5;
-					} else if (d7 > 1.0D) {
+					else if (d7 > 1.0D)
 						d8 = d6;
-					} else {
+					else
 						d8 = d5 + (d6 - d5) * d7;
-					}
 					d8 = d8 - d4;
 					if (k > p_185938_6_ - 4) {
 						double d9 = (k - (p_185938_6_ - 4)) / 3.0F;

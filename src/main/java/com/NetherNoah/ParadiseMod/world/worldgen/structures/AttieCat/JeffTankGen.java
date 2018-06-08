@@ -29,9 +29,7 @@ public class JeffTankGen extends WorldGenerator {
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":attiecat/jeff_tank"));
 		if(template == null||ModConfig.worldgen.structures.attiecat.JeffTank)
-		{
 			return false;
-		}
 		if(JeffTankGen.canSpawnHere(template, worldserver, position)) {
 			if(rand.nextInt(ModConfig.worldgen.structures.attiecat.JeffTankChance) == 0){
 				IBlockState iblockstate = world.getBlockState(position);

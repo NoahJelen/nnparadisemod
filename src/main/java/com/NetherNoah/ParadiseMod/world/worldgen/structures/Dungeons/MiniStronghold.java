@@ -16,9 +16,8 @@ public class MiniStronghold extends WorldGenerator implements IWorldGenerator{
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		if (world.provider.getDimension() != 1 && world.provider.getDimension() != -3 && world.provider.getDimension() != -1) {
+		if (world.provider.getDimension() != 1 && world.provider.getDimension() != -3 && world.provider.getDimension() != -1)
 			generateOverworld(world, rand, blockX + 8, blockZ + 8);
-		}
 	}
 	
 	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
