@@ -196,6 +196,7 @@
     Added Player Head Temples and Giant Grass Blocks (must be enabled from the config)
     Crystals can no longer generate on top of liquids
     Improved world generation in the Deep Underground
+
 1.1.1:
     Fixed a bug with diamond crystal generating in the deep void and deep underground
 
@@ -205,3 +206,9 @@
     Liquid Redstone now generate underground in lakes
     Added Glowing Ice
     Optimized the DU and DV chunk generators
+
+1.2.1:
+    Fixed a bug with custom fences not connecting to vanilla fences
+    Fixed a model bug with the vanilla and moss stone furnaces
+    Fixed the void furnace item showing up as a blank space
+    Added crafting recipe for black dye

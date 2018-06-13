@@ -42,8 +42,7 @@ public class ArmorObsidian extends ItemArmor {
 				}
 			}
 		}
-		if (ArmorObsidianPieces == 4) {
+		if (ArmorObsidianPieces == 4)
 			player.addPotionEffect(new PotionEffect(Potion.getPotionById(12)));
-		}
 	}
 }

@@ -46,9 +46,8 @@ public class ArmorEmerald extends ItemArmor {
 			// 5% chance each tick
 			Random rand = new Random();
 			int giveXp = rand.nextInt(100) + 1;
-			if (giveXp == 2) {
+			if (giveXp == 2)
 				player.addExperience(25);
-			}
 		}
 	}
 }

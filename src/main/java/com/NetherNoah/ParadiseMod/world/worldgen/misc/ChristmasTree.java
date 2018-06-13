@@ -93,14 +93,10 @@ public class ChristmasTree extends WorldGenAbstractTree
                             k3 = 1;
                             ++j3;
                             if (j3 > l)
-                            {
                                 j3 = l;
-                            }
                         }
                         else
-                        {
                             ++i3;
-                        }
                     }
                     int i4 = rand.nextInt(3);
                     for (int k4 = 0; k4 < i - i4; ++k4)

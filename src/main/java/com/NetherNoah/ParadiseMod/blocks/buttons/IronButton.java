@@ -25,7 +25,6 @@ public class IronButton extends IronButtonTicks {
 	}
 	@Override
 	protected void playReleaseSound(World worldIn, BlockPos pos) {
-		worldIn.playSound((EntityPlayer) null, pos, SoundEvents.BLOCK_WOOD_BUTTON_CLICK_OFF, SoundCategory.BLOCKS, 0.3F,
-				0.5F);
+		worldIn.playSound((EntityPlayer) null, pos, SoundEvents.BLOCK_WOOD_BUTTON_CLICK_OFF, SoundCategory.BLOCKS, 0.3F,0.5F);
 	}
 }

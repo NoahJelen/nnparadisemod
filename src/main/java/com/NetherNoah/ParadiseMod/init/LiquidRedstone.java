@@ -75,9 +75,7 @@ public class LiquidRedstone {
                 worldIn.playSound(d8, d4, d6, SoundEvents.BLOCK_LAVA_POP, SoundCategory.BLOCKS, 0.2F + rand.nextFloat() * 0.2F, 0.9F + rand.nextFloat() * 0.15F, false);
             }
             if (rand.nextInt(200) == 0)
-            {
                 worldIn.playSound(d0, d1, d2, SoundEvents.BLOCK_LAVA_AMBIENT, SoundCategory.BLOCKS, 0.2F + rand.nextFloat() * 0.2F, 0.9F + rand.nextFloat() * 0.15F, false);
-                }
 		}
 		
 		// this is a rs power block!
@@ -102,8 +100,7 @@ public class LiquidRedstone {
 			if (this.blockMaterial == Material.LAVA) {
 				boolean flag = false;
 				for (EnumFacing enumfacing : EnumFacing.values()) {
-					if (enumfacing != EnumFacing.DOWN
-							&& worldIn.getBlockState(pos.offset(enumfacing)).getMaterial() == Material.WATER) {
+					if (enumfacing != EnumFacing.DOWN && worldIn.getBlockState(pos.offset(enumfacing)).getMaterial() == Material.WATER) {
 						flag = true;
 						break;
 					}

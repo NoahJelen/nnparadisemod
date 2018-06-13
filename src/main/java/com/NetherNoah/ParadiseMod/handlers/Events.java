@@ -25,10 +25,9 @@ public class Events {
 		modRegistry.remove(woodenPressurePlate);
 		modRegistry.remove(woodenButton);
 		modRegistry.remove(oakTable);
-		modRegistry.remove(furnace);
 	}
 
-	// unlocks all recipes if Quark is not present
+	//unlocks all recipes if Quark is not present
 	@SubscribeEvent
 	public void onPlayerLoggedIn(PlayerLoggedInEvent event) {
 		if (event.player instanceof EntityPlayerMP) {

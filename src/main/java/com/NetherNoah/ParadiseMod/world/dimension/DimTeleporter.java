@@ -99,9 +99,8 @@ public class DimTeleporter extends Teleporter{
 						
 						if (DU) {
 							if (worldServerInstance.getBlockState(blockpos).getBlock() == Misc.DUPortal) {
-								while (worldServerInstance.getBlockState(blockpos1 = blockpos.down()).getBlock() == Misc.DUPortal) {
+								while (worldServerInstance.getBlockState(blockpos1 = blockpos.down()).getBlock() == Misc.DUPortal)
 									blockpos = blockpos1;
-								}
 								double d1 = blockpos.distanceSq(blockpos4);
 								if (d0 < 0.0D || d1 < d0) {
 									d0 = d1;
@@ -112,9 +111,8 @@ public class DimTeleporter extends Teleporter{
 						}
 						else {
 							if (worldServerInstance.getBlockState(blockpos).getBlock() == Misc.DVPortal) {
-								while (worldServerInstance.getBlockState(blockpos1 = blockpos.down()).getBlock() == Misc.DVPortal) {
+								while (worldServerInstance.getBlockState(blockpos1 = blockpos.down()).getBlock() == Misc.DVPortal)
 									blockpos = blockpos1;
-								}
 								double d1 = blockpos.distanceSq(blockpos4);
 								if (d0 < 0.0D || d1 < d0) {
 									d0 = d1;
@@ -128,42 +126,32 @@ public class DimTeleporter extends Teleporter{
 			}
 		}
 		if (d0 >= 0.0D) {
-			if (flag1) {
+			if (flag1)
 				destinationCoordinateCache.put(k, new DimTeleporter.PortalPosition(object, worldServerInstance.getTotalWorldTime()));
-			}
 			double d4 = object.getX() + 0.5D;
 			double d5 = object.getY() + 0.5D;
 			double d6 = object.getZ() + 0.5D;
 			EnumFacing enumfacing = null;
 			
 			if (DU) {
-				if (worldServerInstance.getBlockState(object.west()).getBlock() == Misc.DUPortal) {
+				if (worldServerInstance.getBlockState(object.west()).getBlock() == Misc.DUPortal) 
 					enumfacing = EnumFacing.NORTH;
-				}
-				if (worldServerInstance.getBlockState(object.east()).getBlock() == Misc.DUPortal) {
+				if (worldServerInstance.getBlockState(object.east()).getBlock() == Misc.DUPortal)
 					enumfacing = EnumFacing.SOUTH;
-				}
-				if (worldServerInstance.getBlockState(object.north()).getBlock() == Misc.DUPortal) {
+				if (worldServerInstance.getBlockState(object.north()).getBlock() == Misc.DUPortal)
 					enumfacing = EnumFacing.EAST;
-				}
-				if (worldServerInstance.getBlockState(object.south()).getBlock() == Misc.DUPortal) {
+				if (worldServerInstance.getBlockState(object.south()).getBlock() == Misc.DUPortal)
 					enumfacing = EnumFacing.WEST;
-				}
-				
 			}
 			else {
-				if (worldServerInstance.getBlockState(object.west()).getBlock() == Misc.DVPortal) {
+				if (worldServerInstance.getBlockState(object.west()).getBlock() == Misc.DVPortal)
 					enumfacing = EnumFacing.NORTH;
-				}
-				if (worldServerInstance.getBlockState(object.east()).getBlock() == Misc.DVPortal) {
+				if (worldServerInstance.getBlockState(object.east()).getBlock() == Misc.DVPortal)
 					enumfacing = EnumFacing.SOUTH;
-				}
-				if (worldServerInstance.getBlockState(object.north()).getBlock() == Misc.DVPortal) {
+				if (worldServerInstance.getBlockState(object.north()).getBlock() == Misc.DVPortal)
 					enumfacing = EnumFacing.EAST;
-				}
-				if (worldServerInstance.getBlockState(object.south()).getBlock() == Misc.DVPortal) {
+				if (worldServerInstance.getBlockState(object.south()).getBlock() == Misc.DVPortal)
 					enumfacing = EnumFacing.WEST;
-				}
 			}
 			
 			EnumFacing enumfacing1 = entityIn.getTeleportDirection();
@@ -182,15 +170,12 @@ public class DimTeleporter extends Teleporter{
 				}
 				float f6 = 0.5F;
 				float f1 = 0.5F;
-				if (!flag3 && flag2) {
+				if (!flag3 && flag2)
 					f6 = 1.0F;
-				}
-				else if (flag3 && !flag2) {
+				else if (flag3 && !flag2)
 					f6 = 0.0F;
-				}
-				else if (flag3) {
+				else if (flag3)
 					f1 = 0.0F;
-				}
 				d4 = object.getX() + 0.5D;
 				d5 = object.getY() + 0.5D;
 				d6 = object.getZ() + 0.5D;
@@ -224,15 +209,13 @@ public class DimTeleporter extends Teleporter{
 					entityIn.rotationYaw = p_180620_2_ - enumfacing1.getHorizontalIndex() * 90
 							+ enumfacing.getHorizontalIndex() * 90;
 			}
-			else {
+			else
 				entityIn.motionX = entityIn.motionY = entityIn.motionZ = 0.0D;
-			}
 			entityIn.setLocationAndAngles(d4, d5, d6, entityIn.rotationYaw, entityIn.rotationPitch);
 			return true;
 		}
-		else {
+		else
 			return false;
-		}
 	}
 	@Override
 	public boolean makePortal(Entity entityIn)
@@ -260,9 +243,7 @@ public class DimTeleporter extends Teleporter{
                     if (worldServerInstance.isAirBlock(blockpos$mutableblockpos.setPos(j2, j3, l2)))
                     {
                         while (j3 > 0 && worldServerInstance.isAirBlock(blockpos$mutableblockpos.setPos(j2, j3 - 1, l2)))
-                        {
                             --j3;
-                        }
                         for (int k3 = i2; k3 < i2 + 4; ++k3)
                         {
                             int l3 = k3 % 2;
@@ -318,9 +299,7 @@ public class DimTeleporter extends Teleporter{
                         if (worldServerInstance.isAirBlock(blockpos$mutableblockpos.setPos(l5, i7, j6)))
                         {
                             while (i7 > 0 && worldServerInstance.isAirBlock(blockpos$mutableblockpos.setPos(l5, i7 - 1, j6)))
-                            {
                                 --i7;
-                            }
                             for (int k7 = i2; k7 < i2 + 2; ++k7)
                             {
                                 int j8 = k7 % 2;
@@ -334,9 +313,7 @@ public class DimTeleporter extends Teleporter{
                                         int j13 = j6 + (j10 - 1) * j9;
                                         blockpos$mutableblockpos.setPos(j12, i13, j13);
                                         if (j11 < 0 && !worldServerInstance.getBlockState(blockpos$mutableblockpos).getMaterial().isSolid() || j11 >= 0 && !worldServerInstance.isAirBlock(blockpos$mutableblockpos))
-                                        {
                                             continue label567;
-                                        }
                                     }
                                 }
                                 double d6 = i7 + 0.5D - entityIn.posY;
@@ -433,9 +410,7 @@ public class DimTeleporter extends Teleporter{
             {
                 DimTeleporter.PortalPosition teleporter$portalposition = objectiterator.next();
                 if (teleporter$portalposition == null || teleporter$portalposition.lastUpdateTime < i)
-                {
                     objectiterator.remove();
-                }
             }
         }
     }

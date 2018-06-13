@@ -8,5 +8,4 @@ public class CustomCraftBenchGui extends GuiCrafting {
 	public CustomCraftBenchGui(InventoryPlayer playerInv, World worldIn) {
 		super(playerInv, worldIn);
 	}
-
 }

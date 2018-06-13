@@ -19,29 +19,26 @@ public class ContainerCustomCraftBench extends net.minecraft.inventory.Container
             ItemStack slotStack = slot.getStack();
             stack = slotStack.copy();
             if (slotIndex == 0) {
-                if (!mergeItemStack(slotStack, 10, 46, true)) {
+                if (!mergeItemStack(slotStack, 10, 46, true)) 
                     return ItemStack.EMPTY;
-                }
                 slot.onSlotChange(slotStack, stack);
-            } else if (slotIndex >= 10 && slotIndex < 37) {
-                if (!mergeItemStack(slotStack, 1, 10, false)) {
+            } 
+            else if (slotIndex >= 10 && slotIndex < 37) {
+                if (!mergeItemStack(slotStack, 1, 10, false))
                     return ItemStack.EMPTY;
-                }
-            } else if (slotIndex >= 37 && slotIndex < 46) {
-                if (!mergeItemStack(slotStack, 1, 10, false)) {
+            } 
+            else if (slotIndex >= 37 && slotIndex < 46) {
+                if (!mergeItemStack(slotStack, 1, 10, false))
                     return ItemStack.EMPTY;
-                }
-            } else if (!mergeItemStack(slotStack, 10, 46, false)) {
-                return ItemStack.EMPTY;
             }
-            if (slotStack.isEmpty()) {
+            else if (!mergeItemStack(slotStack, 10, 46, false))
+                return ItemStack.EMPTY;
+            if (slotStack.isEmpty())
                 slot.putStack(ItemStack.EMPTY);
-            } else {
+        	else
                 slot.onSlotChanged();
-            }
-            if (slotStack.getCount() == stack.getCount()) {
+            if (slotStack.getCount() == stack.getCount())
                 return ItemStack.EMPTY;
-            }
             slot.onTake(player, slotStack);
         }
         return stack;

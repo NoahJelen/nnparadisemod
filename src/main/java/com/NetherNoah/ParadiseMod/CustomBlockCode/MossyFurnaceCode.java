@@ -65,21 +65,13 @@ public class MossyFurnaceCode extends BlockContainer
             IBlockState iblockstate3 = worldIn.getBlockState(pos.east());
             EnumFacing enumfacing = state.getValue(FACING);
             if (enumfacing == EnumFacing.NORTH && iblockstate.isFullBlock() && !iblockstate1.isFullBlock())
-            {
                 enumfacing = EnumFacing.SOUTH;
-            }
             else if (enumfacing == EnumFacing.SOUTH && iblockstate1.isFullBlock() && !iblockstate.isFullBlock())
-            {
                 enumfacing = EnumFacing.NORTH;
-            }
             else if (enumfacing == EnumFacing.WEST && iblockstate2.isFullBlock() && !iblockstate3.isFullBlock())
-            {
                 enumfacing = EnumFacing.EAST;
-            }
             else if (enumfacing == EnumFacing.EAST && iblockstate3.isFullBlock() && !iblockstate2.isFullBlock())
-            {
                 enumfacing = EnumFacing.WEST;
-            }
             worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
         }
     }
@@ -97,9 +89,7 @@ public class MossyFurnaceCode extends BlockContainer
             double d3 = 0.52D;
             double d4 = rand.nextDouble() * 0.6D - 0.3D;
             if (rand.nextDouble() < 0.1D)
-            {
                 worldIn.playSound(pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
-            }
             switch (enumfacing)
             {
                 case WEST:
@@ -124,9 +114,7 @@ public class MossyFurnaceCode extends BlockContainer
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (worldIn.isRemote)
-        {
             return true;
-        }
         else
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
@@ -178,9 +166,7 @@ public class MossyFurnaceCode extends BlockContainer
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
             if (tileentity instanceof TEMossyFurnace)
-            {
                 ((TEMossyFurnace)tileentity).setCustomInventoryName(stack.getDisplayName());
-            }
         }
     }
     @Override
@@ -224,9 +210,7 @@ public class MossyFurnaceCode extends BlockContainer
         EnumFacing enumfacing = EnumFacing.getFront(meta);
 
         if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-        {
             enumfacing = EnumFacing.NORTH;
-        }
         return getDefaultState().withProperty(FACING, enumfacing);
     }
     @Override

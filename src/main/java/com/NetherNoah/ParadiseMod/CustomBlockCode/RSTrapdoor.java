@@ -68,13 +68,9 @@ public class RSTrapdoor extends Block{
             }
         }
         else if (state.getValue(HALF) == BlockTrapDoor.DoorHalf.TOP)
-        {
             axisalignedbb = TOP_AABB;
-        }
         else
-        {
             axisalignedbb = BOTTOM_AABB;
-        }
         return axisalignedbb;
     }
     @Override
@@ -96,9 +92,7 @@ public class RSTrapdoor extends Block{
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (blockMaterial == Material.IRON)
-        {
             return false;
-        }
         else
         {
             state = state.cycleProperty(OPEN);
@@ -135,9 +129,7 @@ public class RSTrapdoor extends Block{
             iblockstate = iblockstate.withProperty(HALF, facing == EnumFacing.UP ? BlockTrapDoor.DoorHalf.BOTTOM : BlockTrapDoor.DoorHalf.TOP);
         }
         if (worldIn.isBlockPowered(pos))
-        {
             iblockstate = iblockstate.withProperty(OPEN, Boolean.valueOf(true));
-        }
         return iblockstate;
     }
     @Override
@@ -192,13 +184,9 @@ public class RSTrapdoor extends Block{
         int i = 0;
         i = i | getMetaForFacing(state.getValue(FACING));
         if (state.getValue(OPEN).booleanValue())
-        {
             i |= 4;
-        }
         if (state.getValue(HALF) == BlockTrapDoor.DoorHalf.TOP)
-        {
             i |= 8;
-        }
         return i;
     }
     @Override

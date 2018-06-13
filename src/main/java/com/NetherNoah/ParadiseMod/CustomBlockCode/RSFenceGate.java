@@ -53,9 +53,7 @@ public class RSFenceGate extends BlockHorizontal
     {
         EnumFacing.Axis enumfacing$axis = state.getValue(FACING).getAxis();
         if (enumfacing$axis == EnumFacing.Axis.Z && (canFenceGateConnectTo(worldIn, pos, EnumFacing.WEST) || canFenceGateConnectTo(worldIn, pos, EnumFacing.EAST)) || enumfacing$axis == EnumFacing.Axis.X && (canFenceGateConnectTo(worldIn, pos, EnumFacing.NORTH) || canFenceGateConnectTo(worldIn, pos, EnumFacing.SOUTH)))
-        {
             state = state.withProperty(IN_WALL, Boolean.valueOf(true));
-        }
         return state;
     }
     @Override
@@ -112,9 +110,7 @@ public class RSFenceGate extends BlockHorizontal
         {
             EnumFacing enumfacing = EnumFacing.fromAngle(playerIn.rotationYaw);
             if (state.getValue(FACING) == enumfacing.getOpposite())
-            {
                 state = state.withProperty(FACING, enumfacing);
-            }
             state = state.withProperty(OPEN, Boolean.valueOf(true));
             worldIn.setBlockState(pos, state, 10);
         }
@@ -132,13 +128,9 @@ public class RSFenceGate extends BlockHorizontal
         int i = 0;
         i = i | state.getValue(FACING).getHorizontalIndex();
         if (state.getValue(POWERED).booleanValue())
-        {
             i |= 8;
-        }
         if (state.getValue(OPEN).booleanValue())
-        {
             i |= 4;
-        }
         return i;
     }
     @Override

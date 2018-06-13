@@ -53,30 +53,20 @@ public abstract class CustomWall extends Block
     public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_)
     {
         if (!p_185477_7_)
-        {
             state = this.getActualState(state, worldIn, pos);
-        }
         addCollisionBoxToList(pos, entityBox, collidingBoxes, CLIP_AABB_BY_INDEX[getAABBIndex(state)]);
     }
     private static int getAABBIndex(IBlockState state)
     {
         int i = 0;
         if (state.getValue(NORTH).booleanValue())
-        {
             i |= 1 << EnumFacing.NORTH.getHorizontalIndex();
-        }
         if (state.getValue(EAST).booleanValue())
-        {
             i |= 1 << EnumFacing.EAST.getHorizontalIndex();
-        }
         if (state.getValue(SOUTH).booleanValue())
-        {
             i |= 1 << EnumFacing.SOUTH.getHorizontalIndex();
-        }
         if (state.getValue(WEST).booleanValue())
-        {
             i |= 1 << EnumFacing.WEST.getHorizontalIndex();
-        }
         return i;
     }
     @Override
@@ -98,7 +88,7 @@ public abstract class CustomWall extends Block
     {
         IBlockState iblockstate = worldIn.getBlockState(pos);
         Block block = iblockstate.getBlock();
-        return block == Blocks.BARRIER || block == this || block instanceof BlockWall || block instanceof CustomWall || block instanceof BlockFenceGate || block instanceof BlockFence || (block.isOpaqueCube(iblockstate) && iblockstate.isFullCube());
+        return block == Blocks.BARRIER || block == this || block instanceof BlockWall || block instanceof CustomWall || block instanceof BlockFenceGate || block instanceof BlockFence || block instanceof RSFenceGate||(block.isOpaqueCube(iblockstate) && iblockstate.isFullCube());
     }
     @Override
 	@SideOnly(Side.CLIENT)

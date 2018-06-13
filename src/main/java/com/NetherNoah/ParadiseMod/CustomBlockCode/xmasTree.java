@@ -54,21 +54,15 @@ public class xmasTree extends BlockBush implements IGrowable
         {
             super.updateTick(worldIn, pos, state, rand);
             if (worldIn.getLightFromNeighbors(pos.up()) >= 9 && rand.nextInt(7) == 0)
-            {
                 grow(worldIn, pos, state, rand);
-            }
         }
     }
     public void grow(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
         if (state.getValue(STAGE).intValue() == 0)
-        {
             worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
-        }
         else
-        {
             generateTree(worldIn, pos, state, rand);
-        }
     }
     public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
@@ -123,9 +117,7 @@ public class xmasTree extends BlockBush implements IGrowable
                 worldIn.setBlockState(pos.add(i + 1, 0, j + 1), state, 4);
             }
             else
-            {
                 worldIn.setBlockState(pos, state, 4);
-            }
         }
     }
     private boolean isTwoByTwoOfType(World worldIn, BlockPos pos, int p_181624_3_, int p_181624_4_, planks.EnumType type)

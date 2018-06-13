@@ -41,12 +41,6 @@ public class SaltLampRegistry {
 			double dx = Lamp.Position.getX() + 0.5 - pos.getX();
 			double dy = Math.abs(Lamp.Position.getY() + 0.5 - pos.getY());
 			double dz = Lamp.Position.getZ() + 0.5 - pos.getZ();
-			/*/
-			System.out.println(dx);
-			System.out.println(dy);
-			System.out.println(dz);
-			System.out.println(" ");
-			/*/
 			if((dx * dx + dz * dz) <= (this.LampRangeSq) && dy <= this.LampRange)
 				return true;
 		}

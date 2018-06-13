@@ -31,9 +31,7 @@ public class TileEntityCompressedCactusChestRender extends TileEntitySpecialRend
         Calendar calendar = Calendar.getInstance();
 
         if (calendar.get(2) + 1 == 12 && calendar.get(5) >= 24 && calendar.get(5) <= 26)
-        {
             this.isChristmas = true;
-        }
     }
 
     @Override
@@ -58,9 +56,7 @@ public class TileEntityCompressedCactusChestRender extends TileEntitySpecialRend
             te.checkForAdjacentChests();
         }
         else
-        {
             i = 0;
-        }
 
         if (te.adjacentChestZNeg == null && te.adjacentChestXNeg == null)
         {
@@ -80,17 +76,11 @@ public class TileEntityCompressedCactusChestRender extends TileEntitySpecialRend
                     GlStateManager.matrixMode(5888);
                 }
                 else if (this.isChristmas)
-                {
                     this.bindTexture(TEXTURE_CHRISTMAS);
-                }
                 else if (te.getChestType() == BlockChest.Type.TRAP)
-                {
                     this.bindTexture(TEXTURE_TRAPPED);
-                }
                 else
-                {
                     this.bindTexture(TEXTURE_NORMAL);
-                }
             }
             else
             {
@@ -106,26 +96,18 @@ public class TileEntityCompressedCactusChestRender extends TileEntitySpecialRend
                     GlStateManager.matrixMode(5888);
                 }
                 else if (this.isChristmas)
-                {
                     this.bindTexture(TEXTURE_CHRISTMAS_DOUBLE);
-                }
                 else if (te.getChestType() == BlockChest.Type.TRAP)
-                {
                     this.bindTexture(TEXTURE_TRAPPED_DOUBLE);
-                }
                 else
-                {
                     this.bindTexture(TEXTURE_NORMAL_DOUBLE);
-                }
             }
 
             GlStateManager.pushMatrix();
             GlStateManager.enableRescaleNormal();
 
             if (destroyStage < 0)
-            {
                 GlStateManager.color(1.0F, 1.0F, 1.0F, alpha);
-            }
 
             GlStateManager.translate((float)x, (float)y + 1.0F, (float)z + 1.0F);
             GlStateManager.scale(1.0F, -1.0F, -1.0F);
@@ -133,34 +115,22 @@ public class TileEntityCompressedCactusChestRender extends TileEntitySpecialRend
             int j = 0;
 
             if (i == 2)
-            {
                 j = 180;
-            }
 
             if (i == 3)
-            {
                 j = 0;
-            }
 
             if (i == 4)
-            {
                 j = 90;
-            }
 
             if (i == 5)
-            {
                 j = -90;
-            }
 
             if (i == 2 && te.adjacentChestXPos != null)
-            {
                 GlStateManager.translate(1.0F, 0.0F, 0.0F);
-            }
 
             if (i == 5 && te.adjacentChestZPos != null)
-            {
                 GlStateManager.translate(0.0F, 0.0F, -1.0F);
-            }
 
             GlStateManager.rotate(j, 0.0F, 1.0F, 0.0F);
             GlStateManager.translate(-0.5F, -0.5F, -0.5F);
@@ -171,9 +141,7 @@ public class TileEntityCompressedCactusChestRender extends TileEntitySpecialRend
                 float f1 = te.adjacentChestZNeg.prevLidAngle + (te.adjacentChestZNeg.lidAngle - te.adjacentChestZNeg.prevLidAngle) * partialTicks;
 
                 if (f1 > f)
-                {
                     f = f1;
-                }
             }
 
             if (te.adjacentChestXNeg != null)
@@ -181,9 +149,7 @@ public class TileEntityCompressedCactusChestRender extends TileEntitySpecialRend
                 float f2 = te.adjacentChestXNeg.prevLidAngle + (te.adjacentChestXNeg.lidAngle - te.adjacentChestXNeg.prevLidAngle) * partialTicks;
 
                 if (f2 > f)
-                {
                     f = f2;
-                }
             }
 
             f = 1.0F - f;

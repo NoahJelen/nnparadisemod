@@ -327,7 +327,6 @@ public class DUChunkGenerator implements IChunkGenerator {
 							
 							if (oceanic) 
 								chunk.setBlockState(new BlockPos(cx,cy,cz), PRISMARINE);
-							
 						}
 					}
 				}
@@ -358,7 +357,6 @@ public class DUChunkGenerator implements IChunkGenerator {
 			double d2 = j;
 			if (j > p_185938_6_ / 2)
 				d2 = p_185938_6_ - 1 - j;
-			
 			if (d2 < 4.0D) {
 				d2 = 4.0D - d2;
 				adouble[j] -= d2 * d2 * d2 * 10.0D;

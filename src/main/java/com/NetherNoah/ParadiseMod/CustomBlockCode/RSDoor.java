@@ -95,26 +95,18 @@ public class RSDoor extends Block{
     {
         return blockMaterial == Material.IRON ? 1005 : 1006;
     }
-    //public MapColor getMapColor(IBlockState state)
-    //{
-      //  return state.getBlock() == Blocks.IRON_DOOR ? MapColor.IRON : (state.getBlock() == Blocks.OAK_DOOR ? BlockPlanks.EnumType.OAK.getMapColor() : (state.getBlock() == Blocks.SPRUCE_DOOR ? BlockPlanks.EnumType.SPRUCE.getMapColor() : (state.getBlock() == Blocks.BIRCH_DOOR ? BlockPlanks.EnumType.BIRCH.getMapColor() : (state.getBlock() == Blocks.JUNGLE_DOOR ? BlockPlanks.EnumType.JUNGLE.getMapColor() : (state.getBlock() == Blocks.ACACIA_DOOR ? BlockPlanks.EnumType.ACACIA.getMapColor() : (state.getBlock() == Blocks.DARK_OAK_DOOR ? BlockPlanks.EnumType.DARK_OAK.getMapColor() : super.getMapColor(state)))))));
-    //}
     @Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (blockMaterial == Material.IRON)
-        {
             return false;
-        }
         else
         {
             BlockPos blockpos = state.getValue(HALF) == BlockDoor.EnumDoorHalf.LOWER ? pos : pos.down();
             IBlockState iblockstate = pos.equals(blockpos) ? state : worldIn.getBlockState(blockpos);
 
             if (iblockstate.getBlock() != this)
-            {
                 return false;
-            }
             else
             {
                 state = iblockstate.cycleProperty(OPEN);
@@ -193,9 +185,7 @@ public class RSDoor extends Block{
         if (state.getValue(HALF) == BlockDoor.EnumDoorHalf.LOWER && worldIn.getBlockState(blockpos1).getBlock() == this)
         {
             if (player.capabilities.isCreativeMode)
-            {
                 worldIn.setBlockToAir(pos);
-            }
             worldIn.setBlockToAir(blockpos1);
         }
     }
@@ -213,18 +203,14 @@ public class RSDoor extends Block{
             IBlockState iblockstate = worldIn.getBlockState(pos.up());
 
             if (iblockstate.getBlock() == this)
-            {
                 state = state.withProperty(HINGE, iblockstate.getValue(HINGE)).withProperty(POWERED, iblockstate.getValue(POWERED));
-            }
         }
         else
         {
             IBlockState iblockstate1 = worldIn.getBlockState(pos.down());
 
             if (iblockstate1.getBlock() == this)
-            {
                 state = state.withProperty(FACING, iblockstate1.getValue(FACING)).withProperty(OPEN, iblockstate1.getValue(OPEN));
-            }
         }
 
         return state;
@@ -252,21 +238,15 @@ public class RSDoor extends Block{
         {
             i = i | 8;
             if (state.getValue(HINGE) == BlockDoor.EnumHingePosition.RIGHT)
-            {
                 i |= 1;
-            }
             if (state.getValue(POWERED).booleanValue())
-            {
                 i |= 2;
-            }
         }
         else
         {
             i = i | state.getValue(FACING).rotateY().getHorizontalIndex();
             if (state.getValue(OPEN).booleanValue())
-            {
                 i |= 4;
-            }
         }
         return i;
     }
