@@ -212,3 +212,8 @@
     Fixed a model bug with the vanilla and moss stone furnaces
     Fixed the void furnace item showing up as a blank space
     Added crafting recipe for black dye
+
+1.2.2:
+    Added Cooked Eggs
+    The mod displays its correct version again (I'm always forgetting to update the mcmod.info file, dang it!)
+    Finally added slabs for end stone, compressed cactus, glowing obsidian, obsidian, void stone, and void stone bricks!

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "dummy=false,half=top": { "model": "nnparadisemod:glowing_obsidian" },
+        "dummy=false,half=bottom": { "model": "nnparadisemod:glowing_obsidian" }
+    }
+}

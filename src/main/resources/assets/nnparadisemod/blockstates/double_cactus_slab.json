@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "dummy=false,half=top": { "model": "nnparadisemod:compressed_cactus" },
+        "dummy=false,half=bottom": { "model": "nnparadisemod:compressed_cactus" }
+    }
+}

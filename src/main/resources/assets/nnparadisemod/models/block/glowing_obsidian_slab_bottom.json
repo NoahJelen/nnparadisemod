@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "nnparadisemod:blocks/glowing_obsidian",
+        "top": "nnparadisemod:blocks/glowing_obsidian",
+        "side": "nnparadisemod:blocks/glowing_obsidian"
+    }
+}

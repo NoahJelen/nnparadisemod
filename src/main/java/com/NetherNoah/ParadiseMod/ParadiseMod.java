@@ -17,6 +17,7 @@ import com.NetherNoah.ParadiseMod.init.ModBlocks.Lamps;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Plates;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Slabs;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Stairs;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Tables;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Trapdoors;
@@ -209,6 +210,7 @@ public class ParadiseMod {
 		Trapdoors.initAndRegister();
 		Fences.initAndRegister();
 		Gates.initAndRegister();
+		Slabs.initAndRegister();
 		
 		//item categories
 		Tools.initAndRegister();

@@ -2,12 +2,13 @@ package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import com.NetherNoah.ParadiseMod.Utils;
 import com.NetherNoah.ParadiseMod.blocks.misc.BedrockStairs;
-import com.NetherNoah.ParadiseMod.blocks.misc.CactusStairs;
-import com.NetherNoah.ParadiseMod.blocks.misc.EndStairs;
-import com.NetherNoah.ParadiseMod.blocks.misc.GlowingObsidianStairs;
-import com.NetherNoah.ParadiseMod.blocks.misc.ObsidianStairs;
-import com.NetherNoah.ParadiseMod.blocks.misc.VoidBrickStairs;
-import com.NetherNoah.ParadiseMod.blocks.misc.VoidStairs;
+import com.NetherNoah.ParadiseMod.blocks.stairs.CactusStairs;
+import com.NetherNoah.ParadiseMod.blocks.stairs.EndStairs;
+import com.NetherNoah.ParadiseMod.blocks.stairs.GlowingObsidianStairs;
+import com.NetherNoah.ParadiseMod.blocks.stairs.ObsidianStairs;
+import com.NetherNoah.ParadiseMod.blocks.stairs.VoidBrickStairs;
+import com.NetherNoah.ParadiseMod.blocks.stairs.VoidStairs;
+
 import net.minecraft.block.BlockStairs;
 
 public class Stairs {

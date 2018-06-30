@@ -2,6 +2,7 @@
 itemGroup.christmas_stuff=Christmas Stuff
 
 #items
+item.EggCooked.name=Cooked Egg
 item.santa_jacket.name=Santa Jacket
 item.santa_pants.name=Santa Pants
 item.santa_boots.name=Santa Boots
@@ -97,6 +98,9 @@ item.CactusStick.name=Cactus Stick
 item.VoidPearl.name=Void Pearl
 
 #Blocks
+tile.end_slab.name=End Stone Slab
+tile.cactus_slab.name=Cactus Slab
+tile.glowing_obsidian_slab.name=Glowing Obsidian Slab
 tile.glowingIce.name=Glowing Ice
 tile.SilverFenceGate.name=Silver Fence Gate
 tile.endPearlBlock.name=Ender Pearl Block

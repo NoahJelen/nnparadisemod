@@ -2,6 +2,7 @@ package com.NetherNoah.ParadiseMod.init.ModItems;
 
 import com.NetherNoah.ParadiseMod.Utils;
 import com.NetherNoah.ParadiseMod.items.CactusStick;
+import com.NetherNoah.ParadiseMod.items.CookedEgg;
 import com.NetherNoah.ParadiseMod.items.DyeBlack;
 import com.NetherNoah.ParadiseMod.items.DyeBlue;
 import com.NetherNoah.ParadiseMod.items.DyeBrown;
@@ -15,6 +16,7 @@ import com.NetherNoah.ParadiseMod.items.VoidPearl;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemFood;
 
 public class MiscItems {
 	public static Item DyeBlue;
@@ -29,8 +31,10 @@ public class MiscItems {
 	public static Item RustyIngot;
 	public static Item RustyNugget;
 	public static Item VoidPearl;
+	public static ItemFood CookedEgg;
 	
 	public static void initAndRegister() {
+		Utils.regItem(CookedEgg=new CookedEgg());
 		Utils.regItem(VoidPearl=new VoidPearl());
 		Utils.regItem(DyeBrown=new DyeBrown());
 		Utils.regItem(DyeBlack=new DyeBlack());
@@ -45,6 +49,7 @@ public class MiscItems {
 	}
 	
 	public static void regRenders() {
+		Utils.regRender(CookedEgg);
 		Utils.regRender(VoidPearl);
 		Utils.regRender(DyeBrown);
 		Utils.regRender(DyeBlack);

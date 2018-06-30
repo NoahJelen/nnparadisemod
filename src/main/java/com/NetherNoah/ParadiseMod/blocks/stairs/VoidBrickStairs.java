@@ -1,4 +1,4 @@
-package com.NetherNoah.ParadiseMod.blocks.misc;
+package com.NetherNoah.ParadiseMod.blocks.stairs;
 
 import net.minecraft.block.BlockStairs;
 import net.minecraft.creativetab.CreativeTabs;

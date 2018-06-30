@@ -18,7 +18,7 @@ public class Utils {
 		ForgeRegistries.ITEMS.register(item);
 	}
 	/**
-	 *Registers an item model
+	 *Registers a block model
 	 */
 	public static void regRender(Block block) {
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0,

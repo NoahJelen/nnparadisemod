@@ -11,6 +11,7 @@ import com.NetherNoah.ParadiseMod.init.ModBlocks.Lamps;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Ores;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Plates;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Slabs;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Stairs;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Tables;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Trapdoors;
@@ -50,6 +51,7 @@ public class ClientProxy implements CommonProxy{
 		Trapdoors.regRenders();
 		Fences.regRenders();
 		Gates.regRenders();
+		Slabs.regRenders();
 		
 		//item groups
 		Tools.regRenders();

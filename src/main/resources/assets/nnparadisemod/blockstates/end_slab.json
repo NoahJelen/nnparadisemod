@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "dummy=false,half=bottom": { "model": "nnparadisemod:end_slab_bottom" },
+        "dummy=false,half=top": { "model": "nnparadisemod:end_slab_top" }
+    }
+}

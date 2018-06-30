@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "dummy=false,half=bottom": { "model": "nnparadisemod:cactus_slab_bottom" },
+        "dummy=false,half=top": { "model": "nnparadisemod:cactus_slab_top" }
+    }
+}
