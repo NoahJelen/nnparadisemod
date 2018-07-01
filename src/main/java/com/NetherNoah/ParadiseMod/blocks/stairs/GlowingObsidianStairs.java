@@ -6,7 +6,7 @@ import net.minecraft.init.Blocks;
 
 public class GlowingObsidianStairs extends BlockStairs {
 	public GlowingObsidianStairs() {
-		super(Blocks.OBSIDIAN.getDefaultState());
+		super(Blocks.BARRIER.getDefaultState());
 		setUnlocalizedName("GlowingObsidianStairs");
 		setRegistryName("glowing_obsidian_stairs");
 		setHardness(51F);

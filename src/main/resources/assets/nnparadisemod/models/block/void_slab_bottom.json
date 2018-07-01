@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "nnparadisemod:blocks/void_stone",
+        "top": "nnparadisemod:blocks/void_stone",
+        "side": "nnparadisemod:blocks/void_stone"
+    }
+}

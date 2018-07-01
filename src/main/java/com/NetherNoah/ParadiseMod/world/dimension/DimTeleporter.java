@@ -206,8 +206,7 @@ public class DimTeleporter extends Teleporter{
 				entityIn.motionX = d2 * f2 + d3 * f5;
 				entityIn.motionZ = d2 * f4 + d3 * f3;
 				if (enumfacing1 != null)
-					entityIn.rotationYaw = p_180620_2_ - enumfacing1.getHorizontalIndex() * 90
-							+ enumfacing.getHorizontalIndex() * 90;
+					entityIn.rotationYaw = p_180620_2_ - enumfacing1.getHorizontalIndex()*90+enumfacing.getHorizontalIndex() * 90;
 			}
 			else
 				entityIn.motionX = entityIn.motionY = entityIn.motionZ = 0.0D;

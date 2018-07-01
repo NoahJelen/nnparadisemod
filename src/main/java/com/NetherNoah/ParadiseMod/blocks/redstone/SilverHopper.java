@@ -2,6 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.redstone;
 
 import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntitySilverHopper;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockHopper;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -17,7 +18,6 @@ import net.minecraft.world.World;
 
 public class SilverHopper extends BlockHopper {
 	public SilverHopper() {
-		super();
 		setUnlocalizedName("SilverHopper");
 		setRegistryName("silver_hopper");
 		setHardness(5F);
@@ -26,10 +26,18 @@ public class SilverHopper extends BlockHopper {
 		setSoundType(SoundType.METAL);
 		setHarvestLevel("pickaxe", 2);
 	}
+
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEntitySilverHopper();
 	}
+
+	@Override
+    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
+    {
+		return;
+    }
+
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
@@ -40,12 +48,13 @@ public class SilverHopper extends BlockHopper {
         else
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
-            if (tileentity instanceof TileEntityHopper)
+            if (tileentity instanceof TileEntitySilverHopper)
             {
-                playerIn.displayGUIChest((TileEntityHopper)tileentity);
+                playerIn.displayGUIChest((TileEntitySilverHopper)tileentity);
                 playerIn.addStat(StatList.HOPPER_INSPECTED);
             }
             return true;
         }
     }
+
 }

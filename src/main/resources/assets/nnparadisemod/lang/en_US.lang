@@ -98,6 +98,10 @@ item.CactusStick.name=Cactus Stick
 item.VoidPearl.name=Void Pearl
 
 #Blocks
+tile.bedrock_slab.name=Bedrock Slab
+tile.obsidian_slab.name=Obsidian Slab
+tile.void_slab.name=Void Stone Slab
+tile.void_bricks_slab.name=Void Stone Brick Slab
 tile.end_slab.name=End Stone Slab
 tile.cactus_slab.name=Cactus Slab
 tile.glowing_obsidian_slab.name=Glowing Obsidian Slab
@@ -290,7 +294,6 @@ tile.VoidFurnace.name=Void Furnace
 tile.RegenerationStone.name=Regeneration Stone
 tile.voidPearlBlock.name=Void Pearl Block
 tile.VoidPearlOre.name=Void Pearl Ore
-
 
 #Fluids
 fluid.liquid_redstone=Liquid Redstone

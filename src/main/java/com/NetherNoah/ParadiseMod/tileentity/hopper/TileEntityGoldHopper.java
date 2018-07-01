@@ -1,43 +1,23 @@
 //this was derived from the vanilla code
 package com.NetherNoah.ParadiseMod.tileentity.hopper;
 
-import net.minecraft.entity.player.EntityPlayer;
+import com.NetherNoah.ParadiseMod.blocks.redstone.GoldHopper;
+
+import net.minecraft.block.BlockHopper;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.IHopper;
 import net.minecraft.tileentity.TileEntityHopper;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.NonNullList;
 
 public class TileEntityGoldHopper extends TileEntityHopper {
-	//speed up movement
-	public static boolean pullItemFromSlot(IHopper hopper, IInventory inventoryIn, int index, EnumFacing direction)
-    {
-        ItemStack itemstack = inventoryIn.getStackInSlot(index);
-        if (!itemstack.isEmpty() && canExtractItemFromSlot(inventoryIn, itemstack, index, direction))
-        {
-            ItemStack itemstack1 = itemstack.copy();
-            ItemStack itemstack2 = putStackInInventoryAllSlots(inventoryIn, hopper, inventoryIn.decrStackSize(index, 64), (EnumFacing)null);
-            if (itemstack2.isEmpty())
-            {
-                inventoryIn.markDirty();
-                return true;
-            }
-            inventoryIn.setInventorySlotContents(index, itemstack1);
-        }
-        return false;
-    }
-	//extract a whole item stack from the last hopper
-    public static boolean canExtractItemFromSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side)
-    {
-        return !(inventoryIn instanceof ISidedInventory) || ((ISidedInventory)inventoryIn).canExtractItem(index, stack, side);
-    }
+    private int transferCooldown = -1;
+    private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(5, ItemStack.EMPTY);
+    
     @Override
-    public ItemStack decrStackSize(int index, int count)
+    public void setTransferCooldown(int ticks)
     {
-        fillWithLoot((EntityPlayer)null);
-        ItemStack itemstack = ItemStackHelper.getAndSplit(getItems(), index, 64);
-        return itemstack;
+        this.transferCooldown = ticks/4;
     }
 }

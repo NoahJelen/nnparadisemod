@@ -10,6 +10,8 @@ import com.NetherNoah.ParadiseMod.world.mapgen.MapGenDUCaves;
 import com.NetherNoah.ParadiseMod.world.mapgen.MapGenDURavines;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSand;
+import net.minecraft.block.BlockStainedHardenedClay;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -17,6 +19,7 @@ import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -50,13 +53,20 @@ public class DUChunkGenerator implements IChunkGenerator {
 	protected static final IBlockState COMPICE = Blocks.PACKED_ICE.getDefaultState();
 	protected static final IBlockState ICE=Blocks.ICE.getDefaultState();
 	protected static final IBlockState SAND = Blocks.SAND.getDefaultState();
+	protected static final IBlockState RED_SAND = Blocks.SAND.getDefaultState().withProperty(BlockSand.VARIANT, BlockSand.EnumType.RED_SAND);
 	protected static final IBlockState SANDSTONE = Blocks.SANDSTONE.getDefaultState();
 	protected static final IBlockState PRISMARINE=Blocks.PRISMARINE.getDefaultState();
 	protected static final IBlockState COBBLESTONE = Blocks.COBBLESTONE.getDefaultState();
 	protected static final IBlockState MYCELIUM=Blocks.MYCELIUM.getDefaultState();
 	protected static final IBlockState LIQUID_REDSTONE=LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState();
 	protected static final IBlockState GLOWING_ICE=Misc.glowingIce.getDefaultState();
-	
+
+	protected static final IBlockState TERRACOTTA=Blocks.HARDENED_CLAY.getDefaultState();
+	protected static final IBlockState ORANGE_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.ORANGE);
+	protected static final IBlockState WHITE_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.WHITE);
+	protected static final IBlockState BROWN_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BROWN);
+	protected static final IBlockState YELLOW_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.YELLOW);
+	protected static final IBlockState RED_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.RED);
 
 	private final World world;
 	private final boolean generateStructures;
@@ -73,8 +83,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 	private final WorldGenMinable lightsGen = new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.STONE));
 	private final WorldGenMinable lightsGen2 = new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.GRASS));
 	
-	//desert
+	//desert and mesa
 	private final WorldGenMinable lightsGenDesert= new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.SANDSTONE));
+	private final WorldGenMinable lightsGenMesa= new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.STAINED_HARDENED_CLAY));
 	private final WorldGenMinable lightsGenDesert2= new WorldGenMinable(Blocks.GLOWSTONE.getDefaultState(), 33,BlockMatcher.forBlock(Blocks.SAND));
 
 	//oceanic
@@ -273,7 +284,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 					boolean volcanic=blockBiome==Biomes.EXTREME_HILLS||blockBiome==Biomes.EXTREME_HILLS_EDGE||blockBiome==Biomes.EXTREME_HILLS_WITH_TREES||blockBiome==Biomes.MUTATED_EXTREME_HILLS||blockBiome==Biomes.MUTATED_EXTREME_HILLS_WITH_TREES;
 					boolean oceanic=blockBiome==Biomes.OCEAN||blockBiome==Biomes.DEEP_OCEAN;
 					boolean mushroom=blockBiome==Biomes.MUSHROOM_ISLAND||blockBiome==Biomes.MUSHROOM_ISLAND_SHORE;
-					
+					boolean mesa=blockBiome==Biomes.MESA||blockBiome==Biomes.MESA_CLEAR_ROCK||blockBiome==Biomes.MESA_ROCK||blockBiome==Biomes.MUTATED_MESA ||blockBiome==Biomes.MUTATED_MESA_CLEAR_ROCK ||blockBiome==Biomes.MUTATED_MESA_ROCK;
 					//block to replace
 					Block blockToReplace=chunk.getBlockState(cx, cy, cz).getBlock();
 					
@@ -304,6 +315,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 						if (desert)
 							chunk.setBlockState(new BlockPos(cx, cy, cz),SAND);
 						
+						if(mesa)
+							chunk.setBlockState(new BlockPos(cx,cy,cz), RED_SAND);
+						
 						if (volcanic)
 							chunk.setBlockState(new BlockPos(cx,cy,cz), COBBLESTONE);
 					}
@@ -327,6 +341,20 @@ public class DUChunkGenerator implements IChunkGenerator {
 							
 							if (oceanic) 
 								chunk.setBlockState(new BlockPos(cx,cy,cz), PRISMARINE);
+							
+							if(mesa) {
+								chunk.setBlockState(new BlockPos(cx,cy,cz), TERRACOTTA);
+								if (cy==74||cy==45)
+									chunk.setBlockState(new BlockPos(cx,cy,cz), ORANGE_TERRACOTTA);
+								if (cy==79||cy==50)
+									chunk.setBlockState(new BlockPos(cx,cy,cz), WHITE_TERRACOTTA);
+								if (cy==83||cy==55)
+									chunk.setBlockState(new BlockPos(cx,cy,cz), BROWN_TERRACOTTA);
+								if (cy==85||cy==64)
+									chunk.setBlockState(new BlockPos(cx,cy,cz), YELLOW_TERRACOTTA);
+								if (cy==40||cy==56)
+									chunk.setBlockState(new BlockPos(cx,cy,cz), RED_TERRACOTTA);
+							}
 						}
 					}
 				}
@@ -447,9 +475,10 @@ public class DUChunkGenerator implements IChunkGenerator {
 				lightsGen.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				lightsGen2.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				
-				//desert
+				//desert and mesa
 				lightsGenDesert.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				lightsGenDesert2.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				lightsGenMesa.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				
 				//volcanic
 				Magma.generate(world, rand,blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));

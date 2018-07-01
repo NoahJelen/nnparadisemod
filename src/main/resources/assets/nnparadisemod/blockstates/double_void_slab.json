@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "dummy=false,half=top": { "model": "nnparadisemod:void_stone" },
+        "dummy=false,half=bottom": { "model": "nnparadisemod:void_stone" }
+    }
+}

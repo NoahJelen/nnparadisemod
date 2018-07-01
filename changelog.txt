@@ -216,4 +216,7 @@
 1.2.2:
     Added Cooked Eggs
     The mod displays its correct version again (I'm always forgetting to update the mcmod.info file, dang it!)
-    Finally added slabs for end stone, compressed cactus, glowing obsidian, obsidian, void stone, and void stone bricks!
+    Finally added slabs for Bedrock, end stone, compressed cactus, glowing obsidian, obsidian, void stone, and void stone bricks!
+    Made Obsidian, Glowing Obsidian, and Bedrock Stairs immovable by pistons (they're made of immovable materials)
+    Changed the mechanic of gold and silver hoppers from transferring multiple items at to tranferring items faster than regular hoppers
+    Added mesa biome geneeration to the deep underground

@@ -130,6 +130,7 @@ public class ParadiseMod {
 		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		Blocks.MOB_SPAWNER.setCreativeTab(CreativeTabs.DECORATIONS);
+		
 		//liquids
 		LiquidRedstone.register();
 		FluidRegistry.addBucketForFluid(LiquidRedstone.FluidLiquidRedstone.instance);
@@ -191,10 +192,12 @@ public class ParadiseMod {
 				
 				//trees in the Deep Underground
 				new DUTrees()
-				};
+		};
+		
 		for(int i=0;i<generators.length;i++) {
 			GameRegistry.registerWorldGenerator(generators[i],1);
 		}
+
 		//block categories
 		Lamps.initAndRegister();
 		Ores.initAndRegister();
@@ -221,14 +224,14 @@ public class ParadiseMod {
 	@EventHandler
 	public void Init(FMLInitializationEvent event) {
 		OreDictHandler.registerOreDict();
-		
+
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new CustomCraftBenchGuiHandler());
 		proxy.init();
-		
+
 		ModSmelting.register();
-		
+
 		DimensionRegistry.registerDimensions();
-		
+
 		//spawn mobs in the deep void dimension
 		EntityRegistry.addSpawn(EntityZombie.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);
 		EntityRegistry.addSpawn(EntityCreeper.class, 10, 0, 10, EnumCreatureType.MONSTER, Biomes.VOID);

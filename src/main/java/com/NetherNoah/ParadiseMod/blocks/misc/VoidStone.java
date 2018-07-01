@@ -9,8 +9,7 @@ public class VoidStone extends Block{
 		setUnlocalizedName("VoidStone");
 		setRegistryName("void_stone");
 		setHardness(5F);
-		setResistance(10F);
+		setResistance(15F);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-		setSoundType(SoundType.STONE);
 	}
 }

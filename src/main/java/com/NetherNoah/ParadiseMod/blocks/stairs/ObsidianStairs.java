@@ -6,7 +6,7 @@ import net.minecraft.init.Blocks;
 
 public class ObsidianStairs extends BlockStairs {
 	public ObsidianStairs() {
-		super(Blocks.OBSIDIAN.getDefaultState());
+		super(Blocks.BARRIER.getDefaultState());
 		setUnlocalizedName("ObsidianStairs");
 		setRegistryName("obsidian_stairs");
 		setHardness(51F);

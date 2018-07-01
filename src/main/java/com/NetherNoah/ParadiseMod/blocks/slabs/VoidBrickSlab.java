@@ -23,19 +23,17 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class GlowingObsidianSlab extends BlockSlab {
+public class VoidBrickSlab extends BlockSlab {
 
 	public static final DummyProperty DUMMY_VARIANT = DummyProperty.create("dummy");
 
-	public GlowingObsidianSlab(String name) {
-		super(Material.BARRIER);
+	public VoidBrickSlab(String name) {
+		super(Material.ROCK);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setHardness(51);
-		setResistance(2000);
-		setLightLevel(.46666667F);
+		setHardness(3);
+		setResistance(15);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-
 		IBlockState state = this.blockState.getBaseState();
 		if (!this.isDouble())
 			state = state.withProperty(HALF, EnumBlockHalf.BOTTOM);
@@ -92,10 +90,4 @@ public class GlowingObsidianSlab extends BlockSlab {
 	public boolean isDouble() {
 		return false;
 	}
-	
-	//@Override
-	//public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-    //{
-       // return false;
-    //}
 }

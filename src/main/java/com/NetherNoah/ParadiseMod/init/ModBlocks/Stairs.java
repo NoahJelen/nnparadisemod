@@ -1,7 +1,7 @@
 package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import com.NetherNoah.ParadiseMod.Utils;
-import com.NetherNoah.ParadiseMod.blocks.misc.BedrockStairs;
+import com.NetherNoah.ParadiseMod.blocks.stairs.BedrockStairs;
 import com.NetherNoah.ParadiseMod.blocks.stairs.CactusStairs;
 import com.NetherNoah.ParadiseMod.blocks.stairs.EndStairs;
 import com.NetherNoah.ParadiseMod.blocks.stairs.GlowingObsidianStairs;

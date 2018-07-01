@@ -9,6 +9,7 @@ import com.NetherNoah.ParadiseMod.Reference;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Slabs;
 
 import net.minecraft.block.BlockSlab;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
@@ -23,17 +24,16 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class GlowingObsidianSlab extends BlockSlab {
+public class BedrockSlab extends BlockSlab {
 
 	public static final DummyProperty DUMMY_VARIANT = DummyProperty.create("dummy");
 
-	public GlowingObsidianSlab(String name) {
+	public BedrockSlab(String name) {
 		super(Material.BARRIER);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setHardness(51);
-		setResistance(2000);
-		setLightLevel(.46666667F);
+		setHardness(-1F);
+		setResistance(6000000F);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
 		IBlockState state = this.blockState.getBaseState();
