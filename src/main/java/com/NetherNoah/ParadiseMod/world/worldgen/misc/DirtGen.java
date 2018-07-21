@@ -1,4 +1,4 @@
-package com.NetherNoah.ParadiseMod.world.worldgen.ores;
+package com.NetherNoah.ParadiseMod.world.worldgen.misc;
 
 import java.util.Random;
 

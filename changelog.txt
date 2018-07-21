@@ -220,3 +220,6 @@
     Made Obsidian, Glowing Obsidian, and Bedrock Stairs immovable by pistons (they're made of immovable materials)
     Changed the mechanic of gold and silver hoppers from transferring multiple items at to tranferring items faster than regular hoppers
     Added mesa biome geneeration to the deep underground
+    
+1.3 (Cave Update):
+    Improved cave generation (thank you for the idea, u/SaveThePhytoplankton!)

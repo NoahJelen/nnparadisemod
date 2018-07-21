@@ -2,6 +2,7 @@ package com.NetherNoah.ParadiseMod;
 
 import com.NetherNoah.ParadiseMod.creativeTabs.ChristmasTab;
 import com.NetherNoah.ParadiseMod.handlers.AntiMobLampHandler;
+import com.NetherNoah.ParadiseMod.handlers.CaveGenHandler;
 import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
@@ -36,8 +37,8 @@ import com.NetherNoah.ParadiseMod.tileentity.furnace.TEVoidFurnace;
 import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntityGoldHopper;
 import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntitySilverHopper;
 import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
+import com.NetherNoah.ParadiseMod.world.worldgen.misc.DirtGen;
 import com.NetherNoah.ParadiseMod.world.worldgen.misc.Rose;
-import com.NetherNoah.ParadiseMod.world.worldgen.ores.DirtGen;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenEnd;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenNether;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenOverworld;
@@ -118,6 +119,7 @@ public class ParadiseMod {
         
         //events
         MinecraftForge.EVENT_BUS.register(Events.class);
+        MinecraftForge.EVENT_BUS.register(CaveGenHandler.class);
         
         //some modifications to vanilla blocks
         //This is NOT a coremod!
