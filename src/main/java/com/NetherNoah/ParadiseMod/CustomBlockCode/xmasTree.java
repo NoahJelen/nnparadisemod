@@ -104,9 +104,7 @@ public class xmasTree extends BlockBush implements IGrowable
             worldIn.setBlockState(pos.add(i + 1, 0, j + 1), iblockstate2, 4);
         }
         else
-        {
             worldIn.setBlockState(pos, iblockstate2, 4);
-        }
         if (!worldgenerator.generate(worldIn, rand, pos.add(i, 0, j)))
         {
             if (flag)
@@ -138,9 +136,7 @@ public class xmasTree extends BlockBush implements IGrowable
     public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
     {
         for (planks.EnumType planks$enumtype : planks.EnumType.values())
-        {
             list.add(new ItemStack(itemIn, 1, planks$enumtype.getMetadata()));
-        }
     }
     @Override
 	public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)

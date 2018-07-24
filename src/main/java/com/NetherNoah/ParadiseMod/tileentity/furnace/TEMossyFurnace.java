@@ -190,7 +190,7 @@ public class TEMossyFurnace extends TileEntityLockable implements ITickable, ISi
         boolean flag = isBurning();
         boolean flag1 = false;
         if (isBurning())
-            --furnaceBurnTime;
+            furnaceBurnTime--;
         if (!world.isRemote)
         {
             ItemStack itemstack = furnaceItemStacks.get(1);
@@ -262,7 +262,7 @@ public class TEMossyFurnace extends TileEntityLockable implements ITickable, ISi
                 if (itemstack1.isEmpty()) return true;
                 if (!itemstack1.isItemEqual(itemstack)) return false;
                 int result = itemstack1.getCount() + itemstack.getCount();
-                return result <= getInventoryStackLimit() && result <= itemstack1.getMaxStackSize(); // Forge fix: make furnace respect stack sizes in furnace recipes
+                return result <= getInventoryStackLimit() && result <= itemstack1.getMaxStackSize();
             }
         }
     }

@@ -20,7 +20,7 @@ public class MapGenDUCaves extends MapGenBase{
     protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 
     protected void addRoom(long p_180703_1_, int p_180703_3_, int p_180703_4_, ChunkPrimer primer, double p_180703_6_, double p_180703_8_, double p_180703_10_){
-        this.addTunnel(p_180703_1_, p_180703_3_, p_180703_4_, primer, p_180703_6_, p_180703_8_, p_180703_10_, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
+        addTunnel(p_180703_1_, p_180703_3_, p_180703_4_, primer, p_180703_6_, p_180703_8_, p_180703_10_, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
     }
 
     protected void addTunnel(long p_180702_1_, int p_180702_3_, int p_180702_4_, ChunkPrimer primer, double p_180702_6_, double p_180702_8_, double p_180702_10_, float p_180702_12_, float p_180702_13_, float p_180702_14_, int p_180702_15_, int p_180702_16_, double p_180702_17_){
@@ -31,7 +31,7 @@ public class MapGenDUCaves extends MapGenBase{
         Random random = new Random(p_180702_1_);
 
         if (p_180702_16_ <= 0){
-            int i = this.range * 16 - 16;
+            int i = range * 16 - 16;
             p_180702_16_ = i - random.nextInt(i / 4);
         }
 
@@ -66,8 +66,8 @@ public class MapGenDUCaves extends MapGenBase{
             f = f + (random.nextFloat() - random.nextFloat()) * random.nextFloat() * 4.0F;
 
             if (!flag2 && p_180702_15_ == j && p_180702_12_ > 1.0F && p_180702_16_ > 0){
-                this.addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ - ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
-                this.addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ + ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
+                addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ - ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
+                addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ + ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
                 return;
             }
 
@@ -169,9 +169,6 @@ public class MapGenDUCaves extends MapGenBase{
             return (block1.getBlock() == Blocks.SAND || block1.getBlock() == Blocks.GRAVEL) && block2.getMaterial() != Material.WATER;
     }
 
-    /**
-     * Recursively called by generate()
-     */
     protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX, int originalZ, ChunkPrimer chunkPrimerIn){
         int i = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(15) + 1) + 1);
 

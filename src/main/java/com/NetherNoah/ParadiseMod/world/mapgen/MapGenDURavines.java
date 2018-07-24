@@ -131,9 +131,6 @@ public class MapGenDURavines extends MapGenBase
         }
     }
 
-    /**
-     * Recursively called by generate()
-     */
     protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX, int originalZ, ChunkPrimer chunkPrimerIn){
         if (this.rand.nextInt(50) == 0){
             double d0 = (double)(chunkX * 16 + this.rand.nextInt(16));

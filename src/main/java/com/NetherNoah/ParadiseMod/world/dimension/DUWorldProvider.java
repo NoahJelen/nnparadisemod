@@ -14,7 +14,6 @@ public class DUWorldProvider extends WorldProvider{
 		doesWaterVaporize = false;
 		hasSkyLight = false;
 		nether=true;
-		
 	}
 	
 	@Override

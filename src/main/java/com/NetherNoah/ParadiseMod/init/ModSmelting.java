@@ -20,6 +20,7 @@ public class ModSmelting {
 	public static void register() {
 		//cooked egg recipe
 		GameRegistry.addSmelting(Items.EGG, new ItemStack(MiscItems.CookedEgg), .01F);
+
 		//rubies and silver ingots can obtained by smelting their ores
 		GameRegistry.addSmelting(Ores.RubyOre, new ItemStack(MiscItems.Ruby), 5F);
 		GameRegistry.addSmelting(Ores.SilverOre, new ItemStack(MiscItems.SilverIngot), 5F);

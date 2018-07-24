@@ -1,4 +1,4 @@
-package com.NetherNoah.ParadiseMod.world.worldgen.structures;
+package com.NetherNoah.ParadiseMod.world.worldgen.misc;
 
 import java.util.Random;
 
@@ -46,3 +46,4 @@ public class DUTrees extends WorldGenerator implements IWorldGenerator{
 		return false;
 	}
 }
+

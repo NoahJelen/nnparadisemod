@@ -33,10 +33,8 @@ public class ArmorEmerald extends ItemArmor {
 				if (stack != null) {
 					if (stack.getItem() instanceof ArmorEmerald) {
 						ArmorEmerald item = (ArmorEmerald) stack.getItem();
-						if (item.getArmorMaterial() == Armor.emeraldMaterial) {
+						if (item.getArmorMaterial() == Armor.emeraldMaterial)
 							ArmorEmeraldPieces++;
-							continue;
-						}
 					}
 				}
 			}

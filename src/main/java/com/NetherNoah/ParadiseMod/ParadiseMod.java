@@ -37,13 +37,15 @@ import com.NetherNoah.ParadiseMod.tileentity.furnace.TEVoidFurnace;
 import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntityGoldHopper;
 import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntitySilverHopper;
 import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
+import com.NetherNoah.ParadiseMod.world.worldgen.misc.DUTrees;
 import com.NetherNoah.ParadiseMod.world.worldgen.misc.DirtGen;
 import com.NetherNoah.ParadiseMod.world.worldgen.misc.Rose;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenEnd;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenNether;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenOverworld;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Buoy;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.DUTrees;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.EasterEgg;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.EasterEgg2;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.GiantGrassBlock;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Home;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Ocean;
@@ -52,6 +54,7 @@ import com.NetherNoah.ParadiseMod.world.worldgen.structures.RoguePortal;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Runway;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.SkyWheel;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.TreasureChest;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.UndergroundVillage;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.WickerMan;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.JeffTank;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.Shrine;
@@ -193,12 +196,18 @@ public class ParadiseMod {
 				new Rose(),
 				
 				//trees in the Deep Underground
-				new DUTrees()
+				new DUTrees(),
+				
+				//easter egg
+				new EasterEgg(),
+				new EasterEgg2(),
+				
+				//underground villages
+				new UndergroundVillage()
 		};
 		
-		for(int i=0;i<generators.length;i++) {
+		for(int i=0;i<generators.length;i++) 
 			GameRegistry.registerWorldGenerator(generators[i],1);
-		}
 
 		//block categories
 		Lamps.initAndRegister();

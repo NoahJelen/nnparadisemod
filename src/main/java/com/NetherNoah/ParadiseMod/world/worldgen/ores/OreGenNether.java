@@ -18,24 +18,12 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 public class OreGenNether implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		if (world.provider.getDimension() == -1) {
-			if (ModConfig.worldgen.GenerateNetherOres==true)
-				generateNether(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
-		}
+		if ((world.provider.getDimension() == -1)&&ModConfig.worldgen.GenerateNetherOres) 
+			generateNether(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
 	}
 	private void generateNether(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		int selectOreNether=random.nextInt(2);
-		
-		//silver ore (nether variant)
-		IBlockState oreSelectionNether=Ores.SilverOreNether.getDefaultState();
-		
-		//gold ore (nether variant)
-		if (selectOreNether==1)
-			oreSelectionNether=Ores.GoldOreNether.getDefaultState();
-		else
-			oreSelectionNether=Ores.SilverOreNether.getDefaultState();
-		
-		generateOre(oreSelectionNether, world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(15), 6);
+		IBlockState [] netherOres= {Ores.SilverOreNether.getDefaultState(),Ores.GoldOreNether.getDefaultState()};
+		generateOre(netherOres[random.nextInt(2)], world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(15), 6);
 	}
 	private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {
 		int deltaY = maxY - minY;

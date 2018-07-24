@@ -46,5 +46,5 @@ public class ContainerCustomCraftBench extends net.minecraft.inventory.Container
     @Override
     public boolean canInteractWith(EntityPlayer arg0) {
         return true;
-        }
+    }
 }

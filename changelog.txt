@@ -203,7 +203,7 @@
 1.2:
     Added biomes to Deep Underground
     For performance reasons, most of the gravel generation has been removed from the deep underground dimension.
-    Liquid Redstone now generate underground in lakes
+    Liquid Redstone now generates underground in lakes
     Added Glowing Ice
     Optimized the DU and DV chunk generators
 
@@ -223,3 +223,6 @@
     
 1.3 (Cave Update):
     Improved cave generation (thank you for the idea, u/SaveThePhytoplankton!)
+    Added 2 easter eggs
+    Added underground villages
+    Optimized ore generation

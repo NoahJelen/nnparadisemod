@@ -34,10 +34,8 @@ public class ArmorObsidian extends ItemArmor {
 				if (stack != null) {
 					if (stack.getItem() instanceof ArmorObsidian) {
 						ArmorObsidian item = (ArmorObsidian) stack.getItem();
-						if (item.getArmorMaterial() == Armor.obsidianMaterial) {
+						if (item.getArmorMaterial() == Armor.obsidianMaterial)
 							ArmorObsidianPieces++;
-							continue;
-						}
 					}
 				}
 			}

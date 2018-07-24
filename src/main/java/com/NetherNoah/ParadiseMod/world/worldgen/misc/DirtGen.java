@@ -19,13 +19,8 @@ public class DirtGen implements IWorldGenerator {
 			generateOverworld(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
 	}
 	private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider){
-		int dirtOrSand=random.nextInt(3);
-		if (dirtOrSand==1)
-			generateOre(Blocks.DIRT.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(55), 6);
-		if (dirtOrSand==2)
-			generateOre(Blocks.SAND.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(55), 6);
-		else
-			generateOre(Blocks.CLAY.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(55), 6);
+		IBlockState[] earth= {Blocks.DIRT.getDefaultState(),Blocks.SAND.getDefaultState(),Blocks.CLAY.getDefaultState()};
+		generateOre(earth[random.nextInt(3)], world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(55), 6);
 	}
 	private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {
 		int deltaY = maxY - minY;

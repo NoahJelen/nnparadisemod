@@ -34,9 +34,7 @@ public class planks extends Block
     public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
     {
         for (planks.EnumType blockplanks$enumtype : planks.EnumType.values())
-        {
             list.add(new ItemStack(itemIn, 1, blockplanks$enumtype.getMetadata()));
-        }
     }
     @Override
 	public IBlockState getStateFromMeta(int meta)
@@ -92,9 +90,7 @@ public class planks extends Block
         public static planks.EnumType byMetadata(int meta)
         {
             if (meta < 0 || meta >= META_LOOKUP.length)
-            {
                 meta = 0;
-            }
             return META_LOOKUP[meta];
         }
         @Override
@@ -109,9 +105,7 @@ public class planks extends Block
         static
         {
             for (planks.EnumType blockplanks$enumtype : values())
-            {
                 META_LOOKUP[blockplanks$enumtype.getMetadata()] = blockplanks$enumtype;
-            }
         }
     }
 }

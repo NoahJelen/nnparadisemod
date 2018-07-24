@@ -83,9 +83,7 @@ public abstract class DiamondButtonTicks extends BlockDirectional
         for (EnumFacing enumfacing : EnumFacing.values())
         {
             if (canPlaceBlock(worldIn, pos, enumfacing))
-            {
                 return true;
-            }
         }
         return false;
     }
@@ -111,9 +109,7 @@ public abstract class DiamondButtonTicks extends BlockDirectional
     private boolean checkForDrop(World worldIn, BlockPos pos, IBlockState state)
     {
         if (canPlaceBlockAt(worldIn, pos))
-        {
             return true;
-        }
         else
         {
             dropBlockAsItem(worldIn, pos, state, 0);
@@ -147,9 +143,7 @@ public abstract class DiamondButtonTicks extends BlockDirectional
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (state.getValue(POWERED).booleanValue())
-        {
             return true;
-        }
         else
         {
             worldIn.setBlockState(pos, state.withProperty(POWERED, Boolean.valueOf(true)), 3);
@@ -166,9 +160,7 @@ public abstract class DiamondButtonTicks extends BlockDirectional
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
     {
         if (state.getValue(POWERED).booleanValue())
-        {
             notifyNeighbors(worldIn, pos, state.getValue(FACING));
-        }
         super.breakBlock(worldIn, pos, state);
     }
     @Override
@@ -198,9 +190,7 @@ public abstract class DiamondButtonTicks extends BlockDirectional
             if (state.getValue(POWERED).booleanValue())
             {
                 if (wooden)
-                {
                     checkPressed(state, worldIn, pos);
-                }
                 else
                 {
                     worldIn.setBlockState(pos, state.withProperty(POWERED, Boolean.valueOf(false)));
@@ -219,9 +209,7 @@ public abstract class DiamondButtonTicks extends BlockDirectional
             if (wooden)
             {
                 if (!state.getValue(POWERED).booleanValue())
-                {
                     checkPressed(state, worldIn, pos);
-                }
             }
         }
     }
@@ -245,9 +233,7 @@ public abstract class DiamondButtonTicks extends BlockDirectional
             playReleaseSound(p_185616_2_, p_185616_3_);
         }
         if (flag)
-        {
             p_185616_2_.scheduleUpdate(new BlockPos(p_185616_3_), this, tickRate(p_185616_2_));
-        }
     }
     private void notifyNeighbors(World worldIn, BlockPos pos, EnumFacing facing)
     {
@@ -307,9 +293,7 @@ public abstract class DiamondButtonTicks extends BlockDirectional
                 i = 0;
         }
         if (state.getValue(POWERED).booleanValue())
-        {
             i |= 8;
-        }
         return i;
     }
     @Override

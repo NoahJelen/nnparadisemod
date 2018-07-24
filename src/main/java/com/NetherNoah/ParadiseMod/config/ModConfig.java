@@ -154,7 +154,21 @@ public class ModConfig {
         	
             @Config.LangKey("config.chance")
             public int WickerManChance=800;
+
+        	@Config.Comment("Generate Underground Villages")
+            @Config.LangKey("config.undergroundvillages")
+        	public Boolean UndergroundVillage=true;
         	
+            @Config.LangKey("config.chance")
+            public int UndergroundVillageChance=600;
+
+        	@Config.Comment("Generate a special surprise!")
+            @Config.LangKey("config.easteregg")
+        	public Boolean EasterEgg=true;
+        	
+            @Config.LangKey("config.chance")
+            public int EasterEggChance=1000;
+            
             @Config.LangKey("config.attiecat")
         	public AttieCat attiecat=new AttieCat();
         	public class AttieCat{
@@ -174,7 +188,30 @@ public class ModConfig {
                 public int ShrinesChance=400;
         	}
         }
-    
+
+    	@Config.LangKey("config.caves")
+        public Caves caves=new Caves();
+        public class Caves{
+        	@Config.Comment("Beautify Caves in the Overworld and other mods' cave dimensions (like Cavern")
+        	@Config.LangKey("config.bettercaves")
+        	public Boolean betterCaves=true;
+
+        	@Config.Comment("Chances of crystals generating in caves")
+        	@Config.LangKey("config.crystalchance")
+        	public int CrystalChance=150;
+
+        	@Config.LangKey("config.cavetypes")
+        	public Types types=new Types();
+        	public class Types{
+        		public Boolean Wet=true;
+        		public Boolean Dry=true;
+        		public Boolean Ocean=true;
+        		public Boolean Icy=true;
+        		public Boolean Mushroom=true;
+        		public Boolean Mesa=true;
+        	}
+        	
+        }
         @Config.Comment("Generate roses")
         @Config.LangKey("config.rosegen")
     	public Boolean GenerateRoses=true;

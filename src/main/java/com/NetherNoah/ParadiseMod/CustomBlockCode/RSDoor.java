@@ -179,9 +179,7 @@ public class RSDoor extends Block{
         BlockPos blockpos = pos.down();
         BlockPos blockpos1 = pos.up();
         if (player.capabilities.isCreativeMode && state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER && worldIn.getBlockState(blockpos).getBlock() == this)
-        {
             worldIn.setBlockToAir(blockpos);
-        }
         if (state.getValue(HALF) == BlockDoor.EnumDoorHalf.LOWER && worldIn.getBlockState(blockpos1).getBlock() == this)
         {
             if (player.capabilities.isCreativeMode)

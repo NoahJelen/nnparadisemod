@@ -186,9 +186,6 @@ public class DVChunkGenerator implements IChunkGenerator
         }
     }
 
-    /**
-     * Generates the chunk at the specified position, from scratch
-     */
     @Override
 	public Chunk generateChunk(int x, int z)
     {
@@ -334,16 +331,11 @@ public class DVChunkGenerator implements IChunkGenerator
     	if (net.minecraftforge.event.terraingen.TerrainGen.decorate(world, rand, blockpos,DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
 			if (rand.nextBoolean()) {
 				//crystals
-				quartzGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				diamondGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				emeraldGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				redstoneGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				rubyGen.generate(world, rand,
-						blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				quartzGen.generate(world, rand,	blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				diamondGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				emeraldGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				redstoneGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				rubyGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
 			}
     	}
 		if (TerrainGen.generateOre(world, rand, coalGen, blockpos,OreGenEvent.GenerateMinable.EventType.QUARTZ))
@@ -357,9 +349,6 @@ public class DVChunkGenerator implements IChunkGenerator
 		}
     }
 
-    /**
-     * Called to generate additional structures after initial worldgen, used by ocean monuments
-     */
     @Override
 	public boolean generateStructures(Chunk chunkIn, int x, int z)
     {

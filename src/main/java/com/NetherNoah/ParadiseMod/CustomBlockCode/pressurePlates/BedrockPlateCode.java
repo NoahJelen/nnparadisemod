@@ -41,25 +41,17 @@ public class BedrockPlateCode extends BlockBasePressurePlate
 	protected void playClickOnSound(World worldIn, BlockPos color)
     {
         if (blockMaterial == Material.WOOD)
-        {
             worldIn.playSound((EntityPlayer)null, color, SoundEvents.BLOCK_WOOD_PRESSPLATE_CLICK_ON, SoundCategory.BLOCKS, 0.3F, 0.8F);
-        }
         else
-        {
             worldIn.playSound((EntityPlayer)null, color, SoundEvents.BLOCK_STONE_PRESSPLATE_CLICK_ON, SoundCategory.BLOCKS, 0.3F, 0.6F);
-        }
     }
     @Override
 	protected void playClickOffSound(World worldIn, BlockPos pos)
     {
         if (blockMaterial == Material.WOOD)
-        {
             worldIn.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_WOOD_PRESSPLATE_CLICK_OFF, SoundCategory.BLOCKS, 0.3F, 0.7F);
-        }
         else
-        {
             worldIn.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_STONE_PRESSPLATE_CLICK_OFF, SoundCategory.BLOCKS, 0.3F, 0.5F);
-        }
     }
     @Override
 	protected int computeRedstoneStrength(World worldIn, BlockPos pos)
@@ -85,9 +77,7 @@ public class BedrockPlateCode extends BlockBasePressurePlate
             for (Entity entity : list)
             {
                 if (!entity.doesEntityNotTriggerPressurePlate())
-                {
                     return 15;
-                }
             }
         }
         return 0;

@@ -299,6 +299,10 @@ tile.VoidPearlOre.name=Void Pearl Ore
 fluid.liquid_redstone=Liquid Redstone
 
 #Config
+config.cavetypes=Cave Types
+config.caves=Better Caves
+config.crystalchance=Crystal Chance
+config.bettercaves=Beautify Caves
 config.worldgen=World Generation
 config.dimensions=Dimensions
 config.structures=Structures
@@ -323,7 +327,9 @@ config.mesatemples=Mesa Temples
 config.minerbase=Abandoned Miner Bases
 config.ministronghold=Mini Strongholds
 config.shipwreck=Shipwrecks
+config.easteregg=Easter Egg
 config.oceanvillages=Underwater Villages
+config.undergroundvillages=Underground Villages
 config.portal=Rogue Portals
 config.runways=Elytra Runways
 config.skywheels=Wheels in the Sky

@@ -81,9 +81,7 @@ public class ChristmasTree extends WorldGenAbstractTree
                                     BlockPos blockpos = new BlockPos(i2, j4, k2);
                                     state = worldIn.getBlockState(blockpos);
                                     if (state.getBlock().canBeReplacedByLeaves(state, worldIn, blockpos))
-                                    {
                                         setBlockAndNotifyAdequately(worldIn, blockpos, LEAF);
-                                    }
                                 }
                             }
                         }

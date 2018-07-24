@@ -4,7 +4,7 @@ public class Reference {
 	// Basic Mod Info
 	public static final String MOD_ID = "nnparadisemod";
 	public static final String NAME = "Nether Noah's Paradise Mod";
-	public static final String VERSION = "1.1.1 (The Resurrection Update)";
+	public static final String VERSION = "1.3 (The Cave Update)";
 	public static final String ACCEPTED_VERSIONS = "1.12.2";
 	public static int GUI_CUSTOM_WORKBENCH = 0;
 

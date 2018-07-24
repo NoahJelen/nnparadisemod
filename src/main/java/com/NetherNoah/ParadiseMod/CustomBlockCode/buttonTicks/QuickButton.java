@@ -85,9 +85,8 @@ public abstract class QuickButton extends BlockDirectional {
 	@Override
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
 		for (EnumFacing enumfacing : EnumFacing.values()) {
-			if (canPlaceBlock(worldIn, pos, enumfacing)) {
+			if (canPlaceBlock(worldIn, pos, enumfacing))
 				return true;
-			}
 		}
 		return false;
 	}
@@ -112,9 +111,9 @@ public abstract class QuickButton extends BlockDirectional {
 		}
 	}
 	private boolean checkForDrop(World worldIn, BlockPos pos, IBlockState state) {
-		if (canPlaceBlockAt(worldIn, pos)) {
+		if (canPlaceBlockAt(worldIn, pos))
 			return true;
-		} else {
+		else {
 			dropBlockAsItem(worldIn, pos, state, 0);
 			worldIn.setBlockToAir(pos);
 			return false;
@@ -182,9 +181,9 @@ public abstract class QuickButton extends BlockDirectional {
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (!worldIn.isRemote) {
 			if (state.getValue(POWERED).booleanValue()) {
-				if (wooden) {
+				if (wooden)
 					checkPressed(state, worldIn, pos);
-				} else {
+				else {
 					worldIn.setBlockState(pos, state.withProperty(POWERED, Boolean.valueOf(false)));
 					notifyNeighbors(worldIn, pos, state.getValue(FACING));
 					playReleaseSound(worldIn, pos);
@@ -197,9 +196,8 @@ public abstract class QuickButton extends BlockDirectional {
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
 		if (!worldIn.isRemote) {
 			if (wooden) {
-				if (!state.getValue(POWERED).booleanValue()) {
+				if (!state.getValue(POWERED).booleanValue())
 					checkPressed(state, worldIn, pos);
-				}
 			}
 		}
 	}
@@ -220,9 +218,8 @@ public abstract class QuickButton extends BlockDirectional {
 			p_185616_2_.markBlockRangeForRenderUpdate(p_185616_3_, p_185616_3_);
 			playReleaseSound(p_185616_2_, p_185616_3_);
 		}
-		if (flag) {
+		if (flag)
 			p_185616_2_.scheduleUpdate(new BlockPos(p_185616_3_), this, tickRate(p_185616_2_));
-		}
 	}
 	private void notifyNeighbors(World worldIn, BlockPos pos, EnumFacing facing) {
 		worldIn.notifyNeighborsOfStateChange(pos, this, false);
@@ -277,9 +274,8 @@ public abstract class QuickButton extends BlockDirectional {
 		case DOWN:
 			i = 0;
 		}
-		if (state.getValue(POWERED).booleanValue()) {
+		if (state.getValue(POWERED).booleanValue())
 			i |= 8;
-		}
 		return i;
 	}
 	@Override

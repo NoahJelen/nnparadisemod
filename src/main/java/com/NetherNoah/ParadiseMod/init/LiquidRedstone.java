@@ -42,8 +42,7 @@ public class LiquidRedstone {
 		public static final String name = "liquid_redstone";
 		public static final FluidLiquidRedstone instance = new FluidLiquidRedstone();
 		public FluidLiquidRedstone() {
-			super(name, new ResourceLocation(Reference.MOD_ID + ":" + "blocks/" + name + "_still"),
-					new ResourceLocation(Reference.MOD_ID + ":" + "blocks/" + name + "_flow"));
+			super(name, new ResourceLocation(Reference.MOD_ID + ":" + "blocks/" + name + "_still"),new ResourceLocation(Reference.MOD_ID + ":" + "blocks/" + name + "_flow"));
 			setEmptySound(SoundEvents.ITEM_BUCKET_EMPTY_LAVA);
 			setFillSound(SoundEvents.ITEM_BUCKET_FILL_LAVA);
 			setLuminosity(15);
@@ -128,8 +127,7 @@ public class LiquidRedstone {
 			worldIn.playSound((EntityPlayer) null, pos, SoundEvents.BLOCK_LAVA_EXTINGUISH, SoundCategory.BLOCKS, 0.5F,
 					2.6F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.8F);
 			for (int i = 0; i < 8; ++i) {
-				worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, d0 + Math.random(), d1 + 1.2D, d2 + Math.random(),
-						0.0D, 0.0D, 0.0D, new int[0]);
+				worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, d0 + Math.random(), d1 + 1.2D, d2 + Math.random(),0.0D, 0.0D, 0.0D, new int[0]);
 			}
 		}
 	}

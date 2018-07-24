@@ -263,9 +263,7 @@ public class DimTeleporter extends Teleporter{
                                         int k5 = l2 + (k4 - 1) * i4 - j4 * l3;
                                         blockpos$mutableblockpos.setPos(i5, j5, k5);
                                         if (l4 < 0 && !worldServerInstance.getBlockState(blockpos$mutableblockpos).getMaterial().isSolid() || l4 >= 0 && !worldServerInstance.isAirBlock(blockpos$mutableblockpos))
-                                        {
                                             continue label146;
-                                        }
                                     }
                                 }
                             }

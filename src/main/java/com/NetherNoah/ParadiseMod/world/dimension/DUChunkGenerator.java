@@ -285,6 +285,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 					boolean oceanic=blockBiome==Biomes.OCEAN||blockBiome==Biomes.DEEP_OCEAN;
 					boolean mushroom=blockBiome==Biomes.MUSHROOM_ISLAND||blockBiome==Biomes.MUSHROOM_ISLAND_SHORE;
 					boolean mesa=blockBiome==Biomes.MESA||blockBiome==Biomes.MESA_CLEAR_ROCK||blockBiome==Biomes.MESA_ROCK||blockBiome==Biomes.MUTATED_MESA ||blockBiome==Biomes.MUTATED_MESA_CLEAR_ROCK ||blockBiome==Biomes.MUTATED_MESA_ROCK;
+					
 					//block to replace
 					Block blockToReplace=chunk.getBlockState(cx, cy, cz).getBlock();
 					
