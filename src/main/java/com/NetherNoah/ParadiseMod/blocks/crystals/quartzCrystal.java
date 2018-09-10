@@ -29,6 +29,7 @@ public class quartzCrystal extends BlockBush {
 		setResistance(1F);
 		setLightLevel(1F);
 		setSoundType(SoundType.GLASS);
+		setTickRandomly(false);
 	}
 	@Override
 	protected boolean canSustainBush(IBlockState state)

@@ -28,9 +28,19 @@ public class PlayerTempleGen extends WorldGenerator {
 		WorldServer worldserver = (WorldServer) world;
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-		Template template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":player_temples/nn777_temple"));
+		Template template = null;
+		switch (rand.nextInt(2)) {
+			case 0:
+				template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":player_temples/nn777_temple"));
+				break;
+			case 1:
+				template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":player_temples/attiecat_temple"));
+				break;
+		}
+		/*/
 		if (rand.nextInt(2)==0)
 			template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(Reference.MOD_ID+":player_temples/attiecat_temple"));
+		/*/
 		if(ModConfig.worldgen.structures.PlayerTemples==false)
 			return false;
 		Biome biome = world.getBiomeForCoordsBody(position);

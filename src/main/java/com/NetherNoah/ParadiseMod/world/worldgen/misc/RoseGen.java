@@ -67,7 +67,7 @@ public class RoseGen extends WorldGenerator {
 		return false;
 	}
 	
-	public static int getGroundFromAbove(World world, int x, int z)
+		public static int getGroundFromAbove(World world, int x, int z)
 	{
 		int y = 255;
 		boolean foundGround = false;
@@ -79,4 +79,5 @@ public class RoseGen extends WorldGenerator {
 		}
 		return y;
 	}
+
 }

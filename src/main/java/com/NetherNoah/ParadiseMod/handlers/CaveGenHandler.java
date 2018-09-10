@@ -7,9 +7,7 @@ import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHugeMushroom;
-import net.minecraft.block.BlockMushroom;
 import net.minecraft.block.BlockStainedHardenedClay;
-import net.minecraft.block.BlockStaticLiquid;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.state.IBlockState;
@@ -20,12 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
-import net.minecraft.world.gen.feature.WorldGenBigMushroom;
-import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
-import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType;
 import net.minecraftforge.event.world.ChunkEvent;
-import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -42,8 +35,9 @@ public class CaveGenHandler{
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static Block[] crystals = { Crystals.diamondCrystal, Crystals.emeraldCrystal, Crystals.quartzCrystal,Crystals.redstoneCrystal, Crystals.rubyCrystal };
-
-	@SubscribeEvent(priority = EventPriority.HIGHEST, receiveCanceled = true)
+	public static int height = 255;
+	public static boolean webs = false;
+	@SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
 	public static void onEvent(ChunkEvent.Load event) {
 		Chunk theChunk = event.getChunk();
 		World world = theChunk.getWorld();
@@ -51,17 +45,15 @@ public class CaveGenHandler{
 
 		// ignore chunks that have already been generated or if the config says not to
 		// generate cave features
-		if (theChunk.isPopulated() || theChunk.isTerrainPopulated() || ModConfig.worldgen.caves.betterCaves == false)
+		if (theChunk.isTerrainPopulated() || ModConfig.worldgen.caves.betterCaves == false)
 			return;
 
 		// the height is 256 if the features are being generated in a cave dimension,
-		// else, it's 56
-		int height = 255;
-		boolean webs = false;
+		// else, it's 61
 		if (world.provider.getDimension() == 0) {
-			height = 56;
+			height = 61;
 			webs = true;
-		} 
+		}
 			
 
 		for (int x = 0; x < 16; x++) {
@@ -89,16 +81,28 @@ public class CaveGenHandler{
 					boolean mesa = (blockBiome == Biomes.MESA || blockBiome == Biomes.MESA_CLEAR_ROCK|| blockBiome == Biomes.MESA_ROCK || blockBiome == Biomes.MUTATED_MESA|| blockBiome == Biomes.MUTATED_MESA_CLEAR_ROCK|| blockBiome == Biomes.MUTATED_MESA_ROCK )&& ModConfig.worldgen.caves.types.Mesa == true;
 					boolean jungle = (blockBiome == Biomes.JUNGLE || blockBiome == Biomes.JUNGLE_EDGE|| blockBiome == Biomes.JUNGLE_HILLS || blockBiome == Biomes.MUTATED_JUNGLE|| blockBiome == Biomes.MUTATED_JUNGLE_EDGE )&& ModConfig.worldgen.caves.types.Wet == true;
 
-					//scattered crystals
-					if(blockToReplace==Blocks.STONE&&rand.nextInt(ModConfig.worldgen.caves.CrystalChance)==0&&blockAbove==Blocks.AIR&&(y<(height-1)))
-						theChunk.setBlockState(new BlockPos(x, y+1, z), crystals[rand.nextInt(5)].getDefaultState());
-
-					// replace exposed stone
 					// base cave generation
 					if (blockToReplace == Blocks.STONE) {
-						if (theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.AIR	|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.AIR|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR
-								|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.WATER|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.WATER|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.WATER|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.WATER|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.WATER|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.WATER
-								|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.LAVA|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.LAVA|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA) {
+						
+						// replace exposed stone
+						if (theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR
+								|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.AIR
+								|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR
+								|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR
+								|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.AIR
+								|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR
+								|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.WATER
+								|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.WATER
+								|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.WATER
+								|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.WATER
+								|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.WATER
+								|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.WATER
+								|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA
+								|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.LAVA
+								|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA
+								|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA
+								|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.LAVA
+								|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA) {
 
 							// random cobblestone
 							if (rand.nextInt(10) == 0)
@@ -106,15 +110,17 @@ public class CaveGenHandler{
 
 							// ice cave generation
 							if (icy) {
-
-								// packed ice
-								if (rand.nextInt(2) == 0)
-									theChunk.setBlockState(new BlockPos(x, y, z), COMPICE);
-
-								// snow
-								if (blockAbove == Blocks.AIR && rand.nextInt(5) == 0)
-									theChunk.setBlockState(new BlockPos(x, y + 1, z),Blocks.SNOW_LAYER.getDefaultState());
-
+								switch (rand.nextInt(5)) {
+									//packed ice
+									case 1:
+										theChunk.setBlockState(new BlockPos(x, y, z), COMPICE);
+										break;
+									//snow
+									case 4:
+										if(blockAbove==Blocks.AIR)
+											theChunk.setBlockState(new BlockPos(x, y + 1, z),Blocks.SNOW_LAYER.getDefaultState());
+										break;
+								}
 							}
 
 							// desert cave generation
@@ -125,7 +131,7 @@ public class CaveGenHandler{
 									theChunk.setBlockState(new BlockPos(x, y, z), Blocks.LAVA.getDefaultState());
 
 								// sandstone
-								if (rand.nextInt(2) == 0)
+								if (rand.nextBoolean())
 									theChunk.setBlockState(new BlockPos(x, y, z), SANDSTONE);
 							}
 
@@ -133,58 +139,79 @@ public class CaveGenHandler{
 							if (mesa) {
 
 								// hardened clay (terracotta)
-								theChunk.setBlockState(new BlockPos(x, y, z), TERRACOTTA);
-								if (y == 74 || y == 45)
-									theChunk.setBlockState(new BlockPos(x, y, z), ORANGE_TERRACOTTA);
-								if (y == 79 || y == 50)
-								theChunk.setBlockState(new BlockPos(x, y, z), WHITE_TERRACOTTA);
-								if (y == 83 || y == 55)
-									theChunk.setBlockState(new BlockPos(x, y, z), BROWN_TERRACOTTA);
-								if (y == 85 || y == 64)
-									theChunk.setBlockState(new BlockPos(x, y, z), YELLOW_TERRACOTTA);
-								if (y == 40 || y == 56)
-									theChunk.setBlockState(new BlockPos(x, y, z), RED_TERRACOTTA);
+								switch (y){
+									case 74: case 45:
+										theChunk.setBlockState(new BlockPos(x, y, z), ORANGE_TERRACOTTA);
+										break;
+									
+									case 79: case 50:
+										theChunk.setBlockState(new BlockPos(x, y, z), WHITE_TERRACOTTA);
+										break;
+									
+									case 83: case 55:
+										theChunk.setBlockState(new BlockPos(x, y, z), BROWN_TERRACOTTA);
+										break;
+									
+									case 85: case 64:
+										theChunk.setBlockState(new BlockPos(x, y, z), YELLOW_TERRACOTTA);
+										break;
+										
+									case 40: case 56:
+										theChunk.setBlockState(new BlockPos(x, y, z), RED_TERRACOTTA);
+										break;
+								
+									default:
+										theChunk.setBlockState(new BlockPos(x, y, z), TERRACOTTA);
+								
+								}
 							}
 						}
-
-						// mossy cobblestone in wet biomes (jungles and swamps)
-						if ((jungle || swamp) && rand.nextInt(10) == 0)
-							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.MOSSY_COBBLESTONE.getDefaultState());
 					}
+					//end of base cave generation
+
+					//this needs to be reset
+					blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
+					
+					//shorthands for checking for stone and air
+					boolean stoneCheck=blockToReplace==Blocks.STONE;
+					boolean airCheck=blockToReplace==Blocks.AIR;
 
 					// generate magma around lava pools
-					if (blockToReplace == Blocks.STONE || blockToReplace == Blocks.SANDSTONE|| blockToReplace == Blocks.PACKED_ICE || blockToReplace == Blocks.HARDENED_CLAY|| blockToReplace == Blocks.STAINED_HARDENED_CLAY) {
-						if (theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA)
+					if (stoneCheck
+						|| blockToReplace == Blocks.SANDSTONE
+						|| blockToReplace == Blocks.PACKED_ICE
+						|| blockToReplace == Blocks.HARDENED_CLAY
+						|| blockToReplace == Blocks.STAINED_HARDENED_CLAY) {
+						if (theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA
+							|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA
+							|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA
+							|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA)
 							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.MAGMA.getDefaultState());
 					}
-
-					// randomly generate spider webs
-					if (blockToReplace == Blocks.AIR && y < height && rand.nextInt(1000) == 0 && webs)
-						theChunk.setBlockState(new BlockPos(x, y, z), Blocks.WEB.getDefaultState());
-
-					// water filled caves in oceans in the overworld
-					if (blockToReplace == Blocks.AIR && y < 63 && oceanic && world.provider.getDimension() == 0) {
-						theChunk.setBlockState(new BlockPos(x, y, z), WATER);
-						if (blockBelow == Blocks.LAVA)
-							theChunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.OBSIDIAN.getDefaultState());
-					}
-
+					
 					// jungle and swamp features
 					if (jungle || swamp) {
 
+						// mossy cobblestone
+						if (rand.nextInt(10) == 0&&stoneCheck)
+							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.MOSSY_COBBLESTONE.getDefaultState());
+
 						// shallow water pools
-						if (blockToReplace == Blocks.AIR && y < 20) {
+						if (airCheck&& y < 20) {
 							theChunk.setBlockState(new BlockPos(x, y, z), WATER);
-							if (blockBelow == Blocks.LAVA)
+							if (blockBelow == Blocks.LAVA) {
 								theChunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.OBSIDIAN.getDefaultState());
+								if (rand.nextBoolean())
+									theChunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.MAGMA.getDefaultState());
+							}
 						}
 
 						// replace ground stone with grass
-						if (blockToReplace == Blocks.STONE && blockAbove == Blocks.AIR && y >= 19)
+						if (stoneCheck&&blockAbove==Blocks.AIR && y >= 19)
 							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.GRASS.getDefaultState());
-
-						// vines
-						if (blockToReplace == Blocks.STONE&&y>=19) {
+						
+						//vines
+						if (stoneCheck&&y>=19) {
 							// east
 							if (theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR&& rand.nextInt(10) == 0&&x!=15)
 								theChunk.setBlockState(new BlockPos(x + 1, y, z),Blocks.VINE.getDefaultState().withProperty(BlockVine.WEST, true));
@@ -198,48 +225,78 @@ public class CaveGenHandler{
 								theChunk.setBlockState(new BlockPos(x, y, z + 1),Blocks.VINE.getDefaultState().withProperty(BlockVine.NORTH, true));
 
 							// north
-							if (theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR	&& rand.nextInt(10) == 0&&z!=0)
+							if (theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR && rand.nextInt(10) == 0&&z!=0)
 								theChunk.setBlockState(new BlockPos(x, y, z - 1),Blocks.VINE.getDefaultState().withProperty(BlockVine.SOUTH, true));
 						}
+						blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
 
 					}
+
+					// randomly generate spider webs
+					if (airCheck&& (rand.nextInt(1000) == 0) && webs&&world.provider.getDimension() == 0)
+						theChunk.setBlockState(new BlockPos(x, y, z), Blocks.WEB.getDefaultState());
+
+					// water filled caves in oceans in the overworld
+					if (airCheck&& oceanic && world.provider.getDimension() == 0) {
+						theChunk.setBlockState(new BlockPos(x, y, z), WATER);
+						if (blockBelow == Blocks.LAVA) {
+							theChunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.OBSIDIAN.getDefaultState());
+							if (rand.nextBoolean())
+								theChunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.MAGMA.getDefaultState());
+						}
+					}
+
+					//scattered crystals
+					if(rand.nextInt(ModConfig.worldgen.caves.CrystalChance)==0&&
+						stoneCheck
+						&&theChunk.getBlockState(x, y+1, z).getBlock()==Blocks.AIR
+						&&!oceanic)
+						theChunk.setBlockState(new BlockPos(x, y+1, z), crystals[rand.nextInt(5)].getDefaultState());
 
 					// swamp only features
-					if (swamp) {
-
-						// replace some of the grass with slime
-						if (blockToReplace == Blocks.GRASS && (rand.nextInt(10) == 0) && y < height)
-							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.SLIME_BLOCK.getDefaultState());
-
-						// tall grass
-						if (blockToReplace == Blocks.GRASS && rand.nextInt(2) == 0 && y < height)
-							theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.TALLGRASS.getDefaultState().withProperty(BlockTallGrass.TYPE, BlockTallGrass.EnumType.GRASS));
-
+					if (swamp&&blockToReplace==Blocks.GRASS) {
+							switch (rand.nextInt(5)) {
+								//slime blocks
+								case 1:
+									theChunk.setBlockState(new BlockPos(x, y, z), Blocks.SLIME_BLOCK.getDefaultState());
+									break;
+								//tall grass
+								case 4:
+									theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.TALLGRASS.getDefaultState().withProperty(BlockTallGrass.TYPE, BlockTallGrass.EnumType.GRASS));
+									break;
+						}
 					}
 
+					
 					// mushroom island only features
 					if (mushroom) {
-
 						// replace ground stone with mycelium
-						if (blockToReplace == Blocks.STONE && blockAbove == Blocks.AIR)
+						if (stoneCheck&& blockAbove == Blocks.AIR)
 							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.MYCELIUM.getDefaultState());
-
 						// little mushrooms
-						// red
-						if (blockToReplace == Blocks.MYCELIUM && y < height && rand.nextInt(4) == 0) 
-							theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.RED_MUSHROOM.getDefaultState());
-
-						// brown
-						if (blockToReplace == Blocks.MYCELIUM && y < height && rand.nextInt(2) == 0) 
-							theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.BROWN_MUSHROOM.getDefaultState());
-
+						if(theChunk.getBlockState(x, y, z).getBlock() == Blocks.MYCELIUM){
+							switch (rand.nextInt(10)) {
+								//red
+								case 1:
+									theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.RED_MUSHROOM.getDefaultState());
+									break;
+								//brown
+								case 9:
+									theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.BROWN_MUSHROOM.getDefaultState());
+									break;
+							}
+						}
 						// the cave is a giant mushroom!
-						if (blockToReplace == Blocks.STONE && blockBelow == Blocks.AIR) {
+						if ((stoneCheck||blockToReplace==Blocks.COBBLESTONE) && blockBelow == Blocks.AIR) {
 							int a = 1;
 							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState().withProperty(BlockHugeMushroom.VARIANT, BlockHugeMushroom.EnumType.CENTER));
-							if (rand.nextInt(20) == 0) {
+							if (rand.nextInt(30) == 0) {
 								Block blockToReplace2 = theChunk.getBlockState(x, y - 1, z).getBlock();
-								while (blockToReplace2 == Blocks.AIR || blockToReplace2 == Blocks.WATER|| blockToReplace2 == Blocks.FLOWING_LAVA|| blockToReplace2 == Blocks.FLOWING_WATER || blockToReplace2 == Blocks.LAVA) {
+								while (blockToReplace2 == Blocks.AIR
+										|| blockToReplace2 == Blocks.WATER
+										|| blockToReplace2 == Blocks.LAVA
+										|| blockToReplace2 == Blocks.FLOWING_LAVA
+										|| blockToReplace2 == Blocks.FLOWING_WATER) {
 									theChunk.setBlockState(new BlockPos(x, y - a, z),Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState().withProperty(BlockHugeMushroom.VARIANT, BlockHugeMushroom.EnumType.STEM));
 									a++;
 									blockToReplace2 = theChunk.getBlockState(x, y - a, z).getBlock();
@@ -249,11 +306,12 @@ public class CaveGenHandler{
 					}
 
 					// shrubs in mesa and desert biomes
-					if ((mesa || desert)&& (blockToReplace == Blocks.HARDENED_CLAY || blockToReplace == Blocks.STAINED_HARDENED_CLAY|| blockToReplace == Blocks.SANDSTONE)	&& blockAbove == Blocks.AIR && rand.nextInt(5) == 0 && y < 56) {
+					if ((mesa || desert)&& (blockToReplace == Blocks.HARDENED_CLAY || blockToReplace == Blocks.STAINED_HARDENED_CLAY|| blockToReplace == Blocks.SANDSTONE)	&& blockAbove == Blocks.AIR && rand.nextInt(5) == 0 ) {
 						theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.DEADBUSH.getDefaultState());
 						if (desert)
 							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.SAND.getDefaultState());
 					}
+
 				}
 			}
 		}

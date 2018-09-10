@@ -141,7 +141,6 @@ public class DUChunkGenerator implements IChunkGenerator {
 		worldIn.setSeaLevel(63);
 		genDUCaves=TerrainGen.getModdedMapGen(genDUCaves, InitMapGenEvent.EventType.CAVE);
 		genDURavines=TerrainGen.getModdedMapGen(genDURavines, InitMapGenEvent.EventType.RAVINE);
-		genDUMineshafts=TerrainGen.getModdedMapGen(genDUMineshafts,InitMapGenEvent.EventType.MINESHAFT);
 	}
 
 	public void prepareHeights(int p_185936_1_, int p_185936_2_, ChunkPrimer primer) {
@@ -330,7 +329,6 @@ public class DUChunkGenerator implements IChunkGenerator {
 					//replace exposed stone
 					if (blockToReplace==Blocks.STONE) {
 						if (chunk.getBlockState(cx+1,cy, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy+1, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy, cz+1).getBlock()==Blocks.AIR||chunk.getBlockState(cx-1,cy, cz).getBlock()==Blocks.AIR||chunk.getBlockState(cx,cy-1, cz).getBlock()==Blocks.AIR|| chunk.getBlockState(cx,cy, cz-1).getBlock()==Blocks.AIR||chunk.getBlockState(cx+1,cy, cz).getBlock()==Blocks.WATER||chunk.getBlockState(cx,cy+1, cz).getBlock()==Blocks.WATER||chunk.getBlockState(cx,cy, cz+1).getBlock()==Blocks.WATER||chunk.getBlockState(cx-1,cy, cz).getBlock()==Blocks.WATER||chunk.getBlockState(cx,cy-1, cz).getBlock()==Blocks.WATER|| chunk.getBlockState(cx,cy, cz-1).getBlock()==Blocks.WATER) {
-							
 							if (icy)
 								chunk.setBlockState(new BlockPos(cx, cy, cz), COMPICE);
 							
@@ -344,17 +342,30 @@ public class DUChunkGenerator implements IChunkGenerator {
 								chunk.setBlockState(new BlockPos(cx,cy,cz), PRISMARINE);
 							
 							if(mesa) {
-								chunk.setBlockState(new BlockPos(cx,cy,cz), TERRACOTTA);
-								if (cy==74||cy==45)
-									chunk.setBlockState(new BlockPos(cx,cy,cz), ORANGE_TERRACOTTA);
-								if (cy==79||cy==50)
-									chunk.setBlockState(new BlockPos(cx,cy,cz), WHITE_TERRACOTTA);
-								if (cy==83||cy==55)
-									chunk.setBlockState(new BlockPos(cx,cy,cz), BROWN_TERRACOTTA);
-								if (cy==85||cy==64)
-									chunk.setBlockState(new BlockPos(cx,cy,cz), YELLOW_TERRACOTTA);
-								if (cy==40||cy==56)
-									chunk.setBlockState(new BlockPos(cx,cy,cz), RED_TERRACOTTA);
+								switch (cy) {
+									case 74: case 45:
+										chunk.setBlockState(new BlockPos(cx,cy,cz), ORANGE_TERRACOTTA);
+										break;
+								
+									case 79: case 50:
+										chunk.setBlockState(new BlockPos(cx,cy,cz), WHITE_TERRACOTTA);
+										break;
+								
+									case 83: case 55:
+										chunk.setBlockState(new BlockPos(cx,cy,cz), BROWN_TERRACOTTA);
+										break;
+								
+									case 85: case 64:
+										chunk.setBlockState(new BlockPos(cx,cy,cz), YELLOW_TERRACOTTA);
+										break;
+									
+									case 40: case 56:
+										chunk.setBlockState(new BlockPos(cx,cy,cz), RED_TERRACOTTA);
+										break;
+									
+									default:
+										chunk.setBlockState(new BlockPos(cx,cy,cz), TERRACOTTA);
+								}
 							}
 						}
 					}
@@ -364,8 +375,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 		return chunk;
 	}
 
-	private double[] getHeights(double[] p_185938_1_, int p_185938_2_, int p_185938_3_, int p_185938_4_,
-			int p_185938_5_, int p_185938_6_, int p_185938_7_) {
+	private double[] getHeights(double[] p_185938_1_, int p_185938_2_, int p_185938_3_, int p_185938_4_, int p_185938_5_, int p_185938_6_, int p_185938_7_) {
 		if (p_185938_1_ == null)
 			p_185938_1_ = new double[p_185938_5_ * p_185938_6_ * p_185938_7_];
 		ChunkGeneratorEvent.InitNoiseField event = new ChunkGeneratorEvent.InitNoiseField(this, p_185938_1_,p_185938_2_, p_185938_3_, p_185938_4_, p_185938_5_, p_185938_6_, p_185938_7_);

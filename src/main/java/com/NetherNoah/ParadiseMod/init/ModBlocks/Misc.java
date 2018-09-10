@@ -4,6 +4,7 @@ import com.NetherNoah.ParadiseMod.Utils;
 import com.NetherNoah.ParadiseMod.CustomBlockCode.MossyFurnaceCode;
 import com.NetherNoah.ParadiseMod.CustomBlockCode.VoidFurnaceCode;
 import com.NetherNoah.ParadiseMod.CustomBlockCode.xmasTree;
+import com.NetherNoah.ParadiseMod.blocks.formations.icicle;
 import com.NetherNoah.ParadiseMod.blocks.misc.BlueRose;
 import com.NetherNoah.ParadiseMod.blocks.misc.CactusBookshelf;
 import com.NetherNoah.ParadiseMod.blocks.misc.CompressedCactus;
@@ -36,10 +37,12 @@ import com.NetherNoah.ParadiseMod.blocks.xmas.ChristmasSapling;
 import com.NetherNoah.ParadiseMod.blocks.xmas.ChristmasTopper;
 import com.NetherNoah.ParadiseMod.blocks.xmas.Present;
 import com.NetherNoah.ParadiseMod.blocks.xmas.SantaHat;
+import java.util.concurrent.TimeUnit;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockHopper;
 import net.minecraft.block.BlockLever;
 import net.minecraft.block.BlockOldLeaf;
@@ -50,6 +53,8 @@ import net.minecraft.block.BlockRailPowered;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class Misc {
+	public static BlockDirectional icicle;
+	
 	public static Block VoidBricks;
 	public static Block RegenerationStone;
 	public static Block PolishedVoidStone;
@@ -84,6 +89,7 @@ public class Misc {
 	public static Block glowingIce;
 
 	public static void initAndRegister() {
+		Utils.regBlock(icicle=new icicle());
 		Utils.regBlock(RegenerationStone=new RegenerationStone());
 		Utils.regBlock(VoidBricks=new VoidBricks());
 		Utils.regBlock(PolishedVoidStone=new PolishedVoidStone());
@@ -119,6 +125,8 @@ public class Misc {
 		
 	}
 	public static void regRenders() {
+		Utils.regRender(icicle);
+
 		Utils.regRender(glowingIce);
 		Utils.regRender(RegenerationStone);
 		Utils.regRender(VoidBricks);

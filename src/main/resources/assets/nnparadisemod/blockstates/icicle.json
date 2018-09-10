@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up": { "model": "nnparadisemod:icicle", "x": 270 },
+        "facing=down": { "model": "nnparadisemod:icicle", "x": 90 },
+        "facing=north": { "model": "nnparadisemod:icicle" },
+        "facing=south": { "model": "nnparadisemod:icicle", "y": 180 },
+        "facing=west": { "model": "nnparadisemod:icicle", "y": 270 },
+        "facing=east": { "model": "nnparadisemod:icicle", "y": 90 }
+    }
+}
