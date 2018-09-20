@@ -32,24 +32,10 @@ public class Minerbase extends WorldGenerator implements IWorldGenerator {
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		if (world.provider.getDimension() != 1 && world.provider.getDimension() != DimensionRegistry.DeepVoid
-				&& world.provider.getDimension() != -1) {
-			int y = getGroundFromAbove(world, blockX, blockZ);
-			if (y > 31) {
-				BlockPos pos = new BlockPos(blockX, y, blockZ);
-				generate(world, rand, pos);
-			}
+		if (world.provider.getDimension() == 0||world.provider.getDimension() != DimensionRegistry.DeepUnderground) {
+			BlockPos pos = new BlockPos(blockX, 30, blockZ);
+			generate(world, rand, pos);
 		}
-	}
-
-	public static int getGroundFromAbove(World world, int x, int z) {
-		int y = 75;
-		boolean foundGround = false;
-		while (!foundGround && y-- >= 31) {
-			Block blockAt = world.getBlockState(new BlockPos(x, y, z)).getBlock();
-			foundGround = blockAt == Blocks.STONE;
-		}
-		return y;
 	}
 
 	@Override
@@ -70,7 +56,7 @@ public class Minerbase extends WorldGenerator implements IWorldGenerator {
 						.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
 						.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 				template.getDataBlocks(position, placementsettings);
-				template.addBlocksToWorld(world, position.add(0, -30, 0), placementsettings);
+				template.addBlocksToWorld(world, position.add(0, 0, 0), placementsettings);
 				return true;
 			}
 		}

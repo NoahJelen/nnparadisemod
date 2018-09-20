@@ -18,13 +18,12 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 public class OreGenOverworld implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		if ((world.provider.getDimension()==0)&&ModConfig.worldgen.GenerateOverworldOres==true)
-			generateOverworld(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+		if ((world.provider.getDimension()==0)&&ModConfig.worldgen.GenerateOverworldOres==true){
+			IBlockState[] ores= {Ores.SaltOre.getDefaultState(),Ores.RubyOre.getDefaultState(),Ores.SilverOre.getDefaultState()};
+			generateOre(ores[random.nextInt(3)], world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(4), 6);
+		}
 	}
-	private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		IBlockState[] ores= {Ores.SaltOre.getDefaultState(),Ores.RubyOre.getDefaultState(),Ores.SilverOre.getDefaultState()};
-		generateOre(ores[random.nextInt(3)], world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(4), 6);
-	}
+
 	private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {
 		int deltaY = maxY - minY;
 			int rarity = 16;

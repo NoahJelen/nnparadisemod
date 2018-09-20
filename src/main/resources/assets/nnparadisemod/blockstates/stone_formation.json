@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up": { "model": "nnparadisemod:stone_formation", "x": 270 },
+        "facing=down": { "model": "nnparadisemod:stone_formation", "x": 90 },
+        "facing=north": { "model": "nnparadisemod:stone_formation" },
+        "facing=south": { "model": "nnparadisemod:stone_formation", "y": 180 },
+        "facing=west": { "model": "nnparadisemod:stone_formation", "y": 270 },
+        "facing=east": { "model": "nnparadisemod:stone_formation", "y": 90 }
+    }
+}

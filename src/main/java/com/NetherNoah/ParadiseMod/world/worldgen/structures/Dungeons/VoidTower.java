@@ -59,6 +59,7 @@ public class VoidTower extends WorldGenerator implements IWorldGenerator{
 		Template section = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":dungeons/void_tower_section"));
 		Template top = templatemanager.getTemplate(minecraftserver,new ResourceLocation(Reference.MOD_ID+":dungeons/void_tower_top"));
 		int sections=rand.nextInt(16);
+		sections++;
 		if (ModConfig.worldgen.structures.VoidTower==false)
 			return false;
 		if(canSpawnHere(bottom, worldserver, position)) {
@@ -72,11 +73,11 @@ public class VoidTower extends WorldGenerator implements IWorldGenerator{
 				bottom.addBlocksToWorld(world, position.add(0, 0, 0), placementsettings);
 				for (int i=1;i<sections;i++) {
 					section.getDataBlocks(position, placementsettings);
-					section.addBlocksToWorld(world, position.add(0, i*12+2, 0), placementsettings);
+					section.addBlocksToWorld(world, position.add(0, (i*12)+2, 0), placementsettings);
 					topper=i;
 				}
 				top.getDataBlocks(position, placementsettings);
-				top.addBlocksToWorld(world, position.add(0, topper*12+14, 0), placementsettings);
+				top.addBlocksToWorld(world, position.add(0, (topper*12)+14, 0), placementsettings);
 				
 				return true;
 			}
@@ -110,7 +111,7 @@ public class VoidTower extends WorldGenerator implements IWorldGenerator{
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
 			Block blockAbove = world.getBlockState(new BlockPos(x,y+1,z)).getBlock();
-			foundGround =  (blockAt == Misc.VoidStone);
+			foundGround =  blockAt == Misc.VoidStone;
 		}
 		return y;
 	}

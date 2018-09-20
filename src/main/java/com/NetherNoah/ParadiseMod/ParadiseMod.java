@@ -2,7 +2,6 @@ package com.NetherNoah.ParadiseMod;
 
 import com.NetherNoah.ParadiseMod.creativeTabs.ChristmasTab;
 import com.NetherNoah.ParadiseMod.handlers.AntiMobLampHandler;
-import com.NetherNoah.ParadiseMod.handlers.CaveGenHandler;
 import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
@@ -37,6 +36,14 @@ import com.NetherNoah.ParadiseMod.tileentity.furnace.TEVoidFurnace;
 import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntityGoldHopper;
 import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntitySilverHopper;
 import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
+import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenBase;
+import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenCrystal;
+import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenDesert;
+import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenHumid;
+import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenIcy;
+import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenMesa;
+import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenMushroomIsland;
+import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenOcean;
 import com.NetherNoah.ParadiseMod.world.worldgen.misc.DUTrees;
 import com.NetherNoah.ParadiseMod.world.worldgen.misc.DirtGen;
 import com.NetherNoah.ParadiseMod.world.worldgen.misc.Rose;
@@ -45,7 +52,6 @@ import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenNether;
 import com.NetherNoah.ParadiseMod.world.worldgen.ores.OreGenOverworld;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Buoy;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.EasterEgg;
-import com.NetherNoah.ParadiseMod.world.worldgen.structures.EasterEgg2;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.GiantGrassBlock;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Home;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Ocean;
@@ -122,7 +128,6 @@ public class ParadiseMod {
         
         //events
         MinecraftForge.EVENT_BUS.register(Events.class);
-        MinecraftForge.EVENT_BUS.register(CaveGenHandler.class);
         
         //some modifications to vanilla blocks
         //This is NOT a coremod!
@@ -150,8 +155,32 @@ public class ParadiseMod {
 		GameRegistry.registerTileEntity(TEAntiMobLamp.class,"salt_lamp");
 		
 		//world generators
-		IWorldGenerator[] generators = {
-				//structures!
+		//cave gen
+		IWorldGenerator[] cavegen= {
+				new CaveGenBase(),
+				new CaveGenDesert(),
+				new CaveGenHumid(),
+				new CaveGenIcy(),
+				new CaveGenOcean(),
+				new CaveGenMesa(),
+				new CaveGenMushroomIsland(),
+				new CaveGenCrystal()
+		};
+
+		//ores
+		IWorldGenerator[] ores= {
+				//overworld ore gen
+				new OreGenOverworld(),
+				
+				//nether ore gen
+				new OreGenNether(),
+				
+				//end ore gen
+				new OreGenEnd()
+		};
+
+		//structures
+		IWorldGenerator[] structures= {
 				new Home(),
 				new WickerMan(),
 				new Ocean(),
@@ -180,15 +209,15 @@ public class ParadiseMod {
 				new Shrine(),
 				new JeffTank(),
 				
-				//overworld ore gen
-				new OreGenOverworld(),
+				//easter egg
+				new EasterEgg(),
 				
-				//nether ore gen
-				new OreGenNether(),
-				
-				//end ore gen
-				new OreGenEnd(),
-				
+				//underground villages
+				new UndergroundVillage()
+		};
+
+		//miscellaneous
+		IWorldGenerator[] misc= {
 				//dirt, gravel, sand, and clay on the ocean floors
 				new DirtGen(),
 				
@@ -196,18 +225,17 @@ public class ParadiseMod {
 				new Rose(),
 				
 				//trees in the Deep Underground
-				new DUTrees(),
-				
-				//easter egg
-				new EasterEgg(),
-				new EasterEgg2(),
-				
-				//underground villages
-				new UndergroundVillage()
+				new DUTrees()
 		};
-		
-		for(int i=0;i<generators.length;i++) 
-			GameRegistry.registerWorldGenerator(generators[i],1);
+
+		for(int i=0;i<cavegen.length;i++) 
+			GameRegistry.registerWorldGenerator(cavegen[i],2);
+		for(int i=0;i<ores.length;i++) 
+			GameRegistry.registerWorldGenerator(ores[i],3);
+		for(int i=0;i<structures.length;i++) 
+			GameRegistry.registerWorldGenerator(structures[i],4);
+		for(int i=0;i<misc.length;i++) 
+			GameRegistry.registerWorldGenerator(misc[i],5);
 
 		//block categories
 		Lamps.initAndRegister();

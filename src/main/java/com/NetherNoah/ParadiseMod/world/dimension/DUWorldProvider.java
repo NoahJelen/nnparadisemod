@@ -11,7 +11,6 @@ public class DUWorldProvider extends WorldProvider{
 	@Override
 	public void init() {
 		biomeProvider = new BiomeProvider(world.getWorldInfo());
-		doesWaterVaporize = false;
 		hasSkyLight = false;
 		nether=true;
 	}
@@ -29,7 +28,7 @@ public class DUWorldProvider extends WorldProvider{
 	
 	@Override
 	public IChunkGenerator createChunkGenerator() {
-		return new DUChunkGenerator(world, doesWaterVaporize, DimensionRegistry.DeepUnderground);
+		return new DUChunkGenerator(world, false, DimensionRegistry.DeepUnderground);
 	}
 	
 	@Override

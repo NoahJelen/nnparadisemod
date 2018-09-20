@@ -228,6 +228,12 @@
     Optimized ore generation
     
 1.3.1:
-    Attempted to optimize cave generation
+    Optimized cave generation (it should cause less lag now)
     Ore cystals no longer generate in ocean biomes
     Optimized structure generation
+    Buried Treasure will now generate 2 meters under grass instead of deep underground
+    Added Underground Air (mod internal use only)
+    Added formations to caves and the nether
+    Added prismarine Crystal Block
+    Crystals now generate in bunches in caves
+    Added lava pockets in the deep underground

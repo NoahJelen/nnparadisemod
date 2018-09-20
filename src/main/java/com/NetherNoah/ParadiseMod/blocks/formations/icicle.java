@@ -1,6 +1,7 @@
 package com.NetherNoah.ParadiseMod.blocks.formations;
 
 import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
@@ -27,6 +28,7 @@ public class icicle extends BlockDirectional {
         setCreativeTab(CreativeTabs.DECORATIONS);
 		setUnlocalizedName("Icicle");
 		setRegistryName("icicle");
+		setSoundType(SoundType.GLASS);
     }
 
     @Override

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up": { "model": "nnparadisemod:mossy_stone_formation", "x": 270 },
+        "facing=down": { "model": "nnparadisemod:mossy_stone_formation", "x": 90 },
+        "facing=north": { "model": "nnparadisemod:mossy_stone_formation" },
+        "facing=south": { "model": "nnparadisemod:mossy_stone_formation", "y": 180 },
+        "facing=west": { "model": "nnparadisemod:mossy_stone_formation", "y": 270 },
+        "facing=east": { "model": "nnparadisemod:mossy_stone_formation", "y": 90 }
+    }
+}

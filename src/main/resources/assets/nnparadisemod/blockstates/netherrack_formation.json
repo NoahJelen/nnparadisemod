@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up": { "model": "nnparadisemod:netherrack_formation", "x": 270 },
+        "facing=down": { "model": "nnparadisemod:netherrack_formation", "x": 90 },
+        "facing=north": { "model": "nnparadisemod:netherrack_formation" },
+        "facing=south": { "model": "nnparadisemod:netherrack_formation", "y": 180 },
+        "facing=west": { "model": "nnparadisemod:netherrack_formation", "y": 270 },
+        "facing=east": { "model": "nnparadisemod:netherrack_formation", "y": 90 }
+    }
+}

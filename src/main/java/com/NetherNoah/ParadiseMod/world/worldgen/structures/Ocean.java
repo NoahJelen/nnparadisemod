@@ -36,17 +36,9 @@ public class Ocean extends WorldGenerator implements IWorldGenerator{
 			int y = getGroundFromAbove(world, blockX, blockZ);
 			BlockPos pos = new BlockPos(blockX, y, blockZ);
 			generate(world, rand, pos);
-			//generateOverworld(world, rand, blockX + 8, blockZ + 8);
 		}
 	}
-	/*/
-	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
-	{
-		int y = getGroundFromAbove(world, blockX, blockZ);
-		BlockPos pos = new BlockPos(blockX, y, blockZ);
-		generate(world, rand, pos);
-	}
-	/*/
+
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
 		int y = 255;

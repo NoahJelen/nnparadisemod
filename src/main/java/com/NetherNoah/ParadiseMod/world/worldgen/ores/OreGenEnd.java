@@ -18,13 +18,12 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 public class OreGenEnd implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		if ((world.provider.getDimension() == 1)&&ModConfig.worldgen.GenerateEndOres)
-			generateEnd(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+		if ((world.provider.getDimension() == 1)&&ModConfig.worldgen.GenerateEndOres){
+			IBlockState[]endOres= {Ores.EndRubyOre.getDefaultState(),Ores.EnderPearlOre.getDefaultState(),Ores.VoidPearlOre.getDefaultState()};
+			generateOre(endOres[random.nextInt(3)], world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(15), 6);
+		}
 	}
-	private void generateEnd(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		IBlockState[]endOres= {Ores.EndRubyOre.getDefaultState(),Ores.EnderPearlOre.getDefaultState(),Ores.VoidPearlOre.getDefaultState()};
-		generateOre(endOres[random.nextInt(3)], world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(15), 6);
-	}
+
 	private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {
 		int deltaY = maxY - minY;
 		for (int i = 0; i < chances; i++) {

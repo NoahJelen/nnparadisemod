@@ -114,6 +114,9 @@ public class DUChunkGenerator implements IChunkGenerator {
 	private final WorldGenerator ironGen = new WorldGenMinable(Blocks.IRON_ORE.getDefaultState(), 14,BlockMatcher.forBlock(Blocks.STONE));
 	private final WorldGenerator goldGen = new WorldGenMinable(Blocks.GOLD_ORE.getDefaultState(), 7,BlockMatcher.forBlock(Blocks.STONE));
 	
+	//lava
+	private final WorldGenerator lava= new WorldGenMinable(Blocks.LAVA.getDefaultState(), 7,BlockMatcher.forBlock(Blocks.STONE));
+	
 	//decoration
 	private final WorldGenBush brownMushroomFeature = new WorldGenBush(Blocks.BROWN_MUSHROOM);
 	private final WorldGenBush redMushroomFeature = new WorldGenBush(Blocks.RED_MUSHROOM);
@@ -132,7 +135,7 @@ public class DUChunkGenerator implements IChunkGenerator {
 	public DUChunkGenerator(World worldIn, boolean p_i45637_2_, long seed) {
 		world = worldIn;
 		generateStructures = false;
-		rand = new Random(seed);
+		rand = worldIn.rand;//new Random(seed);
 		lperlinNoise1 = new NoiseGeneratorOctaves(rand, 16);
 		lperlinNoise2 = new NoiseGeneratorOctaves(rand, 16);
 		perlinNoise1 = new NoiseGeneratorOctaves(rand, 16);
@@ -260,7 +263,6 @@ public class DUChunkGenerator implements IChunkGenerator {
 		prepareHeights(x, z, chunkprimer);
 		buildSurfaces(x, z, chunkprimer, 0);
 		genDURavines.generate(world, x, z, chunkprimer);
-		genDUMineshafts.generate(world, x, z, chunkprimer);
 		genDUCaves.generate(world, x, z, chunkprimer);
 		Chunk chunk = new Chunk(world, chunkprimer, x, z);
 		Biome[] abiome = world.getBiomeProvider().getBiomes((Biome[]) null, x * 16, z * 16, 16, 16);
@@ -456,11 +458,11 @@ public class DUChunkGenerator implements IChunkGenerator {
 		if (TerrainGen.decorate(world, rand, blockpos, DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
 			//crystals
 			if (rand.nextBoolean()) {
-				quartzGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				diamondGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				emeraldGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				redstoneGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
-				rubyGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
+				quartzGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
+				diamondGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
+				emeraldGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
+				redstoneGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
+				rubyGen.generate(world, rand,blockpos.add(rand.nextInt(16) + 8, rand.nextInt(128), rand.nextInt(16) + 8));
 			}
 			
 			//mushrooms
@@ -476,6 +478,10 @@ public class DUChunkGenerator implements IChunkGenerator {
 				coalGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				ironGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
 				goldGen.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				
+				//lava
+				lava.generate(world, rand, blockpos.add(rand.nextInt(16), rand.nextInt(216) + 20, rand.nextInt(16)));
+				
 			}
 		}
 		

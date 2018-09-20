@@ -5,6 +5,10 @@ import com.NetherNoah.ParadiseMod.CustomBlockCode.MossyFurnaceCode;
 import com.NetherNoah.ParadiseMod.CustomBlockCode.VoidFurnaceCode;
 import com.NetherNoah.ParadiseMod.CustomBlockCode.xmasTree;
 import com.NetherNoah.ParadiseMod.blocks.formations.icicle;
+import com.NetherNoah.ParadiseMod.blocks.formations.mossyStoneFormation;
+import com.NetherNoah.ParadiseMod.blocks.formations.netherrackFormation;
+import com.NetherNoah.ParadiseMod.blocks.formations.sandstoneFormation;
+import com.NetherNoah.ParadiseMod.blocks.formations.stoneFormation;
 import com.NetherNoah.ParadiseMod.blocks.misc.BlueRose;
 import com.NetherNoah.ParadiseMod.blocks.misc.CactusBookshelf;
 import com.NetherNoah.ParadiseMod.blocks.misc.CompressedCactus;
@@ -23,11 +27,14 @@ import com.NetherNoah.ParadiseMod.blocks.misc.VoidBricks;
 import com.NetherNoah.ParadiseMod.blocks.misc.VoidFurnace;
 import com.NetherNoah.ParadiseMod.blocks.misc.VoidFurnaceLit;
 import com.NetherNoah.ParadiseMod.blocks.misc.VoidStone;
+import com.NetherNoah.ParadiseMod.blocks.misc.bulletproofGlass;
 import com.NetherNoah.ParadiseMod.blocks.misc.emeraldRail;
 import com.NetherNoah.ParadiseMod.blocks.misc.glowingIce;
 import com.NetherNoah.ParadiseMod.blocks.misc.glowingObsidian;
+import com.NetherNoah.ParadiseMod.blocks.misc.prismarineCrystalBlock;
 import com.NetherNoah.ParadiseMod.blocks.misc.soulGlass;
 import com.NetherNoah.ParadiseMod.blocks.misc.soulGlassPane;
+import com.NetherNoah.ParadiseMod.blocks.misc.undergroundAir;
 import com.NetherNoah.ParadiseMod.blocks.redstone.GoldHopper;
 import com.NetherNoah.ParadiseMod.blocks.redstone.SilverHopper;
 import com.NetherNoah.ParadiseMod.blocks.redstone.emeraldRailPowered;
@@ -37,9 +44,9 @@ import com.NetherNoah.ParadiseMod.blocks.xmas.ChristmasSapling;
 import com.NetherNoah.ParadiseMod.blocks.xmas.ChristmasTopper;
 import com.NetherNoah.ParadiseMod.blocks.xmas.Present;
 import com.NetherNoah.ParadiseMod.blocks.xmas.SantaHat;
-import java.util.concurrent.TimeUnit;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockDirectional;
@@ -53,8 +60,16 @@ import net.minecraft.block.BlockRailPowered;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class Misc {
+	//cave formations
 	public static BlockDirectional icicle;
-	
+	public static BlockDirectional stoneFormation;
+	public static BlockDirectional mossyStoneFormation;
+	public static BlockDirectional sandstoneFormation;
+	public static BlockDirectional netherrackFormation;
+
+	public static BlockBreakable bulletproofGlass;
+	public static BlockBreakable prismarineCrystalBlock;
+	public static BlockAir undergroundAir;
 	public static Block VoidBricks;
 	public static Block RegenerationStone;
 	public static Block PolishedVoidStone;
@@ -90,6 +105,13 @@ public class Misc {
 
 	public static void initAndRegister() {
 		Utils.regBlock(icicle=new icicle());
+		Utils.regBlock(stoneFormation=new stoneFormation());
+		Utils.regBlock(mossyStoneFormation=new mossyStoneFormation());
+		Utils.regBlock(sandstoneFormation=new sandstoneFormation());
+		Utils.regBlock(netherrackFormation=new netherrackFormation());
+
+		Utils.regBlock(bulletproofGlass=new bulletproofGlass());
+		Utils.regBlock(prismarineCrystalBlock=new prismarineCrystalBlock());
 		Utils.regBlock(RegenerationStone=new RegenerationStone());
 		Utils.regBlock(VoidBricks=new VoidBricks());
 		Utils.regBlock(PolishedVoidStone=new PolishedVoidStone());
@@ -120,13 +142,21 @@ public class Misc {
 		Utils.regBlock(MossyFurnace = new MossyFurnace());
 		Utils.regBlock(VoidFurnace=new VoidFurnace());
 		Utils.regBlock(glowingIce=new glowingIce());
+		ForgeRegistries.BLOCKS.register(undergroundAir=new undergroundAir());
 		ForgeRegistries.BLOCKS.register(MossyFurnaceLit = new MossyFurnaceLit());
 		ForgeRegistries.BLOCKS.register(VoidFurnaceLit=new VoidFurnaceLit());
 		
 	}
+
 	public static void regRenders() {
 		Utils.regRender(icicle);
+		Utils.regRender(stoneFormation);
+		Utils.regRender(mossyStoneFormation);
+		Utils.regRender(sandstoneFormation);
+		Utils.regRender(netherrackFormation);
 
+		Utils.regRender(bulletproofGlass);
+		Utils.regRender(prismarineCrystalBlock);
 		Utils.regRender(glowingIce);
 		Utils.regRender(RegenerationStone);
 		Utils.regRender(VoidBricks);
