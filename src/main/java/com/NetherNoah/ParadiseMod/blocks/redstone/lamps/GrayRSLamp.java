@@ -28,7 +28,7 @@ public class GrayRSLamp extends BlockRedstoneLight {
         {
             if (worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, Lamps.LitGrayRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.LitGrayLamp.getDefaultState(), 2);
             }
         }
     }
@@ -39,18 +39,18 @@ public class GrayRSLamp extends BlockRedstoneLight {
         {
             if (worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, Lamps.LitGrayRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.LitGrayLamp.getDefaultState(), 2);
             }
         }
     }
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(Lamps.GrayRSLamp);
+        return Item.getItemFromBlock(Lamps.GrayLamp);
     }
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(Lamps.GrayRSLamp);
+        return new ItemStack(Lamps.GrayLamp);
     }
 }

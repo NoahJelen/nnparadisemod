@@ -28,14 +28,14 @@ public class SilverRSLamp extends BlockRedstoneLight {
         {
             if (worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, Lamps.LitSilverRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.LitSilverLamp.getDefaultState(), 2);
             }
         }
     }
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(Lamps.SilverRSLamp);
+        return Item.getItemFromBlock(Lamps.SilverLamp);
     }
     @Override
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
@@ -44,13 +44,13 @@ public class SilverRSLamp extends BlockRedstoneLight {
         {
             if (worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, Lamps.LitSilverRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.LitSilverLamp.getDefaultState(), 2);
             }
         }
     }
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(Lamps.SilverRSLamp);
+        return new ItemStack(Lamps.SilverLamp);
     }
 }

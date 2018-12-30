@@ -7,7 +7,7 @@ import net.minecraft.item.ItemDoor;
 
 public class ItemSilverDoor extends ItemDoor {
 	public ItemSilverDoor() {
-		super(Doors.BlockSilverDoor);
+		super(Doors.SilverDoor);
 		setUnlocalizedName("ItemSilverDoor");
 		setRegistryName("silver_door");
 		setCreativeTab(CreativeTabs.REDSTONE);

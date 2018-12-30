@@ -15,19 +15,16 @@ public class Chests {
 	public static Block CompressedCactusChestTrapped;
 
 	public static void initAndRegister() {
-		
 		//chests
-		Utils.regBlock(CompressedCactusChest=new CompressedCactusChest());
-		Utils.regBlock(CompressedCactusChestTrapped=new CompressedCactusChestTrapped());
 		Utils.regBlock(CactusChest = new CactusChest());
 		Utils.regBlock(CactusChestTrapped = new CactusChestTrapped());
-		
+		Utils.regBlock(CompressedCactusChest=new CompressedCactusChest());
+		Utils.regBlock(CompressedCactusChestTrapped=new CompressedCactusChestTrapped());
 	}
 	public static void regRenders() {
-		Utils.regRender(CompressedCactusChest);
-		Utils.regRender(CompressedCactusChestTrapped);
 		Utils.regRender(CactusChest);
 		Utils.regRender(CactusChestTrapped);
-		
+		Utils.regRender(CompressedCactusChest);
+		Utils.regRender(CompressedCactusChestTrapped);
 	}
 }

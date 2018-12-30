@@ -88,25 +88,18 @@ public class MapGenDUCaves extends MapGenBase{
                     int i3 = MathHelper.floor(p_180702_10_ - d2) - p_180702_4_ * 16 - 1;
                     int i1 = MathHelper.floor(p_180702_10_ + d2) - p_180702_4_ * 16 + 1;
 
-                    if (k2 < 0)
-                        k2 = 0;
-                    if (k > 16)
-                        k = 16;
-                    if (l2 < 1)
-                        l2 = 1;
-                    if (l > 248)
-                        l = 248;
-                    if (i3 < 0)
-                        i3 = 0;
-                    if (i1 > 16)
-                        i1 = 16;
+                    if (k2 < 0) k2 = 0;
+                    if (k > 16) k = 16;
+                    if (l2 < 1) l2 = 1;
+                    if (l > 248) l = 248;
+                    if (i3 < 0) i3 = 0;
+                    if (i1 > 16) i1 = 16;
 
                     for (int j1 = k2; j1 < k; ++j1){
                         for (int k1 = i3; k1 < i1; ++k1){
                             for (int l1 = l + 1; l1 >= l2 - 1; --l1){
                                 if (l1 >= 0 && l1 < 256){
-                                    if (l1 != l2 - 1 && j1 != k2 && j1 != k - 1 && k1 != i3 && k1 != i1 - 1)
-                                        l1 = l2;
+                                    if (l1 != l2 - 1 && j1 != k2 && j1 != k - 1 && k1 != i3 && k1 != i1 - 1) l1 = l2;
                                 }
                             }
                         }
@@ -145,28 +138,17 @@ public class MapGenDUCaves extends MapGenBase{
     }
 
     protected boolean canReplaceBlock(IBlockState block1, IBlockState block2){
-        if (block1.getBlock() == Blocks.STONE)
-            return true;
-        else if (block1.getBlock() == Blocks.DIRT)
-            return true;
-        else if (block1.getBlock() == Blocks.GRASS)
-            return true;
-        else if (block1.getBlock() == Blocks.HARDENED_CLAY)
-            return true;
-        else if (block1.getBlock() == Blocks.STAINED_HARDENED_CLAY)
-            return true;
-        else if (block1.getBlock() == Blocks.SANDSTONE)
-            return true;
-        else if (block1.getBlock() == Blocks.RED_SANDSTONE)
-            return true;
-        else if (block1.getBlock() == Blocks.MYCELIUM)
-            return true;
-        else if (block1.getBlock() == Blocks.SNOW_LAYER)
-            return true;
-        else if (block1.getBlock()==Blocks.FLOWING_WATER||block1.getBlock()==Blocks.WATER)
-        	return true;
-        else
-            return (block1.getBlock() == Blocks.SAND || block1.getBlock() == Blocks.GRAVEL) && block2.getMaterial() != Material.WATER;
+        if (block1.getBlock() == Blocks.STONE)	return true;
+        else if (block1.getBlock() == Blocks.DIRT)	return true;
+        else if (block1.getBlock() == Blocks.GRASS)	return true;
+        else if (block1.getBlock() == Blocks.HARDENED_CLAY)	return true;
+        else if (block1.getBlock() == Blocks.STAINED_HARDENED_CLAY)	return true;
+        else if (block1.getBlock() == Blocks.SANDSTONE)	return true;
+        else if (block1.getBlock() == Blocks.RED_SANDSTONE)	return true;
+        else if (block1.getBlock() == Blocks.MYCELIUM) return true;
+        else if (block1.getBlock() == Blocks.SNOW_LAYER) return true;
+        else if (block1.getBlock()==Blocks.FLOWING_WATER||block1.getBlock()==Blocks.WATER)	return true;
+        else	return (block1.getBlock() == Blocks.SAND || block1.getBlock() == Blocks.GRAVEL) && block2.getMaterial() != Material.WATER;
     }
 
     protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX, int originalZ, ChunkPrimer chunkPrimerIn){

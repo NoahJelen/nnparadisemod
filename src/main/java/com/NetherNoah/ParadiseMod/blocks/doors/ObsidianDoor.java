@@ -16,7 +16,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class ObsidianDoor extends BlockDoor {
-	private static Item item=DoorItems.ItemObsidianDoor;
+	private static Item item=DoorItems.ObsidianDoor;
 	public ObsidianDoor() {
 		super(Material.IRON);
 		setUnlocalizedName("ObsidianDoor");
@@ -28,12 +28,12 @@ public class ObsidianDoor extends BlockDoor {
 	// the item is the door itself
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.ItemObsidianDoor;
+		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.ObsidianDoor;
 	}
 	
 	@Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(DoorItems.ItemObsidianDoor);
+        return new ItemStack(DoorItems.ObsidianDoor);
     }
 }

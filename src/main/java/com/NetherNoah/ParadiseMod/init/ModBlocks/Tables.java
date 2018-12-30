@@ -1,40 +1,32 @@
 package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import com.NetherNoah.ParadiseMod.Utils;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.CustomWorkBench;
-import com.NetherNoah.ParadiseMod.blocks.workbenches.CustomWorkbenchAcacia;
-import com.NetherNoah.ParadiseMod.blocks.workbenches.CustomWorkbenchBirch;
-import com.NetherNoah.ParadiseMod.blocks.workbenches.CustomWorkbenchCactus;
-import com.NetherNoah.ParadiseMod.blocks.workbenches.CustomWorkbenchDarkOak;
-import com.NetherNoah.ParadiseMod.blocks.workbenches.CustomWorkbenchJungle;
-import com.NetherNoah.ParadiseMod.blocks.workbenches.CustomWorkbenchSpruce;
+import com.NetherNoah.ParadiseMod.blocks.base.CustomWorkBench;
 
 public class Tables {
 	//crafting tables
-	public static CustomWorkBench CustomWorkbenchCactus;
-	public static CustomWorkBench CustomWorkbenchAcacia;
-	public static CustomWorkBench CustomWorkbenchBirch;
-	public static CustomWorkBench CustomWorkbenchDarkOak;
-	public static CustomWorkBench CustomWorkbenchJungle;
-	public static CustomWorkBench CustomWorkbenchSpruce;
+	public static CustomWorkBench AcaciaWorkbench = new CustomWorkBench();
+	public static CustomWorkBench BirchWorkbench = new CustomWorkBench();
+	public static CustomWorkBench CactusWorkbench = new CustomWorkBench();
+	public static CustomWorkBench DarkOakWorkbench = new CustomWorkBench();
+	public static CustomWorkBench JungleWorkbench = new CustomWorkBench();
+	public static CustomWorkBench SpruceWorkbench = new CustomWorkBench();
 
 	public static void initAndRegister() {
-		
 		//crafting tables
-		Utils.regBlock(CustomWorkbenchCactus=new CustomWorkbenchCactus());
-		Utils.regBlock(CustomWorkbenchAcacia = new CustomWorkbenchAcacia());
-		Utils.regBlock(CustomWorkbenchBirch = new CustomWorkbenchBirch());
-		Utils.regBlock(CustomWorkbenchDarkOak = new CustomWorkbenchDarkOak());
-		Utils.regBlock(CustomWorkbenchJungle = new CustomWorkbenchJungle());
-		Utils.regBlock(CustomWorkbenchSpruce = new CustomWorkbenchSpruce());
+		Utils.regBlock(AcaciaWorkbench.setUnlocalizedName("CustomWorkbenchAcacia").setRegistryName("acacia_crafting_table"));
+		Utils.regBlock(BirchWorkbench.setUnlocalizedName("CustomWorkbenchBirch").setRegistryName("birch_crafting_table"));
+		Utils.regBlock(CactusWorkbench.setUnlocalizedName("CustomWorkbenchCactus").setRegistryName("cactus_crafting_table"));
+		Utils.regBlock(DarkOakWorkbench.setUnlocalizedName("CustomWorkbenchDarkOak").setRegistryName("dark_oak_crafting_table"));
+		Utils.regBlock(JungleWorkbench.setUnlocalizedName("CustomWorkbenchJungle").setRegistryName("jungle_crafting_table"));
+		Utils.regBlock(SpruceWorkbench.setUnlocalizedName("CustomWorkbenchSpruce").setRegistryName("spruce_crafting_table"));
 	}
 	public static void regRenders() {
-		Utils.regRender(CustomWorkbenchCactus);
-		Utils.regRender(CustomWorkbenchAcacia);
-		Utils.regRender(CustomWorkbenchBirch);
-		Utils.regRender(CustomWorkbenchDarkOak);
-		Utils.regRender(CustomWorkbenchJungle);
-		Utils.regRender(CustomWorkbenchSpruce);
-		Utils.regRender(CustomWorkbenchAcacia);
+		Utils.regRender(CactusWorkbench);
+		Utils.regRender(AcaciaWorkbench);
+		Utils.regRender(BirchWorkbench);
+		Utils.regRender(DarkOakWorkbench);
+		Utils.regRender(JungleWorkbench);
+		Utils.regRender(SpruceWorkbench);
 	}
 }

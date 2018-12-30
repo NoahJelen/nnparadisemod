@@ -239,7 +239,7 @@ public class DVPortal extends Block{
         private BlockPos bottomLeft;
         private int height;
         private int width;
-        public Size(World worldIn, BlockPos p_i45694_2_, EnumFacing.Axis p_i45694_3_)
+        public Size(World worldIn, BlockPos position, EnumFacing.Axis p_i45694_3_)
         {
             world = worldIn;
             axis = p_i45694_3_;
@@ -253,14 +253,14 @@ public class DVPortal extends Block{
                 leftDir = EnumFacing.NORTH;
                 rightDir = EnumFacing.SOUTH;
             }
-            for (BlockPos blockpos = p_i45694_2_; p_i45694_2_.getY() > blockpos.getY() - 21 && p_i45694_2_.getY() > 0 && isEmptyBlock(worldIn.getBlockState(p_i45694_2_.down()).getBlock()); p_i45694_2_ = p_i45694_2_.down())
+            for (BlockPos blockpos = position; position.getY() > blockpos.getY() - 21 && position.getY() > 0 && isEmptyBlock(worldIn.getBlockState(position.down()).getBlock()); position = position.down())
             {
                 ;
             }
-            int i = getDistanceUntilEdge(p_i45694_2_, leftDir) - 1;
+            int i = getDistanceUntilEdge(position, leftDir) - 1;
             if (i >= 0)
             {
-                bottomLeft = p_i45694_2_.offset(leftDir, i);
+                bottomLeft = position.offset(leftDir, i);
                 width = getDistanceUntilEdge(bottomLeft, rightDir);
                 if (width < 2 || width > 21)
                 {

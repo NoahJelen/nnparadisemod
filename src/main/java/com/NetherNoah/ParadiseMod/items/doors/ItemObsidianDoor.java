@@ -7,7 +7,7 @@ import net.minecraft.item.ItemDoor;
 
 public class ItemObsidianDoor extends ItemDoor {
 	public ItemObsidianDoor() {
-		super(Doors.BlockObsidianDoor);
+		super(Doors.ObsidianDoor);
 		setUnlocalizedName("ItemObsidianDoor");
 		setRegistryName("obsidian_door");
 		setCreativeTab(CreativeTabs.REDSTONE);

@@ -1,29 +1,24 @@
 package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import com.NetherNoah.ParadiseMod.Utils;
-import com.NetherNoah.ParadiseMod.blocks.crystals.diamondCrystal;
-import com.NetherNoah.ParadiseMod.blocks.crystals.emeraldCrystal;
-import com.NetherNoah.ParadiseMod.blocks.crystals.quartzCrystal;
-import com.NetherNoah.ParadiseMod.blocks.crystals.redstoneCrystal;
-import com.NetherNoah.ParadiseMod.blocks.crystals.rubyCrystal;
-import net.minecraft.block.BlockBush;
+import com.NetherNoah.ParadiseMod.blocks.base.Crystal;
+import com.NetherNoah.ParadiseMod.init.ModItems.MiscItems;
+
+import net.minecraft.init.Items;
 
 public class Crystals {
-	//crystals
-	public static BlockBush diamondCrystal;
-	public static BlockBush emeraldCrystal;
-	public static BlockBush quartzCrystal;
-	public static BlockBush redstoneCrystal;
-	public static BlockBush rubyCrystal;
+	public static Crystal diamondCrystal = new Crystal(Items.DIAMOND);
+	public static Crystal emeraldCrystal = new Crystal(Items.EMERALD);
+	public static Crystal quartzCrystal = new Crystal(Items.QUARTZ);
+	public static Crystal redstoneCrystal = new Crystal(Items.REDSTONE);
+	public static Crystal rubyCrystal = new Crystal(MiscItems.Ruby);
 
 	public static void initAndRegister() {
-		
-		//crystals
-		Utils.regBlock(diamondCrystal = new diamondCrystal());
-		Utils.regBlock(emeraldCrystal = new emeraldCrystal());
-		Utils.regBlock(quartzCrystal = new quartzCrystal());
-		Utils.regBlock(redstoneCrystal = new redstoneCrystal());
-		Utils.regBlock(rubyCrystal = new rubyCrystal());
+		Utils.regBlock(diamondCrystal.setUnlocalizedName("diamondCrystal").setRegistryName("diamond_crystal"));
+		Utils.regBlock(emeraldCrystal.setUnlocalizedName("emeraldCrystal").setRegistryName("emerald_crystal"));
+		Utils.regBlock(quartzCrystal.setUnlocalizedName("quartzCrystal").setRegistryName("quartz_crystal"));
+		Utils.regBlock(redstoneCrystal.setUnlocalizedName("redstoneCrystal").setRegistryName("redstone_crystal"));
+		Utils.regBlock(rubyCrystal.setUnlocalizedName("rubyCrystal").setRegistryName("ruby_crystal"));
 
 	}
 	public static void regRenders() {

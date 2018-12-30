@@ -71,13 +71,22 @@ public class VoidTower extends WorldGenerator implements IWorldGenerator{
 						.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 				bottom.getDataBlocks(position, placementsettings);
 				bottom.addBlocksToWorld(world, position.add(0, 0, 0), placementsettings);
-				for (int i=1;i<sections;i++) {
-					section.getDataBlocks(position, placementsettings);
-					section.addBlocksToWorld(world, position.add(0, (i*12)+2, 0), placementsettings);
-					topper=i;
+				if (sections>1) {
+					for (int i=1;i<sections;i++) {
+						section.getDataBlocks(position, placementsettings);
+						section.addBlocksToWorld(world, position.add(0, (i*12)+2, 0), placementsettings);
+						topper=i;
+					}
+					top.getDataBlocks(position, placementsettings);
+					top.addBlocksToWorld(world, position.add(0, (topper*12)+14, 0), placementsettings);
 				}
-				top.getDataBlocks(position, placementsettings);
-				top.addBlocksToWorld(world, position.add(0, (topper*12)+14, 0), placementsettings);
+				else 
+				{
+					section.getDataBlocks(position, placementsettings);
+					top.getDataBlocks(position, placementsettings);
+					section.addBlocksToWorld(world, position.add(0, 0, 0), placementsettings);
+					top.addBlocksToWorld(world, position.add(0, 13, 0), placementsettings);
+				}
 				
 				return true;
 			}

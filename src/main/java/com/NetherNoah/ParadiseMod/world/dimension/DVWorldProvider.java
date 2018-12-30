@@ -15,7 +15,7 @@ public class DVWorldProvider extends WorldProvider{
 	public void init() {
 		biomeProvider=new BiomeProviderSingle(Biomes.VOID);
 		hasSkyLight=false;
-		nether=true;
+		nether=false;
 	}
 	
 	@Override
@@ -31,7 +31,7 @@ public class DVWorldProvider extends WorldProvider{
 	
 	@Override
 	public IChunkGenerator createChunkGenerator() {
-		return new DVChunkGenerator(world, false, DimensionRegistry.DeepVoid);
+		return new DVChunkGenerator(world);
 	}
 	
 	@Override

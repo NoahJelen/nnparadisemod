@@ -29,12 +29,12 @@ public class CactusDoor extends BlockDoor {
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-      return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.ItemCactusDoor;
+      return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.CactusDoor;
     }
 	
 	@Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(DoorItems.ItemCactusDoor);
+        return new ItemStack(DoorItems.CactusDoor);
     }
 }

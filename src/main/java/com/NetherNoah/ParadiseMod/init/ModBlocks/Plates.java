@@ -1,90 +1,106 @@
 package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import com.NetherNoah.ParadiseMod.Utils;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.RubyPlateCode;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.pressurePlates.BedrockPlateCode;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.pressurePlates.DiamondPlateCode;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.pressurePlates.EmeraldPlateCode;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.BedrockPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.CobblestonePlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.DiamondPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.DirtPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.EmeraldPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.EndPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.GlowingObsidianPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.GrassPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.MossyPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.RubyPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.RustyPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.SilverPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.VoidPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.stoneVariants.AndesitePlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.stoneVariants.DioritePlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.stoneVariants.GranitePlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.wood.AcaciaPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.wood.BirchPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.wood.CactusPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.wood.DarkOakPlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.wood.JunglePlate;
-import com.NetherNoah.ParadiseMod.blocks.pressurePlates.wood.SprucePlate;
-import net.minecraft.block.BlockPressurePlate;
+import com.NetherNoah.ParadiseMod.blocks.base.CustomPressurePlate;
+
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 
 public class Plates {
-	
 	//pressure plates
-	public static BlockPressurePlate VoidPlate;
-	public static BlockPressurePlate DirtPlate;
-	public static BlockPressurePlate GrassPlate;
-	public static BedrockPlateCode GlowingObsidianPlate;
-	public static DiamondPlateCode DiamondPlate;
-	public static EmeraldPlateCode EmeraldPlate;
-	public static RubyPlateCode SilverPlate;
-	public static RubyPlateCode RubyPlate;
-	public static BedrockPlateCode BedrockPlate;
-	public static BlockPressurePlate CactusPlate;
-	public static BlockPressurePlate CobblestonePlate;
-	public static BlockPressurePlate MossyPlate;
-	public static BlockPressurePlate AcaciaPlate;
-	public static BlockPressurePlate BirchPlate;
-	public static BlockPressurePlate DarkOakPlate;
-	public static BlockPressurePlate JunglePlate;
-	public static BlockPressurePlate SprucePlate;
-	public static BlockPressurePlate AndesitePlate;
-	public static BlockPressurePlate DioritePlate;
-	public static BlockPressurePlate GranitePlate;
-	public static BlockPressurePlate EndPlate;
-	public static BlockPressurePlate RustyPlate;
+	//grass and dirt
+	public static CustomPressurePlate DirtPlate = new CustomPressurePlate(1,20,4, Material.GROUND);
+	public static CustomPressurePlate GrassPlate = new CustomPressurePlate(1,20,3, Material.GROUND);
+
+	//others
+	public static CustomPressurePlate DiamondPlate = new CustomPressurePlate(0,14,2,Material.IRON);
+	public static CustomPressurePlate EmeraldPlate = new CustomPressurePlate(0,10,2,Material.IRON);
+	public static CustomPressurePlate glassPlate  = new CustomPressurePlate(0,20,5, Material.GLASS);
+	public static CustomPressurePlate RubyPlate = new CustomPressurePlate(0,4,2,Material.IRON);
+	public static CustomPressurePlate RustyPlate = new CustomPressurePlate(0,20,2,Material.IRON);
+	public static CustomPressurePlate SilverPlate = new CustomPressurePlate(0,20,2,Material.IRON);
+
+	//stone variants
+	public static CustomPressurePlate CobblestonePlate = new CustomPressurePlate(1,20,0, Material.ROCK);
+	public static CustomPressurePlate MossyPlate = new CustomPressurePlate(1,20,0, Material.ROCK);
+	public static CustomPressurePlate AndesitePlate = new CustomPressurePlate(1,20,0, Material.ROCK);
+	public static CustomPressurePlate DioritePlate = new CustomPressurePlate(1,20,0, Material.ROCK);
+	public static CustomPressurePlate GranitePlate = new CustomPressurePlate(1,20,0, Material.ROCK);
+	public static CustomPressurePlate EndPlate = new CustomPressurePlate(1,20,0, Material.ROCK);
+	public static CustomPressurePlate redSandstonePlate  = new CustomPressurePlate(1,20,0, Material.ROCK);
+	public static CustomPressurePlate sandstonePlate  = new CustomPressurePlate(1,20,0, Material.ROCK);
+	public static CustomPressurePlate VoidPlate = new CustomPressurePlate(1,20,0, Material.ROCK);
+
+	//unbreakable
+	public static CustomPressurePlate GlowingObsidianPlate = new CustomPressurePlate(2,20,0,Material.ROCK);
+	public static CustomPressurePlate BedrockPlate = new CustomPressurePlate(2,20,0,Material.BARRIER);
+
+	//wooden
+	public static CustomPressurePlate AcaciaPlate = new CustomPressurePlate(0, 30, 1, Material.WOOD);
+	public static CustomPressurePlate BirchPlate = new CustomPressurePlate(0, 30, 1, Material.WOOD);
+	public static CustomPressurePlate CactusPlate = new CustomPressurePlate(0, 30, 1, Material.WOOD);
+	public static CustomPressurePlate DarkOakPlate = new CustomPressurePlate(0, 30, 1, Material.WOOD);
+	public static CustomPressurePlate JunglePlate = new CustomPressurePlate(0, 30, 1, Material.WOOD);
+	public static CustomPressurePlate SprucePlate = new CustomPressurePlate(0, 30, 1,Material.WOOD);
 
 	public static void initAndRegister() {
-		
 		//pressure plates
-		Utils.regBlock(VoidPlate=new VoidPlate());
-		Utils.regBlock(DirtPlate=new DirtPlate());
-		Utils.regBlock(GrassPlate=new GrassPlate());
-		Utils.regBlock(CactusPlate=new CactusPlate());
-		Utils.regBlock(EndPlate=new EndPlate());
-		Utils.regBlock(GlowingObsidianPlate=new GlowingObsidianPlate());
-		Utils.regBlock(DiamondPlate = new DiamondPlate());
-		Utils.regBlock(EmeraldPlate = new EmeraldPlate());
-		Utils.regBlock(SilverPlate = new SilverPlate());
-		Utils.regBlock(RubyPlate = new RubyPlate());
-		Utils.regBlock(BedrockPlate = new BedrockPlate());
-		Utils.regBlock(MossyPlate = new MossyPlate());
-		Utils.regBlock(CobblestonePlate = new CobblestonePlate());
-		Utils.regBlock(AndesitePlate = new AndesitePlate());
-		Utils.regBlock(DioritePlate = new DioritePlate());
-		Utils.regBlock(GranitePlate = new GranitePlate());
-		Utils.regBlock(AcaciaPlate = new AcaciaPlate());
-		Utils.regBlock(BirchPlate = new BirchPlate());
-		Utils.regBlock(DarkOakPlate = new DarkOakPlate());
-		Utils.regBlock(JunglePlate = new JunglePlate());
-		Utils.regBlock(SprucePlate = new SprucePlate());
-		Utils.regBlock(RustyPlate=new RustyPlate());
+		//I have to set these motherf_ckers separately since java complains 
+		//about them being set in the lines below!
+		AcaciaPlate.setHarvestLevel("axe", 0);
+		BirchPlate.setHarvestLevel("axe", 0);
+		CactusPlate.setHarvestLevel("axe", 0);
+		DarkOakPlate.setHarvestLevel("axe", 0);
+		DiamondPlate.setHarvestLevel("pickaxe", 2);
+		EmeraldPlate.setHarvestLevel("pickaxe", 2);
+		GlowingObsidianPlate.setHarvestLevel("pickaxe", 3);
+		JunglePlate.setHarvestLevel("axe", 0);
+		SilverPlate.setHarvestLevel("pickaxe", 2);
+		RubyPlate.setHarvestLevel("pickaxe", 2);
+		RustyPlate.setHarvestLevel("pickaxe", 1);
+		SprucePlate.setHarvestLevel("axe", 0);
 
+		//grass and dirt
+		Utils.regBlock(DirtPlate.setUnlocalizedName("DirtPlate").setRegistryName("dirt_pressure_plate"));
+		Utils.regBlock(GrassPlate.setUnlocalizedName("GrassPlate").setRegistryName("grass_pressure_plate"));
+		
+		//special
+		Utils.regBlock(DiamondPlate.setUnlocalizedName("DiamondPlate").setRegistryName("diamond_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(EmeraldPlate.setUnlocalizedName("EmeraldPlate").setRegistryName("emerald_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(glassPlate.setUnlocalizedName("GlassPlate").setRegistryName("glass_pressure_plate").setHardness(0.1F));
+		Utils.regBlock(SilverPlate.setUnlocalizedName("SilverPlate").setRegistryName("silver_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(RubyPlate.setUnlocalizedName("RubyPlate").setRegistryName("ruby_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(RustyPlate.setUnlocalizedName("RustyPlate").setRegistryName("rusty_pressure_plate").setHardness(0.5F));
+
+		//stone variants
+		Utils.regBlock(MossyPlate.setUnlocalizedName("MossyPlate").setRegistryName("mossy_cobblestone_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(CobblestonePlate.setUnlocalizedName("CobblestonePlate").setRegistryName("cobblestone_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(AndesitePlate.setUnlocalizedName("AndesitePlate").setRegistryName("andesite_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(DioritePlate.setUnlocalizedName("DioritePlate").setRegistryName("diorite_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(GranitePlate.setUnlocalizedName("GranitePlate").setRegistryName("granite_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(EndPlate.setUnlocalizedName("EndPlate").setRegistryName("end_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(sandstonePlate.setUnlocalizedName("SandstonePlate").setRegistryName("sandstone_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(redSandstonePlate.setUnlocalizedName("RedSandstonePlate").setRegistryName("red_sandstone_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(VoidPlate.setUnlocalizedName("VoidPlate").setRegistryName("void_pressure_plate").setHardness(0.5F));
+
+		//unbreakable
+		Utils.regBlock(BedrockPlate.setUnlocalizedName("BedrockPlate").setRegistryName("bedrock_pressure_plate").setHardness(-1F).setResistance(6000000F).setBlockUnbreakable());
+		Utils.regBlock(GlowingObsidianPlate.setUnlocalizedName("GlowingObsidianPlate").setRegistryName("glowing_obsidian_pressure_plate").setHardness(51F).setResistance(2000F).setLightLevel(.46666667F));
+
+		//wooden
+		Utils.regBlock(AcaciaPlate.setUnlocalizedName("AcaciaPlate").setRegistryName("acacia_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(BirchPlate.setUnlocalizedName("BirchPlate").setRegistryName("birch_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(CactusPlate.setUnlocalizedName("CactusPlate").setRegistryName("cactus_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(DarkOakPlate.setUnlocalizedName("DarkOakPlate").setRegistryName("dark_oak_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(JunglePlate.setUnlocalizedName("JunglePlate").setRegistryName("jungle_pressure_plate").setHardness(0.5F));
+		Utils.regBlock(SprucePlate.setUnlocalizedName("SprucePlate").setRegistryName("spruce_pressure_plate").setHardness(0.5F));
 	}
+
+	
 	public static void regRenders() {		
 		Utils.regRender(VoidPlate);
 		Utils.regRender(DirtPlate);
+		Utils.regRender(glassPlate);
 		Utils.regRender(GrassPlate);
 		Utils.regRender(RustyPlate);
 		Utils.regRender(CactusPlate);
@@ -93,6 +109,8 @@ public class Plates {
 		Utils.regRender(SilverPlate);
 		Utils.regRender(DiamondPlate);
 		Utils.regRender(EmeraldPlate);
+		Utils.regRender(sandstonePlate);
+		Utils.regRender(redSandstonePlate);
 		Utils.regRender(RubyPlate);
 		Utils.regRender(BedrockPlate);
 		Utils.regRender(MossyPlate);

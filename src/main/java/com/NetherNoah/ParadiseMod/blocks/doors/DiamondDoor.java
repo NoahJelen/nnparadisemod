@@ -29,12 +29,12 @@ public class DiamondDoor extends BlockDoor {
 	// the item is the door itself
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.ItemDiamondDoor;
+		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.DiamondDoor;
 	}
 	
 	@Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(DoorItems.ItemDiamondDoor);
+        return new ItemStack(DoorItems.DiamondDoor);
     }
 }

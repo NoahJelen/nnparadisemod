@@ -33,7 +33,8 @@ public class TreasureChest extends WorldGenerator implements IWorldGenerator{
 		int blockZ = chunkZ * 16;	
 		int y = getGroundFromAbove(world, blockX, blockZ);
 		BlockPos pos = new BlockPos(blockX, y, blockZ);
-		generate(world, rand, pos);
+		if (y>31)
+			generate(world, rand, pos);
 	}
 
 	public static int getGroundFromAbove(World world, int x, int z)

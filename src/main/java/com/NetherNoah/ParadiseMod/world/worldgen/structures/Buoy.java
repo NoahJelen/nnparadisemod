@@ -34,7 +34,7 @@ public class Buoy extends WorldGenerator implements IWorldGenerator{
 		int blockZ = chunkZ * 16;
 		int y = getGroundFromAbove(world, blockX, blockZ);
 		if (y>60||world.provider.getDimension()==DimensionRegistry.DeepUnderground) {
-		BlockPos pos = new BlockPos(blockX, y, blockZ);
+			BlockPos pos = new BlockPos(blockX, y, blockZ);
 			generate(world, rand, pos);
 		}
 	}

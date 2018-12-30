@@ -45,7 +45,6 @@ public class DVChunkGenerator implements IChunkGenerator
     public NoiseGeneratorOctaves noiseGen5;
     public NoiseGeneratorOctaves noiseGen6;
     private final World world;
-    private final boolean mapFeaturesEnabled;
     private NoiseGeneratorSimplex islandNoise;
     private double[] buffer;
     private Biome[] biomesForGeneration;
@@ -70,25 +69,24 @@ public class DVChunkGenerator implements IChunkGenerator
 	private final WorldGenerator silverGen = new WorldGenMinable(Ores.SilverOreVoid.getDefaultState(), 7,BlockMatcher.forBlock(Misc.VoidStone));
 	private final WorldGenerator RStoneGen = new WorldGenMinable(Misc.RegenerationStone.getDefaultState(), 7,BlockMatcher.forBlock(Misc.VoidStone));
 
-    public DVChunkGenerator(World p_i47241_1_, boolean p_i47241_2_, long p_i47241_3_){
-        this.world = p_i47241_1_;
-        this.mapFeaturesEnabled = p_i47241_2_;
-        this.rand = new Random(p_i47241_3_);
-        this.lperlinNoise1 = new NoiseGeneratorOctaves(this.rand, 16);
-        this.lperlinNoise2 = new NoiseGeneratorOctaves(this.rand, 16);
-        this.perlinNoise1 = new NoiseGeneratorOctaves(this.rand, 8);
-        this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
-        this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
-        this.islandNoise = new NoiseGeneratorSimplex(this.rand);
+    public DVChunkGenerator(World worldIn){
+        world = worldIn;
+        rand = worldIn.rand;
+        lperlinNoise1 = new NoiseGeneratorOctaves(this.rand, 16);
+        lperlinNoise2 = new NoiseGeneratorOctaves(this.rand, 16);
+        perlinNoise1 = new NoiseGeneratorOctaves(this.rand, 8);
+        noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
+        noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
+        islandNoise = new NoiseGeneratorSimplex(this.rand);
 
         InitNoiseGensEvent.ContextEnd ctx = new InitNoiseGensEvent.ContextEnd(lperlinNoise1, lperlinNoise2, perlinNoise1, noiseGen5, noiseGen6, islandNoise);
-        ctx = TerrainGen.getModdedNoiseGenerators(p_i47241_1_, this.rand, ctx);
-        this.lperlinNoise1 = ctx.getLPerlin1();
-        this.lperlinNoise2 = ctx.getLPerlin2();
-        this.perlinNoise1 = ctx.getPerlin();
-        this.noiseGen5 = ctx.getDepth();
-        this.noiseGen6 = ctx.getScale();
-        this.islandNoise = ctx.getIsland();
+        ctx = TerrainGen.getModdedNoiseGenerators(worldIn, this.rand, ctx);
+        lperlinNoise1 = ctx.getLPerlin1();
+        lperlinNoise2 = ctx.getLPerlin2();
+        perlinNoise1 = ctx.getPerlin();
+        noiseGen5 = ctx.getDepth();
+        noiseGen6 = ctx.getScale();
+        islandNoise = ctx.getIsland();
     }
 
     public void setBlocksInChunk(int x, int z, ChunkPrimer primer){
@@ -102,14 +100,14 @@ public class DVChunkGenerator implements IChunkGenerator
             for (int j1 = 0; j1 < 2; ++j1){
                 for (int k1 = 0; k1 < 32; ++k1){
                     double d0 = 0.25D;
-                    double d1 = this.buffer[((i1 + 0) * 3 + j1 + 0) * 33 + k1 + 0];
-                    double d2 = this.buffer[((i1 + 0) * 3 + j1 + 1) * 33 + k1 + 0];
-                    double d3 = this.buffer[((i1 + 1) * 3 + j1 + 0) * 33 + k1 + 0];
-                    double d4 = this.buffer[((i1 + 1) * 3 + j1 + 1) * 33 + k1 + 0];
-                    double d5 = (this.buffer[((i1 + 0) * 3 + j1 + 0) * 33 + k1 + 1] - d1) * 0.25D;
-                    double d6 = (this.buffer[((i1 + 0) * 3 + j1 + 1) * 33 + k1 + 1] - d2) * 0.25D;
-                    double d7 = (this.buffer[((i1 + 1) * 3 + j1 + 0) * 33 + k1 + 1] - d3) * 0.25D;
-                    double d8 = (this.buffer[((i1 + 1) * 3 + j1 + 1) * 33 + k1 + 1] - d4) * 0.25D;
+                    double d1 = buffer[((i1 + 0) * 3 + j1 + 0) * 33 + k1 + 0];
+                    double d2 = buffer[((i1 + 0) * 3 + j1 + 1) * 33 + k1 + 0];
+                    double d3 = buffer[((i1 + 1) * 3 + j1 + 0) * 33 + k1 + 0];
+                    double d4 = buffer[((i1 + 1) * 3 + j1 + 1) * 33 + k1 + 0];
+                    double d5 = (buffer[((i1 + 0) * 3 + j1 + 0) * 33 + k1 + 1] - d1) * 0.25D;
+                    double d6 = (buffer[((i1 + 0) * 3 + j1 + 1) * 33 + k1 + 1] - d2) * 0.25D;
+                    double d7 = (buffer[((i1 + 1) * 3 + j1 + 0) * 33 + k1 + 1] - d3) * 0.25D;
+                    double d8 = (buffer[((i1 + 1) * 3 + j1 + 1) * 33 + k1 + 1] - d4) * 0.25D;
 
                     for (int l1 = 0; l1 < 4; ++l1){
                         double d9 = 0.125D;
@@ -189,12 +187,12 @@ public class DVChunkGenerator implements IChunkGenerator
     @Override
 	public Chunk generateChunk(int x, int z)
     {
-        this.chunkX = x; this.chunkZ = z;
-        this.rand.setSeed(x * 341873128712L + z * 132897987541L);
+        chunkX = x; this.chunkZ = z;
+        rand.setSeed(x * 341873128712L + z * 132897987541L);
         ChunkPrimer chunkprimer = new ChunkPrimer();
-        this.biomesForGeneration = this.world.getBiomeProvider().getBiomes(this.biomesForGeneration, x * 16, z * 16, 16, 16);
-        this.setBlocksInChunk(x, z, chunkprimer);
-        this.buildSurfaces(chunkprimer);
+        biomesForGeneration = this.world.getBiomeProvider().getBiomes(this.biomesForGeneration, x * 16, z * 16, 16, 16);
+        setBlocksInChunk(x, z, chunkprimer);
+        buildSurfaces(chunkprimer);
 
         Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
         byte[] abyte = chunk.getBiomeArray();

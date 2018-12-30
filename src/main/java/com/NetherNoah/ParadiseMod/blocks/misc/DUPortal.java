@@ -117,6 +117,7 @@ public class DUPortal extends Block{
 	public IBlockState getStateFromMeta(int meta) {
 		return getDefaultState().withProperty(AXIS, (meta & 3) == 2 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
 	}
+
 	public boolean trySpawnPortal(World worldIn, BlockPos pos) {
 		DUPortal.Size blockportal$size = new DUPortal.Size(worldIn, pos, EnumFacing.Axis.X);	
 		if(blockportal$size.isValid() && blockportal$size.portalBlockCount == 0) {
@@ -138,6 +139,7 @@ public class DUPortal extends Block{
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_)
     {
     }
+
 	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn) {
 		EnumFacing.Axis enumfacing$axis = state.getValue(AXIS);
 		if(enumfacing$axis == EnumFacing.Axis.X) {
@@ -153,14 +155,17 @@ public class DUPortal extends Block{
 			}
 		}
 	}
+
 	@Override
 	public int quantityDropped(Random random) {
 		return 1;
 	}
+
 	@Override
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
-		if(!entityIn.isRiding() && !entityIn.isBeingRidden() && entityIn.isNonBoss() && entityIn instanceof EntityPlayerMP) {
+		if(!entityIn.isRiding() && !entityIn.isBeingRidden() && entityIn.isNonBoss()&& entityIn instanceof EntityPlayerMP) {
 			EntityPlayerMP thePlayer = (EntityPlayerMP)entityIn;
+			
 			if(thePlayer.timeUntilPortal > 0) {
 				thePlayer.timeUntilPortal = 10;
 			}
@@ -177,11 +182,13 @@ public class DUPortal extends Block{
 			}
 		}
 	}
+
 	@SideOnly(Side.CLIENT)
 	@Override
 	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.TRANSLUCENT;
 	}
+
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
@@ -239,11 +246,11 @@ public class DUPortal extends Block{
         private BlockPos bottomLeft;
         private int height;
         private int width;
-        public Size(World worldIn, BlockPos p_i45694_2_, EnumFacing.Axis p_i45694_3_)
+        public Size(World worldIn, BlockPos position, EnumFacing.Axis axisIn)
         {
             world = worldIn;
-            axis = p_i45694_3_;
-            if (p_i45694_3_ == EnumFacing.Axis.X)
+            axis = axisIn;
+            if (axisIn == EnumFacing.Axis.X)
             {
                 leftDir = EnumFacing.EAST;
                 rightDir = EnumFacing.WEST;
@@ -253,14 +260,14 @@ public class DUPortal extends Block{
                 leftDir = EnumFacing.NORTH;
                 rightDir = EnumFacing.SOUTH;
             }
-            for (BlockPos blockpos = p_i45694_2_; p_i45694_2_.getY() > blockpos.getY() - 21 && p_i45694_2_.getY() > 0 && isEmptyBlock(worldIn.getBlockState(p_i45694_2_.down()).getBlock()); p_i45694_2_ = p_i45694_2_.down())
+            for (BlockPos blockpos = position; position.getY() > blockpos.getY() - 21 && position.getY() > 0 && isEmptyBlock(worldIn.getBlockState(position.down()).getBlock()); position = position.down())
             {
                 ;
             }
-            int i = getDistanceUntilEdge(p_i45694_2_, leftDir) - 1;
+            int i = getDistanceUntilEdge(position, leftDir) - 1;
             if (i >= 0)
             {
-                bottomLeft = p_i45694_2_.offset(leftDir, i);
+                bottomLeft = position.offset(leftDir, i);
                 width = getDistanceUntilEdge(bottomLeft, rightDir);
                 if (width < 2 || width > 21)
                 {
@@ -273,20 +280,20 @@ public class DUPortal extends Block{
                 height = calculatePortalHeight();
             }
         }
-        protected int getDistanceUntilEdge(BlockPos p_180120_1_, EnumFacing p_180120_2_)
+        protected int getDistanceUntilEdge(BlockPos position, EnumFacing p_180120_2_)
         {
             int i;
 
             for (i = 0; i < 22; ++i)
             {
-                BlockPos blockpos = p_180120_1_.offset(p_180120_2_, i);
+                BlockPos blockpos = position.offset(p_180120_2_, i);
 
                 if (!isEmptyBlock(world.getBlockState(blockpos).getBlock()) || world.getBlockState(blockpos.down()).getBlock() != Blocks.BOOKSHELF)
                 {
                     break;
                 }
             }
-            Block block = world.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
+            Block block = world.getBlockState(position.offset(p_180120_2_, i)).getBlock();
             return block == Ores.blazeBlock ? i : 0;
         }
         public int getHeight()
@@ -301,7 +308,7 @@ public class DUPortal extends Block{
         protected int calculatePortalHeight()
         {
             label24:
-            for (height = 0; height < 21; ++height)
+            for (height = 0; height < 21; height++)
             {
                 for (int i = 0; i < width; ++i)
                 {
@@ -311,9 +318,9 @@ public class DUPortal extends Block{
                     {
                         break label24;
                     }
-                    if (block == Misc.DVPortal)
+                    if (block == Misc.DUPortal)
                     {
-                        ++portalBlockCount;
+                        portalBlockCount++;
                     }
                     if (i == 0)
                     {
@@ -363,12 +370,12 @@ public class DUPortal extends Block{
         }
         public void placePortalBlocks()
         {
-            for (int i = 0; i < width; ++i)
+            for (int i = 0; i < width; i++)
             {
                 BlockPos blockpos = bottomLeft.offset(rightDir, i);
-                for (int j = 0; j < height; ++j)
+                for (int j = 0; j < height; j++)
                 {
-                    world.setBlockState(blockpos.up(j), Misc.DVPortal.getDefaultState().withProperty(BlockPortal.AXIS, axis), 2);
+                    world.setBlockState(blockpos.up(j), Misc.DUPortal.getDefaultState().withProperty(BlockPortal.AXIS, axis), 2);
                 }
             }
         }

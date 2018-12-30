@@ -7,7 +7,7 @@ import net.minecraft.item.ItemDoor;
 
 public class ItemGraniteDoor extends ItemDoor {
 	public ItemGraniteDoor() {
-		super(Doors.BlockGraniteDoor);
+		super(Doors.GraniteDoor);
 		setUnlocalizedName("ItemGraniteDoor");
 		setRegistryName("granite_door");
 		setCreativeTab(CreativeTabs.REDSTONE);

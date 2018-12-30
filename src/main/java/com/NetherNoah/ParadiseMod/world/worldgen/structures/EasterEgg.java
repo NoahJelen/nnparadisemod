@@ -3,9 +3,17 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.Utils;
 import com.NetherNoah.ParadiseMod.config.ModConfig;
+import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockAir;
+import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockSnow;
+import net.minecraft.block.BlockStoneBrick;
+import net.minecraft.block.BlockStoneBrick.EnumType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
@@ -23,6 +31,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.TemplateManager;
+import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class EasterEgg extends WorldGenerator implements IWorldGenerator{
@@ -37,7 +46,8 @@ public class EasterEgg extends WorldGenerator implements IWorldGenerator{
 		BlockPos pos = new BlockPos(blockX, y, blockZ);
 		if (isUnderground==true)
 			pos = new BlockPos(blockX, 30, blockZ);
-		generate(world, rand, pos,isUnderground);
+		if (world.provider.getDimension()==0)
+			generate(world, rand, pos,isUnderground);
 	}
 
 	public static int getGroundFromAbove(World world, int x, int z)
@@ -72,6 +82,81 @@ public class EasterEgg extends WorldGenerator implements IWorldGenerator{
 					.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 			template.getDataBlocks(position, placementsettings);
 			template.addBlocksToWorld(world, position.add(0, 0, 0), placementsettings);
+			
+			if (isUnderground)
+				return true;
+			
+			//generate supports if needed
+			int x=position.getX();
+			int y=position.getY();
+			int z=position.getZ();
+			Block blockToReplace = world.getBlockState(new BlockPos(x,y-1,z)).getBlock();
+
+			//(0,0)
+			while ((blockToReplace==Blocks.WATER
+					  ||blockToReplace==Blocks.COBBLESTONE
+					  ||blockToReplace==Blocks.FLOWING_WATER
+					  ||blockToReplace instanceof BlockAir
+					  ||blockToReplace instanceof BlockBush
+					  ||blockToReplace instanceof BlockSnow
+					  ||blockToReplace instanceof BlockFluidClassic
+					  ||blockToReplace instanceof BlockLeaves)
+					  &&y>0) {
+				world.setBlockState(new BlockPos(x,y,z), Utils.getRandomBrick());
+				blockToReplace = world.getBlockState(new BlockPos(x,y-1,z)).getBlock();
+				y--;
+			}
+			y=position.getY();
+
+			//(7,0)
+			blockToReplace = world.getBlockState(new BlockPos(x+6,y-1,z)).getBlock();
+			while ((blockToReplace==Blocks.WATER
+					  ||blockToReplace==Blocks.COBBLESTONE
+					  ||blockToReplace==Blocks.FLOWING_WATER
+					  ||blockToReplace instanceof BlockAir
+					  ||blockToReplace instanceof BlockBush
+					  ||blockToReplace instanceof BlockSnow
+					  ||blockToReplace instanceof BlockFluidClassic
+					  ||blockToReplace instanceof BlockLeaves)
+					  &&y>0) {
+				world.setBlockState(new BlockPos(x+6,y,z), Utils.getRandomBrick());
+				blockToReplace = world.getBlockState(new BlockPos(x+6,y-1,z)).getBlock();
+				y--;
+			}
+			y=position.getY();
+
+			//(0,17)
+			blockToReplace = world.getBlockState(new BlockPos(x,y-1,z+16)).getBlock();
+			while ((blockToReplace==Blocks.WATER
+					  ||blockToReplace==Blocks.COBBLESTONE
+					  ||blockToReplace==Blocks.FLOWING_WATER
+					  ||blockToReplace instanceof BlockAir
+					  ||blockToReplace instanceof BlockBush
+					  ||blockToReplace instanceof BlockSnow
+					  ||blockToReplace instanceof BlockFluidClassic
+					  ||blockToReplace instanceof BlockLeaves)
+					  &&y>0) {
+				world.setBlockState(new BlockPos(x,y,z+16), Utils.getRandomBrick());
+				blockToReplace = world.getBlockState(new BlockPos(x,y-1,z+16)).getBlock();
+				y--;
+			}
+			y=position.getY();
+
+			//(7,17)
+			blockToReplace = world.getBlockState(new BlockPos(x+6,y-1,z+16)).getBlock();
+			while ((blockToReplace==Blocks.WATER
+					  ||blockToReplace==Blocks.COBBLESTONE
+					  ||blockToReplace==Blocks.FLOWING_WATER
+					  ||blockToReplace instanceof BlockAir
+					  ||blockToReplace instanceof BlockBush
+					  ||blockToReplace instanceof BlockSnow
+					  ||blockToReplace instanceof BlockFluidClassic
+					  ||blockToReplace instanceof BlockLeaves)
+					  &&y>0) {
+				world.setBlockState(new BlockPos(x+6,y,z+16), Utils.getRandomBrick());
+				blockToReplace = world.getBlockState(new BlockPos(x+6,y-1,z+16)).getBlock();
+				y--;
+			}
 			return true;
 		}
 		return false;
@@ -79,7 +164,6 @@ public class EasterEgg extends WorldGenerator implements IWorldGenerator{
 
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

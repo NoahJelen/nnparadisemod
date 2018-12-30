@@ -29,11 +29,11 @@ public class SilverDoor extends BlockDoor {
 	@Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(DoorItems.ItemSilverDoor);
+        return new ItemStack(DoorItems.SilverDoor);
     }
 	// the item is the door itself
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.ItemSilverDoor;
+		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.SilverDoor;
 	}
 }

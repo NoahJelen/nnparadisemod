@@ -27,14 +27,14 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 public class LiquidRedstone {
-	private static ModelResourceLocation lr_location = new ModelResourceLocation(Reference.MOD_ID + ":" + BlockLiquidRedstone.name, "fluid");
+	//private static ModelResourceLocation lr_location = new ModelResourceLocation(Reference.MOD_ID + ":" + BlockLiquidRedstone.name, "fluid");
 	public static void register() {
 		FluidRegistry.registerFluid(FluidLiquidRedstone.instance);
 		ForgeRegistries.BLOCKS.register(BlockLiquidRedstone.instance);
 		ModelLoader.setCustomStateMapper(BlockLiquidRedstone.instance, new StateMapperBase() {
 			@Override
 			protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
-				return lr_location;
+				return new ModelResourceLocation(Reference.MOD_ID + ":" + BlockLiquidRedstone.name, "fluid");
 			}
 		});
 	}

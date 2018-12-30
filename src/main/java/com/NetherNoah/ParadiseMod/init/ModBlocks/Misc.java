@@ -1,39 +1,19 @@
 package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import com.NetherNoah.ParadiseMod.Utils;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.MossyFurnaceCode;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.VoidFurnaceCode;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.xmasTree;
-import com.NetherNoah.ParadiseMod.blocks.formations.icicle;
-import com.NetherNoah.ParadiseMod.blocks.formations.mossyStoneFormation;
-import com.NetherNoah.ParadiseMod.blocks.formations.netherrackFormation;
-import com.NetherNoah.ParadiseMod.blocks.formations.sandstoneFormation;
-import com.NetherNoah.ParadiseMod.blocks.formations.stoneFormation;
-import com.NetherNoah.ParadiseMod.blocks.misc.BlueRose;
+import com.NetherNoah.ParadiseMod.blocks.base.BasicBlock;
+import com.NetherNoah.ParadiseMod.blocks.base.CaveFormation;
+import com.NetherNoah.ParadiseMod.blocks.base.CustomGlass;
+import com.NetherNoah.ParadiseMod.blocks.base.CustomPane;
+import com.NetherNoah.ParadiseMod.blocks.base.CustomPlant;
+import com.NetherNoah.ParadiseMod.blocks.base.MossyFurnaceBase;
+import com.NetherNoah.ParadiseMod.blocks.base.VoidFurnaceBase;
 import com.NetherNoah.ParadiseMod.blocks.misc.CactusBookshelf;
-import com.NetherNoah.ParadiseMod.blocks.misc.CompressedCactus;
 import com.NetherNoah.ParadiseMod.blocks.misc.DUPortal;
 import com.NetherNoah.ParadiseMod.blocks.misc.DVPortal;
-import com.NetherNoah.ParadiseMod.blocks.misc.GoldBars;
-import com.NetherNoah.ParadiseMod.blocks.misc.MossyFurnace;
-import com.NetherNoah.ParadiseMod.blocks.misc.MossyFurnaceLit;
-import com.NetherNoah.ParadiseMod.blocks.misc.PolishedVoidStone;
 import com.NetherNoah.ParadiseMod.blocks.misc.RegenerationStone;
-import com.NetherNoah.ParadiseMod.blocks.misc.Rose;
-import com.NetherNoah.ParadiseMod.blocks.misc.RustyIronBars;
-import com.NetherNoah.ParadiseMod.blocks.misc.SilverBars;
-import com.NetherNoah.ParadiseMod.blocks.misc.Stonecutter;
-import com.NetherNoah.ParadiseMod.blocks.misc.VoidBricks;
-import com.NetherNoah.ParadiseMod.blocks.misc.VoidFurnace;
-import com.NetherNoah.ParadiseMod.blocks.misc.VoidFurnaceLit;
-import com.NetherNoah.ParadiseMod.blocks.misc.VoidStone;
-import com.NetherNoah.ParadiseMod.blocks.misc.bulletproofGlass;
 import com.NetherNoah.ParadiseMod.blocks.misc.emeraldRail;
-import com.NetherNoah.ParadiseMod.blocks.misc.glowingIce;
-import com.NetherNoah.ParadiseMod.blocks.misc.glowingObsidian;
 import com.NetherNoah.ParadiseMod.blocks.misc.prismarineCrystalBlock;
-import com.NetherNoah.ParadiseMod.blocks.misc.soulGlass;
-import com.NetherNoah.ParadiseMod.blocks.misc.soulGlassPane;
 import com.NetherNoah.ParadiseMod.blocks.misc.undergroundAir;
 import com.NetherNoah.ParadiseMod.blocks.redstone.GoldHopper;
 import com.NetherNoah.ParadiseMod.blocks.redstone.SilverHopper;
@@ -48,8 +28,6 @@ import com.NetherNoah.ParadiseMod.blocks.xmas.SantaHat;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockBreakable;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockHopper;
 import net.minecraft.block.BlockLever;
 import net.minecraft.block.BlockOldLeaf;
@@ -57,135 +35,188 @@ import net.minecraft.block.BlockPane;
 import net.minecraft.block.BlockPumpkin;
 import net.minecraft.block.BlockRail;
 import net.minecraft.block.BlockRailPowered;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class Misc {
 	//cave formations
-	public static BlockDirectional icicle;
-	public static BlockDirectional stoneFormation;
-	public static BlockDirectional mossyStoneFormation;
-	public static BlockDirectional sandstoneFormation;
-	public static BlockDirectional netherrackFormation;
+	public static CaveFormation icicle = new CaveFormation(SoundType.GLASS);
+	public static CaveFormation mossyStoneFormation = new CaveFormation(SoundType.STONE);
+	public static CaveFormation netherrackFormation = new CaveFormation(SoundType.STONE);
+	public static CaveFormation sandstoneFormation = new CaveFormation(SoundType.STONE);
+	public static CaveFormation stoneFormation = new CaveFormation(SoundType.STONE);
 
-	public static BlockBreakable bulletproofGlass;
-	public static BlockBreakable prismarineCrystalBlock;
-	public static BlockAir undergroundAir;
-	public static Block VoidBricks;
-	public static Block RegenerationStone;
-	public static Block PolishedVoidStone;
-	public static Block VoidStone;
-	public static BlockBush BlueRose;
-	public static BlockBush Rose;
-	public static Block Stonecutter;
-	public static Block CompressedCactus;
-	public static Block CactusBookshelf;
-	public static BlockRailPowered emeraldRailPowered;
-	public static BlockRail emeraldRail;
-	public static BlockLever mossyLever;
-	public static DUPortal DUPortal;
-	public static DVPortal DVPortal;
-	public static Block glowingObsidian;
-	public static Block Present;
-	public static xmasTree ChristmasSapling;
-	public static BlockPane GoldBars;
+	//christmas stuff
+	public static ChristmasSapling ChristmasSapling;
 	public static BlockOldLeaf ChristmasLeaves;
 	public static Block ChristmasTopper;
+	public static Block Present;
 	public static BlockPumpkin SantaHat;
-	public static BlockBreakable soulGlass;
-	public static BlockPane soulGlassPane;
-	public static BlockPane SilverBars;
-	public static BlockPane RustyIronBars;
-	public static BlockHopper SilverHopper;
+
+	//deep void blocks
+	public static Block PolishedVoidStone = new Block(Material.ROCK);
+	public static Block RegenerationStone;
+	public static Block VoidBricks = new Block(Material.ROCK);
+	public static Block VoidStone = new Block(Material.ROCK);
+
+	//flowers
+	public static CustomPlant BlueRose = new CustomPlant();
+	public static CustomPlant Rose = new CustomPlant();
+
+	//furnaces
+	public static MossyFurnaceBase MossyFurnace = new MossyFurnaceBase(false);
+	public static MossyFurnaceBase MossyFurnaceLit = new MossyFurnaceBase(true);
+	public static VoidFurnaceBase VoidFurnace = new VoidFurnaceBase(false);
+	public static VoidFurnaceBase VoidFurnaceLit = new VoidFurnaceBase(true);
+
+	//glass
+	public static BlockBreakable bulletproofGlass = new CustomGlass();
+	public static CustomPane bulletproofGlassPane = new CustomPane(Material.GLASS, false, SoundType.GLASS);
+	public static BlockBreakable soulGlass = new CustomGlass();
+	public static CustomPane soulGlassPane = new CustomPane(Material.GLASS, false, SoundType.GLASS);
+
+	//hoppers
 	public static BlockHopper GoldHopper;
-	public static MossyFurnaceCode MossyFurnace;
-	public static MossyFurnaceCode MossyFurnaceLit;
-	public static VoidFurnaceCode VoidFurnace;
-	public static VoidFurnaceCode VoidFurnaceLit;
-	public static Block glowingIce;
+	public static BlockHopper SilverHopper;
+
+	//metal bars
+	public static CustomPane GoldBars = new CustomPane(Material.IRON, true, SoundType.METAL);
+	public static CustomPane RustyIronBars = new CustomPane(Material.IRON, true, SoundType.METAL);
+	public static CustomPane SilverBars = new CustomPane(Material.IRON, true, SoundType.METAL);
+
+	//others
+	public static Block CactusBookshelf;
+	public static BasicBlock CompressedCactus = new BasicBlock(Material.WOOD, SoundType.WOOD, false);
+	public static BasicBlock glowingIce = new BasicBlock(Material.ICE, SoundType.GLASS,false);
+	public static BasicBlock glowingObsidian = new BasicBlock(Material.ROCK,SoundType.STONE,true);
+	public static BlockLever mossyLever;
+	public static BlockBreakable prismarineCrystalBlock;
+	public static Block Stonecutter = new Block(Material.ROCK);
+	public static BlockAir undergroundAir;
+
+	//portal blocks
+	public static DUPortal DUPortal;
+	public static DVPortal DVPortal;
+	
+	//rails
+	public static BlockRail emeraldRail;
+	public static BlockRailPowered emeraldRailPowered;
 
 	public static void initAndRegister() {
-		Utils.regBlock(icicle=new icicle());
-		Utils.regBlock(stoneFormation=new stoneFormation());
-		Utils.regBlock(mossyStoneFormation=new mossyStoneFormation());
-		Utils.regBlock(sandstoneFormation=new sandstoneFormation());
-		Utils.regBlock(netherrackFormation=new netherrackFormation());
-
-		Utils.regBlock(bulletproofGlass=new bulletproofGlass());
-		Utils.regBlock(prismarineCrystalBlock=new prismarineCrystalBlock());
-		Utils.regBlock(RegenerationStone=new RegenerationStone());
-		Utils.regBlock(VoidBricks=new VoidBricks());
-		Utils.regBlock(PolishedVoidStone=new PolishedVoidStone());
-		Utils.regBlock(VoidStone=new VoidStone());
-		Utils.regBlock(DVPortal=new DVPortal());
-		Utils.regBlock(BlueRose=new BlueRose());
-		Utils.regBlock(Rose=new Rose());
-		Utils.regBlock(Stonecutter=new Stonecutter());
-		Utils.regBlock(RustyIronBars=new RustyIronBars());
-		Utils.regBlock(CompressedCactus=new CompressedCactus());
-		Utils.regBlock(CactusBookshelf=new CactusBookshelf());
-		Utils.regBlock(SilverHopper=new SilverHopper());
-		Utils.regBlock(SilverBars=new SilverBars());
-		Utils.regBlock(emeraldRailPowered=new emeraldRailPowered());
-		Utils.regBlock(emeraldRail=new emeraldRail());
-		Utils.regBlock(mossyLever=new mossyLever());
-		Utils.regBlock(DUPortal=new DUPortal());
-		Utils.regBlock(glowingObsidian = new glowingObsidian());
-		Utils.regBlock(soulGlassPane = new soulGlassPane());
-		Utils.regBlock(soulGlass = new soulGlass());
-		Utils.regBlock(Present = new Present());
-		Utils.regBlock(SantaHat = new SantaHat());
+		//cave formations
+		Utils.regBlock(icicle.setUnlocalizedName("Icicle").setRegistryName("icicle"));
+		Utils.regBlock(mossyStoneFormation.setUnlocalizedName("mossyStoneFormation").setRegistryName("mossy_stone_formation"));
+		Utils.regBlock(netherrackFormation.setUnlocalizedName("netherrackFormation").setRegistryName("netherrack_formation"));
+		Utils.regBlock(sandstoneFormation.setUnlocalizedName("sandstoneFormation").setRegistryName("sandstone_formation"));
+		Utils.regBlock(stoneFormation.setUnlocalizedName("stoneFormation").setRegistryName("stone_formation"));
+				
+		//christmas stuff
+		Utils.regBlock(ChristmasLeaves = new ChristmasLeaves());
 		Utils.regBlock(ChristmasSapling = new ChristmasSapling());
 		Utils.regBlock(ChristmasTopper = new ChristmasTopper());
-		Utils.regBlock(GoldBars = new GoldBars());
-		Utils.regBlock(ChristmasLeaves = new ChristmasLeaves());
-		Utils.regBlock(GoldHopper = new GoldHopper());
-		Utils.regBlock(MossyFurnace = new MossyFurnace());
-		Utils.regBlock(VoidFurnace=new VoidFurnace());
-		Utils.regBlock(glowingIce=new glowingIce());
-		ForgeRegistries.BLOCKS.register(undergroundAir=new undergroundAir());
-		ForgeRegistries.BLOCKS.register(MossyFurnaceLit = new MossyFurnaceLit());
-		ForgeRegistries.BLOCKS.register(VoidFurnaceLit=new VoidFurnaceLit());
+		Utils.regBlock(Present = new Present());
+		Utils.regBlock(SantaHat = new SantaHat());
+
+		//deep void blocks
+		Utils.regBlock(PolishedVoidStone.setUnlocalizedName("PolishedVoidStone").setRegistryName("polished_void_stone").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(RegenerationStone=new RegenerationStone());
+		Utils.regBlock(VoidBricks.setUnlocalizedName("VoidBricks").setRegistryName("void_bricks").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(VoidStone.setUnlocalizedName("VoidStone").setRegistryName("void_stone").setHardness(5F).setResistance(15F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+
+		//flowers
+		Utils.regBlock(BlueRose.setUnlocalizedName("BlueRose").setRegistryName("blue_rose"));
+		Utils.regBlock(Rose.setUnlocalizedName("Rose").setRegistryName("rose"));
+
+		//furnaces
+		Utils.regBlock(MossyFurnace.setUnlocalizedName("MossyFurnace").setRegistryName("mossy_furnace").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.DECORATIONS));
+		ForgeRegistries.BLOCKS.register(MossyFurnaceLit.setUnlocalizedName("MossyFurnaceLit").setRegistryName("lit_mossy_furnace").setHardness(5F).setResistance(10F));		
+		Utils.regBlock(VoidFurnace.setUnlocalizedName("VoidFurnace").setRegistryName("void_furnace").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.DECORATIONS));
+		ForgeRegistries.BLOCKS.register(VoidFurnaceLit.setUnlocalizedName("VoidFurnaceLit").setRegistryName("lit_void_furnace").setHardness(5F).setResistance(10F));
 		
+		//glass
+		soulGlassPane.setDefaultSlipperiness(1F);
+		soulGlass.setDefaultSlipperiness(1F);
+
+		Utils.regBlock(bulletproofGlass.setUnlocalizedName("bulletProofGlass").setRegistryName("bulletproof_glass").setHardness(.5F).setResistance(2000F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(bulletproofGlassPane.setUnlocalizedName("bulletproofGlassPane").setRegistryName("bulletproof_glass_pane").setHardness(.5F).setResistance(2000F).setCreativeTab(CreativeTabs.DECORATIONS));
+		Utils.regBlock(soulGlassPane.setUnlocalizedName("soulGlassPane").setRegistryName("soul_glass_pane").setHardness(.5F).setResistance(1F).setLightLevel(1F));
+		Utils.regBlock(soulGlass.setUnlocalizedName("soulGlass").setRegistryName("soul_glass").setHardness(.5F).setResistance(1F).setLightLevel(1F));
+
+		//hoppers
+		Utils.regBlock(SilverHopper=new SilverHopper());
+		Utils.regBlock(GoldHopper = new GoldHopper());
+
+		//metal bars
+		GoldBars.setHarvestLevel("pickaxe", 2);
+		RustyIronBars.setHarvestLevel("pickaxe", 0);
+		SilverBars.setHarvestLevel("pickaxe", 2);
+
+		Utils.regBlock(GoldBars.setUnlocalizedName("GoldBars").setRegistryName("gold_bars").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.DECORATIONS));
+		Utils.regBlock(RustyIronBars.setUnlocalizedName("RustyIronBars").setRegistryName("rusty_iron_bars").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.DECORATIONS));
+		Utils.regBlock(SilverBars.setUnlocalizedName("SilverBars").setRegistryName("silver_bars").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.DECORATIONS));
+
+		//others
+		glowingIce.setDefaultSlipperiness(1F);
+		glowingObsidian.setHarvestLevel("pickaxe",3);
+
+		Utils.regBlock(CactusBookshelf=new CactusBookshelf());
+		Utils.regBlock(CompressedCactus.setUnlocalizedName("CompressedCactus").setRegistryName("compressed_cactus").setHardness(2.5F).setResistance(5F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(glowingIce.setUnlocalizedName("glowingIce").setRegistryName("glowing_ice").setHardness(.2F).setResistance(2F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(.46666667F));
+		Utils.regBlock(glowingObsidian.setUnlocalizedName("glowingObsidian").setRegistryName("glowing_obsidian").setHardness(51F).setResistance(2000F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(.46666667F));
+		Utils.regBlock(mossyLever=new mossyLever());
+		Utils.regBlock(prismarineCrystalBlock=new prismarineCrystalBlock());
+		Utils.regBlock(Stonecutter.setUnlocalizedName("Stonecutter").setRegistryName("stonecutter").setHardness(5F).setResistance(5.8333333333F).setCreativeTab(CreativeTabs.DECORATIONS));
+		ForgeRegistries.BLOCKS.register(undergroundAir=new undergroundAir());
+
+		//portal blocks
+		Utils.regBlock(DUPortal=new DUPortal());
+		Utils.regBlock(DVPortal=new DVPortal());
+
+		//rails
+		Utils.regBlock(emeraldRail=new emeraldRail());
+		Utils.regBlock(emeraldRailPowered=new emeraldRailPowered());
 	}
 
 	public static void regRenders() {
-		Utils.regRender(icicle);
-		Utils.regRender(stoneFormation);
-		Utils.regRender(mossyStoneFormation);
-		Utils.regRender(sandstoneFormation);
-		Utils.regRender(netherrackFormation);
-
-		Utils.regRender(bulletproofGlass);
-		Utils.regRender(prismarineCrystalBlock);
-		Utils.regRender(glowingIce);
-		Utils.regRender(RegenerationStone);
-		Utils.regRender(VoidBricks);
-		Utils.regRender(PolishedVoidStone);
-		Utils.regRender(VoidStone);
-		Utils.regRender(DVPortal);
 		Utils.regRender(BlueRose);
-		Utils.regRender(Rose);
-		Utils.regRender(Stonecutter);
-		Utils.regRender(RustyIronBars);
-		Utils.regRender(CompressedCactus);
+		Utils.regRender(bulletproofGlass);
+		Utils.regRender(bulletproofGlassPane);
 		Utils.regRender(CactusBookshelf);
-		Utils.regRender(SilverHopper);
-		Utils.regRender(SilverBars);
+		Utils.regRender(ChristmasLeaves);
+		Utils.regRender(ChristmasTopper);
+		Utils.regRender(ChristmasSapling);
+		Utils.regRender(CompressedCactus);
+		Utils.regRender(DUPortal);
+		Utils.regRender(DVPortal);
 		Utils.regRender(emeraldRailPowered);
 		Utils.regRender(emeraldRail);
-		Utils.regRender(mossyLever);
-		Utils.regRender(DUPortal);
+		Utils.regRender(glowingIce);
 		Utils.regRender(glowingObsidian);
-		Utils.regRender(soulGlassPane);
-		Utils.regRender(soulGlass);
-		Utils.regRender(Present);
-		Utils.regRender(SantaHat);
-		Utils.regRender(ChristmasSapling);
-		Utils.regRender(ChristmasTopper);
 		Utils.regRender(GoldBars);
-		Utils.regRender(ChristmasLeaves);
 		Utils.regRender(GoldHopper);
+		Utils.regRender(icicle);
 		Utils.regRender(MossyFurnace);
+		Utils.regRender(mossyLever);
+		Utils.regRender(mossyStoneFormation);
+		Utils.regRender(netherrackFormation);
+		Utils.regRender(PolishedVoidStone);
+		Utils.regRender(Present);
+		Utils.regRender(prismarineCrystalBlock);
+		Utils.regRender(RegenerationStone);
+		Utils.regRender(Rose);
+		Utils.regRender(RustyIronBars);
+		Utils.regRender(sandstoneFormation);
+		Utils.regRender(SantaHat);
+		Utils.regRender(SilverBars);
+		Utils.regRender(SilverHopper);
+		Utils.regRender(soulGlass);
+		Utils.regRender(soulGlassPane);
+		Utils.regRender(Stonecutter);
+		Utils.regRender(stoneFormation);
+		Utils.regRender(VoidBricks);
 		Utils.regRender(VoidFurnace);
+		Utils.regRender(VoidStone);
 	}
 }

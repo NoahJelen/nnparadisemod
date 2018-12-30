@@ -7,7 +7,7 @@ import net.minecraft.item.ItemDoor;
 
 public class ItemCactusDoor extends ItemDoor {
 	public ItemCactusDoor() {
-		super(Doors.BlockCactusDoor);
+		super(Doors.CactusDoor);
 		setUnlocalizedName("ItemCactusDoor");
 		setRegistryName("cactus_door");
 		setCreativeTab(CreativeTabs.REDSTONE);

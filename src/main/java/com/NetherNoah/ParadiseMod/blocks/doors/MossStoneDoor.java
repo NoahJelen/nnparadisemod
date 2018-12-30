@@ -28,12 +28,12 @@ public class MossStoneDoor extends BlockDoor {
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-      return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.ItemMossStoneDoor;
+      return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.MossStoneDoor;
     }
 	
 	@Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(DoorItems.ItemMossStoneDoor);
+        return new ItemStack(DoorItems.MossStoneDoor);
     }
 }

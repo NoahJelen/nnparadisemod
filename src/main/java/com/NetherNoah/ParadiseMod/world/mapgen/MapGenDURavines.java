@@ -12,8 +12,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.MapGenBase;
 
-public class MapGenDURavines extends MapGenBase
-{
+public class MapGenDURavines extends MapGenBase {
     protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
     protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
     private final float[] rs = new float[1024];
@@ -43,7 +42,7 @@ public class MapGenDURavines extends MapGenBase
         	
             if (j == 0 || random.nextInt(3) == 0)
                 f2 = 1.0F + random.nextFloat() * random.nextFloat();
-            this.rs[j] = f2 * f2;
+            rs[j] = f2 * f2;
         }
 
         for (; p_180707_15_ < p_180707_16_; ++p_180707_15_){
@@ -81,18 +80,12 @@ public class MapGenDURavines extends MapGenBase
                     int i3 = MathHelper.floor(p_180707_10_ - d9) - p_180707_4_ * 16 - 1;
                     int i1 = MathHelper.floor(p_180707_10_ + d9) - p_180707_4_ * 16 + 1;
 
-                    if (k2 < 0)
-                        k2 = 0;
-                    if (k > 16)
-                        k = 16;
-                    if (l2 < 1)
-                        l2 = 1;
-                    if (l > 248)
-                        l = 248;
-                    if (i3 < 0)
-                        i3 = 0;
-                    if (i1 > 16)
-                        i1 = 16;
+                    if (k2 < 0) k2 = 0;
+                    if (k > 16) k = 16;
+                    if (l2 < 1) l2 = 1;
+                    if (l > 248) l = 248;
+                    if (i3 < 0) i3 = 0;
+                    if (i1 > 16) i1 = 16;
 
                     for (int j1 = k2; j1 < k; ++j1){
                     	for (int k1 = i3; k1 < i1; ++k1){
@@ -123,8 +116,7 @@ public class MapGenDURavines extends MapGenBase
                             }
                         }
 
-                        if (flag1)
-                            break;
+                        if (flag1) break;
                     }
                 }
             }
@@ -158,6 +150,7 @@ public class MapGenDURavines extends MapGenBase
         IBlockState filler = Blocks.DIRT.getDefaultState();
 
         if (state.getBlock() == Blocks.STONE || state.getBlock() == top.getBlock() || state.getBlock() == filler.getBlock()){
+        	
         	//water generates below level 31
         	if (y<=31) {
                 data.setBlockState(x, y, z, WATER);

@@ -49,16 +49,6 @@ public class ModSmelting {
 		GameRegistry.addSmelting(Tools.silverSpade, new ItemStack(MiscItems.SilverNugget),5F);
 		GameRegistry.addSmelting(Tools.silverPickaxe, new ItemStack(MiscItems.SilverNugget),5F);
 		GameRegistry.addSmelting(Tools.silverHoe, new ItemStack(MiscItems.SilverNugget),5F);
-		GameRegistry.addSmelting(Tools.silverSword, new ItemStack(MiscItems.SilverNugget),5F);
-		
-		//golden hopper can be smelted for a gold nugget just like other gold items in vanilla minecraft
-		GameRegistry.addSmelting(Misc.GoldHopper, new ItemStack(Items.GOLD_NUGGET), .01F);
-		
-		//same with golden doors, trapdoors, and fences
-		GameRegistry.addSmelting(DoorItems.ItemGoldDoor, new ItemStack(Items.GOLD_NUGGET), .01F);
-		GameRegistry.addSmelting(Trapdoors.BlockGoldTrapdoor, new ItemStack(Items.GOLD_NUGGET), .01F);
-		GameRegistry.addSmelting(Fences.BlockGoldFence, new ItemStack(Items.GOLD_NUGGET), .01F);
-		GameRegistry.addSmelting(Gates.BlockGoldFenceGate, new ItemStack(Items.GOLD_NUGGET), .01F);
 		
 		//soul glass
 		GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(Misc.soulGlass), .01F);

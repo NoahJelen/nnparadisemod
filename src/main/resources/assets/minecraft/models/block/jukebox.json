@@ -1,5 +1,5 @@
 {
-	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
+	"credit": "Made with Blockbench",
 	"parent": "block/cube_top",
 	"textures": {
 		"top": "blocks/jukebox_top",
@@ -7,7 +7,6 @@
 	},
 	"elements": [
 		{
-			"name": "cube",
 			"from": [0, 0, 13],
 			"to": [16, 16, 16],
 			"faces": {
@@ -20,7 +19,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [0, 0, 0],
 			"to": [16, 16, 3],
 			"faces": {
@@ -33,7 +31,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [9, 0, 3],
 			"to": [16, 16, 13],
 			"faces": {
@@ -44,7 +41,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [0, 0, 3],
 			"to": [7, 16, 13],
 			"faces": {
@@ -55,7 +51,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [7, 0, 3],
 			"to": [9, 4, 13],
 			"faces": {

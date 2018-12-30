@@ -1,7 +1,5 @@
 Is that why you explode?!
 Burn creeper, BURN!
-/locate Flagstaff,AZ
-/locate Tuscon,AZ
 /kill @e[type=demon]
 Ivan Moody!
 Five Finger Death Punch!
@@ -31,8 +29,6 @@ I'll never stop playing Minecraft, Angelica!
 Chester Bennington!
 LINKIN PARK!
 Mike Shinoda!
-/locate GCU
-/locate PHX College
 Method Man!
 DMX!
 Redman!
@@ -61,7 +57,7 @@ Windows security is a big fat joke!
 Rob Halford!
 Judas Priest!
 Since 1969!
-GNU/Linux>Microshaft+Apple!
+GNU/Linux>Microshaft+crApple!
 Screw Windows 10 and macOS!
 
 I use Arch by the way...
@@ -77,3 +73,6 @@ Strike while the iron is hot!
 I'm modding it now, Angelica!
 JAVA IS SO FREAKING CONFUSING!!!!!
 Java sucks!
+
+IN THIS HOUR, THE TOWER SHALL FALL!!!!!!
+I AM THAT I AM!!!!!!

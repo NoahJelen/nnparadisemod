@@ -1,1 +1,1 @@
-{"variants":{"stage=0,type=christmas":{"model":"nnparadisemod:sapling_christmas"},"stage=1,type=christmas":{"model":"nnparadisemod:sapling_christmas"}}}
+{"variants":{"stage=0":{"model":"nnparadisemod:sapling_christmas"},"stage=1":{"model":"nnparadisemod:sapling_christmas"}}}

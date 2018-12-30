@@ -17,7 +17,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class RubyDoor extends BlockDoor {
-	private static Item item=DoorItems.ItemRubyDoor;
+	private static Item item=DoorItems.RubyDoor;
 	public RubyDoor() {
 		super(Material.WOOD);
 		setUnlocalizedName("RubyDoor");
@@ -30,7 +30,7 @@ public class RubyDoor extends BlockDoor {
 	@Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(DoorItems.ItemRubyDoor);
+        return new ItemStack(DoorItems.RubyDoor);
     }
 	private int getCloseSound()
     {
@@ -43,6 +43,6 @@ public class RubyDoor extends BlockDoor {
 	// the item is the door itself
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.ItemRubyDoor;
+		return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR :DoorItems.RubyDoor;
 	}
 }

@@ -132,10 +132,10 @@ public class DUChunkGenerator implements IChunkGenerator {
 	double[] noiseData4;
 	double[] dr;
 
-	public DUChunkGenerator(World worldIn, boolean p_i45637_2_, long seed) {
+	public DUChunkGenerator(World worldIn) {
 		world = worldIn;
 		generateStructures = false;
-		rand = worldIn.rand;//new Random(seed);
+		rand = worldIn.rand;
 		lperlinNoise1 = new NoiseGeneratorOctaves(rand, 16);
 		lperlinNoise2 = new NoiseGeneratorOctaves(rand, 16);
 		perlinNoise1 = new NoiseGeneratorOctaves(rand, 16);

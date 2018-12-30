@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
 import com.NetherNoah.ParadiseMod.config.ModConfig;
+import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -31,7 +32,7 @@ public class MiniStronghold extends WorldGenerator implements IWorldGenerator{
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		if (world.provider.getDimension() != 1 && world.provider.getDimension() != -3 && world.provider.getDimension() != -1) {
+		if (world.provider.getDimension() != DimensionRegistry.DeepVoid && world.provider.getDimension() != -1 && world.provider.getDimension() != 1) {
 			BlockPos pos = new BlockPos(blockX, 16, blockZ);
 			generate(world, rand, pos);
 		}

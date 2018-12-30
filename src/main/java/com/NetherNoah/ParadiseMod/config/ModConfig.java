@@ -22,6 +22,9 @@ public class ModConfig {
         @Config.LangKey("config.structures")
         public Structures structures=new Structures();
     	public class Structures{
+        	@Config.Comment("Generate the black cross")
+            @Config.LangKey("config.blackcross")
+        	public Boolean blackCross=false;
         	@Config.Comment("Generate Brick Pyramids")
             @Config.LangKey("config.brickpyramids")
         	public Boolean BrickPyramids=true;

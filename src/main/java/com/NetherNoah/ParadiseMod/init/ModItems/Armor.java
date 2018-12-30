@@ -19,31 +19,37 @@ public class Armor {
 	public static ItemArmor santaJacket;
 	public static ItemArmor santaPants;
 	public static ItemArmor santaBoots;
+
 	//silver
 	public static ItemArmor silverHelmet;
 	public static ItemArmor silverChestplate;
 	public static ItemArmor silverLeggings;
 	public static ItemArmor silverBoots;
+
 	//rusty iron
 	public static ItemArmor rustyHelmet;
 	public static ItemArmor rustyChestplate;
 	public static ItemArmor rustyLeggings;
 	public static ItemArmor rustyBoots;
+
 	// emerald
 	public static ItemArmor emeraldHelmet;
 	public static ItemArmor emeraldChestplate;
 	public static ItemArmor emeraldLeggings;
 	public static ItemArmor emeraldBoots;
+
 	// ruby
 	public static ItemArmor rubyHelmet;
 	public static ItemArmor rubyChestplate;
 	public static ItemArmor rubyLeggings;
 	public static ItemArmor rubyBoots;
+
 	// redstone
 	public static ItemArmor redstoneHelmet;
 	public static ItemArmor redstoneChestplate;
 	public static ItemArmor redstoneLeggings;
 	public static ItemArmor redstoneBoots;
+
 	// obsidian
 	public static ItemArmor obsidianHelmet;
 	public static ItemArmor obsidianChestplate;

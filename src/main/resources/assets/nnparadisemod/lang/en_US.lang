@@ -98,7 +98,14 @@ item.CactusStick.name=Cactus Stick
 item.VoidPearl.name=Void Pearl
 
 #Blocks
-tile.bulletProofGlass.name=Bulletproof Glass
+tile.bulletproofGlassPane.name=Blastproof Glass Pane
+tile.SandstonePlate.name=Sandstone Pressure Plate
+tile.RedSandstonePlate.name=Red Sandstone Pressure Plate
+tile.GlassPlate.name=Glass Pressure Plate
+tile.SandstoneButton.name=Sandstone Button
+tile.RedSandstoneButton.name=Red Sandstone Button
+tile.GlassButton.name=Glass Button
+tile.bulletProofGlass.name=Blastproof Glass
 tile.bedrock_slab.name=Bedrock Slab
 tile.obsidian_slab.name=Obsidian Slab
 tile.void_slab.name=Void Stone Slab
@@ -305,6 +312,7 @@ tile.prismarineCrystalBlock.name=Prismarine Crystal Block
 fluid.liquid_redstone=Liquid Redstone
 
 #Config
+config.blackcross=Black Cross
 config.cavetypes=Cave Types
 config.caves=Better Caves
 config.crystalchance=Crystal Chance

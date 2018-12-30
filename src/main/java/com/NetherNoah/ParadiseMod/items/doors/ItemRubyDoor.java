@@ -7,7 +7,7 @@ import net.minecraft.item.ItemDoor;
 
 public class ItemRubyDoor extends ItemDoor {
 	public ItemRubyDoor() {
-		super(Doors.BlockRubyDoor);
+		super(Doors.RubyDoor);
 		setUnlocalizedName("ItemRubyDoor");
 		setRegistryName("ruby_door");
 		setCreativeTab(CreativeTabs.REDSTONE);

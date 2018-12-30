@@ -1,60 +1,58 @@
 package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import com.NetherNoah.ParadiseMod.Utils;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.RSFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.BrickFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.CactusFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.DiamondFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.EmeraldFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.GoldFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.IronFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.RedstoneFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.RubyFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.RustyFenceGate;
-import com.NetherNoah.ParadiseMod.blocks.fenceGates.SilverFenceGate;
+import com.NetherNoah.ParadiseMod.blocks.RedstoneFenceGate;
+import com.NetherNoah.ParadiseMod.blocks.base.CustomGate;
 
-import net.minecraft.block.BlockFenceGate;
+import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.SoundType;
 
 public class Gates {
-	
 	//fence gates
-	public static BlockFenceGate RustyFenceGate;
-	public static BlockFenceGate BlockCactusFenceGate;
-	public static BlockFenceGate BlockSilverFenceGate;
-	public static BlockFenceGate BlockBrickFenceGate;
-	public static BlockFenceGate BlockDiamondFenceGate;
-	public static BlockFenceGate BlockEmeraldFenceGate;
-	public static BlockFenceGate BlockGoldFenceGate;
-	public static BlockFenceGate BlockIronFenceGate;
-	public static BlockFenceGate BlockRubyFenceGate;
-	public static RSFenceGate BlockRedstoneFenceGate;
+	public static CustomGate RustyFenceGate = new CustomGate(SoundType.METAL);
+	public static CustomGate CactusFenceGate = new CustomGate(SoundType.WOOD);
+	public static CustomGate SilverFenceGate = new CustomGate(SoundType.METAL);
+	public static CustomGate BrickFenceGate = new CustomGate(SoundType.STONE);
+	public static CustomGate DiamondFenceGate = new CustomGate(SoundType.METAL);
+	public static CustomGate EmeraldFenceGate = new CustomGate(SoundType.METAL);
+	public static CustomGate GoldFenceGate = new CustomGate(SoundType.METAL);
+	public static CustomGate IronFenceGate = new CustomGate(SoundType.METAL);
+	public static CustomGate RubyFenceGate = new CustomGate(SoundType.METAL);
+	public static BlockHorizontal RedstoneFenceGate;
 
 	public static void initAndRegister() {
-		
 		//fence gates
-		Utils.regBlock(RustyFenceGate=new RustyFenceGate());
-		Utils.regBlock(BlockCactusFenceGate=new CactusFenceGate());
-		Utils.regBlock(BlockSilverFenceGate=new SilverFenceGate());
-		Utils.regBlock(BlockBrickFenceGate = new BrickFenceGate());
-		Utils.regBlock(BlockDiamondFenceGate = new DiamondFenceGate());
-		Utils.regBlock(BlockEmeraldFenceGate = new EmeraldFenceGate());
-		Utils.regBlock(BlockGoldFenceGate = new GoldFenceGate());
-		Utils.regBlock(BlockIronFenceGate = new IronFenceGate());
-		Utils.regBlock(BlockRubyFenceGate = new RubyFenceGate());
-		Utils.regBlock(BlockRedstoneFenceGate = new RedstoneFenceGate());
+		BrickFenceGate.setHarvestLevel("pickaxe", 0);
+		DiamondFenceGate.setHarvestLevel("pickaxe", 2);
+		EmeraldFenceGate.setHarvestLevel("pickaxe", 2);
+		GoldFenceGate.setHarvestLevel("pickaxe", 2);
+		IronFenceGate.setHarvestLevel("pickaxe", 1);
+		RubyFenceGate.setHarvestLevel("pickaxe", 2);
+		RustyFenceGate.setHarvestLevel("pickaxe", 1);
+		SilverFenceGate.setHarvestLevel("pickaxe", 2);
 
+		Utils.regBlock(BrickFenceGate.setUnlocalizedName("BrickFenceGate").setRegistryName("brick_fence_gate").setHardness(5F).setResistance(10F));
+		Utils.regBlock(CactusFenceGate.setUnlocalizedName("CactusFenceGate").setRegistryName("cactus_fence_gate").setHardness(5F).setResistance(10F));
+		Utils.regBlock(DiamondFenceGate.setUnlocalizedName("DiamondFenceGate").setRegistryName("diamond_fence_gate").setHardness(5F).setResistance(10F));
+		Utils.regBlock(EmeraldFenceGate.setUnlocalizedName("EmeraldFenceGate").setRegistryName("emerald_fence_gate").setHardness(5F).setResistance(10F));
+		Utils.regBlock(GoldFenceGate.setUnlocalizedName("GoldFenceGate").setRegistryName("gold_fence_gate").setHardness(5F).setResistance(10F));
+		Utils.regBlock(IronFenceGate.setUnlocalizedName("IronFenceGate").setRegistryName("iron_fence_gate").setHardness(5F).setResistance(10F));
+		Utils.regBlock(RedstoneFenceGate = new RedstoneFenceGate());
+		Utils.regBlock(RubyFenceGate.setUnlocalizedName("RubyFenceGate").setRegistryName("ruby_fence_gate").setHardness(5F).setResistance(10F));
+		Utils.regBlock(RustyFenceGate.setUnlocalizedName("RustyFenceGate").setRegistryName("rusty_fence_gate").setHardness(5F).setResistance(10F));
+		Utils.regBlock(SilverFenceGate.setUnlocalizedName("SilverFenceGate").setRegistryName("silver_fence_gate").setHardness(5F).setResistance(10F));
 	}
-	public static void regRenders() {		
+
+	public static void regRenders() {	
+		Utils.regRender(BrickFenceGate);
+		Utils.regRender(CactusFenceGate);
+		Utils.regRender(DiamondFenceGate);
+		Utils.regRender(EmeraldFenceGate);
+		Utils.regRender(GoldFenceGate);
+		Utils.regRender(IronFenceGate);
+		Utils.regRender(RedstoneFenceGate);
+		Utils.regRender(RubyFenceGate);
 		Utils.regRender(RustyFenceGate);
-		Utils.regRender(BlockCactusFenceGate);
-		Utils.regRender(BlockBrickFenceGate);
-		Utils.regRender(BlockDiamondFenceGate);
-		Utils.regRender(BlockEmeraldFenceGate);
-		Utils.regRender(BlockSilverFenceGate);
-		Utils.regRender(BlockGoldFenceGate);
-		Utils.regRender(BlockIronFenceGate);
-		Utils.regRender(BlockRubyFenceGate);
-		Utils.regRender(BlockRedstoneFenceGate);
-		
+		Utils.regRender(SilverFenceGate);
 	}
 }

@@ -237,3 +237,17 @@
     Added prismarine Crystal Block
     Crystals now generate in bunches in caves
     Added lava pockets in the deep underground
+    
+1.4 (Update 2019):
+    Optimized and corrected some block models
+    Added another easter egg
+    Fixed several world generation bugs
+    Improved world generation
+    Removed smelting recipes for modded gold items (they're useless)
+    Made lots of backend optimizations
+    The bounding boxes of certain blocks are now changed to fit the block model
+    Fixed the jungle button model
+    Added glass pressure plate
+    Added sandstone pressure plate
+    Added red sandstone pressure plate
+    Added Blast Proof Glass Pane

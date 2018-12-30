@@ -1,65 +1,53 @@
 package com.NetherNoah.ParadiseMod.init.ModItems;
 
 import com.NetherNoah.ParadiseMod.Utils;
-import com.NetherNoah.ParadiseMod.items.CactusStick;
-import com.NetherNoah.ParadiseMod.items.CookedEgg;
-import com.NetherNoah.ParadiseMod.items.DyeBlack;
-import com.NetherNoah.ParadiseMod.items.DyeBlue;
-import com.NetherNoah.ParadiseMod.items.DyeBrown;
-import com.NetherNoah.ParadiseMod.items.ItemRuby;
-import com.NetherNoah.ParadiseMod.items.RustyIngot;
-import com.NetherNoah.ParadiseMod.items.RustyNugget;
-import com.NetherNoah.ParadiseMod.items.Salt;
-import com.NetherNoah.ParadiseMod.items.SilverIngot;
-import com.NetherNoah.ParadiseMod.items.SilverNugget;
-import com.NetherNoah.ParadiseMod.items.VoidPearl;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemEnderPearl;
 import net.minecraft.item.ItemFood;
 
 public class MiscItems {
-	public static Item DyeBlue;
-	public static Item DyeBlack;
-	public static Item DyeBrown;
-	public static Item salt;
-	public static Item CactusStick;
-	public static ItemBlock ObsidianWall;
-	public static Item SilverNugget;
-	public static Item Ruby;
-	public static Item SilverIngot;
-	public static Item RustyIngot;
-	public static Item RustyNugget;
-	public static Item VoidPearl;
-	public static ItemFood CookedEgg;
+	public static Item BlackDye = new Item();
+	public static Item BlueDye = new Item();
+	public static Item BrownDye = new Item();
+	public static Item CactusStick = new Item();
+	public static ItemFood CookedEgg = new ItemFood(12, true);
+	public static Item Ruby = new Item();
+	public static Item RustyIngot = new Item();
+	public static Item RustyNugget = new Item();
+	public static Item salt = new Item();
+	public static Item SilverIngot = new Item();
+	public static Item SilverNugget = new Item();
+	public static Item VoidPearl=new ItemEnderPearl();
 	
 	public static void initAndRegister() {
-		Utils.regItem(CookedEgg=new CookedEgg());
-		Utils.regItem(VoidPearl=new VoidPearl());
-		Utils.regItem(DyeBrown=new DyeBrown());
-		Utils.regItem(DyeBlack=new DyeBlack());
-		Utils.regItem(DyeBlue=new DyeBlue());
-		Utils.regItem(RustyNugget=new RustyNugget());
-		Utils.regItem(RustyIngot=new RustyIngot());
-		Utils.regItem(salt=new Salt());
-		Utils.regItem(CactusStick=new CactusStick());
-		Utils.regItem(SilverNugget=new SilverNugget());
-		Utils.regItem(Ruby = new ItemRuby());
-		Utils.regItem(SilverIngot=new SilverIngot());
+		Utils.regItem(BlackDye.setUnlocalizedName("DyeBlack").setRegistryName("black_dye").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(BlueDye.setUnlocalizedName("DyeBlue").setRegistryName("blue_dye").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(BrownDye.setUnlocalizedName("DyeBrown").setRegistryName("brown_dye").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(CactusStick.setUnlocalizedName("CactusStick").setRegistryName("cactus_stick").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(CookedEgg.setUnlocalizedName("EggCooked").setRegistryName("cooked_egg"));
+		Utils.regItem(Ruby.setUnlocalizedName("Ruby").setRegistryName("ruby").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(RustyIngot.setUnlocalizedName("RustyIngot").setRegistryName("rusty_ingot").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(RustyNugget.setUnlocalizedName("RustyNugget").setRegistryName("rusty_nugget").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(salt.setUnlocalizedName("salt").setRegistryName("salt").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(SilverIngot.setUnlocalizedName("SilverIngot").setRegistryName("silver_ingot").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(SilverNugget.setUnlocalizedName("SilverNugget").setRegistryName("silver_nugget").setCreativeTab(CreativeTabs.MISC));
+		Utils.regItem(VoidPearl.setUnlocalizedName("VoidPearl").setRegistryName("void_pearl").setCreativeTab(CreativeTabs.MISC));
 	}
 	
 	public static void regRenders() {
-		Utils.regRender(CookedEgg);
-		Utils.regRender(VoidPearl);
-		Utils.regRender(DyeBrown);
-		Utils.regRender(DyeBlack);
-		Utils.regRender(DyeBlue);
-		Utils.regRender(salt);
-		Utils.regRender(RustyIngot);
+		Utils.regRender(BlackDye);
+		Utils.regRender(BlueDye);
+		Utils.regRender(BrownDye);
 		Utils.regRender(CactusStick);
-		Utils.regRender(SilverNugget);
+		Utils.regRender(CookedEgg);
 		Utils.regRender(Ruby);
+		Utils.regRender(RustyIngot);
 		Utils.regRender(RustyNugget);
+		Utils.regRender(salt);
 		Utils.regRender(SilverIngot);
+		Utils.regRender(SilverNugget);
+		Utils.regRender(VoidPearl);
 	}
 }

@@ -1,102 +1,104 @@
 package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import com.NetherNoah.ParadiseMod.Utils;
-import com.NetherNoah.ParadiseMod.blocks.ores.CoalOreVoid;
-import com.NetherNoah.ParadiseMod.blocks.ores.EnderPearlOre;
-import com.NetherNoah.ParadiseMod.blocks.ores.GoldOreNether;
-import com.NetherNoah.ParadiseMod.blocks.ores.GoldOreVoid;
-import com.NetherNoah.ParadiseMod.blocks.ores.IronOreVoid;
-import com.NetherNoah.ParadiseMod.blocks.ores.RubyOre;
-import com.NetherNoah.ParadiseMod.blocks.ores.RubyOreEnd;
-import com.NetherNoah.ParadiseMod.blocks.ores.SaltOre;
-import com.NetherNoah.ParadiseMod.blocks.ores.SilverOre;
-import com.NetherNoah.ParadiseMod.blocks.ores.SilverOreNether;
-import com.NetherNoah.ParadiseMod.blocks.ores.SilverOreVoid;
-import com.NetherNoah.ParadiseMod.blocks.ores.VoidPearlOre;
-import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.BlockRuby;
-import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.BlockRustyIron;
-import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.SaltBlock;
-import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.SilverBlock;
-import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.blazeBlock;
-import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.endPearlBlock;
-import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.sugarBlock;
-import com.NetherNoah.ParadiseMod.blocks.resourceBlocks.voidPearlBlock;
+import com.NetherNoah.ParadiseMod.blocks.sugarBlock;
+import com.NetherNoah.ParadiseMod.blocks.base.BasicBlock;
+import com.NetherNoah.ParadiseMod.blocks.base.CustomOre;
+import com.NetherNoah.ParadiseMod.init.ModItems.MiscItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 
 public class Ores {
-	//resource blocks
-	public static Block RustyIronBlock;
-	public static Block blazeBlock;
-	public static BlockFalling sugarBlock;
-	public static Block RubyBlock;
-	public static Block SilverBlock;
-	public static Block SaltBlock;
-	public static Block endPearlBlock;
-	public static Block voidPearlBlock;
-	
 	//ores
-	public static Block SilverOreVoid;
-	public static Block CoalOreVoid;
-	public static Block GoldOreVoid;
-	public static Block IronOreVoid;
-	public static Block EnderPearlOre;
-	public static Block SilverOreNether;
-	public static Block GoldOreNether;
-	public static Block RubyOre;
-	public static Block EndRubyOre;
-	public static Block SilverOre;
-	public static Block SaltOre;
-	public static Block VoidPearlOre;
+	public static CustomOre CoalOreVoid = new CustomOre(Items.COAL, 4, 0);
+	public static CustomOre EnderPearlOre = new CustomOre(Items.ENDER_PEARL, 1, 2);
+	public static CustomOre EndRubyOre = new CustomOre(MiscItems.Ruby, 1, 2);
+	public static Block GoldOreNether = new Block(Material.ROCK);
+	public static Block GoldOreVoid = new Block(Material.ROCK);
+	public static Block IronOreVoid = new Block(Material.ROCK);
+	public static CustomOre RubyOre = new CustomOre(MiscItems.Ruby, 1, 2);
+	public static CustomOre SaltOre = new CustomOre(MiscItems.salt, 6, 0);
+	public static Block SilverOre = new Block(Material.ROCK);
+	public static Block SilverOreNether = new Block(Material.ROCK);
+	public static Block SilverOreVoid = new Block(Material.ROCK);
+	public static CustomOre VoidPearlOre = new CustomOre(MiscItems.VoidPearl, 1, 2);
+
+	//resource blocks
+	public static BasicBlock blazeBlock = new BasicBlock(Material.IRON, SoundType.METAL, true);
+	public static BasicBlock endPearlBlock = new BasicBlock(Material.IRON, SoundType.METAL, true);
+	public static BasicBlock RubyBlock = new BasicBlock(Material.IRON, SoundType.METAL, true);
+	public static BasicBlock RustyIronBlock = new BasicBlock(Material.IRON, SoundType.METAL, true);
+	public static BasicBlock SaltBlock = new BasicBlock(Material.ROCK, SoundType.STONE, true);
+	public static BasicBlock SilverBlock = new BasicBlock(Material.IRON, SoundType.METAL, true);
+	public static BlockFalling sugarBlock;
+	public static BasicBlock voidPearlBlock = new BasicBlock(Material.IRON, SoundType.METAL, true);
 
 	public static void initAndRegister() {
-		
 		//ores
-		Utils.regBlock(VoidPearlOre=new VoidPearlOre());
-		Utils.regBlock(CoalOreVoid=new CoalOreVoid());
-		Utils.regBlock(GoldOreVoid=new GoldOreVoid());
-		Utils.regBlock(IronOreVoid=new IronOreVoid());
-		Utils.regBlock(SilverOreVoid=new SilverOreVoid());
-		Utils.regBlock(EnderPearlOre=new EnderPearlOre());
-		Utils.regBlock(EndRubyOre = new RubyOreEnd());
-		Utils.regBlock(SilverOreNether=new SilverOreNether());
-		Utils.regBlock(GoldOreNether=new GoldOreNether());
-		Utils.regBlock(RubyOre = new RubyOre());
-		Utils.regBlock(SilverOre=new SilverOre());
-		Utils.regBlock(SaltOre=new SaltOre());
-		
+		GoldOreNether.setHarvestLevel("pickaxe", 2);
+		GoldOreVoid.setHarvestLevel("pickaxe", 2);
+		IronOreVoid.setHarvestLevel("pickaxe", 1);
+		SilverOre.setHarvestLevel("pickaxe", 2);
+		SilverOreNether.setHarvestLevel("pickaxe", 2);
+		SilverOreVoid.setHarvestLevel("pickaxe", 2);
+
+		Utils.regBlock(CoalOreVoid.setUnlocalizedName("VoidCoalOre").setRegistryName("void_coal_ore").setHardness(5F).setResistance(10F));
+		Utils.regBlock(EnderPearlOre.setUnlocalizedName("EndPearlOre").setRegistryName("ender_pearl_ore").setHardness(5F).setResistance(10F));
+		Utils.regBlock(EndRubyOre.setUnlocalizedName("EndRubyOre").setRegistryName("ender_ruby_ore").setHardness(5F).setResistance(10F));
+		Utils.regBlock(GoldOreNether.setUnlocalizedName("NetherGoldOre").setRegistryName("nether_gold_ore").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(GoldOreVoid.setUnlocalizedName("VoidGoldOre").setRegistryName("void_gold_ore").setHardness(5F).setResistance(10F));
+		Utils.regBlock(IronOreVoid.setUnlocalizedName("VoidIronOre").setRegistryName("void_iron_ore").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(RubyOre.setUnlocalizedName("RubyOre").setRegistryName("ruby_ore").setHardness(5F).setResistance(10F));
+		Utils.regBlock(SaltOre.setUnlocalizedName("SaltOre").setRegistryName("salt_ore").setHardness(5F).setResistance(10F));
+		Utils.regBlock(SilverOre.setUnlocalizedName("SilverOre").setRegistryName("silver_ore").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(SilverOreNether.setUnlocalizedName("NetherSilverOre").setRegistryName("nether_silver_ore").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(SilverOreVoid.setUnlocalizedName("VoidSilverOre").setRegistryName("void_silver_ore").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(VoidPearlOre.setUnlocalizedName("VoidPearlOre").setRegistryName("void_pearl_ore").setHardness(5F).setResistance(10F));
+
 		//resource blocks
-		Utils.regBlock(voidPearlBlock=new voidPearlBlock());
-		Utils.regBlock(blazeBlock=new blazeBlock());
+		blazeBlock.setHarvestLevel("pickaxe", 0);
+		endPearlBlock.setHarvestLevel("pickaxe", 0);
+		RubyBlock.setHarvestLevel("pickaxe", 2);
+		RustyIronBlock.setHarvestLevel("pickaxe", 1);
+		SaltBlock.setHarvestLevel("pickaxe", 0);
+		SilverBlock.setHarvestLevel("pickaxe", 2);
+		voidPearlBlock.setHarvestLevel("pickaxe",0);
+
+		Utils.regBlock(blazeBlock.setUnlocalizedName("blazeBlock").setRegistryName("blaze_block").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(1F));
+		Utils.regBlock(endPearlBlock.setUnlocalizedName("endPearlBlock").setRegistryName("ender_pearl_block").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(RubyBlock.setUnlocalizedName("BlockRuby").setRegistryName("ruby_block").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(RustyIronBlock.setUnlocalizedName("BlockRustyIron").setRegistryName("rusty_iron_block").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(SaltBlock.setUnlocalizedName("SaltBlock").setRegistryName("salt_block").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(SilverBlock.setUnlocalizedName("SilverBlock").setRegistryName("silver_block").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
 		Utils.regBlock(sugarBlock=new sugarBlock());
-		Utils.regBlock(RubyBlock = new BlockRuby());
-		Utils.regBlock(SilverBlock=new SilverBlock());
-		Utils.regBlock(SaltBlock=new SaltBlock());
-		Utils.regBlock(endPearlBlock=new endPearlBlock());
-		Utils.regBlock(RustyIronBlock=new BlockRustyIron());
+		Utils.regBlock(voidPearlBlock.setUnlocalizedName("voidPearlBlock").setRegistryName("void_pearl_block").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
 	}
+
 	public static void regRenders() {
-		Utils.regRender(voidPearlBlock);
-		Utils.regRender(VoidPearlOre);
-		Utils.regRender(SilverOreVoid);
+		Utils.regRender(blazeBlock);
 		Utils.regRender(CoalOreVoid);
-		Utils.regRender(GoldOreVoid);
-		Utils.regRender(IronOreVoid);
+		Utils.regRender(endPearlBlock);
 		Utils.regRender(EnderPearlOre);
 		Utils.regRender(EndRubyOre);
-		Utils.regRender(SilverOreNether);
 		Utils.regRender(GoldOreNether);
-		Utils.regRender(SaltOre);
-		Utils.regRender(SilverOre);
-		Utils.regRender(RubyOre);
-		Utils.regRender(sugarBlock);
-		Utils.regRender(blazeBlock);
-		Utils.regRender(SilverBlock);
+		Utils.regRender(GoldOreVoid);
+		Utils.regRender(IronOreVoid);
 		Utils.regRender(RubyBlock);
-		Utils.regRender(SaltBlock);
+		Utils.regRender(RubyOre);
 		Utils.regRender(RustyIronBlock);
-		Utils.regRender(endPearlBlock);
-		
+		Utils.regRender(SaltBlock);
+		Utils.regRender(SaltOre);
+		Utils.regRender(SilverBlock);
+		Utils.regRender(SilverOre);
+		Utils.regRender(SilverOreNether);
+		Utils.regRender(SilverOreVoid);
+		Utils.regRender(sugarBlock);
+		Utils.regRender(voidPearlBlock);
+		Utils.regRender(VoidPearlOre);
 	}
 }

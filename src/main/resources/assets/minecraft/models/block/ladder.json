@@ -1,62 +1,36 @@
 {
-	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
 	"textures": {
 		"0": "blocks/ladder",
 		"particle": "blocks/ladder"
 	},
 	"elements": [
 		{
-			"name": "cube",
 			"from": [12, 0, 15],
 			"to": [14, 16, 16],
 			"faces": {
 				"north": {"uv": [2, 0, 4, 16], "texture": "#0"},
 				"east": {"uv": [2, 0, 3, 16], "texture": "#0"},
-				"south": {
-					"uv": [2, 0, 4, 16],
-					"texture": "#0",
-					"rotation": 180
-				},
+				"south": {"uv": [2, 0, 4, 16], "rotation": 180, "texture": "#0"},
 				"west": {"uv": [3, 0, 4, 16], "texture": "#0"},
-				"up": {
-					"uv": [12, 0, 14, 1],
-					"texture": "#0",
-					"rotation": 180
-				},
-				"down": {
-					"uv": [2, 15, 4, 16],
-					"texture": "#0",
-					"rotation": 180
-				}
+				"up": {"uv": [12, 0, 14, 1], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [2, 15, 4, 16], "rotation": 180, "texture": "#0"}
 			}
 		},
 		{
-			"name": "cube",
 			"from": [2, 0, 15],
 			"to": [4, 16, 16],
 			"faces": {
 				"north": {"uv": [12, 0, 14, 16], "texture": "#0"},
 				"east": {"uv": [12, 0, 13, 16], "texture": "#0"},
-				"south": {
-					"uv": [2, 0, 4, 16],
-					"texture": "#0",
-					"rotation": 180
-				},
+				"south": {"uv": [2, 0, 4, 16], "rotation": 180, "texture": "#0"},
 				"west": {"uv": [13, 0, 14, 16], "texture": "#0"},
-				"up": {
-					"uv": [2, 0, 4, 1],
-					"texture": "#0",
-					"rotation": 180
-				},
-				"down": {
-					"uv": [12, 15, 14, 16],
-					"texture": "#0",
-					"rotation": 180
-				}
+				"up": {"uv": [2, 0, 4, 1], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [12, 15, 14, 16], "rotation": 180, "texture": "#0"}
 			}
 		},
 		{
-			"name": "cube",
 			"from": [1, 5, 14],
 			"to": [15, 7, 15],
 			"faces": {
@@ -69,7 +43,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [1, 9, 14],
 			"to": [15, 11, 15],
 			"faces": {
@@ -82,7 +55,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [1, 13, 14],
 			"to": [15, 15, 15],
 			"faces": {
@@ -95,7 +67,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [1, 1, 14],
 			"to": [15, 3, 15],
 			"faces": {
@@ -107,7 +78,5 @@
 				"down": {"uv": [1, 14, 15, 15], "texture": "#0"}
 			}
 		}
-	],
-	"groups": [0, 1, 2, 3, 4, 5],
-	"ambientocclusion": false
+	]
 }

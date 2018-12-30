@@ -24,7 +24,7 @@ public class LitRedRSLamp extends BlockRedstoneLight {
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (!worldIn.isRemote) {
 			if (!worldIn.isBlockPowered(pos)) {
-				worldIn.setBlockState(pos, Lamps.RedRSLamp.getDefaultState(), 2);
+				worldIn.setBlockState(pos, Lamps.RedLamp.getDefaultState(), 2);
 			}
 		}
 	}
@@ -35,7 +35,7 @@ public class LitRedRSLamp extends BlockRedstoneLight {
         {
         	if (!worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, Lamps.RedRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.RedLamp.getDefaultState(), 2);
             }
         }
     }
@@ -46,18 +46,18 @@ public class LitRedRSLamp extends BlockRedstoneLight {
         {
             if (!worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, Lamps.RedRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.RedLamp.getDefaultState(), 2);
             }
         }
     }
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(Lamps.RedRSLamp);
+        return Item.getItemFromBlock(Lamps.RedLamp);
     }
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(Lamps.RedRSLamp);
+        return new ItemStack(Lamps.RedLamp);
     }
 }

@@ -31,21 +31,10 @@ public class VoidDungeon extends WorldGenerator implements IWorldGenerator{
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		//generateOverworld(world, rand, blockX + 8, blockZ + 8);	
 		int y = getGroundFromAbove(world, blockX, blockZ);
 		BlockPos pos = new BlockPos(blockX, y, blockZ);
-		//WorldGenerator structure = new VoidDungeonGen();
 		generate(world, rand, pos);
 	}
-	/*/
-	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
-	{	
-		int y = getGroundFromAbove(world, blockX, blockZ);
-		BlockPos pos = new BlockPos(blockX, y, blockZ);
-		WorldGenerator structure = new VoidDungeonGen();
-		structure.generate(world, rand, pos);
-	}
-	/*/
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) {
 		Biome biome = world.getBiomeForCoordsBody(position);

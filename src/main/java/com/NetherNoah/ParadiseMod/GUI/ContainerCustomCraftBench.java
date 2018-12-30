@@ -1,4 +1,5 @@
 package com.NetherNoah.ParadiseMod.GUI;
+
 //this was derived from vanilla code
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;

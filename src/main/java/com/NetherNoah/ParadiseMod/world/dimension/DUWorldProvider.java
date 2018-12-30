@@ -28,7 +28,7 @@ public class DUWorldProvider extends WorldProvider{
 	
 	@Override
 	public IChunkGenerator createChunkGenerator() {
-		return new DUChunkGenerator(world, false, DimensionRegistry.DeepUnderground);
+		return new DUChunkGenerator(world);
 	}
 	
 	@Override

@@ -7,7 +7,7 @@ import net.minecraft.item.ItemDoor;
 
 public class ItemBedrockDoor extends ItemDoor {
 	public ItemBedrockDoor() {
-		super(Doors.BlockBedrockDoor);
+		super(Doors.BedrockDoor);
 		setUnlocalizedName("ItemBedrockDoor");
 		setRegistryName("bedrock_door");
 		setCreativeTab(CreativeTabs.REDSTONE);

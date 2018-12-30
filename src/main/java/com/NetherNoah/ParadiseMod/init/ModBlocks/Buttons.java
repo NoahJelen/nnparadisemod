@@ -1,121 +1,115 @@
 package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
 import com.NetherNoah.ParadiseMod.Utils;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.buttonTicks.DiamondButtonTicks;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.buttonTicks.EmeraldButtonTicks;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.buttonTicks.IronButtonTicks;
-import com.NetherNoah.ParadiseMod.CustomBlockCode.buttonTicks.QuickButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.BedrockButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.CobblestoneButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.DiamondButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.DirtButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.EmeraldButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.EndButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.GlowingObsidianButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.GoldButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.GrassButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.IronButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.MossyButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.ObsidianButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.RubyButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.RustyButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.SilverButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.VoidButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.stoneVariants.AndesiteButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.stoneVariants.DioriteButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.stoneVariants.GraniteButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.wood.AcaciaButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.wood.BirchButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.wood.CactusButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.wood.DarkOakButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.wood.JungleButton;
-import com.NetherNoah.ParadiseMod.blocks.buttons.wood.SpruceButton;
-import net.minecraft.block.BlockButton;
-import net.minecraft.block.BlockButtonStone;
+import com.NetherNoah.ParadiseMod.blocks.base.CustomButton;
 
-public class Buttons {
-	
+public class Buttons {	
 	//buttons
-	public static BlockButtonStone VoidButton;
-	public static BlockButtonStone DirtButton;
-	public static BlockButtonStone GrassButton;
-	public static BlockButton GlowingObsidianButton;
-	public static BlockButton EndButton;
-	public static BlockButton CactusButton;
-	public static BlockButton BedrockButton;
-	public static BlockButton ObsidianButton;
-	public static BlockButton MossyButton;
-	public static BlockButton CobblestoneButton;
-	public static BlockButton AcaciaButton;
-	public static BlockButton BirchButton;
-	public static BlockButton DarkOakButton;
-	public static BlockButton JungleButton;
-	public static BlockButton SpruceButton;
-	public static BlockButton AndesiteButton;
-	public static BlockButton DioriteButton;
-	public static BlockButton GraniteButton;
-	public static DiamondButtonTicks DiamondButton;
-	public static EmeraldButtonTicks EmeraldButton;
-	public static QuickButton RubyButton;
-	public static QuickButton SilverButton;
-	public static QuickButton GoldButton;
-	public static IronButtonTicks IronButton;
-	public static IronButtonTicks RustyButton;
+	//dirt and grass
+	public static CustomButton DirtButton = new CustomButton(20,4);
+	public static CustomButton GrassButton = new CustomButton(20,3);
+
+	//special buttons
+	public static CustomButton DiamondButton = new CustomButton(14,2);
+	public static CustomButton EmeraldButton = new CustomButton(10,2);
+	public static CustomButton GlassButton = new CustomButton(20,5);
+	public static CustomButton GoldButton = new CustomButton(2,2);
+	public static CustomButton IronButton = new CustomButton(6,2);
+	public static CustomButton RubyButton = new CustomButton(4,2);
+	public static CustomButton RustyButton = new CustomButton(20,2);
+	public static CustomButton SilverButton = new CustomButton(2,2);
+
+	//stone variants
+	public static CustomButton AndesiteButton = new CustomButton(20,0);
+	public static CustomButton CobblestoneButton = new CustomButton(20,0);
+	public static CustomButton DioriteButton = new CustomButton(20,0);
+	public static CustomButton EndButton = new CustomButton(20,0);
+	public static CustomButton GraniteButton = new CustomButton(20,0);
+	public static CustomButton MossyButton = new CustomButton(20,0);
+	public static CustomButton RedSandstoneButton = new CustomButton(20,0);
+	public static CustomButton SandstoneButton = new CustomButton(20,0);
+	public static CustomButton VoidButton = new CustomButton(20,0);
+
+	//unbreakable buttons
+	public static CustomButton GlowingObsidianButton = new CustomButton(20,2);
+	public static CustomButton BedrockButton = new CustomButton(20,2);
+	public static CustomButton ObsidianButton = new CustomButton(20,2);
+
+	//wooden buttons
+	public static CustomButton AcaciaButton = new CustomButton(30,1);
+	public static CustomButton BirchButton = new CustomButton(30,1);
+	public static CustomButton DarkOakButton = new CustomButton(30,1);
+	public static CustomButton JungleButton = new CustomButton(30,1);
+	public static CustomButton SpruceButton = new CustomButton(30,1);
+	public static CustomButton CactusButton = new CustomButton(30,1);
 
 	public static void initAndRegister() {
-		//buttons
-		Utils.regBlock(VoidButton=new VoidButton());
-		Utils.regBlock(DirtButton=new DirtButton());
-		Utils.regBlock(GrassButton=new GrassButton());
-		Utils.regBlock(RustyButton=new RustyButton());
-		Utils.regBlock(EndButton=new EndButton());
-		Utils.regBlock(CactusButton=new CactusButton());
-		Utils.regBlock(GlowingObsidianButton=new GlowingObsidianButton());
-		Utils.regBlock(DiamondButton = new DiamondButton());
-		Utils.regBlock(EmeraldButton = new EmeraldButton());
-		Utils.regBlock(GoldButton = new GoldButton());
-		Utils.regBlock(IronButton = new IronButton());
-		Utils.regBlock(SilverButton = new SilverButton());
-		Utils.regBlock(RubyButton = new RubyButton());
-		Utils.regBlock(ObsidianButton = new ObsidianButton());
-		Utils.regBlock(BedrockButton = new BedrockButton());
-		Utils.regBlock(MossyButton = new MossyButton());
-		Utils.regBlock(CobblestoneButton = new CobblestoneButton());
-		Utils.regBlock(AndesiteButton = new AndesiteButton());
-		Utils.regBlock(DioriteButton = new DioriteButton());
-		Utils.regBlock(GraniteButton = new GraniteButton());
-		Utils.regBlock(AcaciaButton = new AcaciaButton());
-		Utils.regBlock(BirchButton = new BirchButton());
-		Utils.regBlock(DarkOakButton = new DarkOakButton());
-		Utils.regBlock(JungleButton = new JungleButton());
-		Utils.regBlock(SpruceButton = new SpruceButton());
-		
+		//dirt and grass
+		Utils.regBlock(DirtButton.setUnlocalizedName("DirtButton").setRegistryName("dirt_button"));
+		Utils.regBlock(GrassButton.setUnlocalizedName("GrassButton").setRegistryName("grass_button"));
+
+		//special buttons
+		Utils.regBlock(DiamondButton.setUnlocalizedName("DiamondButton").setRegistryName("diamond_button").setHardness(0.5F));
+		Utils.regBlock(EmeraldButton.setUnlocalizedName("EmeraldButton").setRegistryName("emerald_button").setHardness(0.5F));
+		Utils.regBlock(GlassButton.setUnlocalizedName("GlassButton").setRegistryName("glass_button").setHardness(0.5F));
+		Utils.regBlock(GoldButton.setUnlocalizedName("GoldButton").setRegistryName("gold_button").setHardness(0.5F));
+		Utils.regBlock(IronButton.setUnlocalizedName("IronButton").setRegistryName("iron_button").setHardness(0.5F));
+		Utils.regBlock(RubyButton.setUnlocalizedName("RubyButton").setRegistryName("ruby_button").setHardness(0.5F));
+		Utils.regBlock(RustyButton.setUnlocalizedName("RustyButton").setRegistryName("rusty_button").setHardness(0.5F));
+		Utils.regBlock(SilverButton.setUnlocalizedName("SilverButton").setRegistryName("silver_button").setHardness(0.5F));
+
+		//stone variant buttons
+		Utils.regBlock(AndesiteButton.setUnlocalizedName("AndesiteButton").setRegistryName("andesite_button").setHardness(0.5F));
+		Utils.regBlock(CobblestoneButton.setUnlocalizedName("CobblestoneButton").setRegistryName("cobblestone_button").setHardness(0.5F));
+		Utils.regBlock(DioriteButton.setUnlocalizedName("DioriteButton").setRegistryName("diorite_button").setHardness(0.5F));
+		Utils.regBlock(EndButton.setUnlocalizedName("EndButton").setRegistryName("end_button").setHardness(0.5F));
+		Utils.regBlock(GraniteButton.setUnlocalizedName("GraniteButton").setRegistryName("granite_button").setHardness(0.5F));
+		Utils.regBlock(MossyButton.setUnlocalizedName("MossyButton").setRegistryName("mossy_cobblestone_button").setHardness(0.5F));
+		Utils.regBlock(RedSandstoneButton.setUnlocalizedName("RedSandstoneButton").setRegistryName("red_sandstone_button").setHardness(0.5F));
+		Utils.regBlock(SandstoneButton.setUnlocalizedName("SandstoneButton").setRegistryName("sandstone_button").setHardness(0.5F));
+		Utils.regBlock(VoidButton.setUnlocalizedName("VoidButton").setRegistryName("void_button").setHardness(0.5F));
+
+		//unbreakable buttons
+		Utils.regBlock(BedrockButton.setUnlocalizedName("BedrockButton").setRegistryName("bedrock_button").setHardness(-1F).setResistance(18000000F).setBlockUnbreakable());
+		Utils.regBlock(GlowingObsidianButton.setUnlocalizedName("GlowingObsidianButton").setRegistryName("glowing_obsidian_button").setHardness(51F).setResistance(2000F).setLightLevel(.46666667F));
+		Utils.regBlock(ObsidianButton.setUnlocalizedName("ObsidianButton").setRegistryName("obsidian_button").setHardness(51F).setResistance(6000F));
+
+		//wooden buttons
+		Utils.regBlock(AcaciaButton.setUnlocalizedName("AcaciaButton").setRegistryName("acacia_button").setHardness(0.5F));
+		Utils.regBlock(BirchButton.setUnlocalizedName("BirchButton").setRegistryName("birch_button").setHardness(0.5F));
+		Utils.regBlock(CactusButton.setUnlocalizedName("CactusButton").setRegistryName("cactus_button").setHardness(0.5F));
+		Utils.regBlock(DarkOakButton.setUnlocalizedName("DarkOakButton").setRegistryName("dark_oak_button").setHardness(0.5F));
+		Utils.regBlock(JungleButton.setUnlocalizedName("JungleButton").setRegistryName("jungle_button").setHardness(0.5F));
+		Utils.regBlock(SpruceButton.setUnlocalizedName("SpruceButton").setRegistryName("spruce_button").setHardness(0.5F));	
 	}
 	public static void regRenders() {
-		Utils.regRender(VoidButton);
-		Utils.regRender(DirtButton);
-		Utils.regRender(GrassButton);
-		Utils.regRender(RustyButton);
-		Utils.regRender(CactusButton);
-		Utils.regRender(GlowingObsidianButton);
-		Utils.regRender(EndButton);
-		Utils.regRender(SilverButton);
-		Utils.regRender(DiamondButton);
-		Utils.regRender(EmeraldButton);
-		Utils.regRender(GoldButton);
-		Utils.regRender(IronButton);
-		Utils.regRender(RubyButton);
-		Utils.regRender(BedrockButton);
-		Utils.regRender(ObsidianButton);
-		Utils.regRender(CobblestoneButton);
-		Utils.regRender(MossyButton);
-		Utils.regRender(AndesiteButton);
-		Utils.regRender(DioriteButton);
-		Utils.regRender(GraniteButton);
 		Utils.regRender(AcaciaButton);
+		Utils.regRender(AndesiteButton);
+		Utils.regRender(BedrockButton);
 		Utils.regRender(BirchButton);
+		Utils.regRender(CactusButton);
+		Utils.regRender(CobblestoneButton);
 		Utils.regRender(DarkOakButton);
+		Utils.regRender(DiamondButton);
+		Utils.regRender(DioriteButton);
+		Utils.regRender(DirtButton);
+		Utils.regRender(EmeraldButton);
+		Utils.regRender(EndButton);
+		Utils.regRender(GlassButton);
+		Utils.regRender(GoldButton);
+		Utils.regRender(GlowingObsidianButton);
+		Utils.regRender(GraniteButton);
+		Utils.regRender(GrassButton);
+		Utils.regRender(IronButton);
 		Utils.regRender(JungleButton);
+		Utils.regRender(MossyButton);
+		Utils.regRender(ObsidianButton);
+		Utils.regRender(RedSandstoneButton);
+		Utils.regRender(RubyButton);
+		Utils.regRender(RustyButton);
+		Utils.regRender(SandstoneButton);
+		Utils.regRender(SilverButton);
 		Utils.regRender(SpruceButton);
+		Utils.regRender(VoidButton);
 	}
 }

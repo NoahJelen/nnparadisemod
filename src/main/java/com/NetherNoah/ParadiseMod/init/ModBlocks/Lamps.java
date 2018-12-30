@@ -44,100 +44,101 @@ public class Lamps {
 		return SaltLamp;
 	}
 	public static SaltLamp SaltLamp;
-	//unlit lamps
-	public static BlockRedstoneLight BlackRSLamp;
-	public static BlockRedstoneLight BlueRSLamp;
-	public static BlockRedstoneLight BrownRSLamp;
-	public static BlockRedstoneLight CyanRSLamp;
-	public static BlockRedstoneLight GrayRSLamp;
-	public static BlockRedstoneLight GreenRSLamp;
-	public static BlockRedstoneLight LightBlueRSLamp;
-	public static BlockRedstoneLight LimeRSLamp;
-	public static BlockRedstoneLight MagentaRSLamp;
-	public static BlockRedstoneLight OrangeRSLamp;
-	public static BlockRedstoneLight PinkRSLamp;
-	public static BlockRedstoneLight PurpleRSLamp;
-	public static BlockRedstoneLight RedRSLamp;
-	public static BlockRedstoneLight SilverRSLamp;
-	public static BlockRedstoneLight WhiteRSLamp;
-	public static BlockRedstoneLight YellowRSLamp;
-	
+
 	//lit lamps
-	public static BlockRedstoneLight LitBlackRSLamp;
-	public static BlockRedstoneLight LitBlueRSLamp;
-	public static BlockRedstoneLight LitBrownRSLamp;
-	public static BlockRedstoneLight LitCyanRSLamp;
-	public static BlockRedstoneLight LitGrayRSLamp;
-	public static BlockRedstoneLight LitGreenRSLamp;
-	public static BlockRedstoneLight LitLightBlueRSLamp;
-	public static BlockRedstoneLight LitLimeRSLamp;
-	public static BlockRedstoneLight LitMagentaRSLamp;
-	public static BlockRedstoneLight LitOrangeRSLamp;
-	public static BlockRedstoneLight LitPinkRSLamp;
-	public static BlockRedstoneLight LitPurpleRSLamp;
-	public static BlockRedstoneLight LitRedRSLamp;
-	public static BlockRedstoneLight LitSilverRSLamp;
-	public static BlockRedstoneLight LitWhiteRSLamp;
-	public static BlockRedstoneLight LitYellowRSLamp;
+	public static BlockRedstoneLight LitBlackLamp;
+	public static BlockRedstoneLight LitBlueLamp;
+	public static BlockRedstoneLight LitBrownLamp;
+	public static BlockRedstoneLight LitCyanLamp;
+	public static BlockRedstoneLight LitGrayLamp;
+	public static BlockRedstoneLight LitGreenLamp;
+	public static BlockRedstoneLight LitLightBlueLamp;
+	public static BlockRedstoneLight LitLimeLamp;
+	public static BlockRedstoneLight LitMagentaLamp;
+	public static BlockRedstoneLight LitOrangeLamp;
+	public static BlockRedstoneLight LitPinkLamp;
+	public static BlockRedstoneLight LitPurpleLamp;
+	public static BlockRedstoneLight LitRedLamp;
+	public static BlockRedstoneLight LitSilverLamp;
+	public static BlockRedstoneLight LitWhiteLamp;
+	public static BlockRedstoneLight LitYellowLamp;
+
+	//unlit lamps
+	public static BlockRedstoneLight BlackLamp;
+	public static BlockRedstoneLight BlueLamp;
+	public static BlockRedstoneLight BrownLamp;
+	public static BlockRedstoneLight CyanLamp;
+	public static BlockRedstoneLight GrayLamp;
+	public static BlockRedstoneLight GreenLamp;
+	public static BlockRedstoneLight LightBlueLamp;
+	public static BlockRedstoneLight LimeLamp;
+	public static BlockRedstoneLight MagentaLamp;
+	public static BlockRedstoneLight OrangeLamp;
+	public static BlockRedstoneLight PinkLamp;
+	public static BlockRedstoneLight PurpleLamp;
+	public static BlockRedstoneLight RedLamp;
+	public static BlockRedstoneLight SilverLamp;
+	public static BlockRedstoneLight WhiteLamp;
+	public static BlockRedstoneLight YellowLamp;
+
 
 	public static void initAndRegister() {
-		
 		Utils.regBlock(SaltLamp=new SaltLamp());
-		//unlit lamps
-		Utils.regBlock(BlackRSLamp = new BlackRSLamp());
-		Utils.regBlock(BlueRSLamp = new BlueRSLamp());
-		Utils.regBlock(BrownRSLamp = new BrownRSLamp());
-		Utils.regBlock(CyanRSLamp = new CyanRSLamp());
-		Utils.regBlock(GrayRSLamp = new GrayRSLamp());
-		Utils.regBlock(GreenRSLamp = new GreenRSLamp());
-		Utils.regBlock(LightBlueRSLamp = new LightBlueRSLamp());
-		Utils.regBlock(LimeRSLamp = new LimeRSLamp());
-		Utils.regBlock(MagentaRSLamp = new MagentaRSLamp());
-		Utils.regBlock(OrangeRSLamp = new OrangeRSLamp());
-		Utils.regBlock(PinkRSLamp = new PinkRSLamp());
-		Utils.regBlock(PurpleRSLamp = new PurpleRSLamp());
-		Utils.regBlock(RedRSLamp = new RedRSLamp());
-		Utils.regBlock(SilverRSLamp = new SilverRSLamp());
-		Utils.regBlock(WhiteRSLamp = new WhiteRSLamp());
-		Utils.regBlock(YellowRSLamp = new YellowRSLamp());
-		
-		//lit lamps
-		ForgeRegistries.BLOCKS.register(LitBlackRSLamp = new LitBlackRSLamp());
-		ForgeRegistries.BLOCKS.register(LitBlueRSLamp = new LitBlueRSLamp());
-		ForgeRegistries.BLOCKS.register(LitBrownRSLamp = new LitBrownRSLamp());
-		ForgeRegistries.BLOCKS.register(LitCyanRSLamp = new LitCyanRSLamp());
-		ForgeRegistries.BLOCKS.register(LitGrayRSLamp = new LitGrayRSLamp());
-		ForgeRegistries.BLOCKS.register(LitGreenRSLamp = new LitGreenRSLamp());
-		ForgeRegistries.BLOCKS.register(LitLightBlueRSLamp = new LitLightBlueRSLamp());
-		ForgeRegistries.BLOCKS.register(LitLimeRSLamp = new LitLimeRSLamp());
-		ForgeRegistries.BLOCKS.register(LitMagentaRSLamp = new LitMagentaRSLamp());
-		ForgeRegistries.BLOCKS.register(LitOrangeRSLamp = new LitOrangeRSLamp());
-		ForgeRegistries.BLOCKS.register(LitPinkRSLamp = new LitPinkRSLamp());
-		ForgeRegistries.BLOCKS.register(LitPurpleRSLamp = new LitPurpleRSLamp());
-		ForgeRegistries.BLOCKS.register(LitRedRSLamp = new LitRedRSLamp());
-		ForgeRegistries.BLOCKS.register(LitSilverRSLamp = new LitSilverRSLamp());
-		ForgeRegistries.BLOCKS.register(LitWhiteRSLamp = new LitWhiteRSLamp());
-		ForgeRegistries.BLOCKS.register(LitYellowRSLamp = new LitYellowRSLamp());
 
+		//lit lamps
+		ForgeRegistries.BLOCKS.register(LitBlackLamp = new LitBlackRSLamp());
+		ForgeRegistries.BLOCKS.register(LitBlueLamp = new LitBlueRSLamp());
+		ForgeRegistries.BLOCKS.register(LitBrownLamp = new LitBrownRSLamp());
+		ForgeRegistries.BLOCKS.register(LitCyanLamp = new LitCyanRSLamp());
+		ForgeRegistries.BLOCKS.register(LitGrayLamp = new LitGrayRSLamp());
+		ForgeRegistries.BLOCKS.register(LitGreenLamp = new LitGreenRSLamp());
+		ForgeRegistries.BLOCKS.register(LitLightBlueLamp = new LitLightBlueRSLamp());
+		ForgeRegistries.BLOCKS.register(LitLimeLamp = new LitLimeRSLamp());
+		ForgeRegistries.BLOCKS.register(LitMagentaLamp = new LitMagentaRSLamp());
+		ForgeRegistries.BLOCKS.register(LitOrangeLamp = new LitOrangeRSLamp());
+		ForgeRegistries.BLOCKS.register(LitPinkLamp = new LitPinkRSLamp());
+		ForgeRegistries.BLOCKS.register(LitPurpleLamp = new LitPurpleRSLamp());
+		ForgeRegistries.BLOCKS.register(LitRedLamp = new LitRedRSLamp());
+		ForgeRegistries.BLOCKS.register(LitSilverLamp = new LitSilverRSLamp());
+		ForgeRegistries.BLOCKS.register(LitWhiteLamp = new LitWhiteRSLamp());
+		ForgeRegistries.BLOCKS.register(LitYellowLamp = new LitYellowRSLamp());
+
+		//unlit lamps
+		Utils.regBlock(BlackLamp = new BlackRSLamp());
+		Utils.regBlock(BlueLamp = new BlueRSLamp());
+		Utils.regBlock(BrownLamp = new BrownRSLamp());
+		Utils.regBlock(CyanLamp = new CyanRSLamp());
+		Utils.regBlock(GrayLamp = new GrayRSLamp());
+		Utils.regBlock(GreenLamp = new GreenRSLamp());
+		Utils.regBlock(LightBlueLamp = new LightBlueRSLamp());
+		Utils.regBlock(LimeLamp = new LimeRSLamp());
+		Utils.regBlock(MagentaLamp = new MagentaRSLamp());
+		Utils.regBlock(OrangeLamp = new OrangeRSLamp());
+		Utils.regBlock(PinkLamp = new PinkRSLamp());
+		Utils.regBlock(PurpleLamp = new PurpleRSLamp());
+		Utils.regBlock(RedLamp = new RedRSLamp());
+		Utils.regBlock(SilverLamp = new SilverRSLamp());
+		Utils.regBlock(WhiteLamp = new WhiteRSLamp());
+		Utils.regBlock(YellowLamp = new YellowRSLamp());
 	}
-	public static void regRenders() {		
+
+	public static void regRenders() {
+		Utils.regRender(BlackLamp);
+		Utils.regRender(BlueLamp);
+		Utils.regRender(BrownLamp);
+		Utils.regRender(CyanLamp);
+		Utils.regRender(GrayLamp);
+		Utils.regRender(GreenLamp);
+		Utils.regRender(LightBlueLamp);
+		Utils.regRender(LimeLamp);
+		Utils.regRender(MagentaLamp);
+		Utils.regRender(OrangeLamp);
+		Utils.regRender(PinkLamp);
+		Utils.regRender(PurpleLamp);
+		Utils.regRender(RedLamp);
 		Utils.regRender(SaltLamp);
-		Utils.regRender(BlackRSLamp);
-		Utils.regRender(BlueRSLamp);
-		Utils.regRender(BrownRSLamp);
-		Utils.regRender(CyanRSLamp);
-		Utils.regRender(GrayRSLamp);
-		Utils.regRender(GreenRSLamp);
-		Utils.regRender(LightBlueRSLamp);
-		Utils.regRender(LimeRSLamp);
-		Utils.regRender(MagentaRSLamp);
-		Utils.regRender(OrangeRSLamp);
-		Utils.regRender(PinkRSLamp);
-		Utils.regRender(PurpleRSLamp);
-		Utils.regRender(RedRSLamp);
-		Utils.regRender(SilverRSLamp);
-		Utils.regRender(WhiteRSLamp);
-		Utils.regRender(YellowRSLamp);
-		
+		Utils.regRender(SilverLamp);
+		Utils.regRender(WhiteLamp);
+		Utils.regRender(YellowLamp);
 	}
 }

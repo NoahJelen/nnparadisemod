@@ -7,7 +7,7 @@ import net.minecraft.item.ItemDoor;
 
 public class ItemMossStoneDoor extends ItemDoor {
 	public ItemMossStoneDoor() {
-		super(Doors.BlockMossStoneDoor);
+		super(Doors.MossStoneDoor);
 		setUnlocalizedName("ItemMossStoneDoor");
 		setRegistryName("moss_stone_door");
 		setCreativeTab(CreativeTabs.REDSTONE);

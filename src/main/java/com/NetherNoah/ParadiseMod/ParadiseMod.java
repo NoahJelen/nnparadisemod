@@ -62,6 +62,7 @@ import com.NetherNoah.ParadiseMod.world.worldgen.structures.SkyWheel;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.TreasureChest;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.UndergroundVillage;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.WickerMan;
+import com.NetherNoah.ParadiseMod.world.worldgen.structures.blackCross;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.JeffTank;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.AttieCat.Shrine;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Dungeons.BrickPyramid;
@@ -205,6 +206,9 @@ public class ParadiseMod {
 				new PlayerTemples(),
 				new GiantGrassBlock(),
 				
+				//I am NOT an apostolic christian, nor do I want to be one, Genesis!
+				new blackCross(),
+				
 				//created by AttieCat
 				new Shrine(),
 				new JeffTank(),
@@ -233,7 +237,7 @@ public class ParadiseMod {
 		for(int i=0;i<ores.length;i++) 
 			GameRegistry.registerWorldGenerator(ores[i],3);
 		for(int i=0;i<structures.length;i++) 
-			GameRegistry.registerWorldGenerator(structures[i],4);
+			GameRegistry.registerWorldGenerator(structures[i],i);
 		for(int i=0;i<misc.length;i++) 
 			GameRegistry.registerWorldGenerator(misc[i],5);
 

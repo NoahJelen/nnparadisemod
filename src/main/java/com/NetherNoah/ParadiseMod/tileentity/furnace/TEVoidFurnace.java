@@ -1,8 +1,9 @@
-//this was derived from the vanilla code
 package com.NetherNoah.ParadiseMod.tileentity.furnace;
 
 
-import com.NetherNoah.ParadiseMod.CustomBlockCode.VoidFurnaceCode;
+import javax.annotation.Nullable;
+
+import com.NetherNoah.ParadiseMod.blocks.base.VoidFurnaceBase;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -34,8 +35,13 @@ import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.datafix.FixTypes;
 import net.minecraft.util.datafix.walkers.ItemStackDataLists;
 import net.minecraft.util.math.MathHelper;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.wrapper.SidedInvWrapper;
 
 public class TEVoidFurnace extends TileEntityLockable implements ITickable, ISidedInventory
 {
@@ -235,7 +241,7 @@ public class TEVoidFurnace extends TileEntityLockable implements ITickable, ISid
             if (flag != isBurning())
             {
                 flag1 = true;
-                VoidFurnaceCode.setState(isBurning(), world, pos);
+                VoidFurnaceBase.setState(isBurning(), world, pos);
             }
         }
         if (flag1)
@@ -299,7 +305,7 @@ public class TEVoidFurnace extends TileEntityLockable implements ITickable, ISid
             Item item = stack.getItem();
             if (!item.getRegistryName().getResourceDomain().equals("minecraft"))
             {
-                int burnTime = net.minecraftforge.fml.common.registry.GameRegistry.getFuelValue(stack);
+                int burnTime = GameRegistry.getFuelValue(stack);
                 if (burnTime != 0) return burnTime;
             }
             return item == Item.getItemFromBlock(Blocks.WOODEN_SLAB) ? 150 : (item == Item.getItemFromBlock(Blocks.WOOL) ? 100 : (item == Item.getItemFromBlock(Blocks.CARPET) ? 67 : (item == Item.getItemFromBlock(Blocks.LADDER) ? 300 : (item == Item.getItemFromBlock(Blocks.WOODEN_BUTTON) ? 100 : (Block.getBlockFromItem(item).getDefaultState().getMaterial() == Material.WOOD ? 300 : (item == Item.getItemFromBlock(Blocks.COAL_BLOCK) ? 16000 : (item instanceof ItemTool && "WOOD".equals(((ItemTool)item).getToolMaterialName()) ? 200 : (item instanceof ItemSword && "WOOD".equals(((ItemSword)item).getToolMaterialName()) ? 200 : (item instanceof ItemHoe && "WOOD".equals(((ItemHoe)item).getMaterialName()) ? 200 : (item == Items.STICK ? 100 : (item != Items.BOW && item != Items.FISHING_ROD ? (item == Items.SIGN ? 200 : (item == Items.COAL ? 1600 : (item == Items.LAVA_BUCKET ? 20000 : (item != Item.getItemFromBlock(Blocks.SAPLING) && item != Items.BOWL ? (item == Items.BLAZE_ROD ? 2400 : (item instanceof ItemDoor && item != Items.IRON_DOOR ? 200 : (item instanceof ItemBoat ? 400 : 0))) : 100)))) : 300)))))))))));
@@ -424,13 +430,13 @@ public class TEVoidFurnace extends TileEntityLockable implements ITickable, ISid
     {
         furnaceItemStacks.clear();
     }
-    net.minecraftforge.items.IItemHandler handlerTop = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.UP);
-    net.minecraftforge.items.IItemHandler handlerBottom = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.DOWN);
-    net.minecraftforge.items.IItemHandler handlerSide = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.WEST);
+    IItemHandler handlerTop = new SidedInvWrapper(this, EnumFacing.UP);
+    IItemHandler handlerBottom = new SidedInvWrapper(this, EnumFacing.DOWN);
+    IItemHandler handlerSide = new SidedInvWrapper(this, EnumFacing.WEST);
     @Override
-	public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, @javax.annotation.Nullable net.minecraft.util.EnumFacing facing)
+	public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing)
     {
-        if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+        if (facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
             if (facing == EnumFacing.DOWN)
                 return (T) handlerBottom;
             else if (facing == EnumFacing.UP)

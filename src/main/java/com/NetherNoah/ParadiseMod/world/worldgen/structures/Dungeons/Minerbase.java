@@ -32,7 +32,7 @@ public class Minerbase extends WorldGenerator implements IWorldGenerator {
 			IChunkProvider chunkProvider) {
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
-		if (world.provider.getDimension() == 0||world.provider.getDimension() != DimensionRegistry.DeepUnderground) {
+		if (world.provider.getDimension() != DimensionRegistry.DeepVoid && world.provider.getDimension() != -1 && world.provider.getDimension() != 1) {
 			BlockPos pos = new BlockPos(blockX, 30, blockZ);
 			generate(world, rand, pos);
 		}

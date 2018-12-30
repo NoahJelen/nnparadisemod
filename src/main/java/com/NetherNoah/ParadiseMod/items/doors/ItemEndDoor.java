@@ -7,7 +7,7 @@ import net.minecraft.item.ItemDoor;
 
 public class ItemEndDoor extends ItemDoor {
 	public ItemEndDoor() {
-		super(Doors.BlockEndDoor);
+		super(Doors.EndDoor);
 		setUnlocalizedName("ItemEndDoor");
 		setRegistryName("end_door");
 		setCreativeTab(CreativeTabs.REDSTONE);

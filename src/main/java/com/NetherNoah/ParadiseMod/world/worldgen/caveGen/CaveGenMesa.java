@@ -36,6 +36,7 @@ public class CaveGenMesa implements IWorldGenerator {
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
 		Chunk theChunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
+
 		// don't generate if the config says not to
 		// generate cave features
 		if (ModConfig.worldgen.caves.betterCaves == false)

@@ -30,6 +30,7 @@ public class CaveGenDesert implements IWorldGenerator{
 		// generate cave features
 		if (ModConfig.worldgen.caves.betterCaves == false)
 			return;
+
 		if(ModConfig.worldgen.caves.types.Dry == false)
 			return;
 

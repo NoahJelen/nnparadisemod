@@ -1,6 +1,6 @@
 package com.NetherNoah.ParadiseMod.init.ModBlocks;
 
-import com.NetherNoah.ParadiseMod.CustomBlockCode.RSDoor;
+import com.NetherNoah.ParadiseMod.blocks.RedstoneDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.AndesiteDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.BedrockDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.CactusDoor;
@@ -15,58 +15,59 @@ import com.NetherNoah.ParadiseMod.blocks.doors.GoldDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.GraniteDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.MossStoneDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.ObsidianDoor;
-import com.NetherNoah.ParadiseMod.blocks.doors.RedstoneDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.RubyDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.RustyDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.SilverDoor;
 import com.NetherNoah.ParadiseMod.blocks.doors.StoneDoor;
+
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class Doors {
 	//doors
-	public static BlockDoor BlockCactusDoor;
-	public static BlockDoor BlockEndDoor;
-	public static BlockDoor BlockSilverDoor;
-	public static BlockDoor BlockGlassDoor;
-	public static BlockDoor BlockGoldDoor;
-	public static BlockDoor BlockDiamondDoor;
-	public static BlockDoor BlockEmeraldDoor;
-	public static BlockDoor BlockAndesiteDoor;
-	public static BlockDoor BlockDioriteDoor;
-	public static BlockDoor BlockGraniteDoor;
-	public static BlockDoor BlockStoneDoor;
-	public static BlockDoor BlockCobblestoneDoor;
-	public static BlockDoor BlockMossStoneDoor;
-	public static BlockDoor BlockGlowingObsidianDoor;
-	public static BlockDoor BlockObsidianDoor;
-	public static BlockDoor BlockBedrockDoor;
-	public static BlockDoor BlockRubyDoor;
-	public static RSDoor BlockRedstoneDoor;
-	public static BlockDoor RustyDoor;;
+	public static BlockDoor CactusDoor;
+	public static BlockDoor EndDoor;
+	public static BlockDoor SilverDoor;
+	public static BlockDoor GlassDoor;
+	public static BlockDoor GoldDoor;
+	public static BlockDoor DiamondDoor;
+	public static BlockDoor EmeraldDoor;
+	public static BlockDoor AndesiteDoor;
+	public static BlockDoor DioriteDoor;
+	public static BlockDoor GraniteDoor;
+	public static BlockDoor StoneDoor;
+	public static BlockDoor CobblestoneDoor;
+	public static BlockDoor MossStoneDoor;
+	public static BlockDoor GlowingObsidianDoor;
+	public static BlockDoor ObsidianDoor;
+	public static BlockDoor BedrockDoor;
+	public static BlockDoor RubyDoor;
+	public static Block RedstoneDoor;
+	public static BlockDoor RustyDoor;
 
 	public static void initAndRegister() {
 		
 		// door blocks
 		// they don't need their own items
 		ForgeRegistries.BLOCKS.register(RustyDoor=new RustyDoor());
-		ForgeRegistries.BLOCKS.register(BlockCactusDoor=new CactusDoor());
-		ForgeRegistries.BLOCKS.register(BlockGlowingObsidianDoor=new GlowingObsidianDoor());
-		ForgeRegistries.BLOCKS.register(BlockEndDoor=new EndDoor());
-		ForgeRegistries.BLOCKS.register(BlockSilverDoor=new SilverDoor());
-		ForgeRegistries.BLOCKS.register(BlockGlassDoor = new GlassDoor());
-		ForgeRegistries.BLOCKS.register(BlockGoldDoor = new GoldDoor());
-		ForgeRegistries.BLOCKS.register(BlockDiamondDoor = new DiamondDoor());
-		ForgeRegistries.BLOCKS.register(BlockEmeraldDoor = new EmeraldDoor());
-		ForgeRegistries.BLOCKS.register(BlockAndesiteDoor = new AndesiteDoor());
-		ForgeRegistries.BLOCKS.register(BlockDioriteDoor = new DioriteDoor());
-		ForgeRegistries.BLOCKS.register(BlockGraniteDoor = new GraniteDoor());
-		ForgeRegistries.BLOCKS.register(BlockStoneDoor = new StoneDoor());
-		ForgeRegistries.BLOCKS.register(BlockCobblestoneDoor = new CobblestoneDoor());
-		ForgeRegistries.BLOCKS.register(BlockMossStoneDoor = new MossStoneDoor());
-		ForgeRegistries.BLOCKS.register(BlockObsidianDoor = new ObsidianDoor());
-		ForgeRegistries.BLOCKS.register(BlockBedrockDoor = new BedrockDoor());
-		ForgeRegistries.BLOCKS.register(BlockRubyDoor = new RubyDoor());
-		ForgeRegistries.BLOCKS.register(BlockRedstoneDoor = new RedstoneDoor());
+		ForgeRegistries.BLOCKS.register(CactusDoor=new CactusDoor());
+		ForgeRegistries.BLOCKS.register(GlowingObsidianDoor=new GlowingObsidianDoor());
+		ForgeRegistries.BLOCKS.register(EndDoor=new EndDoor());
+		ForgeRegistries.BLOCKS.register(SilverDoor=new SilverDoor());
+		ForgeRegistries.BLOCKS.register(GlassDoor = new GlassDoor());
+		ForgeRegistries.BLOCKS.register(GoldDoor = new GoldDoor());
+		ForgeRegistries.BLOCKS.register(DiamondDoor = new DiamondDoor());
+		ForgeRegistries.BLOCKS.register(EmeraldDoor = new EmeraldDoor());
+		ForgeRegistries.BLOCKS.register(AndesiteDoor = new AndesiteDoor());
+		ForgeRegistries.BLOCKS.register(DioriteDoor = new DioriteDoor());
+		ForgeRegistries.BLOCKS.register(GraniteDoor = new GraniteDoor());
+		ForgeRegistries.BLOCKS.register(StoneDoor = new StoneDoor());
+		ForgeRegistries.BLOCKS.register(CobblestoneDoor = new CobblestoneDoor());
+		ForgeRegistries.BLOCKS.register(MossStoneDoor = new MossStoneDoor());
+		ForgeRegistries.BLOCKS.register(ObsidianDoor = new ObsidianDoor());
+		ForgeRegistries.BLOCKS.register(BedrockDoor = new BedrockDoor());
+		ForgeRegistries.BLOCKS.register(RubyDoor = new RubyDoor());
+		ForgeRegistries.BLOCKS.register(RedstoneDoor = new RedstoneDoor());
 	}
 }

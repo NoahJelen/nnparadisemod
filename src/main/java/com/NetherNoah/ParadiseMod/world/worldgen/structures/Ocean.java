@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.world.worldgen.structures;
 import java.util.Random;
 
 import com.NetherNoah.ParadiseMod.Reference;
+import com.NetherNoah.ParadiseMod.Utils;
 import com.NetherNoah.ParadiseMod.config.ModConfig;
 
 import net.minecraft.block.Block;
@@ -33,9 +34,12 @@ public class Ocean extends WorldGenerator implements IWorldGenerator{
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
 		if (world.provider.getDimension() == 0) {
+			int structureType=rand.nextInt(2);
 			int y = getGroundFromAbove(world, blockX, blockZ);
+			if (structureType==0)
+				y=getLowestBlock(world, blockX, blockZ);
 			BlockPos pos = new BlockPos(blockX, y, blockZ);
-			generate(world, rand, pos);
+			generate(world, rand, pos,structureType);
 		}
 	}
 
@@ -43,23 +47,40 @@ public class Ocean extends WorldGenerator implements IWorldGenerator{
 	{
 		int y = 255;
 		boolean foundGround = false;
-		while(!foundGround && y-- >= 31)
+		while(!foundGround && y-- >= 20)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround = blockAt == Blocks.GRAVEL;
+			foundGround = blockAt == Blocks.GRAVEL||blockAt == Blocks.DIRT||blockAt == Blocks.CLAY;
 		}
 		return y;
 	}
 
-	@Override
-	public boolean generate(World world, Random rand, BlockPos position) {
+	//get the lowest block in the area
+	public static int getLowestBlock(World world, int blockX,int blockZ) {
+		int[] heights = new int[136];
+		int index = 0;
+		for (int i=0;i<=33;i++) {
+			heights[index]=getGroundFromAbove(world, blockX, blockZ);
+			index++;
+			heights[index]=getGroundFromAbove(world, blockX+i+1, blockZ);
+			index++;
+			heights[index]=getGroundFromAbove(world, blockX+i+1, blockZ+i+1);
+			index++;
+			heights[index]=getGroundFromAbove(world, blockX+i+1, blockZ+i+1);
+			index++;
+		}
+			
+		return Utils.getMinValue(heights);
+	}
+
+	public boolean generate(World world, Random rand, BlockPos position, int structureType) {
 		WorldServer worldserver = (WorldServer) world;
 		MinecraftServer minecraftserver = world.getMinecraftServer();
 		TemplateManager templatemanager = worldserver.getStructureTemplateManager();
 		Template template = null;
 		int rarity=ModConfig.worldgen.structures.ShipwreckChance;
 
-		switch(rand.nextInt(2)) {
+		switch(structureType) {
 			case 0:
 				if (ModConfig.worldgen.structures.OceanVillage==true) {
 					rarity=ModConfig.worldgen.structures.OceanVillageChance;
@@ -98,5 +119,10 @@ public class Ocean extends WorldGenerator implements IWorldGenerator{
 		int zwidth = template.getSize().getZ();
 		int xwidth = template.getSize().getX();
 		return posAboveGround.getY() > 31;
+	}
+
+	@Override
+	public boolean generate(World worldIn, Random rand, BlockPos position) {
+		return false;
 	}
 }

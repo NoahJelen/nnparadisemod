@@ -28,7 +28,7 @@ public class LimeRSLamp extends BlockRedstoneLight {
         {
             if (worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, Lamps.LitLimeRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.LitLimeLamp.getDefaultState(), 2);
             }
         }
     }
@@ -39,18 +39,18 @@ public class LimeRSLamp extends BlockRedstoneLight {
         {
             if (worldIn.isBlockPowered(pos))
             {
-                worldIn.setBlockState(pos, Lamps.LitLimeRSLamp.getDefaultState(), 2);
+                worldIn.setBlockState(pos, Lamps.LitLimeLamp.getDefaultState(), 2);
             }
         }
     }
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(Lamps.LimeRSLamp);
+        return Item.getItemFromBlock(Lamps.LimeLamp);
     }
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(Lamps.LimeRSLamp);
+        return new ItemStack(Lamps.LimeLamp);
     }
 }

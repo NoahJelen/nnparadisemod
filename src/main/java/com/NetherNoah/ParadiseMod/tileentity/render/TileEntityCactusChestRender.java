@@ -113,17 +113,20 @@ public class TileEntityCactusChestRender extends TileEntitySpecialRenderer<TileE
             GlStateManager.translate(0.5F, 0.5F, 0.5F);
             int j = 0;
 
-            if (i == 2)
-                j = 180;
-
-            if (i == 3)
-                j = 0;
-
-            if (i == 4)
-                j = 90;
-
-            if (i == 5)
-                j = -90;
+            switch (i) {
+            	case 2:
+            		j = 180;
+            		break;
+            	case 4:
+                    j = 90;
+            		break;
+            	case 5:
+                    j = -90;
+            		break;
+            	case 3:
+                default:
+                	j=0;
+            }
 
             if (i == 2 && te.adjacentChestXPos != null)
                 GlStateManager.translate(1.0F, 0.0F, 0.0F);
