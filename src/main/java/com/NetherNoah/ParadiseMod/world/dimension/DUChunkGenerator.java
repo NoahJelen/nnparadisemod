@@ -3,7 +3,7 @@ package com.NetherNoah.ParadiseMod.world.dimension;
 import java.util.List;
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
+import com.NetherNoah.ParadiseMod.blocks.misc.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Crystals;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 import com.NetherNoah.ParadiseMod.world.mapgen.MapGenDUCaves;
@@ -51,22 +51,22 @@ public class DUChunkGenerator implements IChunkGenerator {
 	protected static final IBlockState GRASS = Blocks.GRASS.getDefaultState();
 	protected static final IBlockState DIRT = Blocks.DIRT.getDefaultState();
 	protected static final IBlockState COMPICE = Blocks.PACKED_ICE.getDefaultState();
-	protected static final IBlockState ICE=Blocks.ICE.getDefaultState();
+	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState SAND = Blocks.SAND.getDefaultState();
 	protected static final IBlockState RED_SAND = Blocks.SAND.getDefaultState().withProperty(BlockSand.VARIANT, BlockSand.EnumType.RED_SAND);
 	protected static final IBlockState SANDSTONE = Blocks.SANDSTONE.getDefaultState();
 	protected static final IBlockState PRISMARINE=Blocks.PRISMARINE.getDefaultState();
 	protected static final IBlockState COBBLESTONE = Blocks.COBBLESTONE.getDefaultState();
-	protected static final IBlockState MYCELIUM=Blocks.MYCELIUM.getDefaultState();
-	protected static final IBlockState LIQUID_REDSTONE=LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState();
-	protected static final IBlockState GLOWING_ICE=Misc.glowingIce.getDefaultState();
+	protected static final IBlockState MYCELIUM = Blocks.MYCELIUM.getDefaultState();
+	protected static final IBlockState LIQUID_REDSTONE = LiquidRedstone.BlockLiquidRedstone.instance.getDefaultState();
+	protected static final IBlockState GLOWING_ICE = Misc.glowingIce.getDefaultState();
 
-	protected static final IBlockState TERRACOTTA=Blocks.HARDENED_CLAY.getDefaultState();
-	protected static final IBlockState ORANGE_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.ORANGE);
-	protected static final IBlockState WHITE_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.WHITE);
-	protected static final IBlockState BROWN_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BROWN);
-	protected static final IBlockState YELLOW_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.YELLOW);
-	protected static final IBlockState RED_TERRACOTTA=Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.RED);
+	protected static final IBlockState TERRACOTTA = Blocks.HARDENED_CLAY.getDefaultState();
+	protected static final IBlockState ORANGE_TERRACOTTA = Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.ORANGE);
+	protected static final IBlockState WHITE_TERRACOTTA = Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.WHITE);
+	protected static final IBlockState BROWN_TERRACOTTA = Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.BROWN);
+	protected static final IBlockState YELLOW_TERRACOTTA = Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.YELLOW);
+	protected static final IBlockState RED_TERRACOTTA = Blocks.STAINED_HARDENED_CLAY.getDefaultState().withProperty(BlockStainedHardenedClay.COLOR, EnumDyeColor.RED);
 
 	private final World world;
 	private final boolean generateStructures;

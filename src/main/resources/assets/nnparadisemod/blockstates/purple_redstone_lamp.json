@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:lamp_purple"}}}
+{
+    "forge_marker": 1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "particle":"nnparadisemod:blocks/lamp_purple",
+            "down":"nnparadisemod:blocks/lamp_purple",
+            "up":"nnparadisemod:blocks/lamp_purple",
+            "north":"nnparadisemod:blocks/lamp_purple",
+            "east":"nnparadisemod:blocks/lamp_purple",
+            "south":"nnparadisemod:blocks/lamp_purple",
+            "west":"nnparadisemod:blocks/lamp_purple"
+        }
+    },
+    "variants":{
+        "inventory":{
+            "model":"cube_all"
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

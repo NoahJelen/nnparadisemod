@@ -1,5 +1,19 @@
 {
+    "forge_marker": 1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "particle":"nnparadisemod:blocks/cactus_crafting_table_front",
+            "down":"nnparadisemod:blocks/compressed_cactus",
+            "up":"nnparadisemod:blocks/cactus_crafting_table_top",
+            "north":"nnparadisemod:blocks/cactus_crafting_table_front",
+            "east":"nnparadisemod:blocks/cactus_crafting_table_side",
+            "south":"nnparadisemod:blocks/cactus_crafting_table_side",
+            "west":"nnparadisemod:blocks/cactus_crafting_table_front"
+        }
+    },
     "variants": {
-        "normal": { "model": "nnparadisemod:cactus_crafting_table" }
+        "normal": { "model": "cube_all" },
+        "inventory":[{"model":"cube_all"}]
     }
 }

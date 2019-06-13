@@ -1,1 +1,18 @@
-{"variants":{"powered=false":{"model":"nnparadisemod:ruby_pressure_plate_up"},"powered=true":{"model":"nnparadisemod:ruby_pressure_plate_down"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"pressure_plate_up",
+        "textures":{"texture":"nnparadisemod:blocks/ruby_block"}
+    },
+	"variants": {
+        "inventory":{
+            "model":"pressure_plate_up"
+        },
+		"powered=false": {
+			"model": "pressure_plate_up"
+		},
+		"powered=true": {
+			"model": "pressure_plate_down"
+		}
+	}
+}

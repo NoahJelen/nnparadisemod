@@ -316,9 +316,6 @@ public class DVChunkGenerator implements IChunkGenerator
         return p_185963_1_;
     }
 
-    /**
-     * Generate initial structures in this chunk, e.g. mineshafts, temples, lakes, and dungeons
-     */
     @Override
 	public void populate(int x, int z)
     {
@@ -326,7 +323,7 @@ public class DVChunkGenerator implements IChunkGenerator
 		int i = x * 16;
 		int j = z * 16;
 		BlockPos blockpos = new BlockPos(i, 0, j);
-    	if (net.minecraftforge.event.terraingen.TerrainGen.decorate(world, rand, blockpos,DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
+    	if (TerrainGen.decorate(world, rand, blockpos,DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
 			if (rand.nextBoolean()) {
 				//crystals
 				quartzGen.generate(world, rand,	blockpos.add(rand.nextInt(16) + 8, rand.nextInt(256), rand.nextInt(16) + 8));
@@ -359,11 +356,6 @@ public class DVChunkGenerator implements IChunkGenerator
         return world.getBiome(pos).getSpawnableList(creatureType);
     }
 
-    /**
-     * Recreates data about structures intersecting given chunk (used for example by getPossibleCreatures), without
-     * placing any blocks. When called for the first time before any chunk is generated - also initializes the internal
-     * state needed by getPossibleCreatures.
-     */
     @Override
 	public void recreateStructures(Chunk chunkIn, int x, int z)
     {

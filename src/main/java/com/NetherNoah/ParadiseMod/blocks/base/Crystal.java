@@ -2,7 +2,7 @@ package com.NetherNoah.ParadiseMod.blocks.base;
 
 import java.util.Random;
 
-import com.NetherNoah.ParadiseMod.init.LiquidRedstone.BlockLiquidRedstone;
+import com.NetherNoah.ParadiseMod.blocks.misc.LiquidRedstone.BlockLiquidRedstone;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class Crystal extends BlockBush {
-	public Item dropItem;
+	public final Item dropItem;
 	public Crystal(Item drop) {
 		dropItem=drop;
 		setHardness(.5F);
@@ -87,12 +87,14 @@ public class Crystal extends BlockBush {
             return this.quantityDropped(random);
         }
     }
+
     //spawn the item in the world
     @Override
 	public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
     {
         super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
     }
+
     //spawn xp orbs
     @Override
     public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)
@@ -106,6 +108,7 @@ public class Crystal extends BlockBush {
         }
         return 0;
     }
+
     //spawn the actual item
     @Override
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)

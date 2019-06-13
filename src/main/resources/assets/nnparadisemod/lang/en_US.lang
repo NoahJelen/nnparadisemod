@@ -98,6 +98,11 @@ item.CactusStick.name=Cactus Stick
 item.VoidPearl.name=Void Pearl
 
 #Blocks
+tile.EndGrass.name=End Grass
+tile.TallEndGrass.name=Tall End Grass
+tile.EnderRose.name=Ender Rose
+tile.OverGrownEndStone.name=Overgrown End Stone
+tile.PolishedEndStone.name=Polished End Stone
 tile.bulletproofGlassPane.name=Blastproof Glass Pane
 tile.SandstonePlate.name=Sandstone Pressure Plate
 tile.RedSandstonePlate.name=Red Sandstone Pressure Plate
@@ -310,6 +315,7 @@ tile.netherrackFormation.name=Netherrack Formation
 tile.prismarineCrystalBlock.name=Prismarine Crystal Block
 #Fluids
 fluid.liquid_redstone=Liquid Redstone
+fluid.ender_acid=Ender Acid
 
 #Config
 config.blackcross=Black Cross

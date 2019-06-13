@@ -1,6 +1,16 @@
 {
+    "forge_marker":1,
+    "defaults":{
+        "model": "half_slab",
+        "textures": {
+            "bottom": "blocks/end_stone",
+            "top": "blocks/end_stone",
+            "side": "blocks/end_stone"
+        }
+    },
     "variants": {
-        "dummy=false,half=bottom": { "model": "nnparadisemod:end_slab_bottom" },
-        "dummy=false,half=top": { "model": "nnparadisemod:end_slab_top" }
+        "inventory":{ "model": "half_slab" },
+        "dummy=false,half=bottom": { "model": "half_slab" },
+        "dummy=false,half=top": { "model": "upper_slab" }
     }
 }

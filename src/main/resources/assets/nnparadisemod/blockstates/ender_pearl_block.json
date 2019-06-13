@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:ender_pearl_block"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/ender_pearl_block",
+            "down":"nnparadisemod:blocks/ender_pearl_block",
+            "east":"nnparadisemod:blocks/ender_pearl_block",
+            "west":"nnparadisemod:blocks/ender_pearl_block",
+            "north":"nnparadisemod:blocks/ender_pearl_block",
+            "south":"nnparadisemod:blocks/ender_pearl_block",
+            "particle":"nnparadisemod:blocks/ender_pearl_block"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

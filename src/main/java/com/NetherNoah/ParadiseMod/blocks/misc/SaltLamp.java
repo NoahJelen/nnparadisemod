@@ -21,6 +21,7 @@ public class SaltLamp extends Block implements ITileEntityProvider{
 		setSoundType(SoundType.GLASS);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 	}
+
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TEAntiMobLamp();

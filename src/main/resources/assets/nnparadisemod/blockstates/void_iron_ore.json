@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:void_iron_ore"}}}
+{
+    "forge_marker": 1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/void_iron_ore",
+            "down":"nnparadisemod:blocks/void_iron_ore",
+            "east":"nnparadisemod:blocks/void_iron_ore",
+            "west":"nnparadisemod:blocks/void_iron_ore",
+            "north":"nnparadisemod:blocks/void_iron_ore",
+            "south":"nnparadisemod:blocks/void_iron_ore",
+            "particle":"nnparadisemod:blocks/void_iron_ore"
+        }
+    },
+    "variants":{
+        "inventory":{
+            "model":"cube_all"
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

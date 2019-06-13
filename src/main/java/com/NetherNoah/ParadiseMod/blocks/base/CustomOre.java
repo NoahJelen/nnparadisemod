@@ -18,8 +18,8 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class CustomOre extends Block {
-	private int max;
-	private Item itemDrop;
+	private final int max;
+	private final Item itemDrop;
 	/**
 	 * Custom ore class for ores that drop items other than their own block
 	 * @param drop

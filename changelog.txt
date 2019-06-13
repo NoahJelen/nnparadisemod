@@ -251,3 +251,13 @@
     Added sandstone pressure plate
     Added red sandstone pressure plate
     Added Blast Proof Glass Pane
+    
+1.5 (Better End):
+    Optimized Block model loading (most models now share a common model)
+    changed the side texture of glowing obsidian slab
+    Bonemeal now generates roses
+    Added Overgrown End Stone
+    Added Ender Rose
+    Added End Grasses
+    Added Ender Acid
+    Changed world generation of The End

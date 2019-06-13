@@ -2,6 +2,7 @@ package com.NetherNoah.ParadiseMod;
 
 import java.util.Random;
 
+import com.NetherNoah.ParadiseMod.blocks.base.CustomSlab;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Misc;
 
 import net.minecraft.block.Block;
@@ -13,6 +14,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSlab;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class Utils {
@@ -45,6 +47,7 @@ public class Utils {
 		return bricks[rand.nextInt(3)];
 	}
 
+
 	/**
 	 *Registers a block with associated item
 	 */
@@ -56,27 +59,38 @@ public class Utils {
 	}
 
 	/**
+	 *Registers a slab with its double and item
+	 */
+	public static void regSlab(CustomSlab slab,CustomSlab doubleSlab) {
+		ForgeRegistries.BLOCKS.register(doubleSlab);
+		ForgeRegistries.BLOCKS.register(slab);
+		doubleSlab.setSingleSlab(slab);
+		ItemBlock item = new ItemSlab(slab, slab, doubleSlab);
+		ForgeRegistries.ITEMS.register(item.setRegistryName(slab.getRegistryName()));
+	}
+
+	/**
+	 *Registers an item
+	 */
+	public static void regItem(Item item) {
+		ForgeRegistries.ITEMS.register(item);
+	}
+
+
+	/**
 	 *Registers a block model
 	 */
 	public static void regRender(Block block) {
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation(block.getRegistryName(),"inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(),"inventory"));
 	}
 
 	/**
 	 *Registers an item model
 	 */
 	public static void regRender(Item item) {
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0,
-				new ModelResourceLocation(item.getRegistryName(), "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
-	
-	/**
-	 *Registers an item
-	 */
-	public static void regItem(Item value) {
-		ForgeRegistries.ITEMS.register(value);
-	}
+
 	
 	/**
 	 *Gets the maximum value of an integer array

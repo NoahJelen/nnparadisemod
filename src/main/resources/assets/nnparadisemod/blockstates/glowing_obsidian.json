@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:glowing_obsidian"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/glowing_obsidian",
+            "down":"nnparadisemod:blocks/glowing_obsidian",
+            "east":"nnparadisemod:blocks/glowing_obsidian",
+            "west":"nnparadisemod:blocks/glowing_obsidian",
+            "north":"nnparadisemod:blocks/glowing_obsidian",
+            "south":"nnparadisemod:blocks/glowing_obsidian",
+            "particle":"nnparadisemod:blocks/glowing_obsidian"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

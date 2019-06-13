@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:blaze_block"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/blaze_block",
+            "down":"nnparadisemod:blocks/blaze_block",
+            "east":"nnparadisemod:blocks/blaze_block",
+            "west":"nnparadisemod:blocks/blaze_block",
+            "north":"nnparadisemod:blocks/blaze_block",
+            "south":"nnparadisemod:blocks/blaze_block",
+            "particle":"nnparadisemod:blocks/blaze_block"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

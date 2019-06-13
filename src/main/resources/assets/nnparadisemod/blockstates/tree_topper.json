@@ -1,1 +1,7 @@
-{"variants":{"normal":{"model":"nnparadisemod:tree_topper"}}}
+{
+    "variants":{
+        "normal":{
+            "model":"nnparadisemod:tree_topper"
+        }
+    }
+}

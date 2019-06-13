@@ -12,20 +12,31 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class CustomPlant extends BlockBush implements IGrowable {
-	public CustomPlant() {
+	private final boolean big;
+	public CustomPlant(boolean isBig) {
+		big=isBig;
 		setSoundType(SoundType.PLANT);
 	}
 	@Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+    {
+		if (big)
+			return FULL_BLOCK_AABB;
+		return BUSH_AABB;
+    }
+	@Override
 	protected boolean canSustainBush(IBlockState state)
     {
-		return state.getBlock()==Blocks.GRASS|state.getBlock()==Blocks.DIRT;
+		return state.getBlock()==Blocks.GRASS||state.getBlock()==Blocks.DIRT;
     }
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
@@ -35,14 +46,15 @@ public class CustomPlant extends BlockBush implements IGrowable {
 	@Override
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
     {
-        return true;
+        return false;
     }
 
+	
     @Override
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state)
     {
-        spawnAsEntity(worldIn, pos, new ItemStack(this));
     }
+    
 	@Override
 	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()

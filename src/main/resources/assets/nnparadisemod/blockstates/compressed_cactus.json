@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:compressed_cactus"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/compressed_cactus",
+            "down":"nnparadisemod:blocks/compressed_cactus",
+            "east":"nnparadisemod:blocks/compressed_cactus",
+            "west":"nnparadisemod:blocks/compressed_cactus",
+            "north":"nnparadisemod:blocks/compressed_cactus",
+            "south":"nnparadisemod:blocks/compressed_cactus",
+            "particle":"nnparadisemod:blocks/compressed_cactus"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

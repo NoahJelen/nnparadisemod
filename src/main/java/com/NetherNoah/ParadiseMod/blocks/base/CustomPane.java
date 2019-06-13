@@ -13,26 +13,19 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class CustomPane extends BlockPane {
-	private boolean metal;
+	private final boolean metal;
+	private final Material blockMaterial;
 	public CustomPane(Material material, boolean isMetal,SoundType sound) {
 		super(material, isMetal);
+		blockMaterial=material;
 		metal=isMetal;
 		setSoundType(sound);
 	}
-	/*
-	//@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune)
-   {
-		if (glass)
-			return Item.getItemFromBlock(this);
-		else
-			return null;
-    }
-   */
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer() {
-		if (metal)
+		if (blockMaterial!=Material.GLASS)
 			return BlockRenderLayer.SOLID;
 		else
 			return BlockRenderLayer.TRANSLUCENT;

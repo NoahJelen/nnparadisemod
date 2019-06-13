@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:regeneration_stone"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/regeneration_stone",
+            "down":"nnparadisemod:blocks/regeneration_stone",
+            "east":"nnparadisemod:blocks/regeneration_stone",
+            "west":"nnparadisemod:blocks/regeneration_stone",
+            "north":"nnparadisemod:blocks/regeneration_stone",
+            "south":"nnparadisemod:blocks/regeneration_stone",
+            "particle":"nnparadisemod:blocks/regeneration_stone"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

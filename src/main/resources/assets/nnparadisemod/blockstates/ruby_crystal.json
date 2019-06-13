@@ -1,1 +1,13 @@
-{"variants":{"normal":{"model":"nnparadisemod:ruby_crystal"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"nnparadisemod:crystal",
+        "textures": {
+            "all": "nnparadisemod:blocks/ruby_crystal"
+        }
+    },
+    "variants":{
+        "inventory":{"model":"nnparadisemod:crystal"},
+        "normal":{"model":"nnparadisemod:crystal"}
+    }
+}

@@ -1,8 +1,0 @@
-{
-    "parent": "block/half_slab",
-    "textures": {
-        "bottom": "nnparadisemod:blocks/compressed_cactus",
-        "top": "nnparadisemod:blocks/compressed_cactus",
-        "side": "nnparadisemod:blocks/compressed_cactus"
-    }
-}

@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:lamp_lime"}}}
+{
+    "forge_marker": 1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "particle":"nnparadisemod:blocks/lamp_lime",
+            "down":"nnparadisemod:blocks/lamp_lime",
+            "up":"nnparadisemod:blocks/lamp_lime",
+            "north":"nnparadisemod:blocks/lamp_lime",
+            "east":"nnparadisemod:blocks/lamp_lime",
+            "south":"nnparadisemod:blocks/lamp_lime",
+            "west":"nnparadisemod:blocks/lamp_lime"
+        }
+    },
+    "variants":{
+        "inventory":{
+            "model":"cube_all"
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

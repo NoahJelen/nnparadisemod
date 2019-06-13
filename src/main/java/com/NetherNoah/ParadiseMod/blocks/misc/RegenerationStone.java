@@ -20,6 +20,7 @@ public class RegenerationStone extends Block{
 		setSoundType(SoundType.STONE);
 		setLightLevel(.46666667F);
 	}
+
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 		EntityLivingBase entityLiving= (EntityLivingBase) entityIn;

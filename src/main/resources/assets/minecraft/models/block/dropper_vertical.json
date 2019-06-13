@@ -1,5 +1,5 @@
 {
-	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
+	"credit": "Made with Blockbench",
 	"parent": "block/orientable_vertical",
 	"textures": {
 		"front": "blocks/dropper_front_vertical",
@@ -7,7 +7,6 @@
 	},
 	"elements": [
 		{
-			"name": "cube",
 			"from": [0, 0, 0],
 			"to": [16, 12, 16],
 			"faces": {
@@ -20,7 +19,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [0, 12, 10],
 			"to": [16, 16, 16],
 			"faces": {
@@ -32,7 +30,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [0, 12, 0],
 			"to": [16, 16, 6],
 			"faces": {
@@ -44,7 +41,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [11, 12, 6],
 			"to": [16, 16, 10],
 			"faces": {
@@ -54,7 +50,6 @@
 			}
 		},
 		{
-			"name": "cube",
 			"from": [0, 12, 6],
 			"to": [5, 16, 10],
 			"faces": {

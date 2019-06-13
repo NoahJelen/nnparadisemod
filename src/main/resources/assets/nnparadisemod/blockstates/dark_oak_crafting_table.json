@@ -1,1 +1,19 @@
-{"variants":{"normal":{"model":"nnparadisemod:dark_oak_crafting_table"}}}
+{
+    "forge_marker": 1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "particle":"nnparadisemod:blocks/crafting_table_darkoak_front",
+            "down":"blocks/planks_big_oak",
+            "up":"nnparadisemod:blocks/crafting_table_darkoak_top",
+            "north":"nnparadisemod:blocks/crafting_table_darkoak_front",
+            "east":"nnparadisemod:blocks/crafting_table_darkoak_side",
+            "south":"nnparadisemod:blocks/crafting_table_darkoak_side",
+            "west":"nnparadisemod:blocks/crafting_table_darkoak_front"
+        }
+    },
+    "variants":{
+        "normal":{"model":"cube_all"},
+        "inventory":[{"model":"cube_all"}]
+    }
+}

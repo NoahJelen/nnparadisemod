@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:salt_lamp"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/salt_lamp",
+            "down":"nnparadisemod:blocks/salt_lamp",
+            "east":"nnparadisemod:blocks/salt_lamp",
+            "west":"nnparadisemod:blocks/salt_lamp",
+            "north":"nnparadisemod:blocks/salt_lamp",
+            "south":"nnparadisemod:blocks/salt_lamp",
+            "particle":"nnparadisemod:blocks/salt_lamp"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

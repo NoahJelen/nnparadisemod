@@ -3,6 +3,7 @@ package com.NetherNoah.ParadiseMod.init.ModBlocks;
 import com.NetherNoah.ParadiseMod.Utils;
 import com.NetherNoah.ParadiseMod.blocks.base.BasicBlock;
 import com.NetherNoah.ParadiseMod.blocks.base.CaveFormation;
+import com.NetherNoah.ParadiseMod.blocks.base.CustomEndPlant;
 import com.NetherNoah.ParadiseMod.blocks.base.CustomGlass;
 import com.NetherNoah.ParadiseMod.blocks.base.CustomPane;
 import com.NetherNoah.ParadiseMod.blocks.base.CustomPlant;
@@ -11,6 +12,7 @@ import com.NetherNoah.ParadiseMod.blocks.base.VoidFurnaceBase;
 import com.NetherNoah.ParadiseMod.blocks.misc.CactusBookshelf;
 import com.NetherNoah.ParadiseMod.blocks.misc.DUPortal;
 import com.NetherNoah.ParadiseMod.blocks.misc.DVPortal;
+import com.NetherNoah.ParadiseMod.blocks.misc.OvergrownEndStone;
 import com.NetherNoah.ParadiseMod.blocks.misc.RegenerationStone;
 import com.NetherNoah.ParadiseMod.blocks.misc.emeraldRail;
 import com.NetherNoah.ParadiseMod.blocks.misc.prismarineCrystalBlock;
@@ -31,7 +33,6 @@ import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.BlockHopper;
 import net.minecraft.block.BlockLever;
 import net.minecraft.block.BlockOldLeaf;
-import net.minecraft.block.BlockPane;
 import net.minecraft.block.BlockPumpkin;
 import net.minecraft.block.BlockRail;
 import net.minecraft.block.BlockRailPowered;
@@ -61,9 +62,16 @@ public class Misc {
 	public static Block VoidBricks = new Block(Material.ROCK);
 	public static Block VoidStone = new Block(Material.ROCK);
 
+	//end improvements
+	public static Block PolishedEndStone = new Block(Material.ROCK);
+	public static Block OvergrownEndStone = new OvergrownEndStone();
+	public static CustomEndPlant EndGrass = new CustomEndPlant(true);
+	public static CustomEndPlant TallEndGrass = new CustomEndPlant(true);
+
 	//flowers
-	public static CustomPlant BlueRose = new CustomPlant();
-	public static CustomPlant Rose = new CustomPlant();
+	public static CustomPlant BlueRose = new CustomPlant(false);
+	public static CustomPlant Rose = new CustomPlant(false);
+	public static CustomEndPlant EnderRose = new CustomEndPlant(false);
 
 	//furnaces
 	public static MossyFurnaceBase MossyFurnace = new MossyFurnaceBase(false);
@@ -73,7 +81,7 @@ public class Misc {
 
 	//glass
 	public static BlockBreakable bulletproofGlass = new CustomGlass();
-	public static CustomPane bulletproofGlassPane = new CustomPane(Material.GLASS, false, SoundType.GLASS);
+	public static CustomPane bulletproofGlassPane = new CustomPane(Material.GLASS, true, SoundType.GLASS);
 	public static BlockBreakable soulGlass = new CustomGlass();
 	public static CustomPane soulGlassPane = new CustomPane(Material.GLASS, false, SoundType.GLASS);
 
@@ -125,9 +133,16 @@ public class Misc {
 		Utils.regBlock(VoidBricks.setUnlocalizedName("VoidBricks").setRegistryName("void_bricks").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
 		Utils.regBlock(VoidStone.setUnlocalizedName("VoidStone").setRegistryName("void_stone").setHardness(5F).setResistance(15F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
 
+		//end improvements
+		Utils.regBlock(OvergrownEndStone);
+		Utils.regBlock(PolishedEndStone.setUnlocalizedName("PolishedEndStone").setRegistryName("polished_end_stone").setHardness(5F).setResistance(15F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(EndGrass.setUnlocalizedName("EndGrass").setRegistryName("end_grass"));
+		Utils.regBlock(TallEndGrass.setUnlocalizedName("TallEndGrass").setRegistryName("tall_end_grass"));
+		
 		//flowers
 		Utils.regBlock(BlueRose.setUnlocalizedName("BlueRose").setRegistryName("blue_rose"));
 		Utils.regBlock(Rose.setUnlocalizedName("Rose").setRegistryName("rose"));
+		Utils.regBlock(EnderRose.setUnlocalizedName("EnderRose").setRegistryName("ender_rose"));
 
 		//furnaces
 		Utils.regBlock(MossyFurnace.setUnlocalizedName("MossyFurnace").setRegistryName("mossy_furnace").setHardness(5F).setResistance(10F).setCreativeTab(CreativeTabs.DECORATIONS));
@@ -139,10 +154,10 @@ public class Misc {
 		soulGlassPane.setDefaultSlipperiness(1F);
 		soulGlass.setDefaultSlipperiness(1F);
 
-		Utils.regBlock(bulletproofGlass.setUnlocalizedName("bulletProofGlass").setRegistryName("bulletproof_glass").setHardness(.5F).setResistance(2000F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
-		Utils.regBlock(bulletproofGlassPane.setUnlocalizedName("bulletproofGlassPane").setRegistryName("bulletproof_glass_pane").setHardness(.5F).setResistance(2000F).setCreativeTab(CreativeTabs.DECORATIONS));
 		Utils.regBlock(soulGlassPane.setUnlocalizedName("soulGlassPane").setRegistryName("soul_glass_pane").setHardness(.5F).setResistance(1F).setLightLevel(1F));
 		Utils.regBlock(soulGlass.setUnlocalizedName("soulGlass").setRegistryName("soul_glass").setHardness(.5F).setResistance(1F).setLightLevel(1F));
+		Utils.regBlock(bulletproofGlass.setUnlocalizedName("bulletProofGlass").setRegistryName("bulletproof_glass").setHardness(.5F).setResistance(2000F).setCreativeTab(CreativeTabs.BUILDING_BLOCKS));
+		Utils.regBlock(bulletproofGlassPane.setUnlocalizedName("bulletproofGlassPane").setRegistryName("bulletproof_glass_pane").setHardness(.5F).setResistance(2000F).setCreativeTab(CreativeTabs.DECORATIONS));
 
 		//hoppers
 		Utils.regBlock(SilverHopper=new SilverHopper());
@@ -180,6 +195,9 @@ public class Misc {
 	}
 
 	public static void regRenders() {
+		Utils.regRender(EndGrass);
+		Utils.regRender(TallEndGrass);
+		Utils.regRender(EnderRose);
 		Utils.regRender(BlueRose);
 		Utils.regRender(bulletproofGlass);
 		Utils.regRender(bulletproofGlassPane);
@@ -202,6 +220,8 @@ public class Misc {
 		Utils.regRender(mossyStoneFormation);
 		Utils.regRender(netherrackFormation);
 		Utils.regRender(PolishedVoidStone);
+		Utils.regRender(PolishedEndStone);
+		Utils.regRender(OvergrownEndStone);
 		Utils.regRender(Present);
 		Utils.regRender(prismarineCrystalBlock);
 		Utils.regRender(RegenerationStone);

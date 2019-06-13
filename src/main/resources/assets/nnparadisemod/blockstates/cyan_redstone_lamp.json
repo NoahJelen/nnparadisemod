@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:lamp_cyan"}}}
+{
+    "forge_marker": 1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "particle":"nnparadisemod:blocks/lamp_cyan",
+            "down":"nnparadisemod:blocks/lamp_cyan",
+            "up":"nnparadisemod:blocks/lamp_cyan",
+            "north":"nnparadisemod:blocks/lamp_cyan",
+            "east":"nnparadisemod:blocks/lamp_cyan",
+            "south":"nnparadisemod:blocks/lamp_cyan",
+            "west":"nnparadisemod:blocks/lamp_cyan"
+        }
+    },
+    "variants":{
+        "inventory":{
+            "model":"cube_all"
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

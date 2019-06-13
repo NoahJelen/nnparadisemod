@@ -1,11 +1,12 @@
 package com.NetherNoah.ParadiseMod;
 
+import com.NetherNoah.ParadiseMod.blocks.misc.EnderAcid;
+import com.NetherNoah.ParadiseMod.blocks.misc.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.creativeTabs.ChristmasTab;
 import com.NetherNoah.ParadiseMod.handlers.AntiMobLampHandler;
 import com.NetherNoah.ParadiseMod.handlers.CustomCraftBenchGuiHandler;
 import com.NetherNoah.ParadiseMod.handlers.Events;
 import com.NetherNoah.ParadiseMod.handlers.OreDictHandler;
-import com.NetherNoah.ParadiseMod.init.LiquidRedstone;
 import com.NetherNoah.ParadiseMod.init.ModSmelting;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Buttons;
 import com.NetherNoah.ParadiseMod.init.ModBlocks.Chests;
@@ -36,6 +37,8 @@ import com.NetherNoah.ParadiseMod.tileentity.furnace.TEVoidFurnace;
 import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntityGoldHopper;
 import com.NetherNoah.ParadiseMod.tileentity.hopper.TileEntitySilverHopper;
 import com.NetherNoah.ParadiseMod.world.dimension.DimensionRegistry;
+import com.NetherNoah.ParadiseMod.world.worldgen.betterEnd.EndGrass;
+import com.NetherNoah.ParadiseMod.world.worldgen.betterEnd.EndLakes;
 import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenBase;
 import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenCrystal;
 import com.NetherNoah.ParadiseMod.world.worldgen.caveGen.CaveGenDesert;
@@ -76,6 +79,9 @@ import com.NetherNoah.ParadiseMod.world.worldgen.structures.Landmines.LandMine;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Landmines.LandMineDirt;
 import com.NetherNoah.ParadiseMod.world.worldgen.structures.Landmines.LandMineStone;
 
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityCreeper;
@@ -104,6 +110,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSIONS)
 public class ParadiseMod {
+	//custom material for ender acid so endermen can swim in it
+	public final static Material ENDER_ACID = (new MaterialLiquid(MapColor.WATER));
+
 	public static final CreativeTabs xmas = new ChristmasTab();
 	private AntiMobLampHandler AntiMobLampHandler;
 	static {
@@ -141,10 +150,11 @@ public class ParadiseMod {
 		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		Blocks.MOB_SPAWNER.setCreativeTab(CreativeTabs.DECORATIONS);
-		
 		//liquids
 		LiquidRedstone.register();
+		EnderAcid.register();
 		FluidRegistry.addBucketForFluid(LiquidRedstone.FluidLiquidRedstone.instance);
+		FluidRegistry.addBucketForFluid(EnderAcid.FluidEnderAcid.instance);
 		
 		//tile entities
 		GameRegistry.registerTileEntity(TEMossyFurnace.class,"mossy_furnace");
@@ -205,8 +215,6 @@ public class ParadiseMod {
 				new VoidTower(),
 				new PlayerTemples(),
 				new GiantGrassBlock(),
-				
-				//I am NOT an apostolic christian, nor do I want to be one, Genesis!
 				new blackCross(),
 				
 				//created by AttieCat
@@ -240,6 +248,9 @@ public class ParadiseMod {
 			GameRegistry.registerWorldGenerator(structures[i],i);
 		for(int i=0;i<misc.length;i++) 
 			GameRegistry.registerWorldGenerator(misc[i],5);
+		
+		GameRegistry.registerWorldGenerator(new EndGrass(),2);		
+		GameRegistry.registerWorldGenerator(new EndLakes(),2);
 
 		//block categories
 		Lamps.initAndRegister();

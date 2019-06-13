@@ -1,1 +1,20 @@
-{"variants":{"normal":{"model":"nnparadisemod:lamp_gray_lit"}}}
+{
+    "forge_marker": 1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "particle":"nnparadisemod:blocks/lamp_gray_lit",
+            "down":"nnparadisemod:blocks/lamp_gray_lit",
+            "up":"nnparadisemod:blocks/lamp_gray_lit",
+            "north":"nnparadisemod:blocks/lamp_gray_lit",
+            "east":"nnparadisemod:blocks/lamp_gray_lit",
+            "south":"nnparadisemod:blocks/lamp_gray_lit",
+            "west":"nnparadisemod:blocks/lamp_gray_lit"
+        }
+    },
+    "variants":{
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

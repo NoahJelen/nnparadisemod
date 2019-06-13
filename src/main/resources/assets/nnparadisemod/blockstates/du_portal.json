@@ -1,1 +1,26 @@
-{"variants":{"axis=z":{"model":"nnparadisemod:du_portal"},"axis=x":{"model":"nnparadisemod:du_portal"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/portal",
+            "down":"nnparadisemod:blocks/portal",
+            "east":"nnparadisemod:blocks/portal",
+            "west":"nnparadisemod:blocks/portal",
+            "north":"nnparadisemod:blocks/portal",
+            "south":"nnparadisemod:blocks/portal",
+            "particle":"nnparadisemod:blocks/portal"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "axis=z":{
+            "model":"cube_all"
+        },
+        "axis=x":{
+            "model":"cube_all"
+        }
+    }
+}

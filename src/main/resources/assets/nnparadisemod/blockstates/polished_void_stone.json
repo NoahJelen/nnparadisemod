@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:polished_void_stone"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/polished_void_stone",
+            "down":"nnparadisemod:blocks/polished_void_stone",
+            "east":"nnparadisemod:blocks/polished_void_stone",
+            "west":"nnparadisemod:blocks/polished_void_stone",
+            "north":"nnparadisemod:blocks/polished_void_stone",
+            "south":"nnparadisemod:blocks/polished_void_stone",
+            "particle":"nnparadisemod:blocks/polished_void_stone"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

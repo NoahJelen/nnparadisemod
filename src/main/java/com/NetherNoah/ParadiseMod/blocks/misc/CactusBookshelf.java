@@ -17,6 +17,7 @@ public class CactusBookshelf extends Block{
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		setSoundType(SoundType.WOOD);
 	}
+
 	@Override
 	public float getEnchantPowerBonus(World world, BlockPos pos)
     {

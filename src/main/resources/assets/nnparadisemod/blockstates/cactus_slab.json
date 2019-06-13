@@ -1,6 +1,16 @@
 {
+    "forge_marker":1,
+    "defaults":{
+        "model": "half_slab",
+        "textures": {
+            "bottom": "nnparadisemod:blocks/compressed_cactus",
+            "top": "nnparadisemod:blocks/compressed_cactus",
+            "side": "nnparadisemod:blocks/compressed_cactus"
+        }
+    },
     "variants": {
-        "dummy=false,half=bottom": { "model": "nnparadisemod:cactus_slab_bottom" },
-        "dummy=false,half=top": { "model": "nnparadisemod:cactus_slab_top" }
+        "inventory":{ "model": "half_slab" },
+        "dummy=false,half=bottom": { "model": "half_slab" },
+        "dummy=false,half=top": { "model": "upper_slab" }
     }
 }

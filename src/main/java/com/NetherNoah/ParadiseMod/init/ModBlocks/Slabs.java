@@ -33,46 +33,32 @@ public class Slabs {
 	public static void initAndRegister() {
 		bedrock_slab.setUnlocalizedName("bedrock_slab").setRegistryName("bedrock_slab").setHardness(-1F).setResistance(6000000F).setBlockUnbreakable();
 		bedrock_slab_double.setRegistryName("double_bedrock_slab").setHardness(-1F).setResistance(6000000F).setBlockUnbreakable();
-		bedrock_slab.setItem(bedrock_slab);
-		bedrock_slab_double.setItem(bedrock_slab);
 
 		cactus_slab.setUnlocalizedName("cactus_slab").setRegistryName("cactus_slab").setHardness(2.5F).setResistance(5F);
 		cactus_slab_double.setRegistryName("double_cactus_slab").setHardness(2.5F).setResistance(5F);
-		cactus_slab.setItem(cactus_slab);
-		cactus_slab_double.setItem(cactus_slab);
 
 		end_slab.setUnlocalizedName("end_slab").setRegistryName("end_slab").setHardness(7.5F).setResistance(15F);
 		end_slab_double.setRegistryName("double_end_slab").setHardness(7.5F).setResistance(15F);
-		end_slab.setItem(end_slab);
-		end_slab_double.setItem(end_slab);
 
 		glowing_obsidian_slab.setUnlocalizedName("glowing_obsidian_slab").setRegistryName("glowing_obsidian_slab").setHardness(51F).setResistance(2000F).setLightLevel(.46666667F).setHarvestLevel("pickaxe", 3);
 		glowing_obsidian_slab_double.setRegistryName("glowing_obsidian_slab_double").setHardness(51F).setResistance(2000F).setLightLevel(.46666667F).setHarvestLevel("pickaxe", 3);
-		glowing_obsidian_slab.setItem(glowing_obsidian_slab);
-		glowing_obsidian_slab_double.setItem(glowing_obsidian_slab);
 
 		obsidian_slab.setUnlocalizedName("obsidian_slab").setRegistryName("obsidian_slab").setHardness(51F).setResistance(2000F).setHarvestLevel("pickaxe", 3);
 		obsidian_slab_double.setRegistryName("double_obsidian_slab").setHardness(51F).setResistance(2000F).setHarvestLevel("pickaxe", 3);
-		obsidian_slab_double.setItem(obsidian_slab);
-		obsidian_slab.setItem(obsidian_slab);
 
 		void_slab.setUnlocalizedName("void_slab").setRegistryName("void_slab").setHardness(5F).setResistance(10F);
 		void_slab_double.setRegistryName("double_void_slab").setHardness(5F).setResistance(10F);
-		void_slab.setItem(void_slab);
-		void_slab_double.setItem(void_slab);
 
 		void_bricks_slab.setUnlocalizedName("void_bricks_slab").setRegistryName("void_bricks_slab").setHardness(5F).setResistance(10F);
 		void_bricks_slab_double.setRegistryName("double_void_bricks_slab").setHardness(5F).setResistance(10F);
-		void_bricks_slab.setItem(void_bricks_slab);
-		void_bricks_slab_double.setItem(void_bricks_slab);
 
-		regSlab(bedrock_slab,bedrock_slab_double);
-		regSlab(end_slab,end_slab_double);
-		regSlab(cactus_slab,cactus_slab_double);
-		regSlab(glowing_obsidian_slab,glowing_obsidian_slab_double);
-		regSlab(obsidian_slab,obsidian_slab_double);
-		regSlab(void_slab,void_slab_double);
-		regSlab(void_bricks_slab,void_bricks_slab_double);
+		Utils.regSlab(bedrock_slab,bedrock_slab_double);
+		Utils.regSlab(end_slab,end_slab_double);
+		Utils.regSlab(cactus_slab,cactus_slab_double);
+		Utils.regSlab(glowing_obsidian_slab,glowing_obsidian_slab_double);
+		Utils.regSlab(obsidian_slab,obsidian_slab_double);
+		Utils.regSlab(void_slab,void_slab_double);
+		Utils.regSlab(void_bricks_slab,void_bricks_slab_double);
 	}
 	
 	public static void regRenders() {
@@ -88,10 +74,13 @@ public class Slabs {
 	/**
 	 *Registers a slab with its double and item
 	 */
+	/*
 	public static void regSlab(CustomSlab slab,CustomSlab doubleSlab) {
 		ForgeRegistries.BLOCKS.register(doubleSlab);
 		ForgeRegistries.BLOCKS.register(slab);
+		doubleSlab.setSingleSlab(slab);
 		ItemBlock item = new ItemSlab(slab, slab, doubleSlab);
 		ForgeRegistries.ITEMS.register(item.setRegistryName(slab.getRegistryName()));
 	}
+	*/
 }

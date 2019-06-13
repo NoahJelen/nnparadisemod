@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:lamp_green"}}}
+{
+    "forge_marker": 1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "particle":"nnparadisemod:blocks/lamp_green",
+            "down":"nnparadisemod:blocks/lamp_green",
+            "up":"nnparadisemod:blocks/lamp_green",
+            "north":"nnparadisemod:blocks/lamp_green",
+            "east":"nnparadisemod:blocks/lamp_green",
+            "south":"nnparadisemod:blocks/lamp_green",
+            "west":"nnparadisemod:blocks/lamp_green"
+        }
+    },
+    "variants":{
+        "inventory":{
+            "model":"cube_all"
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

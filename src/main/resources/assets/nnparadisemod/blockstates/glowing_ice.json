@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:glowing_ice"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/glowing_ice",
+            "down":"nnparadisemod:blocks/glowing_ice",
+            "east":"nnparadisemod:blocks/glowing_ice",
+            "west":"nnparadisemod:blocks/glowing_ice",
+            "north":"nnparadisemod:blocks/glowing_ice",
+            "south":"nnparadisemod:blocks/glowing_ice",
+            "particle":"nnparadisemod:blocks/glowing_ice"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

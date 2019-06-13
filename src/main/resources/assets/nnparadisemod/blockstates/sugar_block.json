@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:sugar_block"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/sugar_block",
+            "down":"nnparadisemod:blocks/sugar_block",
+            "east":"nnparadisemod:blocks/sugar_block",
+            "west":"nnparadisemod:blocks/sugar_block",
+            "north":"nnparadisemod:blocks/sugar_block",
+            "south":"nnparadisemod:blocks/sugar_block",
+            "particle":"nnparadisemod:blocks/sugar_block"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

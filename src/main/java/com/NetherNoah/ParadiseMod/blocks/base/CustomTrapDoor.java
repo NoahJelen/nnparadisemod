@@ -21,7 +21,7 @@ public class CustomTrapDoor extends BlockTrapDoor {
 	 */
 	private final int[] openSounds = {1037,1007};
 	private final int[] closeSounds = {1036,1013};
-	private int creak;
+	private final int creak;
 	public CustomTrapDoor(Material material, SoundType sound, int creakSound) {
 		super(material);
 		setCreativeTab(CreativeTabs.REDSTONE);

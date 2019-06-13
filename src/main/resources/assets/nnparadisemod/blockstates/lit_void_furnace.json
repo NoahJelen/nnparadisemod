@@ -1,1 +1,31 @@
-{"variants":{"facing=north":{"model":"nnparadisemod:lit_void_furnace"},"facing=south":{"model":"nnparadisemod:lit_void_furnace","y":180},"facing=west":{"model":"nnparadisemod:lit_void_furnace","y":270},"facing=east":{"model":"nnparadisemod:lit_void_furnace","y":90}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"nnparadisemod:custom_furnace",
+        "textures":{
+            "front":"nnparadisemod:blocks/void_furnace_front_on",
+            "top":"nnparadisemod:blocks/void_furnace_top",
+            "side":"nnparadisemod:blocks/void_furnace_side"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"nnparadisemod:custom_furnace"  
+        },
+        "facing=north":{
+            "model":"nnparadisemod:custom_furnace"
+        },
+        "facing=south":{
+            "model":"nnparadisemod:custom_furnace",
+            "y":180
+        },
+        "facing=west":{
+            "model":"nnparadisemod:custom_furnace",
+            "y":270
+        },
+        "facing=east":{
+            "model":"nnparadisemod:custom_furnace",
+            "y":90
+        }
+    }
+}

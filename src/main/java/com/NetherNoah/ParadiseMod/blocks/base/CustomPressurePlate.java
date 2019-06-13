@@ -25,10 +25,10 @@ public class CustomPressurePlate extends BlockBasePressurePlate
 {
     public static final PropertyBool POWERED = PropertyBool.create("powered");
 
-    private int sensitivity;
-    private int tickRate;
-    private int sound;
-    public Material type;
+    private final int sensitivity;
+    private final int tickRate;
+    private final int sound;
+    public final Material type;
 
     private final SoundType[] sounds = {
     		blockSoundType.STONE,

@@ -35,9 +35,6 @@ import net.minecraft.world.gen.structure.template.TemplateManager;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
-//I'm NOT an apostolic christian, Genesis, nor do I want to be one!
-//And yes, I'll continue listening to my "ungodly" death metal music!
-
 public class blackCross extends WorldGenerator implements IWorldGenerator{
 
 	@Override

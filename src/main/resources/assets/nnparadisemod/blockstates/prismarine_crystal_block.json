@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:prismarine_crystal_block"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/prismarine_crystal_block",
+            "down":"nnparadisemod:blocks/prismarine_crystal_block",
+            "east":"nnparadisemod:blocks/prismarine_crystal_block",
+            "west":"nnparadisemod:blocks/prismarine_crystal_block",
+            "north":"nnparadisemod:blocks/prismarine_crystal_block",
+            "south":"nnparadisemod:blocks/prismarine_crystal_block",
+            "particle":"nnparadisemod:blocks/prismarine_crystal_block"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

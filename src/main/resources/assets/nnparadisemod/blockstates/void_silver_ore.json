@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:void_silver_ore"}}}
+{
+    "forge_marker": 1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/void_silver_ore",
+            "down":"nnparadisemod:blocks/void_silver_ore",
+            "east":"nnparadisemod:blocks/void_silver_ore",
+            "west":"nnparadisemod:blocks/void_silver_ore",
+            "north":"nnparadisemod:blocks/void_silver_ore",
+            "south":"nnparadisemod:blocks/void_silver_ore",
+            "particle":"nnparadisemod:blocks/void_silver_ore"
+        }
+    },
+    "variants":{
+        "inventory":{
+            "model":"cube_all"
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

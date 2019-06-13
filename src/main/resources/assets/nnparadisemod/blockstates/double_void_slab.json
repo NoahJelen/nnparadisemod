@@ -1,6 +1,19 @@
 {
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/void_stone",
+            "down":"nnparadisemod:blocks/void_stone",
+            "east":"nnparadisemod:blocks/void_stone",
+            "west":"nnparadisemod:blocks/void_stone",
+            "north":"nnparadisemod:blocks/void_stone",
+            "south":"nnparadisemod:blocks/void_stone",
+            "particle":"nnparadisemod:blocks/void_stone"
+        }
+    },
     "variants": {
-        "dummy=false,half=top": { "model": "nnparadisemod:void_stone" },
-        "dummy=false,half=bottom": { "model": "nnparadisemod:void_stone" }
+        "dummy=false,half=top": { "model": "cube_all" },
+        "dummy=false,half=bottom": { "model": "cube_all" }
     }
 }

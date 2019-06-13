@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:soul_glass"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/soul_glass",
+            "down":"nnparadisemod:blocks/soul_glass",
+            "east":"nnparadisemod:blocks/soul_glass",
+            "west":"nnparadisemod:blocks/soul_glass",
+            "north":"nnparadisemod:blocks/soul_glass",
+            "south":"nnparadisemod:blocks/soul_glass",
+            "particle":"nnparadisemod:blocks/soul_glass"
+        }
+    },
+    "variants":{
+        "inventory":{
+            "model":"cube_all"
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

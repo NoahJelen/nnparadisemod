@@ -1,1 +1,17 @@
-{"variants":{"stage=0":{"model":"nnparadisemod:sapling_christmas"},"stage=1":{"model":"nnparadisemod:sapling_christmas"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cross",
+        "textures":{
+            "cross":"nnparadisemod:blocks/sapling_christmas"
+        }
+    },
+    "variants":{
+        "stage=0":{
+            "model":"cross"
+        },
+        "stage=1":{
+            "model":"cross"
+        }
+    }
+}

@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:void_bricks"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "model":"cube_all",
+        "textures":{
+            "up":"nnparadisemod:blocks/void_bricks",
+            "down":"nnparadisemod:blocks/void_bricks",
+            "east":"nnparadisemod:blocks/void_bricks",
+            "west":"nnparadisemod:blocks/void_bricks",
+            "north":"nnparadisemod:blocks/void_bricks",
+            "south":"nnparadisemod:blocks/void_bricks",
+            "particle":"nnparadisemod:blocks/void_bricks"
+        }
+    },
+    "variants":{
+        "inventory":{
+          "model":"cube_all"  
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

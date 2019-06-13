@@ -48,8 +48,8 @@ public class CustomButton extends BlockDirectional
     protected static final AxisAlignedBB WEST_ON = new AxisAlignedBB(0.9375D, 0.375D, 0.3125D, 1.0D, 0.625D, 0.6875D);
     protected static final AxisAlignedBB EAST_ON = new AxisAlignedBB(0.0D, 0.375D, 0.3125D, 0.0625D, 0.625D, 0.6875D);
     private boolean wooden;
-    private int tickRate;
-    private int sound;
+    private final int tickRate;
+    private final int sound;
     private final SoundType[] sounds = {
     		blockSoundType.STONE,
     		blockSoundType.WOOD,
@@ -186,7 +186,7 @@ public class CustomButton extends BlockDirectional
             worldIn.markBlockRangeForRenderUpdate(pos, pos);
             playClickSound(playerIn, worldIn, pos);
             notifyNeighbors(worldIn, pos, state.getValue(FACING));
-            worldIn.scheduleUpdate(pos, this, tickRate(worldIn));
+            worldIn.scheduleUpdate(pos, this, tickRate);//(worldIn)
             return true;
         }
     }
@@ -281,7 +281,7 @@ public class CustomButton extends BlockDirectional
             playReleaseSound(world, position);
         }
         if (flag)
-        	world.scheduleUpdate(new BlockPos(position), this, tickRate(world));
+        	world.scheduleUpdate(new BlockPos(position), this, tickRate);//(world)
     }
     private void notifyNeighbors(World worldIn, BlockPos pos, EnumFacing facing)
     {

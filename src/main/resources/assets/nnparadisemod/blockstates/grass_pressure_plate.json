@@ -1,1 +1,17 @@
-{"variants":{"powered=false":{"model":"nnparadisemod:grass_pressure_plate_up"},"powered=true":{"model":"nnparadisemod:grass_pressure_plate_down"}}}
+{
+    "forge_marker":1,
+    "defaults":{
+        "textures":{"texture":"nnparadisemod:blocks/grass_colored"}
+    },
+	"variants": {
+        "inventory":{
+            "model":"pressure_plate_up"
+        },
+		"powered=false": {
+			"model": "nnparadisemod:grass_pressure_plate_up"
+		},
+		"powered=true": {
+			"model": "nnparadisemod:grass_pressure_plate_down"
+		}
+	}
+}

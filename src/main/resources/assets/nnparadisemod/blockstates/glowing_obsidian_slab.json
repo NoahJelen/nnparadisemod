@@ -1,6 +1,22 @@
 {
+    "forge_marker":1,
+    "defaults":{
+        "model": "half_slab",
+        "textures": {
+            "bottom": "nnparadisemod:blocks/glowing_obsidian",
+            "top": "nnparadisemod:blocks/glowing_obsidian",
+            "side": "nnparadisemod:blocks/glowing_obsidian_slab"
+        }
+    },
     "variants": {
-        "dummy=false,half=bottom": { "model": "nnparadisemod:glowing_obsidian_slab_bottom" },
-        "dummy=false,half=top": { "model": "nnparadisemod:glowing_obsidian_slab_top" }
+        "inventory":{ 
+            "model": "half_slab"
+        },
+        "dummy=false,half=bottom": {
+            "model": "half_slab"
+        },
+        "dummy=false,half=top": {
+            "model": "upper_slab"
+        }
     }
 }

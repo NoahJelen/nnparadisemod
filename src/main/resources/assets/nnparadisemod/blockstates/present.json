@@ -1,1 +1,23 @@
-{"variants":{"normal":{"model":"nnparadisemod:present"}}}
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"textures": {
+			"up": "nnparadisemod:blocks/present_top",
+			"down": "nnparadisemod:blocks/present_bottom",
+			"east": "nnparadisemod:blocks/present_side2",
+			"west": "nnparadisemod:blocks/present_side2",
+			"north": "nnparadisemod:blocks/present_side",
+			"south": "nnparadisemod:blocks/present_side",
+			"particle": "nnparadisemod:blocks/present_side"
+		}
+	},
+    "variants":{
+        "inventory":{
+            "model":"cube_all"
+        },
+        "normal":{
+            "model":"cube_all"
+        }
+    }
+}

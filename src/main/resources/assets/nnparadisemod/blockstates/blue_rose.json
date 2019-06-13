@@ -1,5 +1,12 @@
 {
+    "forge_marker":1,
+    "defaults":{
+        "model":"cross",
+        "textures":{
+            "cross":"nnparadisemod:blocks/blue_rose"
+        }
+    },
     "variants": {
-        "normal": { "model": "nnparadisemod:blue_rose" }
+        "normal": { "model": "cross" }
     }
 }

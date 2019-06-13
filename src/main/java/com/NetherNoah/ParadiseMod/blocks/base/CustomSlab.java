@@ -25,9 +25,8 @@ import net.minecraft.world.World;
 public class CustomSlab extends BlockSlab {
 
 	public static final DummyProperty DUMMY_VARIANT = DummyProperty.create("dummy");
-	private Block itemBlock;
-	private boolean Double;
-	public Block pickBlock;
+	private final boolean Double;
+	private Block singleSlab;
 	
 	public CustomSlab(Material material, boolean isDouble) {
 		super(material);
@@ -42,15 +41,18 @@ public class CustomSlab extends BlockSlab {
 		setDefaultState(state);
 		this.useNeighborBrightness = true;
 	}
-	public Block setItem(Block block) {
-		pickBlock=block;
-		return block;
+
+	public Block setSingleSlab(Block slab) {
+		singleSlab=slab;
+		return slab;
 	}
-	
+
 	@Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(pickBlock);
+		if (Double)
+			return new ItemStack(singleSlab);
+        return new ItemStack(state.getBlock());
     }
 
 	@Override
@@ -90,7 +92,10 @@ public class CustomSlab extends BlockSlab {
 
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Item.getItemFromBlock(pickBlock);
+
+		if (Double)
+			return Item.getItemFromBlock(singleSlab);
+		return Item.getItemFromBlock(state.getBlock());
 	}
 
 	@Override

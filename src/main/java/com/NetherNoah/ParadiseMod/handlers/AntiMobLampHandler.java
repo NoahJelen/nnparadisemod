@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class AntiMobLampHandler {
 	@SubscribeEvent
-	public void onEntityCheckSpawn(LivingSpawnEvent.CheckSpawn event)
+	public static void onEntityCheckSpawn(LivingSpawnEvent.CheckSpawn event)
 	{
 		if(SaltLampFilter.containsEntity(event.getEntity()))
 		{
