@@ -39,7 +39,7 @@ public class CaveGenMushroomIsland implements IWorldGenerator{
 
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,IChunkProvider chunkProvider) {
-		Chunk theChunk=world.getChunkFromChunkCoords(chunkX, chunkZ);
+		Chunk chunk=world.getChunkFromChunkCoords(chunkX, chunkZ);
 		// don't generate if the config says not to
 		// generate cave features
 		if (ModConfig.worldgen.caves.betterCaves == false)
@@ -59,32 +59,32 @@ public class CaveGenMushroomIsland implements IWorldGenerator{
 				for (int y = 0; y < height; y++) {
 
 					// biome of current block
-					Biome blockBiome = theChunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
+					Biome blockBiome = chunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
 
 					// the block to be replaced
-					Block blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
+					Block blockToReplace = chunk.getBlockState(x, y, z).getBlock();
 
 					// the block above it
-					Block blockAbove = theChunk.getBlockState(x, y + 1, z).getBlock();
+					Block blockAbove = chunk.getBlockState(x, y + 1, z).getBlock();
 
 					// the block below it
-					Block blockBelow = theChunk.getBlockState(x, y - 1, z).getBlock();
+					Block blockBelow = chunk.getBlockState(x, y - 1, z).getBlock();
 
 					if (blockBiome == Biomes.MUSHROOM_ISLAND|| blockBiome == Biomes.MUSHROOM_ISLAND_SHORE) {
 						// replace ground stone with mycelium
 						if ((blockToReplace==Blocks.STONE||blockToReplace==Blocks.COBBLESTONE)&& blockAbove == Blocks.AIR)
-							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.MYCELIUM.getDefaultState());
+							chunk.setBlockState(new BlockPos(x, y, z), Blocks.MYCELIUM.getDefaultState());
 
 						// little mushrooms
-						if(theChunk.getBlockState(x, y, z).getBlock() == Blocks.MYCELIUM){
+						if(chunk.getBlockState(x, y, z).getBlock() == Blocks.MYCELIUM){
 							switch (rand.nextInt(10)) {
 								//red
 								case 1:
-									theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.RED_MUSHROOM.getDefaultState());
+									chunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.RED_MUSHROOM.getDefaultState());
 									break;
 								//brown
 								case 9:
-									theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.BROWN_MUSHROOM.getDefaultState());
+									chunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.BROWN_MUSHROOM.getDefaultState());
 									break;
 							}
 						}
@@ -92,17 +92,17 @@ public class CaveGenMushroomIsland implements IWorldGenerator{
 						// the cave is a giant mushroom!
 						if ((blockToReplace==Blocks.STONE||blockToReplace==Blocks.COBBLESTONE) && blockBelow == Blocks.AIR) {
 							int a = 1;
-							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState().withProperty(BlockHugeMushroom.VARIANT, BlockHugeMushroom.EnumType.CENTER));
+							chunk.setBlockState(new BlockPos(x, y, z), Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState().withProperty(BlockHugeMushroom.VARIANT, BlockHugeMushroom.EnumType.CENTER));
 							if (rand.nextInt(30) == 0) {
-								Block blockToReplace2 = theChunk.getBlockState(x, y - 1, z).getBlock();
+								Block blockToReplace2 = chunk.getBlockState(x, y - 1, z).getBlock();
 								while (blockToReplace2 == Blocks.AIR
 										|| blockToReplace2 == Blocks.WATER
 										|| blockToReplace2 == Blocks.LAVA
 										|| blockToReplace2 == Blocks.FLOWING_LAVA
 										|| blockToReplace2 == Blocks.FLOWING_WATER) {
-									theChunk.setBlockState(new BlockPos(x, y - a, z),Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState().withProperty(BlockHugeMushroom.VARIANT, BlockHugeMushroom.EnumType.STEM));
+									chunk.setBlockState(new BlockPos(x, y - a, z),Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState().withProperty(BlockHugeMushroom.VARIANT, BlockHugeMushroom.EnumType.STEM));
 									a++;
-									blockToReplace2 = theChunk.getBlockState(x, y - a, z).getBlock();
+									blockToReplace2 = chunk.getBlockState(x, y - a, z).getBlock();
 								}
 							}
 						}

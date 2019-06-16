@@ -27,7 +27,7 @@ public class CaveGenHumid implements IWorldGenerator{
 
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,IChunkProvider chunkProvider) {
-		Chunk theChunk=world.getChunkFromChunkCoords(chunkX, chunkZ);
+		Chunk chunk=world.getChunkFromChunkCoords(chunkX, chunkZ);
 
 		// don't generate if the config says not to
 		// generate cave features
@@ -48,16 +48,16 @@ public class CaveGenHumid implements IWorldGenerator{
 				for (int y = 0; y < height; y++) {
 
 					// biome of current block
-					Biome blockBiome = theChunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
+					Biome blockBiome = chunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
 
 					// the block to be replaced
-					Block blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
+					Block blockToReplace = chunk.getBlockState(x, y, z).getBlock();
 
 					// the block above it
-					Block blockAbove = theChunk.getBlockState(x, y + 1, z).getBlock();
+					Block blockAbove = chunk.getBlockState(x, y + 1, z).getBlock();
 
 					// the block below it
-					Block blockBelow = theChunk.getBlockState(x, y - 1, z).getBlock();
+					Block blockBelow = chunk.getBlockState(x, y - 1, z).getBlock();
 
 					// biome types
 					boolean swamp = blockBiome == Biomes.SWAMPLAND|| blockBiome == Biomes.MUTATED_SWAMPLAND;
@@ -71,47 +71,47 @@ public class CaveGenHumid implements IWorldGenerator{
 
 						// mossy cobblestone
 						if (rand.nextInt(10) == 0&&stoneCheck)
-							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.MOSSY_COBBLESTONE.getDefaultState());
+							chunk.setBlockState(new BlockPos(x, y, z), Blocks.MOSSY_COBBLESTONE.getDefaultState());
 
 						// shallow water pools
 						if (blockToReplace==Blocks.AIR&& y < 20) {
-							theChunk.setBlockState(new BlockPos(x, y, z), WATER);
+							chunk.setBlockState(new BlockPos(x, y, z), WATER);
 							if (blockBelow == Blocks.LAVA) {
-								theChunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.OBSIDIAN.getDefaultState());
+								chunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.OBSIDIAN.getDefaultState());
 								if (rand.nextBoolean())
-									theChunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.MAGMA.getDefaultState());
+									chunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.MAGMA.getDefaultState());
 							}
 						}
 
 						// replace ground stone with grass
 						if (stoneCheck&&blockAbove==Blocks.AIR && y >= 19)
-							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.GRASS.getDefaultState());
+							chunk.setBlockState(new BlockPos(x, y, z), Blocks.GRASS.getDefaultState());
 
 						//mossy stone formations
 						if (stoneCheck&&blockAbove==Blocks.AIR&&rand.nextInt(10)==0)
-							theChunk.setBlockState(new BlockPos(x,y+1,z), Misc.mossyStoneFormation.getDefaultState());
+							chunk.setBlockState(new BlockPos(x,y+1,z), Misc.mossyStoneFormation.getDefaultState());
 						if (stoneCheck&&blockBelow==Blocks.AIR&&rand.nextInt(10)==0&&y>0)
-							theChunk.setBlockState(new BlockPos(x,y-1,z), Misc.mossyStoneFormation.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.DOWN));
+							chunk.setBlockState(new BlockPos(x,y-1,z), Misc.mossyStoneFormation.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.DOWN));
 
 						//vines
 						if (stoneCheck&&y>=19) {
 							// east
-							if (theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR&& rand.nextInt(10) == 0&&x!=15)
-								theChunk.setBlockState(new BlockPos(x + 1, y, z),Blocks.VINE.getDefaultState().withProperty(BlockVine.WEST, true));
+							if (chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR&& rand.nextInt(10) == 0&&x!=15)
+								chunk.setBlockState(new BlockPos(x + 1, y, z),Blocks.VINE.getDefaultState().withProperty(BlockVine.WEST, true));
 
 							// west
-							if (theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR && rand.nextInt(10) == 0&&x!=0)
-								theChunk.setBlockState(new BlockPos(x - 1, y, z),Blocks.VINE.getDefaultState().withProperty(BlockVine.EAST, true));
+							if (chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR && rand.nextInt(10) == 0&&x!=0)
+								chunk.setBlockState(new BlockPos(x - 1, y, z),Blocks.VINE.getDefaultState().withProperty(BlockVine.EAST, true));
 
 							// south
-							if (theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR && rand.nextInt(10) == 0&&z!=15)
-								theChunk.setBlockState(new BlockPos(x, y, z + 1),Blocks.VINE.getDefaultState().withProperty(BlockVine.NORTH, true));
+							if (chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR && rand.nextInt(10) == 0&&z!=15)
+								chunk.setBlockState(new BlockPos(x, y, z + 1),Blocks.VINE.getDefaultState().withProperty(BlockVine.NORTH, true));
 
 							// north
-							if (theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR && rand.nextInt(10) == 0&&z!=0)
-								theChunk.setBlockState(new BlockPos(x, y, z - 1),Blocks.VINE.getDefaultState().withProperty(BlockVine.SOUTH, true));
+							if (chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR && rand.nextInt(10) == 0&&z!=0)
+								chunk.setBlockState(new BlockPos(x, y, z - 1),Blocks.VINE.getDefaultState().withProperty(BlockVine.SOUTH, true));
 						}
-						blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
+						blockToReplace = chunk.getBlockState(x, y, z).getBlock();
 
 					}
 
@@ -120,12 +120,12 @@ public class CaveGenHumid implements IWorldGenerator{
 							switch (rand.nextInt(5)) {
 								//slime blocks
 								case 1:
-									theChunk.setBlockState(new BlockPos(x, y, z), Blocks.SLIME_BLOCK.getDefaultState());
+									chunk.setBlockState(new BlockPos(x, y, z), Blocks.SLIME_BLOCK.getDefaultState());
 									break;
 
 								//tall grass
 								case 4:
-									theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.TALLGRASS.getDefaultState().withProperty(BlockTallGrass.TYPE, BlockTallGrass.EnumType.GRASS));
+									chunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.TALLGRASS.getDefaultState().withProperty(BlockTallGrass.TYPE, BlockTallGrass.EnumType.GRASS));
 									break;
 						}
 					}

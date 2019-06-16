@@ -22,35 +22,32 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class EndGrass implements IWorldGenerator {
-	public static int height;
-	public static boolean webs = false;
 
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
 		if (world.provider.getDimension()!=1)
 			return;
-		Chunk theChunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
-		height=255;
+		Chunk chunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
 		Block[] plants= {Misc.EnderRose,Misc.EndGrass,Misc.TallEndGrass};
 
 		for (int x = 0; x < 16; x++) {
 			for (int z = 0; z < 16; z++) {
-				for (int y = 0; y < height; y++) {
+				for (int y = 0; y < 80; y++) {
 
 					// the block to be replaced
-					Block blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
+					Block blockToReplace = chunk.getBlockState(x, y, z).getBlock();
 
 					// the block above it
-					Block blockAbove = theChunk.getBlockState(x, y + 1, z).getBlock();
+					Block blockAbove = chunk.getBlockState(x, y + 1, z).getBlock();
 
 					// replace exposed end stone
 					if ((blockToReplace == Blocks.END_STONE||blockToReplace == Ores.EnderPearlOre||blockToReplace == Ores.EndRubyOre||blockToReplace == Ores.VoidPearlOre) && blockAbove==Blocks.AIR)
-						theChunk.setBlockState(new BlockPos(x, y, z), Misc.OvergrownEndStone.getDefaultState());
+						chunk.setBlockState(new BlockPos(x, y, z), Misc.OvergrownEndStone.getDefaultState());
 					
 					// ender roses and grass
 					if (rand.nextInt(15)==0 && (blockToReplace == Blocks.END_STONE||blockToReplace==Misc.OvergrownEndStone) && blockAbove==Blocks.AIR)
-						theChunk.setBlockState(new BlockPos(x, y+1, z), plants[rand.nextInt(3)].getDefaultState());
+						chunk.setBlockState(new BlockPos(x, y+1, z), plants[rand.nextInt(3)].getDefaultState());
 				}
 			}
 		}

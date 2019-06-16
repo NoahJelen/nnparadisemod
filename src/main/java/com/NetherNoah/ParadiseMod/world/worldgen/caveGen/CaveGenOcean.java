@@ -23,7 +23,7 @@ public class CaveGenOcean implements IWorldGenerator{
 	public static int height;
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,IChunkProvider chunkProvider) {
-		Chunk theChunk=world.getChunkFromChunkCoords(chunkX, chunkZ);
+		Chunk chunk=world.getChunkFromChunkCoords(chunkX, chunkZ);
 
 		// don't generate if the config says not to
 		// generate cave features
@@ -44,49 +44,49 @@ public class CaveGenOcean implements IWorldGenerator{
 				for (int y = 0; y < height; y++) {
 
 					// biome of current block
-					Biome blockBiome = theChunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
+					Biome blockBiome = chunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
 
 					// the block to be replaced
-					Block blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
+					Block blockToReplace = chunk.getBlockState(x, y, z).getBlock();
 
 					// the block above it
-					Block blockAbove = theChunk.getBlockState(x, y + 1, z).getBlock();
+					Block blockAbove = chunk.getBlockState(x, y + 1, z).getBlock();
 
 					// the block below it
-					Block blockBelow = theChunk.getBlockState(x, y - 1, z).getBlock();
+					Block blockBelow = chunk.getBlockState(x, y - 1, z).getBlock();
 
 					if (blockToReplace==Blocks.AIR&& (blockBiome == Biomes.OCEAN|| blockBiome == Biomes.DEEP_OCEAN)&& world.provider.getDimension() == 0) {
-						theChunk.setBlockState(new BlockPos(x, y, z), WATER);
+						chunk.setBlockState(new BlockPos(x, y, z), WATER);
 						if (blockBelow == Blocks.LAVA) {
-							theChunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.OBSIDIAN.getDefaultState());
+							chunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.OBSIDIAN.getDefaultState());
 							if (rand.nextBoolean())
-								theChunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.MAGMA.getDefaultState());
+								chunk.setBlockState(new BlockPos(x, y - 1, z), Blocks.MAGMA.getDefaultState());
 						}
 					}
 
 					if ((blockBiome == Biomes.OCEAN|| blockBiome == Biomes.DEEP_OCEAN)&&(blockToReplace == Blocks.STONE||blockToReplace == Blocks.PRISMARINE) && 
-							(theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR
-							|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.AIR
-							|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR
-							|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR
-							|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.AIR
-							|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR
-							|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.WATER
-							|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.WATER
-							|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.WATER
-							|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.WATER
-							|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.WATER
-							|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.WATER
-							|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA
-							|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.LAVA
-							|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA
-							|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA
-							|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.LAVA
-							|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA)) {
+							(chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR
+							|| chunk.getBlockState(x, y + 1, z).getBlock() == Blocks.AIR
+							|| chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR
+							|| chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR
+							|| chunk.getBlockState(x, y - 1, z).getBlock() == Blocks.AIR
+							|| chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR
+							|| chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.WATER
+							|| chunk.getBlockState(x, y + 1, z).getBlock() == Blocks.WATER
+							|| chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.WATER
+							|| chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.WATER
+							|| chunk.getBlockState(x, y - 1, z).getBlock() == Blocks.WATER
+							|| chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.WATER
+							|| chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA
+							|| chunk.getBlockState(x, y + 1, z).getBlock() == Blocks.LAVA
+							|| chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA
+							|| chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA
+							|| chunk.getBlockState(x, y - 1, z).getBlock() == Blocks.LAVA
+							|| chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA)) {
 						if (rand.nextInt(5)==0)
-							theChunk.setBlockState(new BlockPos(x,y,z), Blocks.PRISMARINE.getDefaultState());
+							chunk.setBlockState(new BlockPos(x,y,z), Blocks.PRISMARINE.getDefaultState());
 						if (rand.nextInt(ModConfig.worldgen.caves.CrystalChance)==0)
-							theChunk.setBlockState(new BlockPos(x,y,z), Misc.prismarineCrystalBlock.getDefaultState());
+							chunk.setBlockState(new BlockPos(x,y,z), Misc.prismarineCrystalBlock.getDefaultState());
 					}
 				}
 			}

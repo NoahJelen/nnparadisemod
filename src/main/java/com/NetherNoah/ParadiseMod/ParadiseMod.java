@@ -110,8 +110,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSIONS)
 public class ParadiseMod {
-	//custom material for ender acid so endermen can swim in it
-	public final static Material ENDER_ACID = (new MaterialLiquid(MapColor.WATER));
 
 	public static final CreativeTabs xmas = new ChristmasTab();
 	private AntiMobLampHandler AntiMobLampHandler;
@@ -138,7 +136,7 @@ public class ParadiseMod {
         
         //events
         MinecraftForge.EVENT_BUS.register(Events.class);
-        
+
         //some modifications to vanilla blocks
         //This is NOT a coremod!
 		Blocks.REDSTONE_BLOCK.setResistance(2000F);
@@ -150,6 +148,7 @@ public class ParadiseMod {
 		Blocks.CHAIN_COMMAND_BLOCK.setCreativeTab(CreativeTabs.REDSTONE);
 		Blocks.BARRIER.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		Blocks.MOB_SPAWNER.setCreativeTab(CreativeTabs.DECORATIONS);
+
 		//liquids
 		LiquidRedstone.register();
 		EnderAcid.register();
@@ -249,8 +248,8 @@ public class ParadiseMod {
 		for(int i=0;i<misc.length;i++) 
 			GameRegistry.registerWorldGenerator(misc[i],5);
 		
-		GameRegistry.registerWorldGenerator(new EndGrass(),2);		
-		GameRegistry.registerWorldGenerator(new EndLakes(),2);
+		GameRegistry.registerWorldGenerator(new EndGrass(),0);		
+		GameRegistry.registerWorldGenerator(new EndLakes(),1);
 
 		//block categories
 		Lamps.initAndRegister();

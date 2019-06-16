@@ -19,16 +19,16 @@ public class MapGenDUCaves extends MapGenBase{
     protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
     protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 
-    protected void addRoom(long p_180703_1_, int p_180703_3_, int p_180703_4_, ChunkPrimer primer, double p_180703_6_, double p_180703_8_, double p_180703_10_){
-        addTunnel(p_180703_1_, p_180703_3_, p_180703_4_, primer, p_180703_6_, p_180703_8_, p_180703_10_, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
+    protected void addRoom(long seed, int originalX, int originalZ, ChunkPrimer primer, double d0, double d1, double d2){
+        addTunnel(seed, originalX, originalZ, primer, d0, d1, d2, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
     }
 
-    protected void addTunnel(long p_180702_1_, int p_180702_3_, int p_180702_4_, ChunkPrimer primer, double p_180702_6_, double p_180702_8_, double p_180702_10_, float p_180702_12_, float p_180702_13_, float p_180702_14_, int p_180702_15_, int p_180702_16_, double p_180702_17_){
-        double d0 = (double)(p_180702_3_ * 16 + 8);
-        double d1 = (double)(p_180702_4_ * 16 + 8);
+    protected void addTunnel(long seed, int chunkX, int chunkZ, ChunkPrimer primer, double p_180702_6_, double p_180702_8_, double p_180702_10_, float p_180702_12_, float p_180702_13_, float p_180702_14_, int p_180702_15_, int p_180702_16_, double p_180702_17_){
+        double d0 = (double)(chunkX * 16 + 8);
+        double d1 = (double)(chunkZ * 16 + 8);
         float f = 0.0F;
         float f1 = 0.0F;
-        Random random = new Random(p_180702_1_);
+        Random random = new Random(seed);
 
         if (p_180702_16_ <= 0){
             int i = range * 16 - 16;
@@ -66,8 +66,8 @@ public class MapGenDUCaves extends MapGenBase{
             f = f + (random.nextFloat() - random.nextFloat()) * random.nextFloat() * 4.0F;
 
             if (!flag2 && p_180702_15_ == j && p_180702_12_ > 1.0F && p_180702_16_ > 0){
-                addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ - ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
-                addTunnel(random.nextLong(), p_180702_3_, p_180702_4_, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ + ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
+                addTunnel(random.nextLong(), chunkX, chunkZ, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ - ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
+                addTunnel(random.nextLong(), chunkX, chunkZ, primer, p_180702_6_, p_180702_8_, p_180702_10_, random.nextFloat() * 0.5F + 0.5F, p_180702_13_ + ((float)Math.PI / 2F), p_180702_14_ / 3.0F, p_180702_15_, p_180702_16_, 1.0D);
                 return;
             }
 
@@ -81,12 +81,12 @@ public class MapGenDUCaves extends MapGenBase{
                     return;
 
                 if (p_180702_6_ >= d0 - 16.0D - d2 * 2.0D && p_180702_10_ >= d1 - 16.0D - d2 * 2.0D && p_180702_6_ <= d0 + 16.0D + d2 * 2.0D && p_180702_10_ <= d1 + 16.0D + d2 * 2.0D){
-                    int k2 = MathHelper.floor(p_180702_6_ - d2) - p_180702_3_ * 16 - 1;
-                    int k = MathHelper.floor(p_180702_6_ + d2) - p_180702_3_ * 16 + 1;
+                    int k2 = MathHelper.floor(p_180702_6_ - d2) - chunkX * 16 - 1;
+                    int k = MathHelper.floor(p_180702_6_ + d2) - chunkX * 16 + 1;
                     int l2 = MathHelper.floor(p_180702_8_ - d3) - 1;
                     int l = MathHelper.floor(p_180702_8_ + d3) + 1;
-                    int i3 = MathHelper.floor(p_180702_10_ - d2) - p_180702_4_ * 16 - 1;
-                    int i1 = MathHelper.floor(p_180702_10_ + d2) - p_180702_4_ * 16 + 1;
+                    int i3 = MathHelper.floor(p_180702_10_ - d2) - chunkZ * 16 - 1;
+                    int i1 = MathHelper.floor(p_180702_10_ + d2) - chunkZ * 16 + 1;
 
                     if (k2 < 0) k2 = 0;
                     if (k > 16) k = 16;
@@ -108,10 +108,10 @@ public class MapGenDUCaves extends MapGenBase{
                     BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 
                     for (int j3 = k2; j3 < k; ++j3){
-                    	double d10 = ((double)(j3 + p_180702_3_ * 16) + 0.5D - p_180702_6_) / d2;
+                    	double d10 = ((double)(j3 + chunkX * 16) + 0.5D - p_180702_6_) / d2;
 
                         for (int i2 = i3; i2 < i1; ++i2){
-                        	double d8 = ((double)(i2 + p_180702_4_ * 16) + 0.5D - p_180702_10_) / d2;
+                        	double d8 = ((double)(i2 + chunkZ * 16) + 0.5D - p_180702_10_) / d2;
                             boolean flag1 = false;
 
                             if (d10 * d10 + d8 * d8 < 1.0D){
@@ -119,11 +119,11 @@ public class MapGenDUCaves extends MapGenBase{
                             		double d9 = ((double)(j2 - 1) + 0.5D - p_180702_8_) / d3;
 
                                     if (d9 > -0.7D && d10 * d10 + d9 * d9 + d8 * d8 < 1.0D){
-                                    	IBlockState iblockstate1 = primer.getBlockState(j3, j2, i2);
-                                        IBlockState iblockstate2 = (IBlockState)MoreObjects.firstNonNull(primer.getBlockState(j3, j2 + 1, i2), AIR);
-                                        flag1 = isTopBlock(primer, j3, j2, i2, p_180702_3_, p_180702_4_);
+                                    	IBlockState state = primer.getBlockState(j3, j2, i2);
+                                        IBlockState up = (IBlockState)MoreObjects.firstNonNull(primer.getBlockState(j3, j2 + 1, i2), AIR);
+                                        flag1 = isTopBlock(primer, j3, j2, i2, chunkX, chunkZ);
 
-                                        digBlock(primer, j3, j2, i2, p_180702_3_, p_180702_4_, flag1, iblockstate1, iblockstate2);
+                                        digBlock(primer, j3, j2, i2, chunkX, chunkZ, flag1, state, up);
                                     }
                             	}
                             }
@@ -153,7 +153,6 @@ public class MapGenDUCaves extends MapGenBase{
 
     protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX, int originalZ, ChunkPrimer chunkPrimerIn){
         int i = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(15) + 1) + 1);
-
         if (this.rand.nextInt(7) != 0)
             i = 0;
 

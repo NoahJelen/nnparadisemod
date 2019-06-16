@@ -25,7 +25,7 @@ public class CaveGenDesert implements IWorldGenerator{
 
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,IChunkProvider chunkProvider) {
-		Chunk theChunk=world.getChunkFromChunkCoords(chunkX, chunkZ);
+		Chunk chunk=world.getChunkFromChunkCoords(chunkX, chunkZ);
 		// don't generate if the config says not to
 		// generate cave features
 		if (ModConfig.worldgen.caves.betterCaves == false)
@@ -46,57 +46,57 @@ public class CaveGenDesert implements IWorldGenerator{
 				for (int y = 0; y < height; y++) {
 
 					// biome of current block
-					Biome blockBiome = theChunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
+					Biome blockBiome = chunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
 
 					// the block to be replaced
-					Block blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
+					Block blockToReplace = chunk.getBlockState(x, y, z).getBlock();
 
 					// the block above it
-					Block blockAbove = theChunk.getBlockState(x, y + 1, z).getBlock();
+					Block blockAbove = chunk.getBlockState(x, y + 1, z).getBlock();
 
 					// the block below it
-					Block blockBelow = theChunk.getBlockState(x, y - 1, z).getBlock();
+					Block blockBelow = chunk.getBlockState(x, y - 1, z).getBlock();
 
 					if (blockBiome == Biomes.DESERT || blockBiome == Biomes.DESERT_HILLS|| blockBiome == Biomes.MUTATED_DESERT){
-						if ((blockToReplace == Blocks.STONE||blockToReplace == Blocks.SANDSTONE)&&(theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR
-								|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.AIR
-								|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR
-								|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR
-								|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.AIR
-								|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR
-								|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.WATER
-								|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.WATER
-								|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.WATER
-								|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.WATER
-								|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.WATER
-								|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.WATER
-								|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA
-								|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.LAVA
-								|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA
-								|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA
-								|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.LAVA
-								|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA)) {
+						if ((blockToReplace == Blocks.STONE||blockToReplace == Blocks.SANDSTONE)&&(chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR
+								|| chunk.getBlockState(x, y + 1, z).getBlock() == Blocks.AIR
+								|| chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR
+								|| chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR
+								|| chunk.getBlockState(x, y - 1, z).getBlock() == Blocks.AIR
+								|| chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR
+								|| chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.WATER
+								|| chunk.getBlockState(x, y + 1, z).getBlock() == Blocks.WATER
+								|| chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.WATER
+								|| chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.WATER
+								|| chunk.getBlockState(x, y - 1, z).getBlock() == Blocks.WATER
+								|| chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.WATER
+								|| chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA
+								|| chunk.getBlockState(x, y + 1, z).getBlock() == Blocks.LAVA
+								|| chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA
+								|| chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA
+								|| chunk.getBlockState(x, y - 1, z).getBlock() == Blocks.LAVA
+								|| chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA)) {
 							// lava
 							if (rand.nextInt(20) == 0 && blockAbove == Blocks.AIR)
-									theChunk.setBlockState(new BlockPos(x, y, z), Blocks.LAVA.getDefaultState());
+								chunk.setBlockState(new BlockPos(x, y, z), Blocks.LAVA.getDefaultState());
 							// sandstone
 							if (rand.nextBoolean())
-								theChunk.setBlockState(new BlockPos(x, y, z), SANDSTONE);
+								chunk.setBlockState(new BlockPos(x, y, z), SANDSTONE);
 							
 							//sandstone formations
 							if (blockAbove==Blocks.AIR&&rand.nextInt(10)==0)
-								theChunk.setBlockState(new BlockPos(x,y+1,z), Misc.sandstoneFormation.getDefaultState());
+								chunk.setBlockState(new BlockPos(x,y+1,z), Misc.sandstoneFormation.getDefaultState());
 							if (blockBelow==Blocks.AIR&&rand.nextInt(10)==0&&y>0)
-								theChunk.setBlockState(new BlockPos(x,y-1,z), Misc.sandstoneFormation.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.DOWN));
+								chunk.setBlockState(new BlockPos(x,y-1,z), Misc.sandstoneFormation.getDefaultState().withProperty(BlockDirectional.FACING, EnumFacing.DOWN));
 						}
 
 						//this needs to be reset
-						blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
+						blockToReplace = chunk.getBlockState(x, y, z).getBlock();
 
 						// shrubs
 						if (blockToReplace == Blocks.SANDSTONE	&& blockAbove == Blocks.AIR && rand.nextInt(5) == 0 ) {
-							theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.DEADBUSH.getDefaultState());
-							theChunk.setBlockState(new BlockPos(x, y, z), Blocks.SAND.getDefaultState());
+							chunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.DEADBUSH.getDefaultState());
+							chunk.setBlockState(new BlockPos(x, y, z), Blocks.SAND.getDefaultState());
 						}
 					}
 				}

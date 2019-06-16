@@ -35,7 +35,7 @@ public class CaveGenMesa implements IWorldGenerator {
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
-		Chunk theChunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
+		Chunk chunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
 
 		// don't generate if the config says not to
 		// generate cave features
@@ -56,16 +56,16 @@ public class CaveGenMesa implements IWorldGenerator {
 				for (int y = 0; y < height; y++) {
 
 					// biome of current block
-					Biome blockBiome = theChunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
+					Biome blockBiome = chunk.getBiome(new BlockPos(x, y, z), world.getBiomeProvider());
 
 					// the block to be replaced
-					Block blockToReplace = theChunk.getBlockState(x, y, z).getBlock();
+					Block blockToReplace = chunk.getBlockState(x, y, z).getBlock();
 
 					// the block above it
-					Block blockAbove = theChunk.getBlockState(x, y + 1, z).getBlock();
+					Block blockAbove = chunk.getBlockState(x, y + 1, z).getBlock();
 
 					// the block below it
-					Block blockBelow = theChunk.getBlockState(x, y - 1, z).getBlock();
+					Block blockBelow = chunk.getBlockState(x, y - 1, z).getBlock();
 
 					boolean mesa = blockBiome == Biomes.MESA || blockBiome == Biomes.MESA_CLEAR_ROCK
 							|| blockBiome == Biomes.MESA_ROCK || blockBiome == Biomes.MUTATED_MESA
@@ -73,54 +73,54 @@ public class CaveGenMesa implements IWorldGenerator {
 
 					// replace exposed stone
 					if (mesa&&(blockToReplace == Blocks.STONE || blockToReplace == Blocks.COBBLESTONE)
-							&& (theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR
-									|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.AIR
-									|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR
-									|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR
-									|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.AIR
-									|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR
-									|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.WATER
-									|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.WATER
-									|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.WATER
-									|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.WATER
-									|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.WATER
-									|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.WATER
-									|| theChunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA
-									|| theChunk.getBlockState(x, y + 1, z).getBlock() == Blocks.LAVA
-									|| theChunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA
-									|| theChunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA
-									|| theChunk.getBlockState(x, y - 1, z).getBlock() == Blocks.LAVA
-									|| theChunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA)) {
+							&& (chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.AIR
+									|| chunk.getBlockState(x, y + 1, z).getBlock() == Blocks.AIR
+									|| chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.AIR
+									|| chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.AIR
+									|| chunk.getBlockState(x, y - 1, z).getBlock() == Blocks.AIR
+									|| chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.AIR
+									|| chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.WATER
+									|| chunk.getBlockState(x, y + 1, z).getBlock() == Blocks.WATER
+									|| chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.WATER
+									|| chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.WATER
+									|| chunk.getBlockState(x, y - 1, z).getBlock() == Blocks.WATER
+									|| chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.WATER
+									|| chunk.getBlockState(x + 1, y, z).getBlock() == Blocks.LAVA
+									|| chunk.getBlockState(x, y + 1, z).getBlock() == Blocks.LAVA
+									|| chunk.getBlockState(x, y, z + 1).getBlock() == Blocks.LAVA
+									|| chunk.getBlockState(x - 1, y, z).getBlock() == Blocks.LAVA
+									|| chunk.getBlockState(x, y - 1, z).getBlock() == Blocks.LAVA
+									|| chunk.getBlockState(x, y, z - 1).getBlock() == Blocks.LAVA)) {
 
 							// hardened clay (terracotta)
 							switch (y) {
 							case 74:
 							case 45:
-								theChunk.setBlockState(new BlockPos(x, y, z), ORANGE_TERRACOTTA);
+								chunk.setBlockState(new BlockPos(x, y, z), ORANGE_TERRACOTTA);
 								break;
 
 							case 79:
 							case 50:
-								theChunk.setBlockState(new BlockPos(x, y, z), WHITE_TERRACOTTA);
+								chunk.setBlockState(new BlockPos(x, y, z), WHITE_TERRACOTTA);
 								break;
 
 							case 83:
 							case 55:
-								theChunk.setBlockState(new BlockPos(x, y, z), BROWN_TERRACOTTA);
+								chunk.setBlockState(new BlockPos(x, y, z), BROWN_TERRACOTTA);
 								break;
 
 							case 85:
 							case 64:
-								theChunk.setBlockState(new BlockPos(x, y, z), YELLOW_TERRACOTTA);
+								chunk.setBlockState(new BlockPos(x, y, z), YELLOW_TERRACOTTA);
 								break;
 
 							case 40:
 							case 56:
-								theChunk.setBlockState(new BlockPos(x, y, z), RED_TERRACOTTA);
+								chunk.setBlockState(new BlockPos(x, y, z), RED_TERRACOTTA);
 								break;
 
 							default:
-								theChunk.setBlockState(new BlockPos(x, y, z), TERRACOTTA);
+								chunk.setBlockState(new BlockPos(x, y, z), TERRACOTTA);
 
 							}
 						}
@@ -128,7 +128,7 @@ public class CaveGenMesa implements IWorldGenerator {
 						// shrubs
 						if (mesa && (blockToReplace == Blocks.HARDENED_CLAY || blockToReplace == Blocks.STAINED_HARDENED_CLAY
 								|| blockToReplace == Blocks.SANDSTONE) && blockAbove == Blocks.AIR && rand.nextInt(5) == 0) {
-							theChunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.DEADBUSH.getDefaultState());
+							chunk.setBlockState(new BlockPos(x, y + 1, z), Blocks.DEADBUSH.getDefaultState());
 
 					}
 				}
